@@ -47,9 +47,25 @@ from transformers import PreTrainedTokenizerFast
 #         "1+1=2\n4+0=4\n2+6=8\n6+4=10\n5+6=11\n8+1=9\n9+8=17\n3+3=",
 #     ]
 #
-VOCAB_CHARS: list[str] = []
-SAMPLE_TEXTS: list[str] = []
+# Our task: addition problems across four numeral bases (binary, octal,
+# decimal, hexadecimal) sharing one vocabulary. There is no per-base marker
+# token -- the model has to infer the base purely from which digit
+# characters it sees, so every base's digits must already be in this set.
+# Digits 0-9 cover binary/octal/decimal; A-F additionally cover hex.
+# '+' and '=' are the operator/result markers, ',' separates the few-shot
+# examples within a prompt, and ' ' separates operands/operators visually.
 
+VOCAB_CHARS: list[str] = sorted("0123456789ABCDEF+=, ")
+SAMPLE_TEXTS: list[str] = [
+    "13 + 11 = 24",                          # decimal, the anchor base
+    "1101 + 1011 = 11000",                    # binary: same sum as above, minimal token overlap with decimal
+    "15 + 13 = 30",                           # octal: same sum again, different surface form, carries at a different position
+    "D + B = 18",                             # hex: D + B = 13 + 11 = 24 decimal = 0x18
+    "9F + 7C = 11B",                          # hex: 159 + 124 = 283 decimal = 0x11B -- exercises remaining digits/letters
+    "A + 6 = 10",                             # hex: 10 + 6 = 16 decimal = 0x10 -- exercises digit 6 and letter A
+    "E + 1 = F",                              # hex: 14 + 1 = 15 decimal = 0xF -- exercises letter E
+    "13 + 11 = 24, 15 + 13 = 30, 3 + 5 = ",    # few-shot style: worked examples, then an unanswered test problem ending in "="
+]
 # --------------------------------------------------------------------------- #
 
 _SPECIAL_TOKENS = ["<pad>", "<bos>", "<eos>", "<unk>"]
