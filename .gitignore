@@ -16,4 +16,3 @@ wandb/
 *.err
 analysis_results*/
 .claude/
-artifacts/
