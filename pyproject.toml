@@ -1,0 +1,54 @@
+[project]
+name = "mechinterp-template"
+version = "0.1.0"
+description = "A template for mechanistic interpretability projects on small transformer language models."
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "accelerate>=1.11.0",
+    "datasets>=4.5.0",
+    "huggingface-hub>=0.35.3",
+    "jupyter>=1.1.1",
+    "matplotlib>=3.10.7",
+    "protobuf>=6.33.1",
+    "scikit-learn>=1.7.2",
+    "seaborn>=0.13.2",
+    "torch>=2.6.0,<2.10",
+    "transformers>=4.57.1",
+    "wandb>=0.25.0",
+    "rich>=14.3.3",
+    "transformer-lens>=3.2.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pre-commit>=4.4.0",
+    "ruff>=0.14.5",
+]
+
+[tool.ruff.lint]
+select = [
+    "E", # Pycodestyle errors
+    "F", # Pyflakes errors
+    "W", # Pycodestyle warnings
+    "UP", # Pyupgrade rules
+    "I", # Import related rules
+    "C90", # Complexity rules
+    "D", # Documentation rules
+    "ANN", # Annotations rules
+    "TYP", # Type checking rules
+    "N", # Naming rules
+    "Q000", # Quotation style rules
+    "RET", # Return type rules
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+
+[tool.ruff.format]
+quote-style = "double"
+docstring-code-format = true
