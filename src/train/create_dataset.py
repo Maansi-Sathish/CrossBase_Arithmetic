@@ -100,26 +100,24 @@ def build_prompt(
     rng: np.random.Generator,
     few_shot: int = FEW_SHOT,
 ) -> str:
-    """Build one few-shot prompt ending at '=' (model must produce the answer).
-
-    Few-shot pool is `fs_pairs` (always the base's TRAIN pool, even for val rows).
-
-    Key fixes vs. original:
-      1. Sampling WITHOUT replacement — no duplicate few-shot examples in a prompt.
-      2. The test pair (test_a, test_b) is excluded from the few-shot pool before
-         sampling, so the test problem is never inadvertently shown solved in its
-         own context.
-
-    Returns a string like:
-        "A+B=C\\nD+E=F\\n...\\nX+Y="
-    where the final test pair is unsolved and the prompt ends immediately after '='.
-    """
-    # Build a pool that excludes the test pair itself to prevent leakage.
-    eligible = [(a, b) for (a, b) in fs_pairs if (a, b) != (test_a, test_b)]
-
-    # Sample WITHOUT replacement so no duplicate solved examples appear in one prompt.
-    chosen_indices = rng.choice(len(eligible), size=few_shot, replace=False)
-    fs_strs = [render_example(eligible[i][0], eligible[i][1], base) for i in chosen_indices]
+    """Build one few-shot prompt ending at '='. Optimized for large datasets."""
+    # 1. Pick indices uniformly from the whole pool
+    chosen_indices = rng.choice(len(fs_pairs), size=few_shot, replace=False)
+    
+    fs_strs = []
+    for idx in chosen_indices:
+        pair = fs_pairs[idx]
+        
+        # 2. If we accidentally picked the test pair itself, swap it on the fly!
+        if pair == (test_a, test_b):
+            # Use an alternative index that we know isn't in chosen_indices
+            # (e.g., adding 1 or wrapped around the list length)
+            alt_idx = (idx + 1) % len(fs_pairs)
+            while alt_idx in chosen_indices:
+                alt_idx = (alt_idx + 1) % len(fs_pairs)
+            pair = fs_pairs[alt_idx]
+            
+        fs_strs.append(render_example(pair[0], pair[1], base))
 
     solved = "\n".join(fs_strs)
     test_q = f"{to_base(test_a, base)}+{to_base(test_b, base)}="
