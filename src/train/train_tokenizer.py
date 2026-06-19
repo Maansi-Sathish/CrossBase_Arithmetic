@@ -55,16 +55,37 @@ from transformers import PreTrainedTokenizerFast
 # '+' and '=' are the operator/result markers, ',' separates the few-shot
 # examples within a prompt, and ' ' separates operands/operators visually.
 
-VOCAB_CHARS: list[str] = sorted("0123456789ABCDEF+=, ")
+VOCAB_CHARS: list[str] = sorted("0123456789ABCDEF+=,\n ")
 SAMPLE_TEXTS: list[str] = [
-    "13 + 11 = 24",                          # decimal, the anchor base
-    "1101 + 1011 = 11000",                    # binary: same sum as above, minimal token overlap with decimal
-    "15 + 13 = 30",                           # octal: same sum again, different surface form, carries at a different position
-    "D + B = 18",                             # hex: D + B = 13 + 11 = 24 decimal = 0x18
-    "9F + 7C = 11B",                          # hex: 159 + 124 = 283 decimal = 0x11B -- exercises remaining digits/letters
-    "A + 6 = 10",                             # hex: 10 + 6 = 16 decimal = 0x10 -- exercises digit 6 and letter A
-    "E + 1 = F",                              # hex: 14 + 1 = 15 decimal = 0xF -- exercises letter E
-    "13 + 11 = 24, 15 + 13 = 30, 3 + 5 = ",    # few-shot style: worked examples, then an unanswered test problem ending in "="
+    # Decimal
+    "13+11=24",
+
+    # Binary
+    "1101+1011=11000",
+
+    # Octal
+    "15+13=30",
+
+    # Hexadecimal
+    "D+B=18",
+    "9F+7C=11B",
+    "A+6=10",
+    "E+1=F",
+
+    # Comma-delimited few-shot prompt
+    "13+11=24,15+13=30",
+
+    # Decimal few-shot prompt
+    "13+11=24\n25+14=39\n47+32=79\n8+91=99\n56+23=79\n10+11=21\n33+44=77\n62+15=77\n18+20=",
+
+    # Binary few-shot prompt
+    "1101+1011=11000\n11001+1110=100111\n101111+100000=1001111\n1000+1011=10011\n110+101=1011\n11111+1=100000\n10101+1010=11111\n1001+110=1111\n11010+101=",
+
+    # Octal few-shot prompt
+    "15+13=30\n31+16=47\n57+40=117\n10+13=23\n70+27=117\n12+55=67\n43+54=117\n76+11=107\n24+20=",
+
+    # Hexadecimal few-shot prompt
+    "D+B=18\n19+E=27\n5F+4C=AB\n32+1F=51\n7A+6=80\nCA+F=D9\nC3+2D=F0\n48+39=81\n2B+14=",
 ]
 # --------------------------------------------------------------------------- #
 
