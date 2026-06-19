@@ -47,15 +47,8 @@ from transformers import PreTrainedTokenizerFast
 #         "1+1=2\n4+0=4\n2+6=8\n6+4=10\n5+6=11\n8+1=9\n9+8=17\n3+3=",
 #     ]
 #
-# Our task: addition problems across four numeral bases (binary, octal,
-# decimal, hexadecimal) sharing one vocabulary. There is no per-base marker
-# token -- the model has to infer the base purely from which digit
-# characters it sees, so every base's digits must already be in this set.
-# Digits 0-9 cover binary/octal/decimal; A-F additionally cover hex.
-# '+' and '=' are the operator/result markers, ',' separates the few-shot
-# examples within a prompt, and ' ' separates operands/operators visually.
 
-VOCAB_CHARS: list[str] = sorted("0123456789ABCDEF+=,\n")
+VOCAB_CHARS: list[str] = sorted("0123456789ABCDEF+=\n")
 SAMPLE_TEXTS: list[str] = [
     # Decimal
     "13+11=24",
@@ -72,20 +65,17 @@ SAMPLE_TEXTS: list[str] = [
     "A+6=10",
     "E+1=F",
 
-    # Comma-delimited few-shot prompt
-    "13+11=24,15+13=30",
-
-    # Decimal few-shot prompt
-    "13+11=24\n25+14=39\n47+32=79\n8+91=99\n56+23=79\n10+11=21\n33+44=77\n62+15=77\n18+20=",
+    # Decimal few-shot prompt (5-shot, unanswered test problem at the end)
+    "13+11=24\n25+14=39\n47+32=79\n8+91=99\n56+23=79\n18+20=",
 
     # Binary few-shot prompt
-    "1101+1011=11000\n11001+1110=100111\n101111+100000=1001111\n1000+1011=10011\n110+101=1011\n11111+1=100000\n10101+1010=11111\n1001+110=1111\n11010+101=",
+    "1101+1011=11000\n11001+1110=100111\n101111+100000=1001111\n1000+1011=10011\n110+101=1011\n11010+101=",
 
     # Octal few-shot prompt
-    "15+13=30\n31+16=47\n57+40=117\n10+13=23\n70+27=117\n12+55=67\n43+54=117\n76+11=107\n24+20=",
+    "15+13=30\n31+16=47\n57+40=117\n10+13=23\n70+27=117\n24+20=",
 
     # Hexadecimal few-shot prompt
-    "D+B=18\n19+E=27\n5F+4C=AB\n32+1F=51\n7A+6=80\nCA+F=D9\nC3+2D=F0\n48+39=81\n2B+14=",
+    "D+B=18\n19+E=27\n5F+4C=AB\n32+1F=51\n7A+6=80\n2B+14=",
 ]
 # --------------------------------------------------------------------------- #
 
@@ -105,8 +95,7 @@ def build_tokenizer() -> PreTrainedTokenizerFast:
     tok_obj = Tokenizer(WordLevel(vocab=_VOCAB, unk_token="<unk>"))
     tok_obj.pre_tokenizer = Split(pattern=Regex(r"[\s\S]"), behavior="isolated")
     tok_obj.decoder = Fuse()
-    # Wrap in a PreTrainedTokenizerFast so it behaves like any HuggingFace tokenizer (padding,
-    # special tokens, save/push_to_hub, etc.).
+
     return PreTrainedTokenizerFast(
         tokenizer_object=tok_obj,
         bos_token="<bos>",  # beginning-of-sequence
