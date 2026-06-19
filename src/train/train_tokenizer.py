@@ -55,7 +55,7 @@ from transformers import PreTrainedTokenizerFast
 # '+' and '=' are the operator/result markers, ',' separates the few-shot
 # examples within a prompt, and ' ' separates operands/operators visually.
 
-VOCAB_CHARS: list[str] = sorted("0123456789ABCDEF+=,\n ")
+VOCAB_CHARS: list[str] = sorted("0123456789ABCDEF+=,\n")
 SAMPLE_TEXTS: list[str] = [
     # Decimal
     "13+11=24",
