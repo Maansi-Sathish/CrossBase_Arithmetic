@@ -152,8 +152,7 @@ def build_dataset(
             prompt  - the full few-shot prompt ending at '='
             answer  - the correct answer string, reversed-digit, in the appropriate base
             base    - integer base (2, 8, 10, or 16)
-            a       - first operand as a decimal integer
-            b       - second operand as a decimal integer
+            a       - first operand as a decimal integer  b  - second operand as a decimal integer
     """
     t0 = time.time()
 
