@@ -9,8 +9,7 @@ dataset with "prompt" and "answer" columns (see create_dataset.py; DATASET_NAME 
 likewise be a local path such as "./artifacts/dataset" or an HF Hub repo ID).
 
 Evaluation is done by greedy generation + exact-match accuracy on the "answer"
-column. If your task needs finer-grained metrics (per-category accuracy, etc.),
-see the commented example inside GenerationEvalTrainer.evaluate.
+column. Per-base accuracy is tracked for both train and eval splits.
 """
 
 import argparse
@@ -31,17 +30,14 @@ from transformers import (
 )
 
 # --------------------------------------------------------------------------- #
-# TODO: fill these in for your task.
+# Fill these in for your task.
 # --------------------------------------------------------------------------- #
 
 # HF Hub repo holding your trained tokenizer (see train_tokenizer.py).
-# Example: TOKENIZER_NAME = "your-username/your-project-tokenizer"
-TOKENIZER_NAME: str = ""
+TOKENIZER_NAME: str = "CrossBaseArithmetic/crossbase-tokenizer"  # TODO: replace with your HF tokenizer repo
 
-# Dataset with "train"/"validation" splits (see create_dataset.py). A local path such as
-# "./artifacts/dataset" or an HF Hub repo ID both work.
-# Example: DATASET_NAME = "your-username/your-dataset-name"
-DATASET_NAME: str = ""
+# Dataset with "train"/"validation" splits. Using the -99 dataset.
+DATASET_NAME: str = "CrossBaseArithmetic/multi-base-addition-99"  # TODO: replace with your HF dataset repo
 
 # Dataset config/subset name, or None if the dataset has a single default config.
 DATASET_CONFIG: str | None = None
@@ -75,17 +71,39 @@ class GenerationEvalTrainer(Trainer):
     """Trainer that replaces the default eval loop with generation-based exact-match accuracy.
 
     The eval dataset is expected to be the raw (untokenized) validation set with
-    "prompt" and "answer" columns. For each prompt the model greedily generates a
-    completion, which is compared for exact string equality against "answer".
+    "prompt", "answer", and "base" columns. For each prompt the model greedily generates
+    a completion, which is compared for exact string equality against "answer".
+
+    Also computes train accuracy (overall + per-base) by running inference over the raw
+    training set, so you can watch both curves in wandb and detect grokking.
     """
 
     def __init__(
-        self, *args: object, eval_batch_size: int = 128, eval_max_new_tokens: int = 16, **kwargs: object
+        self,
+        *args: object,
+        eval_batch_size: int = 128,
+        eval_max_new_tokens: int = 16,
+        train_dataset_raw: Dataset | None = None,
+        **kwargs: object,
     ) -> None:
         """Store eval-time generation settings, then defer to the base Trainer."""
         super().__init__(*args, **kwargs)
         self.eval_batch_size = eval_batch_size
         self.eval_max_new_tokens = eval_max_new_tokens
+        # Raw (untokenized) train set used for train-accuracy tracking.
+        self.train_dataset_raw = train_dataset_raw
+
+    def _run_eval_loop(self, dataset: Dataset, desc: str) -> list[dict]:
+        """Run greedy generation over an entire dataset; return list of {predicted, answer} dicts."""
+        results = []
+        for i in tqdm(range(0, len(dataset), self.eval_batch_size), desc=desc):
+            batch = dataset[i : i + self.eval_batch_size]
+            predictions = run_inference_batch(
+                self.model, self.processing_class, batch["prompt"], self.eval_max_new_tokens
+            )
+            for j, predicted in enumerate(predictions):
+                results.append({"predicted": predicted, "answer": batch["answer"][j]})
+        return results
 
     def evaluate(
         self,
@@ -93,7 +111,7 @@ class GenerationEvalTrainer(Trainer):
         ignore_keys: list[str] | None = None,
         metric_key_prefix: str = "eval",
     ) -> dict[str, float]:
-        """Run greedy generation on the validation set and return exact-match accuracy."""
+        """Run greedy generation on the validation AND training sets; return exact-match metrics."""
         eval_dataset = eval_dataset if eval_dataset is not None else self.eval_dataset
         was_training = self.model.training
         self.model.eval()
@@ -101,38 +119,46 @@ class GenerationEvalTrainer(Trainer):
         self.processing_class.padding_side = "left"
 
         try:
-            results = []
-            for i in tqdm(range(0, len(eval_dataset), self.eval_batch_size), desc="Evaluating"):
-                batch = eval_dataset[i : i + self.eval_batch_size]
-                predictions = run_inference_batch(
-                    self.model, self.processing_class, batch["prompt"], self.eval_max_new_tokens
+            metrics: dict[str, float] = {}
+
+            # ---------------------------------------------------------------- #
+            # 1. EVAL split — overall accuracy + per-base accuracy
+            # ---------------------------------------------------------------- #
+            eval_results = self._run_eval_loop(eval_dataset, desc="Evaluating (val)")
+
+            eval_accuracy = sum(r["predicted"] == r["answer"] for r in eval_results) / len(eval_results)
+            metrics[f"{metric_key_prefix}_accuracy"] = eval_accuracy
+
+            # Per-base accuracy on eval split
+            eval_bases = eval_dataset["base"]
+            for base in sorted(set(eval_bases)):
+                subset = [r for r, b in zip(eval_results, eval_bases) if b == base]
+                metrics[f"{metric_key_prefix}_base{base}_accuracy"] = (
+                    sum(r["predicted"] == r["answer"] for r in subset) / len(subset)
+                    if subset
+                    else float("nan")
                 )
-                for j, predicted in enumerate(predictions):
-                    results.append({"predicted": predicted, "answer": batch["answer"][j]})
 
-            accuracy = sum(r["predicted"] == r["answer"] for r in results) / len(results)
-            metrics = {f"{metric_key_prefix}_accuracy": accuracy}
+            # ---------------------------------------------------------------- #
+            # 2. TRAIN split — overall accuracy + per-base accuracy
+            # ---------------------------------------------------------------- #
+            if self.train_dataset_raw is not None:
+                train_results = self._run_eval_loop(self.train_dataset_raw, desc="Evaluating (train)")
 
-            # ------------------------------------------------------------------- #
-            # Optional: per-category accuracy breakdown.
-            # ------------------------------------------------------------------- #
-            # `results` is in the same order as `eval_dataset`, so you can split it
-            # by any category column on the val rows. This block is drop-in: paste
-            # it right here. Example for a single-digit addition task, reporting
-            # accuracy separately for sums that carry (answer >= 10) vs those that
-            # don't -- assuming each val row has an integer "answer" column:
-            #
-            #     answers = [int(x) for x in eval_dataset["answer"]]
-            #     no_carry = [r for k, r in enumerate(results) if answers[k] < 10]
-            #     carry = [r for k, r in enumerate(results) if answers[k] >= 10]
-            #     metrics[f"{metric_key_prefix}_no_carry_accuracy"] = (
-            #         sum(r["predicted"] == r["answer"] for r in no_carry) / len(no_carry) if no_carry else float("nan")
-            #     )
-            #     metrics[f"{metric_key_prefix}_carry_accuracy"] = (
-            #         sum(r["predicted"] == r["answer"] for r in carry) / len(carry) if carry else float("nan")
-            #     )
-            # ------------------------------------------------------------------- #
+                train_accuracy = sum(r["predicted"] == r["answer"] for r in train_results) / len(train_results)
+                metrics["train_accuracy"] = train_accuracy
 
+                # Per-base accuracy on train split
+                train_bases = self.train_dataset_raw["base"]
+                for base in sorted(set(train_bases)):
+                    subset = [r for r, b in zip(train_results, train_bases) if b == base]
+                    metrics[f"train_base{base}_accuracy"] = (
+                        sum(r["predicted"] == r["answer"] for r in subset) / len(subset)
+                        if subset
+                        else float("nan")
+                    )
+
+            # ---------------------------------------------------------------- #
             self.log(metrics)
             self.control = self.callback_handler.on_evaluate(self.args, self.state, self.control, metrics)
             return metrics
@@ -145,11 +171,12 @@ class GenerationEvalTrainer(Trainer):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Train a small LM from scratch on a synthetic dataset")
 
-    # Model size (GPT-2 config attribute names)
-    parser.add_argument("--hidden-size", type=int, default=256, help="Hidden size (GPT-2 n_embd)")
-    parser.add_argument("--num-hidden-layers", type=int, default=4, help="Number of transformer layers (GPT-2 n_layer)")
-    parser.add_argument("--num-attention-heads", type=int, default=4, help="Number of attention heads (GPT-2 n_head)")
-    parser.add_argument("--intermediate-size", type=int, default=1024, help="MLP/FFN inner size (GPT-2 n_inner)")
+    # Model size (GPT-2 config attribute names).
+    # intermediate-size is intentionally omitted: it is hardcoded as 4 * hidden_size.
+    parser.add_argument("--hidden-size", type=int, default=32, help="Hidden size (GPT-2 n_embd). Start small: 32.")
+    parser.add_argument("--num-hidden-layers", type=int, default=1, help="Number of transformer layers (GPT-2 n_layer). Start small: 1.")
+    parser.add_argument("--num-attention-heads", type=int, default=2, help="Number of attention heads (GPT-2 n_head). Start small: 2.")
+    # parser.add_argument("--intermediate-size", type=int, default=1024, help="MLP/FFN inner size (GPT-2 n_inner)")
     parser.add_argument(
         "--max-position-embeddings", type=int, default=256, help="Max sequence length (GPT-2 n_positions)"
     )
@@ -166,7 +193,7 @@ if __name__ == "__main__":
         "--output-dir", type=str, default="./saved_models", help="Output directory for model checkpoints"
     )
     parser.add_argument("--seed", type=int, default=42, help="Random seed")
-    parser.add_argument("--num-epochs", type=int, default=5, help="Number of training epochs")
+    parser.add_argument("--num-epochs", type=int, default=10, help="Number of training epochs")
     parser.add_argument("--batch-size", type=int, default=128, help="Batch size per device for train and eval")
     parser.add_argument("--eval-max-new-tokens", type=int, default=16, help="Max tokens to generate per eval prompt")
     parser.add_argument("--learning-rate", type=float, default=1e-3, help="Peak learning rate")
@@ -193,9 +220,8 @@ if __name__ == "__main__":
     parser.add_argument(
         "--report-to",
         type=str,
-        default="none",
-        help="Reporting integration (e.g. 'wandb', 'tensorboard', 'none'). Defaults to 'none' so "
-        "training works without a wandb account; pass --report-to wandb to enable it.",
+        default="wandb",
+        help="Reporting integration (e.g. 'wandb', 'tensorboard', 'none'). Defaults to 'wandb'.",
     )
     parser.add_argument("--run-name", type=str, default=None, help="Run name for the experiment tracker")
 
@@ -227,14 +253,17 @@ if __name__ == "__main__":
     print(f"  bos_token_id       : {tokenizer.bos_token_id}")
     print(f"  eos_token_id       : {tokenizer.eos_token_id}")
 
+    # intermediate_size is always 4x hidden_size (standard transformer rule).
+    intermediate_size = 4 * args.hidden_size
+
     # Config -- a GPT-2 architecture sized down to the values below. Tune these (via CLI args)
     # to control how big your model is: more layers/heads/width = more capacity but slower.
     config = GPT2Config(
-        vocab_size=len(tokenizer),  # must match the tokenizer so the embedding/output sizes line up
-        n_embd=args.hidden_size,  # width of the residual stream (hidden_size)
-        n_inner=args.intermediate_size,  # width of each MLP's hidden layer
+        vocab_size=len(tokenizer),       # must match the tokenizer so the embedding/output sizes line up
+        n_embd=args.hidden_size,         # width of the residual stream (hidden_size)
+        n_inner=intermediate_size,       # width of each MLP's hidden layer (hardcoded: 4 * hidden_size)
         n_layer=args.num_hidden_layers,  # number of transformer blocks (depth)
-        n_head=args.num_attention_heads,  # attention heads per block
+        n_head=args.num_attention_heads, # attention heads per block
         n_positions=args.max_position_embeddings,  # max sequence length the model can handle
         pad_token_id=tokenizer.pad_token_id,
         bos_token_id=tokenizer.bos_token_id,
@@ -254,7 +283,7 @@ if __name__ == "__main__":
     print("Model Configuration:")
     print(f"  vocab_size:    {config.vocab_size}")
     print(f"  n_embd:        {config.n_embd}")
-    print(f"  n_inner:       {config.n_inner}")
+    print(f"  n_inner:       {config.n_inner}  (= 4 x hidden_size)")
     print(f"  n_layer:       {config.n_layer}")
     print(f"  n_head:        {config.n_head}")
     print(f"  n_positions:   {config.n_positions}")
@@ -284,6 +313,16 @@ if __name__ == "__main__":
     cuda_available = torch.cuda.is_available()
     supports_bf16 = cuda_available and torch.cuda.get_device_capability()[0] >= 8
     print(f"\nCUDA available: {cuda_available}\nSupports bf16: {supports_bf16}")
+
+    # Auto-generate a descriptive run name if none is provided.
+    # Format: L{layers}_H{heads}_D{dim}  e.g. "L1_H2_D32"
+    auto_run_name = (
+        args.run_name
+        if args.run_name is not None
+        else f"L{args.num_hidden_layers}_H{args.num_attention_heads}_D{args.hidden_size}"
+        + (f"_{hub_name.split('/')[-1]}" if hub_name else "")
+    )
+
     training_args = TrainingArguments(
         output_dir=args.output_dir,
         num_train_epochs=args.num_epochs,
@@ -313,7 +352,7 @@ if __name__ == "__main__":
         hub_strategy="every_save",
         seed=args.seed,
         report_to=args.report_to,
-        run_name=args.run_name if args.run_name is not None else (hub_name.split("/")[-1] if hub_name else None),
+        run_name=auto_run_name,
         bf16=supports_bf16,
     )
 
@@ -326,6 +365,7 @@ if __name__ == "__main__":
         processing_class=tokenizer,
         eval_batch_size=args.batch_size,
         eval_max_new_tokens=args.eval_max_new_tokens,
+        train_dataset_raw=raw_train,  # raw (untokenized) train set for train-accuracy tracking
     )
 
     print("\nStarting training...")
@@ -347,5 +387,8 @@ if __name__ == "__main__":
         print(f"  {metric}: {value}")
 
     if wandb.run is not None:
-        wandb.run.summary["val/accuracy"] = metrics["eval_accuracy"]
+        wandb.run.summary["val/accuracy"] = metrics.get("eval_accuracy", float("nan"))
         wandb.run.summary["val/n_examples"] = len(raw_val)
+        if "train_accuracy" in metrics:
+            wandb.run.summary["train/accuracy"] = metrics["train_accuracy"]
+            wandb.run.summary["train/n_examples"] = len(raw_train)
