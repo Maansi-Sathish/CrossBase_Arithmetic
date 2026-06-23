@@ -208,8 +208,6 @@ if __name__ == "__main__":
     )
     parser.add_argument("--max-grad-norm", type=float, default=1.0, help="Gradient clipping max norm")
     parser.add_argument("--logging-steps", type=int, default=100, help="Log every N steps")
-    parser.add_argument("--eval-steps", type=int, default=500, help="Evaluate every N steps")
-    parser.add_argument("--save-steps", type=int, default=500, help="Save checkpoint every N steps")
     parser.add_argument("--save-total-limit", type=int, default=5, help="Max checkpoints to keep on disk")
     parser.add_argument(
         "--lr-scheduler-type",
@@ -268,6 +266,12 @@ if __name__ == "__main__":
         pad_token_id=tokenizer.pad_token_id,
         bos_token_id=tokenizer.bos_token_id,
         eos_token_id=tokenizer.eos_token_id,
+        # Disable dropout (GPT2Config defaults all of these to 0.1) so weight decay is the sole
+        # regularizer, per the grokking recipe (Power et al. 2022; Nanda et al. 2023) this sweep follows.
+        resid_pdrop=0.0,
+        embd_pdrop=0.0,
+        attn_pdrop=0.0,
+        summary_first_dropout=0.0,
     )
 
     # from_config builds the model with RANDOM weights (training "from scratch"), as opposed to
@@ -334,10 +338,8 @@ if __name__ == "__main__":
         max_grad_norm=args.max_grad_norm,
         optim="adamw_torch",
         eval_on_start=True,
-        eval_strategy="steps",
-        eval_steps=args.eval_steps,
-        save_strategy="steps",
-        save_steps=args.save_steps,
+        eval_strategy="epoch",
+        save_strategy="epoch",
         save_total_limit=args.save_total_limit,
         # Reloading the best checkpoint may print "missing keys: ['lm_head.weight']" -- this is
         # expected and harmless: GPT-2 ties its output head to the input embedding, so that
