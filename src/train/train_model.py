@@ -299,6 +299,11 @@ if __name__ == "__main__":
     raw_train = load_dataset(DATASET_NAME, DATASET_CONFIG, split="train")
     raw_val = load_dataset(DATASET_NAME, DATASET_CONFIG, split="validation")
 
+    # Subsample for faster eval (10k rows each)
+    EVAL_SAMPLE_SIZE = 10_000
+    eval_train_sample = raw_train.shuffle(seed=args.seed).select(range(min(EVAL_SAMPLE_SIZE, len(raw_train))))
+    eval_val_sample = raw_val.shuffle(seed=args.seed).select(range(min(EVAL_SAMPLE_SIZE, len(raw_val))))
+
     def tokenize(batch: dict) -> dict:
         """Turn each (prompt, answer) pair into one token sequence the model learns to predict.
 
@@ -362,12 +367,12 @@ if __name__ == "__main__":
         model=model,
         args=training_args,
         train_dataset=tokenized_train,
-        eval_dataset=raw_val,
+        eval_dataset=eval_val_sample,
         data_collator=collator,
         processing_class=tokenizer,
         eval_batch_size=args.batch_size,
         eval_max_new_tokens=args.eval_max_new_tokens,
-        train_dataset_raw=raw_train,  # raw (untokenized) train set for train-accuracy tracking
+        train_dataset_raw=eval_train_sample,  # raw (untokenized) train set for train-accuracy tracking
     )
 
     print("\nStarting training...")
