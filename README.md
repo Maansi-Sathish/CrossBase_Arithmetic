@@ -178,15 +178,15 @@ what it produces and hands to the next one:
   PromptDataset  ──▶  main.py  ──▶  results file  ──▶  lasso.py  ──▶  analysis.json
    (probe prompts)    (capture)     (activations)       (rank parts)    (what to ablate)
         │                                                                     │
-        └──────────▶  main.py --intervention  ──▶  effects.py  ◀─────────────┘
-                      (switch the parts off)        (rank components by effect)
+        └──────────▶  main.py --intervention  ◀───────────────────────────────┘
+                      (switch the parts off, save baseline + ablated runs)
 ```
 
 Follow it like a snake: build the model along the top, drop down and run it on your own prompts to
-**record what happens inside**, **shortlist** the neurons/heads that look important, feed that
-shortlist back into `main.py` to **switch them off**, then run `effects.py` to **rank them by how
-much each one mattered**. The last three steps (`lasso.py`, `--intervention`, `effects.py`) are
-optional — you can also stop after capturing and explore the saved activations yourself.
+**record what happens inside**, **shortlist** the neurons/heads that look important, then feed that
+shortlist back into `main.py` to **switch them off** and see how the answers change. The last two
+steps (`lasso.py` and `--intervention`) are optional — you can also stop after capturing and explore
+the saved activations yourself.
 
 ## Setup
 
@@ -219,11 +219,10 @@ src/
     dataset.py           # PromptDataset: the probe prompts you run            [fill in — required]
     parser.py            # command-line arguments for main.py                  [optional extra args]
     dir.py               # builds the output filename                          [optional]
-    strip_geometry.py    # shrink saved result files by dropping big tensors (ready to use)
   inference.py           # the activation-capture loop — the heart of the analysis
   main.py                # ENTRY POINT: run capture (+ optional intervention) and save results
   lasso.py               # OPTIONAL: rank neurons/heads by importance, write analysis.json
-  effects.py             # OPTIONAL: rank ablated components by how much they changed the answers
+  plot_ablations.py      # OPTIONAL: heatmap of each ablated component's accuracy drop
 ```
 
 The two files you'll spend the most time *reading* are **`inference.py`** (how activations are
@@ -310,8 +309,10 @@ the current directory (its name is generated automatically from the run's parame
 uv run python src/lasso.py --dir . --output analysis.json
 ```
 
-Reads the `.pt` files, fits the Lasso, and writes `analysis.json` — the shortlist of important
-neurons/heads per layer.
+Reads the `.pt` files, fits the Lasso, and writes `analysis.json` — per layer and per condition, the
+shortlist of important neurons/heads, each with its Lasso **weight** (signed effect size), plus a
+top-level `conditions` block recording how many rows backed each condition. (See the `lasso.py`
+module docstring for the exact JSON layout.)
 
 ### 7. Ablate them *(optional)*
 
@@ -319,23 +320,15 @@ neurons/heads per layer.
 uv run python src/main.py -m <user>/my-model --num-prompts 200 --intervention analysis.json
 ```
 
-Re-runs the prompts, switching off each important component in turn, and saves the baseline plus one
-result per ablation into a single `.pt` file.
-
-### 8. Measure the effect *(optional)*
+Re-runs the prompts, switching off each important component in turn, and for each one records the
+**accuracy drop** it causes (`baseline_accuracy - ablated_accuracy`) into a single `.pt` file — the
+bigger the drop, the more the model relied on that component. Accuracy is scored by `is_correct` in
+`src/main.py` (it compares the model's answer to the `"answer"` in each prompt's metadata; adjust it
+for your task). `src/plot_ablations.py` turns those drops into a heatmap:
 
 ```bash
-uv run python src/effects.py --file <the --intervention output>.pt        # ranked table
-uv run python src/effects.py --file <...>.pt --plot effects.png           # + a bar chart
+uv run python src/plot_ablations.py --file <the --intervention output>.pt --num-mlp-neurons <d_mlp>
 ```
-
-Reads that file and prints a table of components — both MLP neurons and attention heads —
-**ranked by how much switching each one off changed the model's answers** (the payoff of the whole
-exercise). It reports `answer_change_rate` (fraction of prompts whose answer changed; works with no
-extra setup) and, once you implement `is_correct` in `src/effects.py`, an `accuracy_drop` column
-(how much each component mattered to *getting the task right*). Pass `--plot` to also save a bar
-chart (neurons and heads in different colours). The components at the top are the ones the model
-causally depends on — the starting point for working out what each actually computes.
 
 ## The capture convention (which token we read)
 
@@ -345,8 +338,8 @@ we read activations? **Always at the last token of the answer.**
 If the model answers `42` and that is two tokens `['4', '2']`, we read at `'2'`. If it answers `-63`
 as `['-', '6', '3']`, we read at `'3'`. The intuition: by the answer's last token the model has
 committed to its answer, so that position's residual stream is the most informative single place to
-look. All four recorded tensors (residual, MLP neurons, attention heads, embedding) are read at this
-*same* position, so they always describe the same token.
+look. Every recorded tensor (residual, MLP neurons, attention heads, and the token / positional
+embeddings) is read at this *same* position, so they all describe the same token.
 
 > [!NOTE]
 > How this works under the hood: after generating, we run the *whole* output sequence (prompt +
@@ -365,21 +358,23 @@ CPU). The shapes shown are GPT-2's; a toy model you trained will have whatever s
 
 ```python
 {
-  "result": [                       # one entry per prompt
+  "baseline": [                     # one entry per prompt (intervention mode uses this key too)
     {
-      "prompt_idx": 0,
       "prompt": "7+5=",
       "prompt_length": 4,           # number of prompt tokens
+      "metadata": { ... },           # that prompt's ground truth, from PromptDataset
       "result": {
         "completion": "12",          # what the model generated
         "answer": {
           "token": "12",             # the answer (string)
           "position": 5,             # absolute index of its LAST token
-          "residual":    {0: Tensor[768],  1: ...},   # per layer
-          "mlp_neurons": {0: Tensor[3072], 1: ...},   # per layer (the neurons)
-          "attn_heads":  {0: Tensor[12, 64], ...},    # per layer (per head)
-          "embedding":   Tensor[768],
-          "logits":      Tensor[50257],   # next-token distribution at the answer
+          "residual":        {0: Tensor[768],  1: ...},   # per layer
+          "mlp_neurons":     {0: Tensor[3072], 1: ...},   # per layer (the neurons)
+          "attn_heads":      {0: Tensor[12, 64], ...},    # per layer (per head)
+          "token_embedding": Tensor[768],   # content embedding at the answer token
+          "pos_embedding":   Tensor[768],   # positional embedding at the answer token
+          "resid_pre":       Tensor[768],   # block 0's input (token + positional embedding)
+          "logits":          Tensor[50257],   # next-token distribution at the answer
         },
         "geometry": { ... },          # extra positions from find_positions_of_interest
       },
@@ -395,7 +390,7 @@ To explore it in a notebook:
 ```python
 import torch
 data = torch.load("your_results.pt", weights_only=False)   # the .pt file main.py wrote
-row = data["result"][0]
+row = data["baseline"][0]
 print(row["prompt"], "->", row["result"]["answer"]["token"])
 answer = row["result"]["answer"]
 layer = data["metadata"]["layer_indices"][0]                # a layer you actually captured
@@ -404,16 +399,10 @@ print(neurons.shape)                                        # e.g. torch.Size([3
 ```
 
 An **intervention** run (step 7) saves a slightly different layout — `{"baseline": [rows],
-"ablations": [{"layer_idx", "type", "local_idx", ..., "result": [rows]}, ...], "metadata": {...}}` —
-where each ablation's `result` is a full re-run with one component switched off. You normally don't
-read this by hand; `effects.py` (step 8) turns it into the ranked effect table for you.
-
-Result files get large. `src/utils/strip_geometry.py` writes a lightweight copy with the big tensors
-removed (keeping prompts, answers, metadata):
-
-```bash
-uv run python src/utils/strip_geometry.py --dir <folder-of-.pt-files>
-```
+"baseline_accuracy": float, "ablations": [{"layer_idx", "feature_idx", "type", "local_idx",
+"accuracy", "accuracy_drop"}, ...], "metadata": {...}}` — where each ablation records only the
+*scalar* accuracy and its drop versus baseline (the heavy per-ablation rows are discarded; the
+unablated `baseline` is kept once). `src/plot_ablations.py` reads this and plots the drops.
 
 ## Everything you need to fill in
 
@@ -434,7 +423,7 @@ grep -rn TODO src/
 | `src/utils/parser.py` | extra task-specific command-line arguments | optional |
 | `src/utils/dir.py` | `generate_output_path` — the output filename | optional (good default) |
 | `src/lasso.py` | `assign_condition`, `build_target` — what to compare/predict | optional (good defaults) |
-| `src/effects.py` | `is_correct` — whether a generated answer is right (unlocks `accuracy_drop`) | optional (default: skipped) |
+| `src/main.py` | `is_correct` — whether a generated answer is right (scores ablation accuracy drops) | optional (good default) |
 
 Each `TODO` explains *what* to do, *why*, and shows a worked example in comments. Once your model is
 trained, the analysis side **runs as soon as you implement `PromptDataset.generate_prompts`** — every
