@@ -1,15 +1,14 @@
 """Prompt dataset for inference: builds the prompts that main.py runs the model on.
 
-A "prompt" is just the input string you feed the model. The model reads it, generates a
-continuation, and we capture its internal activations while it does so. So your prompts ARE
-your experiment: they decide what behaviour you get to study. This file is where you define them.
-
-You implement `PromptDataset.generate_prompts`. A small self-contained example (single-digit
-addition) is shown in comments -- uncomment it to see the pipeline run, then replace it with
-prompts for your own task.
+Prompts follow exactly the same format the model was trained on (see
+src/train/create_dataset.py): few_shot_examples solved equations, then the
+test question, answered in reversed-digit order (LSD first) via to_base_answer.
+No base-indicator token — the model infers the base from the digit characters
+in the few-shot context, exactly as during training.
 """
 
 import random
+
 
 # --------------------------------------------------------------------------- #
 # Base conversion helpers — copied exactly from src/train/create_dataset.py
@@ -41,20 +40,17 @@ def render_example(a: int, b: int, base: int) -> str:
     """One solved shot: 'A+B=reversed_answer' — no spaces, matches training format."""
     return f"{to_base(a, base)}+{to_base(b, base)}={to_base_answer(a + b, base)}"
 
+
 # --------------------------------------------------------------------------- #
 # PromptDataset
 # --------------------------------------------------------------------------- #
-
 
 class PromptDataset:
     """A collection of prompts to run activation-extraction inference on.
 
     `inference.run` iterates over `self.prompts`, a list of {"prompt": str, "metadata": dict}
-    entries; that is the only interface the rest of the pipeline relies on. "prompt" is the string
-    fed to the model; "metadata" is an optional free-form dict that can carry that prompt's ground truth
-    (e.g. the operands and correct answer) so you can score the model's output downstream. It's
-    passed straight through to each result row and never inspected by the pipeline, so put whatever
-    you need in it (or leave it empty).
+    entries. "prompt" is the string fed to the model; "metadata" carries ground truth
+    (base, a, b, answer) so is_correct in main.py can score the output.
     """
 
     def __init__(self) -> None:
@@ -66,61 +62,82 @@ class PromptDataset:
         return len(self.prompts)
 
     @classmethod
-    def generate_prompts(cls, num_prompts: int) -> "PromptDataset":
-        """Build the list of prompts to run inference on.
+    def generate_prompts(
+        cls,
+        num_prompts: int,
+        bases: list[int] | None = None,
+        max_operand: int = 999,
+        few_shot_examples: int = 5,
+        base_filter: int | None = None,
+    ) -> "PromptDataset":
+        """Build prompts that exactly match the training format from create_dataset.py.
 
         Args:
-            num_prompts: How many prompts to generate (comes from `--num-prompts`).
+            num_prompts:        How many prompts to generate (from --num-prompts).
+            bases:              Which bases to sample from. Defaults to [2, 8, 10, 16].
+                                Ignored if base_filter is set.
+            max_operand:        Operands sampled from [0, max_operand]. Matches training
+                                default of 999 (from --max-operand).
+            few_shot_examples:  Number of solved examples shown before the question.
+                                Matches training default of 5 (from --few-shot-examples).
+            base_filter:        If set, generate prompts for ONLY this one base.
+                                Useful for per-base circuit analysis (from --base-filter).
 
         Returns:
-            A PromptDataset whose `.prompts` is a list of `num_prompts` {"prompt": str,
-            "metadata": dict} entries.
+            A PromptDataset whose .prompts is a list of num_prompts
+            {"prompt": str, "metadata": dict} entries.
         """
-        # ----------------------------------------------------------------------------------- #
-        # TODO: build your prompts and append each one to `instance.prompts` as a dict
-        #     {"prompt": <string>, "metadata": <dict of ground truth>}.
-        #
-        # WHAT a prompt should be:
-        #   The model continues whatever you give it, so end the prompt right where you want the
-        #   answer to begin. For arithmetic you'd end with "7+5=" so the model produces "12".
-        #   Whatever the model then generates is parsed by find_answer_span in src/inference.py.
-        #
-        # WHAT metadata is for:
-        #   A free-form dict of that prompt's ground truth (e.g. {"a": 7, "b": 5, "answer": "12"}).
-        #   It's copied verbatim onto the result row, so downstream code (scoring, lasso.py) can
-        #   compare the model's output against the truth. The pipeline never reads it -- use {} if
-        #   you don't need it.
-        #
-        # FEW-SHOT prompting (used in the example below):
-        #   Small models follow patterns better when you first show a few solved examples
-        #   ("shots") in the same prompt, separated by newlines, before the real question. The
-        #   model infers the rule from the examples. This is optional but common for tiny models.
-        #
-        # TIPS:
-        #   - Keep answers short (ideally one or two tokens) so the analysis is clean.
-        #   - Use a fixed random seed (main.py already seeds RNGs) so runs are reproducible.
-        #   - If your task needs extra knobs (operator, number of shots, digit count, ...), add
-        #     them as CLI arguments in src/utils/parser.py and as parameters to this method,
-        #     then pass them through from src/main.py.
-        # ----------------------------------------------------------------------------------- #
-        #
-        # Example (single-digit addition, 4-shot) -- uncomment to run the pipeline, then replace:
-        #
-        #     import random
-        #     instance = cls()
-        #     for _ in range(num_prompts):
-        #         shots = []                                    # the solved examples shown first
-        #         for _ in range(4):
-        #             a, b = random.randint(0, 9), random.randint(0, 9)
-        #             shots.append(f"{a}+{b}={a + b}")          # e.g. "7+5=12"
-        #         a, b = random.randint(0, 9), random.randint(0, 9)
-        #         instance.prompts.append(
-        #             {
-        #                 "prompt": "\n".join(shots) + f"\n{a}+{b}=",  # ends at "=", answer to come
-        #                 "metadata": {"a": a, "b": b, "answer": str(a + b)},
-        #             }
-        #         )
-        #     return instance
-        #
-        # ----------------------------------------------------------------------------------- #
-        raise NotImplementedError("Implement PromptDataset.generate_prompts() -- see the example in comments.")
+        # Resolve which bases to use
+        # base_filter overrides bases entirely — useful when you want to isolate
+        # one base's circuit during analysis (e.g. --base-filter 2 for binary only)
+        if base_filter is not None:
+            active_bases = [base_filter]
+        elif bases is not None:
+            active_bases = bases
+        else:
+            active_bases = [2, 8, 10, 16]  # default: all four bases
+
+        instance = cls()
+
+        for _ in range(num_prompts):
+            # Sample a base uniformly from the active set
+            # Uniform sampling matches training where all bases are balanced
+            base = random.choice(active_bases)
+
+            # Sample the test pair (a, b)
+            a = random.randint(0, max_operand)
+            b = random.randint(0, max_operand)
+
+            # Build few-shot examples — no duplicates, test pair excluded
+            # This mirrors create_dataset.py's without-replacement sampling logic
+            seen = {(a, b)}  # start with test pair so it can't appear as a shot
+            shots = []
+            for _ in range(few_shot_examples):
+                while True:
+                    fa = random.randint(0, max_operand)
+                    fb = random.randint(0, max_operand)
+                    if (fa, fb) not in seen:
+                        break
+                seen.add((fa, fb))
+                shots.append(render_example(fa, fb, base))
+
+            # Build the full prompt: shots joined by \n, then the test question ending at =
+            # The model reads everything up to = and generates the answer from there
+            question = f"{to_base(a, base)}+{to_base(b, base)}="
+            prompt = "\n".join(shots) + "\n" + question
+
+            # Answer in reversed-digit order — this is what the model outputs
+            # and what is_correct in main.py compares against
+            answer = to_base_answer(a + b, base)
+
+            instance.prompts.append({
+                "prompt": prompt,
+                "metadata": {
+                    "base": base,       # which base this prompt is in
+                    "a": a,             # first operand (decimal)
+                    "b": b,             # second operand (decimal)
+                    "answer": answer,   # correct answer in reversed-digit order
+                },
+            })
+
+        return instance

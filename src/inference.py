@@ -45,68 +45,132 @@ def find_answer_span(generated_text: str) -> tuple[str, int, int] | None:
     returns the character span of the answer; inference.py then maps it to tokens and captures
     activations at the answer's LAST token.
 
-    The default grabs the first whitespace-delimited chunk of the generation (a good target for
-    short, single-"word" answers like a number). Override it if your answers look different.
+    Our model outputs answers in reversed-digit order (LSD first), terminated
+    by a newline or end of string. The answer is the first unbroken run of
+    valid hex characters [0-9A-F] after any leading whitespace.
+
+    We match [0-9A-F]+ because:
+      - Binary answers only use 0 and 1 — both in this set
+      - Octal answers use 0-7 — all in this set
+      - Decimal answers use 0-9 — all in this set
+      - Hex answers use 0-9 and A-F — exactly this set
+    So one pattern covers all four bases without needing to know the base.
 
     Args:
         generated_text: The decoded text the model generated after the prompt.
 
     Returns:
         (answer_text, start_char, end_char): the answer substring and its character offsets
-        within generated_text, or None if no answer could be found (that prompt is then skipped).
+        within generated_text, or None if no answer could be found (that prompt is skipped).
     """
-    # TODO (optional): change how the answer is located for your task. Return the (text, start,
-    # end) of the answer substring, or None to skip the prompt. The default below works for many
-    # short answers; only change it if your answer format needs something more specific.
-    #
-    # Example (an arithmetic task whose answer is an integer, possibly negative, e.g. "12" or "-46"):
-    #     match = re.search(r"^\s*(-?\d+)", generated_text)
-    match = re.search(r"^\s*(\S+)", generated_text)
+    # Match the first contiguous block of valid characters in our alphabet.
+    # ^ anchors to the start so we don't accidentally grab digits from later lines.
+    # \s* skips any leading whitespace the model may have emitted before the answer.
+    match = re.search(r"^\s*([0-9A-F]+)", generated_text)
     if not match:
+        # Model generated something we can't parse — skip this prompt
         return None
+
+    # Return (answer string, start char index, end char index)
     return match.group(1), match.start(1), match.end(1)
 
 
 def find_positions_of_interest(model: TransformerBridge, prompt: str) -> dict[str, int | None]:
     """Return extra PROMPT token positions to capture activations at (for --capture-geometry).
 
-    WHY this exists: by default we capture activations only at the answer token. But often you
-    also want activations at specific INPUT positions -- e.g. for "7+5=" you might study the
-    representations sitting on the "7", the "5", and the "+". This function names those positions
-    so inference.py records residual/MLP/head/embedding activations there too, stored under
-    result["geometry"][name]. The default returns nothing, which is fine if you only care about
-    the answer.
+    WHY this exists: by default we capture activations only at the answer token. But for
+    circuit analysis we also want to know what the model is doing at specific INPUT positions
+    — e.g. which head is looking at the carry digit, which head tracks the operator.
+
+    For cross-base arithmetic we care about six positions in the TEST question
+    (the last line of the prompt — not the few-shot examples):
+
+      first_digit_a  — leftmost digit of operand a  (most significant)
+      last_digit_a   — rightmost digit of operand a (carry originates here)
+      operator       — the + sign
+      first_digit_b  — leftmost digit of operand b
+      last_digit_b   — rightmost digit of operand b (carry originates here)
+      eq_sign        — the = sign (transition from reading to generating)
+
+    Why these specifically:
+      - If shared circuits exist across bases, heads that attend to the operator
+        or eq_sign should fire identically regardless of which base is being used.
+      - Carry-tracking heads should show high attention weights on last_digit_a
+        and last_digit_b, since that's where carries originate.
+      - first_digit_a / first_digit_b capture how the model encodes magnitude,
+        useful for probing whether number representations are shared or base-specific.
+
+    All positions reference the LAST line only (the actual test question),
+    because the few-shot lines are just context — we don't analyze those.
 
     Args:
-        model: The TransformerLens bridge. Useful helpers: `model.to_str_tokens(prompt,
-            prepend_bos=False)` returns the prompt split into per-token strings (so the i-th
-            entry is the string of token i), which makes it easy to find a token's index.
+        model: The TransformerLens bridge. model.to_str_tokens(prompt, prepend_bos=False)
+               returns the prompt as a list of per-token strings.
         prompt: The full prompt string.
 
     Returns:
-        dict mapping a name you choose to a token index within the prompt (or None to skip it).
-        IMPORTANT: index tokens WITHOUT a BOS prefix, to match how inference.py tokenizes prompts
-        (prepend_bos=False), so the indices line up with the captured activations.
+        dict mapping position name -> token index within the prompt (or None if not found).
+        IMPORTANT: indices are WITHOUT BOS prefix, matching how inference.py tokenizes.
     """
-    # ----------------------------------------------------------------------------------- #
-    # TODO (optional): return the prompt token positions you want to study, e.g.
-    #     {"operator": 5, "first_operand": 3}. Leave it returning {} to capture only the answer.
-    # ----------------------------------------------------------------------------------- #
-    #
-    # Example (a single-digit addition task with prompts like "7+5="), capturing the '+' operator
-    # and the '=' sign by scanning the per-token strings of the prompt:
-    #
-    #     str_tokens = model.to_str_tokens(prompt, prepend_bos=False)  # ["7", "+", "5", "=", ...]
-    #     positions: dict[str, int | None] = {}
-    #     for idx, tok in enumerate(str_tokens):
-    #         if tok.strip() == "+":
-    #             positions["operator"] = idx
-    #         elif tok.strip() == "=":
-    #             positions["eq_sign"] = idx
-    #     return positions
-    #
-    # ----------------------------------------------------------------------------------- #
-    return {}
+    # Split the prompt into individual character tokens.
+    # e.g. "123+456=" -> ["1","2","3","+","4","5","6","="]
+    # (plus the few-shot lines above, each separated by "\n")
+    str_tokens = model.to_str_tokens(prompt, prepend_bos=False)
+
+    positions: dict[str, int | None] = {}
+
+    # --- Step 1: Find the last + and = in the entire token list ---
+    # The few-shot lines also contain + and =, so we scan ALL tokens and keep
+    # only the LAST occurrence of each — those belong to the test question.
+    last_plus = None
+    last_eq = None
+    for idx, tok in enumerate(str_tokens):
+        if tok == "+":
+            last_plus = idx   # keep updating — we want the very last one
+        elif tok == "=":
+            last_eq = idx
+
+    # Store operator and eq_sign positions
+    # These are the most important positions for cross-base comparison:
+    # if the model has a shared circuit, heads attending to + or = should
+    # behave identically regardless of which base the prompt is in.
+    positions["operator"] = last_plus
+    positions["eq_sign"] = last_eq
+
+    # --- Step 2: Locate operand a's digits (everything between last \n and +) ---
+    if last_plus is not None:
+
+        # last_digit_a is the token immediately before the + sign.
+        # This is the LEAST significant digit of a — where carry arithmetic starts.
+        # A carry-tracking head should show high attention weights here.
+        positions["last_digit_a"] = last_plus - 1
+
+        # Scan backwards from + to find where the last line begins.
+        # The last line starts right after the last \n token (or at index 0
+        # if there's no \n, which shouldn't happen in few-shot prompts).
+        start_of_last_line = 0
+        for idx in range(last_plus - 1, -1, -1):
+            if str_tokens[idx] == "\n":
+                start_of_last_line = idx + 1  # first token after the newline
+                break
+
+        # first_digit_a is the leftmost token of the last line.
+        # This is the MOST significant digit of a.
+        # Useful for probing how the model encodes number magnitude.
+        positions["first_digit_a"] = start_of_last_line
+
+    # --- Step 3: Locate operand b's digits (everything between + and =) ---
+    if last_plus is not None and last_eq is not None:
+
+        # first_digit_b is the token immediately after +
+        # (most significant digit of b)
+        positions["first_digit_b"] = last_plus + 1
+
+        # last_digit_b is the token immediately before =
+        # (least significant digit of b — carry originates here too)
+        positions["last_digit_b"] = last_eq - 1
+
+    return positions
 
 
 def _map_char_to_token(model: TransformerBridge, token_ids: torch.Tensor, target_char_position: int) -> int | None:
@@ -221,8 +285,6 @@ def build_ablation_hooks(
 
     if mlp_ablation:
         for layer_idx, neuron_indices in mlp_ablation.items():
-            # idxs bound as a default arg so each layer's closure keeps its own indices
-            # (the classic Python late-binding gotcha).
             def mlp_hook(act: torch.Tensor, hook: HookPoint, idxs: list[int] = list(neuron_indices)) -> torch.Tensor:
                 act[..., idxs] = 0.0  # zero these neurons at every position
                 return act
@@ -231,7 +293,6 @@ def build_ablation_hooks(
 
     if head_ablation:
         for layer_idx, head_indices in head_ablation.items():
-
             def head_hook(act: torch.Tensor, hook: HookPoint, idxs: list[int] = list(head_indices)) -> torch.Tensor:
                 act[:, :, idxs, :] = 0.0  # zero these heads' outputs at every position
                 return act
@@ -246,26 +307,8 @@ def _read_activations_at(
     layer_indices: list[int],
     pos: int | None,
 ) -> dict[str, Any]:
-    """Read MLP-neuron, per-head, residual, and embedding activations at ONE token position.
-
-    Shared by `_capture_geometry` (one call per named prompt position) and `_run_single_prompt`
-    (one call for the answer position), so the cache-indexing logic lives in exactly one place.
-
-    Args:
-        cache: The activation cache from model.run_with_cache over the full output sequence.
-        layer_indices: Layer indices to read per-layer activations from.
-        pos: The absolute token position to read, or None (or out of range) to get all-None
-            placeholders -- e.g. when the answer couldn't be located, or a prompt position
-            couldn't be parsed.
-
-    Returns:
-        {"mlp_neurons": {layer_idx: Tensor | None}, "attn_heads": {layer_idx: Tensor | None},
-         "residual": {layer_idx: Tensor | None}, "token_embedding": Tensor | None,
-         "pos_embedding": Tensor | None, "resid_pre": Tensor | None}. "resid_pre" is block 0's
-         actual input (blocks.0.hook_resid_pre, i.e. token_embedding + pos_embedding), read
-         directly from the cache rather than summed so it stays correct for any architecture.
-    """
-    embed = cache["hook_embed"][0]  # [seq_len, d_model]
+    """Read MLP-neuron, per-head, residual, and embedding activations at ONE token position."""
+    embed = cache["hook_embed"][0]
     in_range = pos is not None and 0 <= pos < embed.shape[0]
 
     return {
@@ -289,27 +332,11 @@ def _capture_geometry(
     layer_indices: list[int],
     positions: dict[str, int | None],
 ) -> dict[str, dict[int, dict[str, torch.Tensor | None]]]:
-    """Slice residual / MLP / head / embedding activations at named prompt positions out of the cache.
-
-    Args:
-        cache: The activation cache from model.run_with_cache over the full output sequence.
-        layer_indices: Layer indices to extract from.
-        positions: Mapping {name: token_index} of prompt positions (from find_positions_of_interest);
-            any index may be None.
-
-    Returns:
-        dict mapping each position name to layer_idx ->
-        {"residual": Tensor | None, "mlp": Tensor | None, "heads": Tensor | None}.
-        layer_idx=-1 holds the pre-block-0 representation: "resid_pre" is block 0's actual input
-        (blocks.0.hook_resid_pre = token_embedding + pos_embedding), "mlp"/"heads"=None (nothing
-        runs before block 0), plus the decomposed "token_embedding" and "pos_embedding" so you can
-        separate content from position.
-    """
+    """Slice residual / MLP / head / embedding activations at named prompt positions out of the cache."""
     geometry: dict[str, dict] = {}
     for name, pos in positions.items():
         act = _read_activations_at(cache, layer_indices, pos)
         geometry[name] = {
-            # layer_idx = -1 holds the pre-block-0 representation.
             -1: {
                 "resid_pre": act["resid_pre"],
                 "mlp": None,
@@ -340,39 +367,11 @@ def _run_single_prompt(
     head_ablation: dict[int, list[int]] | None = None,
     capture_geometry: bool = True,
 ) -> dict[str, Any]:
-    """Run a single prompt through the model, capturing answer-token and geometry activations.
-
-    Flow:
-      1. Generate a completion (with any ablation hooks active, so the generation reflects the
-         knocked-out components).
-      2. Re-run the FULL output sequence once -- with the same hooks -- to get logits, and (when
-         capturing geometry) a cache of every layer/position activation.
-      3. Locate the answer span's last token and read all activations at that single position.
-
-    Args:
-        model: The TransformerLens bridge.
-        prompt: Full prompt string.
-        prompt_length: Number of tokens in the prompt (prepend_bos=False).
-        layer_indices: Layer indices to capture from.
-        max_new_tokens: Maximum tokens to generate.
-        mlp_ablation: Optional dict {layer_idx: [neuron indices]} to zero out.
-        head_ablation: Optional dict {layer_idx: [head indices]} to zero out.
-        capture_geometry: If True, read per-position activations (MLP neurons, heads, residual,
-            token/positional embedding) and store output_ids. Set False during ablation sweeps to
-            store less data.
-
-    Returns:
-        Dict with keys: text, completion, output_ids (None when capture_geometry=False), and an
-        answer sub-dict (position, token_id, token, mlp_neurons, attn_heads, residual,
-        token_embedding, pos_embedding, resid_pre, logits) plus a geometry sub-dict (empty when
-        capture_geometry=False).
-    """
+    """Run a single prompt through the model, capturing answer-token and geometry activations."""
     ablation_hooks = build_ablation_hooks(mlp_ablation, head_ablation)
-    prompt_tokens = model.to_tokens(prompt, prepend_bos=False)  # [1, prompt_length]
+    prompt_tokens = model.to_tokens(prompt, prepend_bos=False)
 
-    # 1. Generate with ablation applied. Greedy decoding (do_sample=False) so runs are
-    #    deterministic. We pass already-tokenized input (built with prepend_bos=False above) so
-    #    token indices stay aligned with prompt_length.
+    # Step 1: Generate the answer (with any ablation hooks active)
     with model.hooks(fwd_hooks=ablation_hooks):
         out_tokens = model.generate(
             prompt_tokens,
@@ -381,13 +380,11 @@ def _run_single_prompt(
             return_type="tokens",
             verbose=False,
         )
-    output_ids = out_tokens[0].detach().cpu()  # [prompt_length + n_generated]
+    output_ids = out_tokens[0].detach().cpu()
     generated_text = model.to_string(output_ids)
     completion = model.to_string(output_ids[prompt_length:]).strip()
 
-    # 2. Re-run the whole output sequence once (same ablation) to read logits, plus a full
-    #    activation cache when we need geometry. One pass covers every position, including the
-    #    answer's last token.
+    # Step 2: Re-run the full output sequence to get logits and activations
     if capture_geometry:
         with model.hooks(fwd_hooks=ablation_hooks):
             logits, cache = model.run_with_cache(out_tokens)
@@ -396,16 +393,12 @@ def _run_single_prompt(
             logits = model.run_with_hooks(out_tokens, return_type="logits")
         cache = None
 
-    # 3. Locate the answer span's last token and the absolute position to read activations at.
+    # Step 3: Find where the answer is in the generated text
     answer_position, answer_token_ids, answer_token, answer_logits = _locate_answer(
         model, prompt_length, output_ids, logits
     )
 
-    # 4. Read all activations at the answer token's position (same position across every tensor, so
-    #    they all describe the same token), plus the prompt-position geometry. These are independent:
-    #    geometry covers PROMPT positions known from the prompt text alone, so it's captured even
-    #    when the answer couldn't be located (e.g. garbage generation); only the answer-position
-    #    activations need answer_position (a None pos yields all-None placeholders).
+    # Step 4: Read activations at the answer token position and at named prompt positions
     if capture_geometry and cache is not None:
         answer_act = _read_activations_at(cache, layer_indices, answer_position)
         mlp_neurons = answer_act["mlp_neurons"]
@@ -415,6 +408,7 @@ def _run_single_prompt(
         answer_pos_embedding = answer_act["pos_embedding"]
         answer_resid_pre = answer_act["resid_pre"]
 
+        # Capture activations at the named prompt positions (operator, digits, etc.)
         positions = find_positions_of_interest(model, prompt)
         geometry = _capture_geometry(cache, layer_indices, positions)
     else:
@@ -455,29 +449,10 @@ def run(
     head_ablation: dict[int, list[int]] | None = None,
     capture_geometry: bool = True,
 ) -> list[dict[str, Any]]:
-    """Run inference over a dataset, capturing MLP-neuron, per-head, residual, and geometry activations.
-
-    Args:
-        model: The TransformerLens bridge.
-        dataset: Dataset whose `.prompts` is a list of {"prompt": str, "metadata": dict} entries
-            to run (see src/utils/dataset.py).
-        layers: Layer indices to capture from.
-        max_new_tokens: Max tokens to generate per prompt.
-        mlp_ablation: Optional dict {layer_idx: [neuron indices]} to zero on every prompt.
-        head_ablation: Optional dict {layer_idx: [head indices]} to zero on every prompt.
-        capture_geometry: If True, capture activations at the answer token and at the
-            find_positions_of_interest positions. Set False during ablation sweeps to avoid
-            storing per-feature geometry data.
-
-    Returns:
-        List of result dicts, one per prompt (in dataset order), each with keys "prompt",
-        "prompt_length", "metadata" (that prompt's ground truth -- see src/utils/dataset.py), and
-        "result" (see _run_single_prompt for that sub-dict's schema).
-    """
+    """Run inference over a dataset, capturing MLP-neuron, per-head, residual, and geometry activations."""
     results: list[dict[str, Any]] = []
     for entry in tqdm(dataset.prompts, desc="Running neuron inference"):
         prompt = entry["prompt"]
-        # prompt_length (in tokens, no BOS) marks the boundary between prompt and generated tokens.
         prompt_length = model.to_tokens(prompt, prepend_bos=False).shape[1]
 
         run_result = _run_single_prompt(

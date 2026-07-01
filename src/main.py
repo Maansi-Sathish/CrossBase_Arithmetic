@@ -82,12 +82,12 @@ if __name__ == "__main__":
     # If your task needs extra parameters (operator, few-shot count, ...), add them as CLI args in
     # src/utils/parser.py and forward them here.
     dataset = utils.dataset.PromptDataset.generate_prompts(
-    num_prompts=args.num_prompts,
-    bases=args.bases,                          # from --bases
-    max_operand=args.max_operand,              # from --max-operand
-    few_shot_examples=args.few_shot_examples,  # from --few-shot-examples
-    base_filter=args.base_filter,              # from --base-filter
-    )
+        num_prompts=args.num_prompts,
+        bases=args.bases,                          # from --bases
+        max_operand=args.max_operand,              # from --max-operand
+        few_shot_examples=args.few_shot_examples,  # from --few-shot-examples
+        base_filter=args.base_filter,              # from --base-filter
+)
 
     # 6. Baseline run: generate on every prompt and capture activations (no ablation here).
     result = inference.run(
