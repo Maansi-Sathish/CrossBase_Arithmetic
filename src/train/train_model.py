@@ -392,5 +392,5 @@ if __name__ == "__main__":
         wandb.run.summary["val/accuracy"] = metrics.get("eval_accuracy", float("nan"))
         wandb.run.summary["val/n_examples"] = len(raw_val)
         if "train_accuracy" in metrics:
-            wandb.run.summary["train/accuracy"] = metrics["train_accuracy"]
+            wandb.run.summary["trexain/accuracy"] = metrics["train_accuracy"]
             wandb.run.summary["train/n_examples"] = len(raw_train)
