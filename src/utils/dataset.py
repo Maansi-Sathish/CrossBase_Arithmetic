@@ -9,6 +9,42 @@ addition) is shown in comments -- uncomment it to see the pipeline run, then rep
 prompts for your own task.
 """
 
+import random
+
+# --------------------------------------------------------------------------- #
+# Base conversion helpers — copied exactly from src/train/create_dataset.py
+# so prompt format is byte-for-byte identical to training data
+# --------------------------------------------------------------------------- #
+
+def to_base(n: int, base: int) -> str:
+    """Convert a non-negative integer to its string representation in the given base.
+    Uses uppercase A-F for hex. No padding (PAD_WIDTH=0 matches training default).
+    """
+    if n == 0:
+        return "0"
+    digits = []
+    while n > 0:
+        digits.append("0123456789ABCDEF"[n % base])
+        n //= base
+    return "".join(reversed(digits))
+
+
+def to_base_answer(n: int, base: int) -> str:
+    """Answer in reversed digit order, unpadded — the Lee et al. / training convention.
+    Strips any leading zeros before reversing so '042' doesn't become '240'.
+    """
+    fwd = to_base(n, base).lstrip("0") or "0"
+    return fwd[::-1]  # reverse: LSD first
+
+
+def render_example(a: int, b: int, base: int) -> str:
+    """One solved shot: 'A+B=reversed_answer' — no spaces, matches training format."""
+    return f"{to_base(a, base)}+{to_base(b, base)}={to_base_answer(a + b, base)}"
+
+# --------------------------------------------------------------------------- #
+# PromptDataset
+# --------------------------------------------------------------------------- #
+
 
 class PromptDataset:
     """A collection of prompts to run activation-extraction inference on.
