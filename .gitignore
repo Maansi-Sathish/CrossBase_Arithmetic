@@ -5,7 +5,6 @@ __pycache__/
 logs/
 retry_missing*.slurm
 *.png
-*.pt
 .ruff_cache/
 results/
 plots/
