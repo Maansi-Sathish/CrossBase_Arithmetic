@@ -36,7 +36,7 @@ def add_arguments(parser: argparse.ArgumentParser) -> None:
     parser.add_argument(
         "--output", "-out",
         type=str,
-        help="Full output path for the results file. If omitted, auto-generated from run parameters.",
+        help="Full output path for the results file. If omitted, auto-generated.",
     )
     parser.add_argument(
         "--seed", "-s",
@@ -50,8 +50,8 @@ def add_arguments(parser: argparse.ArgumentParser) -> None:
     parser.add_argument(
         "--capture-geometry",
         action="store_true",
-        help="Capture detailed per-position activations (MLP neurons, attention heads, residual stream). "
-             "Omit for lightweight runs such as large ablation sweeps.",
+        help="Capture detailed per-position activations (MLP neurons, attention heads, "
+             "residual stream). Omit for lightweight runs such as large ablation sweeps.",
     )
     parser.add_argument(
         "--intervention",
@@ -61,33 +61,12 @@ def add_arguments(parser: argparse.ArgumentParser) -> None:
              "When provided, an intervention pass is run after the baseline.",
     )
 
-    # --- Task-specific arguments for cross-base arithmetic ---
+    # --- Task-specific argument ---
     parser.add_argument(
-        "--bases", "-b",
-        nargs="+",
+        "--base", "-b",
         type=int,
-        default=[2, 8, 10, 16],
-        help="Which numeral bases to include in prompts. Defaults to all four: 2 8 10 16. "
-             "Ignored if --base-filter is set.",
-    )
-    parser.add_argument(
-        "--max-operand", "-mo",
-        type=int,
-        default=999,
-        help="Operands sampled from [0, max-operand] inclusive. "
-             "Matches training default of 999.",
-    )
-    parser.add_argument(
-        "--few-shot-examples", "-fs",
-        type=int,
-        default=5,
-        help="Number of solved examples shown before the question. "
-             "Matches training default of 5.",
-    )
-    parser.add_argument(
-        "--base-filter", "-bf",
-        type=int,
-        default=None,
-        help="If set, generate prompts for only this one base (e.g. --base-filter 2 for binary only). "
-             "Overrides --bases. Useful for isolating one base during circuit analysis.",
+        required=True,
+        choices=[2, 8, 10, 16],
+        help="Which numeral base to run prompts for. One of 2, 8, 10, 16. "
+             "Run separately for each base to compare circuits across bases.",
     )
