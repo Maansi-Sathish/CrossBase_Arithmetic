@@ -65,52 +65,39 @@ class PromptDataset:
     def generate_prompts(
         cls,
         num_prompts: int,
-        bases: list[int] | None = None,
+        base: int,
         max_operand: int = 999,
         few_shot_examples: int = 5,
-        base_filter: int | None = None,
     ) -> "PromptDataset":
-        """Build prompts that exactly match the training format from create_dataset.py.
+        """Build prompts for a single base, matching training format exactly.
+
+        We always run N prompts for one base at a time — base is fixed at
+        runtime via --base CLI argument. To compare circuits across bases,
+        run the script separately for each base.
 
         Args:
-            num_prompts:        How many prompts to generate (from --num-prompts).
-            bases:              Which bases to sample from. Defaults to [2, 8, 10, 16].
-                                Ignored if base_filter is set.
-            max_operand:        Operands sampled from [0, max_operand]. Matches training
-                                default of 999 (from --max-operand).
-            few_shot_examples:  Number of solved examples shown before the question.
-                                Matches training default of 5 (from --few-shot-examples).
-            base_filter:        If set, generate prompts for ONLY this one base.
-                                Useful for per-base circuit analysis (from --base-filter).
+            num_prompts:       How many prompts to generate (from --num-prompts).
+            base:              Which base to generate prompts for (from --base).
+                               One of 2, 8, 10, 16.
+            max_operand:       Operands sampled from [0, max_operand].
+                               Hardcoded to 999 matching training.
+            few_shot_examples: Number of solved examples shown before the question.
+                               Hardcoded to 5 matching training.
 
         Returns:
             A PromptDataset whose .prompts is a list of num_prompts
-            {"prompt": str, "metadata": dict} entries.
+            {"prompt": str, "metadata": dict} entries, all in the given base.
         """
-        # Resolve which bases to use
-        # base_filter overrides bases entirely — useful when you want to isolate
-        # one base's circuit during analysis (e.g. --base-filter 2 for binary only)
-        if base_filter is not None:
-            active_bases = [base_filter]
-        elif bases is not None:
-            active_bases = bases
-        else:
-            active_bases = [2, 8, 10, 16]  # default: all four bases
-
         instance = cls()
 
         for _ in range(num_prompts):
-            # Sample a base uniformly from the active set
-            # Uniform sampling matches training where all bases are balanced
-            base = random.choice(active_bases)
-
             # Sample the test pair (a, b)
             a = random.randint(0, max_operand)
             b = random.randint(0, max_operand)
 
             # Build few-shot examples — no duplicates, test pair excluded
-            # This mirrors create_dataset.py's without-replacement sampling logic
-            seen = {(a, b)}  # start with test pair so it can't appear as a shot
+            # Mirrors create_dataset.py's without-replacement sampling logic
+            seen = {(a, b)}
             shots = []
             for _ in range(few_shot_examples):
                 while True:
@@ -121,22 +108,20 @@ class PromptDataset:
                 seen.add((fa, fb))
                 shots.append(render_example(fa, fb, base))
 
-            # Build the full prompt: shots joined by \n, then the test question ending at =
-            # The model reads everything up to = and generates the answer from there
+            # Full prompt: shots joined by \n, then test question ending at =
             question = f"{to_base(a, base)}+{to_base(b, base)}="
             prompt = "\n".join(shots) + "\n" + question
 
-            # Answer in reversed-digit order — this is what the model outputs
-            # and what is_correct in main.py compares against
+            # Answer in reversed-digit order — what the model outputs
             answer = to_base_answer(a + b, base)
 
             instance.prompts.append({
                 "prompt": prompt,
                 "metadata": {
-                    "base": base,       # which base this prompt is in
-                    "a": a,             # first operand (decimal)
-                    "b": b,             # second operand (decimal)
-                    "answer": answer,   # correct answer in reversed-digit order
+                    "base": base,
+                    "a": a,
+                    "b": b,
+                    "answer": answer,
                 },
             })
 
