@@ -98,6 +98,7 @@ if __name__ == "__main__":
             "metadata": {
                 "model_path": args.model_path,
                 "num_prompts": args.num_prompts,
+                "base": args.base,
                 "num_layers": len(layers),
                 "layer_indices": layers,
                 "max_new_tokens": args.max_new_tokens,
@@ -162,6 +163,7 @@ if __name__ == "__main__":
             "metadata": {
                 "model_path": args.model_path,
                 "num_prompts": args.num_prompts,
+                "base": args.base,
                 "num_layers": len(layers),
                 "layer_indices": layers,
                 "max_new_tokens": args.max_new_tokens,
