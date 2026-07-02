@@ -42,14 +42,9 @@ from model import load_model
 def is_correct(row: dict) -> bool:
     """Whether the model's generated answer matches the ground truth for one result row.
 
-    Used to score intervention runs (baseline vs ablated accuracy). The default compares the answer
-    token inference.py captured (row["result"]["answer"]["token"]) against an "answer" stored in
-    that prompt's metadata (see PromptDataset.generate_prompts in src/utils/dataset.py). It
-    therefore only does something useful if your prompts carry a ground-truth "answer" in their
-    metadata; otherwise every row counts as wrong and the accuracies come out 0.
-
-    TODO (optional): adjust this if "correct" means something else for your task, or if your
-    metadata stores the truth under a different key.
+    Compares the answer token inference.py captured against the reversed-digit
+    answer stored in metadata by dataset.py. Direct string comparison works
+    because both sides use the same reversed-digit convention.
     """
     return row["result"]["answer"]["token"] == row["metadata"].get("answer")
 
@@ -63,7 +58,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
     print(args)
 
-    # 2. Seed every RNG so a run is reproducible (same seed -> same prompts and same outputs).
+    # 2. Seed every RNG so a run is reproducible.
     random.seed(args.seed)
     torch.manual_seed(args.seed)
     np.random.seed(args.seed)
@@ -71,25 +66,19 @@ if __name__ == "__main__":
     if torch.cuda.is_available():
         torch.cuda.manual_seed_all(args.seed)
 
-    # 3. Load the model into a TransformerLens bridge (works for real gpt2 AND a toy model you
-    #    trained from scratch -- just point --model-path at a Hub repo or local directory).
+    # 3. Load the model into a TransformerLens bridge.
     model = load_model(args.model_path, device)
 
     # 4. Choose which decoder layers to capture from (--layers; None = all of them).
     layers = args.layers if args.layers else list(range(model.cfg.n_layers))
 
-    # 5. Build the prompts to run on. TODO: implement PromptDataset.generate_prompts (src/utils/dataset.py).
-    # If your task needs extra parameters (operator, few-shot count, ...), add them as CLI args in
-    # src/utils/parser.py and forward them here.
+    # 5. Build the prompts — one base at a time, fixed at runtime via --base.
     dataset = utils.dataset.PromptDataset.generate_prompts(
         num_prompts=args.num_prompts,
-        bases=args.bases,                          # from --bases
-        max_operand=args.max_operand,              # from --max-operand
-        few_shot_examples=args.few_shot_examples,  # from --few-shot-examples
-        base_filter=args.base_filter,              # from --base-filter
-)
+        base=args.base,
+    )
 
-    # 6. Baseline run: generate on every prompt and capture activations (no ablation here).
+    # 6. Baseline run: generate on every prompt and capture activations.
     result = inference.run(
         model,
         dataset,
@@ -98,13 +87,11 @@ if __name__ == "__main__":
         capture_geometry=args.capture_geometry,
     )
 
-    # 7. Decide where to save (src/utils/dir.py builds a filename from the run's parameters).
+    # 7. Decide where to save.
     output_path = Path(utils.dir.generate_output_path(args))
     output_path.parent.mkdir(parents=True, exist_ok=True)
 
-    # 8a. Normal mode: just save the baseline activations plus run metadata. Saved under "baseline"
-    #     (the same key intervention mode uses below) since both are the same thing: an unablated
-    #     inference.run() pass.
+    # 8a. Normal mode: save baseline activations plus run metadata.
     if args.intervention is None:
         save_data = {
             "baseline": result,
@@ -119,29 +106,19 @@ if __name__ == "__main__":
             },
         }
 
-    # 8b. Intervention mode: re-run the prompts many times, each with one component knocked out,
-    #     to measure which components causally matter. Results are saved alongside the baseline.
+    # 8b. Intervention mode: re-run with each component knocked out one at a time.
     else:
-        # The spec is the analysis.json written by src/lasso.py: analysis["layers"][L][condition]
-        # is {"features": [indices], "weight": [coeffs]}. Feature indices below num_mlp_neurons are
-        # MLP neurons; the rest are attention heads (offset by num_mlp). We ablate each flagged
-        # feature individually (a sweep) and record which conditions flagged it.
-        # TODO: if you write your own spec format, adapt this block to build the
-        # {layer_idx: [indices]} ablation dicts passed to inference.run.
         with open(args.intervention) as f:
             analysis = json.load(f)
 
         num_mlp = analysis["num_mlp_neurons"]
         ablations: list[dict] = []
 
-        # Baseline accuracy (no ablation): the reference each ablated run is compared against to get
-        # its accuracy_drop. See `is_correct` above for how "correct" is decided.
         baseline_accuracy = sum(1 for row in result if is_correct(row)) / len(result) if result else 0.0
 
         layers_iter = tqdm(list(analysis["layers"].items()), desc="Layers", position=0)
         for layer_str, layer_conditions in layers_iter:
             layer_idx = int(layer_str)
-            # The features to test are those flagged by ANY condition at this layer (their union).
             all_features = sorted({f for entry in layer_conditions.values() for f in entry["features"]})
 
             for feat_idx in tqdm(all_features, desc=f"Layer {layer_idx} features", position=1, leave=False):
@@ -164,16 +141,12 @@ if __name__ == "__main__":
                     capture_geometry=args.capture_geometry,
                 )
                 ablated_accuracy = sum(1 for row in ablated if is_correct(row)) / len(ablated) if ablated else 0.0
-                # Keep only the scalar accuracy stats, not the heavy `ablated` rows: the baseline is
-                # saved once below, and that drop is all the downstream analysis (e.g.
-                # src/plot_ablations.py) needs.
                 ablations.append(
                     {
                         "layer_idx": layer_idx,
                         "feature_idx": feat_idx,
                         "type": feat_type,
                         "local_idx": local_idx,
-                        # which conditions flagged this feature as important
                         "conditions": [
                             name for name, entry in layer_conditions.items() if feat_idx in set(entry["features"])
                         ],
