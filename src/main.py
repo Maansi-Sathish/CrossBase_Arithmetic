@@ -83,7 +83,9 @@ if __name__ == "__main__":
     # src/utils/parser.py and forward them here.
     dataset = utils.dataset.PromptDataset.generate_prompts(num_prompts=args.num_prompts)
 
-    # 6. Baseline run: generate on every prompt and capture activations (no ablation here).
+    # 6. Baseline run: generate on every prompt and capture activations per --capture-geometry (no
+    #    ablation here). This runs in BOTH modes -- it's the saved output in normal mode, and the
+    #    unablated accuracy reference each ablated run is compared against in intervention mode.
     result = inference.run(
         model,
         dataset,
@@ -156,7 +158,9 @@ if __name__ == "__main__":
                     args.max_new_tokens,
                     mlp_ablation=mlp_abl,
                     head_ablation=head_abl,
-                    capture_geometry=args.capture_geometry,
+                    # Never capture geometry in the sweep: only the resulting accuracy is used, and
+                    # the heavy per-feature activations would be dropped when building `ablations`.
+                    capture_geometry=False,
                 )
                 ablated_accuracy = sum(1 for row in ablated if is_correct(row)) / len(ablated) if ablated else 0.0
                 # Keep only the scalar accuracy stats, not the heavy `ablated` rows: the baseline is
