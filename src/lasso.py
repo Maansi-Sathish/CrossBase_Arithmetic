@@ -58,7 +58,7 @@ from sklearn.linear_model import LassoCV
 from sklearn.preprocessing import StandardScaler
 
 
-def keep_row(row: dict[str, Any], metadata: dict[str, Any]) -> bool:
+def keep_row(row, metadata):
     """Return True to include this result row in the analysis, False to drop it.
 
     Runs before assign_condition/build_target, so a dropped row never reaches the Lasso. The

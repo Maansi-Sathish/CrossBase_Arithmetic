@@ -1,6 +1,7 @@
 """Build the output path/filename for saved inference results."""
 
 import argparse
+from pathlib import Path
 
 
 def generate_output_path(args: argparse.Namespace) -> str:
@@ -24,6 +25,7 @@ def generate_output_path(args: argparse.Namespace) -> str:
     """
     if args.output is not None:
         return args.output
+    results_dir = Path("results")
 
     # Model name — replace / with -- so HF repo names don't create subdirectories
     model_name = str(args.model_path).replace("/", "--")
@@ -45,4 +47,4 @@ def generate_output_path(args: argparse.Namespace) -> str:
         f"[geo={geo}]",
     ]
 
-    return "_".join(components) + ".pt"
+    return str(results_dir / ("_".join(components) + ".pt"))
