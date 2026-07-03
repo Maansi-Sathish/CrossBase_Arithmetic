@@ -23,8 +23,11 @@ def generate_output_path(args: argparse.Namespace) -> str:
     Returns:
         str: The output path for the run's results.
     """
+    
     if args.output is not None:
         return args.output
+    results_dir = Path("results")
+
     results_dir = Path("results")
 
     # Model name — replace / with -- so HF repo names don't create subdirectories
