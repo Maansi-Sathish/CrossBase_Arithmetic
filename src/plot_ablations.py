@@ -1,6 +1,6 @@
 """Plot the causal effect of zeroing each ablated neuron/head, from intervention .pt files.
 
-Point it at a DIRECTORY of intervention runs (exactly like src/lasso.py takes --dir) 
+Point it at a DIRECTORY of intervention runs (exactly like src/lasso.py takes --dir)
 and it reads everything it needs from the files:
 
     python src/plot_ablations.py --dir <dir of intervention .pt files> [--output plots]
@@ -493,10 +493,14 @@ if __name__ == "__main__":
         if num_mlp:
             make_layer_component_heatmap(label, ablations, layers, num_mlp, "mlp", out_dir / f"heatmap_{label}_mlp.png")
         else:
-            print(f"  [skip {label} MLP heatmap]: can't tell where heads start (no num_mlp_neurons and "
-                  "no head was ablated).")
+            print(
+                f"  [skip {label} MLP heatmap]: can't tell where heads start (no num_mlp_neurons and "
+                "no head was ablated)."
+            )
         if num_heads:
-            make_layer_component_heatmap(label, ablations, layers, num_heads, "head", out_dir / f"heatmap_{label}_heads.png")
+            make_layer_component_heatmap(
+                label, ablations, layers, num_heads, "head", out_dir / f"heatmap_{label}_heads.png"
+            )
 
     # (3 & 4) Across settings (needs >= 2): setting x flattened (layer, component) heatmaps, one for
     # MLP neurons and one for heads. Use the union of layers and the largest MLP/head counts so runs
@@ -509,14 +513,20 @@ if __name__ == "__main__":
         max_mlp = max((infer_num_mlp(ablations, meta) or 0) for ablations, meta in loaded.values())
         max_heads = max(meta.get("num_attention_heads", 0) for _, meta in loaded.values())
         if max_mlp:
-            make_setting_component_heatmap(abl_by_setting, all_layers, max_mlp, "mlp", out_dir / "heatmap_settings_mlp.png")
+            make_setting_component_heatmap(
+                abl_by_setting, all_layers, max_mlp, "mlp", out_dir / "heatmap_settings_mlp.png"
+            )
         if max_heads:
-            make_setting_component_heatmap(abl_by_setting, all_layers, max_heads, "head", out_dir / "heatmap_settings_heads.png")
+            make_setting_component_heatmap(
+                abl_by_setting, all_layers, max_heads, "head", out_dir / "heatmap_settings_heads.png"
+            )
 
         # Scatter for every pair of settings. Reuses the summaries already loaded.
         make_scatter_matrix(abl_by_setting, out_dir)
     else:
-        print(f"  only one usable setting ({next(iter(loaded))}) -- add more intervention runs to --dir "
-              "for the setting-vs-setting heatmaps and scatters.")
+        print(
+            f"  only one usable setting ({next(iter(loaded))}) -- add more intervention runs to --dir "
+            "for the setting-vs-setting heatmaps and scatters."
+        )
 
     print(f"Done. Figures in {out_dir}/")
