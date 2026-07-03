@@ -86,10 +86,9 @@ def keep_row(row: dict[str, Any], metadata: dict[str, Any]) -> bool:
     # PromptDataset.generate_prompts in src/utils/dataset.py.)
     # ----------------------------------------------------------------------------------- #
     #
-    return True
+    return row["result"]["answer"]["token"] == row["metadata"].get("answer")
 
-
-def assign_condition(row: dict[str, Any], metadata: dict[str, Any]) -> str | None:
+def assign_condition(row, metadata):
     """Return the name of the condition this result row belongs to, or None to skip it.
 
     A condition is just a label; rows sharing a label are analysed together. Returning
@@ -120,10 +119,10 @@ def assign_condition(row: dict[str, Any], metadata: dict[str, Any]) -> str | Non
     #     ans = (row["result"]["answer"]["token"] or "").strip()
     #     return "single_digit" if ans.isdigit() and len(ans) == 1 else "other"
     #
-    return "all"
+    return str(row["metadata"]["base"])
 
 
-def build_target(row: dict[str, Any], metadata: dict[str, Any]) -> float | None:
+def build_target(row, metadata):
     """Return the scalar value the Lasso should predict from the activations, or None to skip.
 
     The Lasso looks for neurons whose activations linearly predict this target, so choose a
@@ -155,17 +154,7 @@ def build_target(row: dict[str, Any], metadata: dict[str, Any]) -> float | None:
     #     a, b = question.split("+")
     #     return float(int(a) + int(b))
     #
-    answer = row["result"]["answer"]
-    token_id = answer.get("token_id")
-    if token_id is None:
-        return None
-    # token_id may be a tensor of several ids (if the answer span is >1 token, e.g. "42" -> ['4','2']).
-    # We use the LAST one, because inference.py captures activations at the answer span's LAST token,
-    # so the target and the captured activations describe the same token.
-    ids = torch.as_tensor(token_id).flatten()
-    if ids.numel() == 0:
-        return None
-    return float(ids[-1].item())
+    return float(row["metadata"]["a"] + row["metadata"]["b"])
 
 
 def _load_file(pt_file: Path) -> tuple[list[dict[str, Any]], dict[str, Any]] | None:
