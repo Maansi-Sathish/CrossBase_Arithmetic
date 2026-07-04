@@ -7,7 +7,6 @@ retry_missing*.slurm
 *.png
 .ruff_cache/
 results/
-plots/
 saved_models/
 wandb/
 *.out
