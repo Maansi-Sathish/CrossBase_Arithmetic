@@ -425,12 +425,14 @@ def make_scatter_matrix(ablations_by_setting: dict[str, list[dict[str, Any]]], o
 
 
 def discover_settings(directory: Path) -> dict[str, Path]:
-    """The settings to plot: every .pt in `directory`, labelled by filename (stem).
+    """The settings to plot: every INTERVENTION .pt in `directory`, labelled by filename (stem).
 
-    Mirrors how src/lasso.py takes a --dir of runs. Non-intervention .pt files are filtered out later
-    by load_ablations (it returns None for them), so this can safely list every .pt it finds.
+    Mirrors how src/lasso.py takes a --dir of runs. Filenames are matched on "[int=True]" (the tag
+    src/utils/dir.py always embeds for intervention runs) before anything is loaded -- baseline .pt
+    files (saved by normal, non-intervention runs) are often multiple GB, so we must never
+    torch.load one just to discover via load_ablations that it lacks an "ablations" key.
     """
-    return {path.stem: path for path in sorted(directory.glob("*.pt"))}
+    return {path.stem: path for path in sorted(directory.glob("*.pt")) if "[int=True]" in path.name}
 
 
 def load_settings(settings: dict[str, Path]) -> dict[str, tuple[list[dict[str, Any]], dict[str, Any]]]:
@@ -449,7 +451,27 @@ def load_settings(settings: dict[str, Path]) -> dict[str, tuple[list[dict[str, A
         result = load_ablations(Path(path))
         if result and result[0]:  # has ablations
             loaded[label] = result
-    return loaded
+    return _relabel_by_metadata(loaded)
+
+
+def _relabel_by_metadata(loaded: dict[str, tuple[list[dict[str, Any]], dict[str, Any]]]) -> dict:
+    """Rename each setting from its raw filename stem to a short label built from its metadata.
+
+    Filenames from src/utils/dir.py encode every run parameter (e.g.
+    "[m=...]_[p=1000]_[b=10]_[int=True]_[geo=False]"), which is unreadable as a plot tick label and
+    produces ~200-char scatter filenames once two are joined with "_vs_". Since every intervention
+    file already carries "base" in its metadata, "base10" reads far better and is what actually
+    varies across your four runs. Falls back to the original filename stem if metadata has no
+    "base" (e.g. an older file), and de-duplicates if two files would otherwise collide.
+    """
+    relabeled: dict[str, tuple[list[dict[str, Any]], dict[str, Any]]] = {}
+    for original_label, (ablations, metadata) in loaded.items():
+        base = metadata.get("base")
+        label = f"base{base}" if base is not None else original_label
+        if label in relabeled:  # collision (e.g. two files with the same base) -- keep both, distinctly
+            label = original_label
+        relabeled[label] = (ablations, metadata)
+    return relabeled
 
 
 if __name__ == "__main__":
