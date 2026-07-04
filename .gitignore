@@ -4,7 +4,6 @@ __pycache__/
 .venv/
 logs/
 retry_missing*.slurm
-*.png
 .ruff_cache/
 results/
 saved_models/
