@@ -18,7 +18,7 @@ The extension points, in the order you'll likely touch them:
   4. src/utils/parser.py   add_arguments                   -- add any task-specific CLI arguments.
   5. src/utils/dir.py      generate_output_path            -- name your saved output files.
   6. "Intervention mode" below                             -- the format of your --intervention spec file.
-  7. src/main.py           is_correct                      -- how an answer is scored right (ablation accuracy).
+  7. src/utils/scoring.py  is_correct                      -- how an answer is scored right (ablation accuracy).
 
 To train a small model from scratch first, see src/train/ (tokenizer -> dataset -> model),
 which has its own TODO markers.
@@ -118,6 +118,8 @@ if __name__ == "__main__":
         num_mlp = analysis["num_mlp_neurons"]
         ablations: list[dict] = []
 
+        # Baseline accuracy (no ablation): the reference each ablated run is compared against to get
+        # its accuracy_drop. See `is_correct` in src/utils/scoring.py for how "correct" is decided.
         baseline_accuracy = sum(1 for row in result if is_correct(row)) / len(result) if result else 0.0
 
         layers_iter = tqdm(list(analysis["layers"].items()), desc="Layers", position=0)
