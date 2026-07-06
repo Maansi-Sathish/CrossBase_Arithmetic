@@ -4,7 +4,7 @@ Normal mode:   run N prompts, save activations.
 Intervention mode (--intervention <analysis.json>):
     Run the same N prompts without hooks (baseline), then for each important
     neuron/head in the JSON re-run the same N prompts with that feature zeroed,
-    recording how far task accuracy drops when it's gone (src/plot_ablations.py
+    recording how far task accuracy drops when it's gone (src/analysis/plot_ablations.py
     can turn those drops into a heatmap).
 
 ================================ ADAPTING THIS TEMPLATE ================================
@@ -112,6 +112,12 @@ if __name__ == "__main__":
 
     # 8b. Intervention mode: re-run with each component knocked out one at a time.
     else:
+        # The spec is the analysis.json written by src/analysis/lasso.py: analysis["layers"][L][condition]
+        # is {"features": [indices], "weight": [coeffs]}. Feature indices below num_mlp_neurons are
+        # MLP neurons; the rest are attention heads (offset by num_mlp). We ablate each flagged
+        # feature individually (a sweep) and record which conditions flagged it.
+        # TODO: if you write your own spec format, adapt this block to build the
+        # {layer_idx: [indices]} ablation dicts passed to inference.run.
         with open(args.intervention) as f:
             analysis = json.load(f)
 
@@ -149,6 +155,9 @@ if __name__ == "__main__":
                     capture_geometry=False,
                 )
                 ablated_accuracy = sum(1 for row in ablated if is_correct(row)) / len(ablated) if ablated else 0.0
+                # Keep only the scalar accuracy stats, not the heavy `ablated` rows: the baseline is
+                # saved once below, and that drop is all the downstream analysis (e.g.
+                # src/analysis/plot_ablations.py) needs.
                 ablations.append(
                     {
                         "layer_idx": layer_idx,
