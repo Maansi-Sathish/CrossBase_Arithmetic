@@ -1395,6 +1395,7 @@ Run from the repository root. Scripts that use stored activations need `results/
 | Section | Scripts in `experiments/mechanism/` |
 |---|---|
 | Mechanism (worked examples) | `t20_example_8_7.py`, `t21_decimal_walkthrough.py`, `t21b_logit_parts.py` |
+| Interactive tool (Base Adder Trace) | `webtool/build.py` builds `webtool/base-adder-trace.html`; see `webtool/README.md` |
 | 2 | `f01_heldout.py`, `e01_behaviour.py` |
 | 3 | `s01_residues.py`, `s02_translators.py`, `s04_fourier_helix.py`, `s09_wrap.py` |
 | 4.1–4.3 | `f03_base_switch.py`, `f09_base_circuit.py`, `f22_binary_length.py`, `v05_vector_checks.py`, `t04_l0_heads.py` |
