@@ -1,0 +1,4 @@
+8 {'two bumps + carry-aware gates (8 numbers)': 0.701, '+ graded previous-column sum (12 numbers)': 0.836}
+10 {'two bumps + carry-aware gates (8 numbers)': 0.601, '+ graded previous-column sum (12 numbers)': 0.775}
+16 {'two bumps + carry-aware gates (8 numbers)': 0.312, '+ graded previous-column sum (12 numbers)': 0.441}
+DONE

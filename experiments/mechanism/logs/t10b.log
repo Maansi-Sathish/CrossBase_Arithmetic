@@ -1,0 +1,4 @@
+8 {'weights_atop_btop_written': [-3.68, -4.12, 3.04], 'r2': 0.923, 'rule_accuracy': 1.0, 'threshold_over_base': 0.812, 'model_correct': 1.0, 'n': 2000}
+10 {'weights_atop_btop_written': [-3.06, -3.12, 3.36], 'r2': 0.963, 'rule_accuracy': 1.0, 'threshold_over_base': 0.85, 'model_correct': 1.0, 'n': 2000}
+16 {'weights_atop_btop_written': [-1.74, -2.13, 1.48], 'r2': 0.923, 'rule_accuracy': 1.0, 'threshold_over_base': 0.906, 'model_correct': 1.0, 'n': 2000}
+DONE

@@ -1,0 +1,103 @@
+{
+ "Q11": {},
+ "Q12": {},
+ "Q13": {
+  "accuracy by digits past b's end": {
+   "0": 1.0,
+   "1": 1.0,
+   "2": 1.0
+  },
+  "L1H0 attention on b's digits (correct / wrong)": [
+   0.12,
+   0.29
+  ],
+  "L1H0 on b's leading digit (correct / wrong)": [
+   0.05,
+   0.01
+  ],
+  "L1H1 attention on b's digits (correct / wrong)": [
+   0.01,
+   0.0
+  ],
+  "L1H1 on b's leading digit (correct / wrong)": [
+   0.0,
+   0.0
+  ],
+  "L1H2 attention on b's digits (correct / wrong)": [
+   0.26,
+   0.06
+  ],
+  "L1H2 on b's leading digit (correct / wrong)": [
+   0.0,
+   0.01
+  ],
+  "L1H3 attention on b's digits (correct / wrong)": [
+   0.06,
+   0.09
+  ],
+  "L1H3 on b's leading digit (correct / wrong)": [
+   0.02,
+   0.01
+  ],
+  "wrong answers equal (a_k + 1 + c) mod 2, i.e. as if b's digit were 1": 1.0,
+  "block L1H0 from b's digits: accuracy": [
+   0.94,
+   "errors fixed",
+   1.0
+  ],
+  "block L1H1 from b's digits: accuracy": [
+   1.0,
+   "errors fixed",
+   0.0
+  ],
+  "block L1H2 from b's digits: accuracy": [
+   0.93,
+   "errors fixed",
+   0.0
+  ],
+  "block L1H3 from b's digits: accuracy": [
+   0.98,
+   "errors fixed",
+   0.0
+  ],
+  "baseline accuracy": 1.0
+ },
+ "Q11b": {
+  "short test operands (2-3 binary digits)": {
+   "binary context: 0 / 2": [
+    0.87,
+    0.0
+   ],
+   "octal context: 0 / 2": [
+    0.0,
+    0.99
+   ],
+   "octal context, tags +87 (to binary positions): 0 / 2": [
+    0.12,
+    0.0
+   ],
+   "binary context, tags -87 (to octal positions): 0 / 2": [
+    0.21,
+    0.0
+   ]
+  },
+  "long test operands (7-10 binary digits)": {
+   "binary context: 0 / 2": [
+    1.0,
+    0.0
+   ],
+   "octal context: 0 / 2": [
+    0.0,
+    0.01
+   ],
+   "octal context, tags +87 (to binary positions): 0 / 2": [
+    0.0,
+    0.0
+   ],
+   "binary context, tags -87 (to octal positions): 0 / 2": [
+    0.85,
+    0.0
+   ]
+  }
+ }
+}

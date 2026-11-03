@@ -1,0 +1,46 @@
+{
+ "10->16": {
+  "weighted R2 offset only": 0.9430891275405884,
+  "weighted R2 gain only": 0.7242867946624756,
+  "weighted R2 gain + offset": 0.9634267807981294,
+  "weighted median gain": 0.9136893577648821,
+  "n cells": 17,
+  "cell mean offset": 0.11528469622135162,
+  "other neurons mean offset": 0.19691112637519836,
+  "cell activity in y / x on those sums": 1.1569795608520508,
+  "predicted by offset alone": 1.2066854238510132
+ },
+ "16->10": {
+  "weighted R2 offset only": 0.9410237073898315,
+  "weighted R2 gain only": 0.46841543912887573,
+  "weighted R2 gain + offset": 0.9630143019924196,
+  "weighted median gain": 1.0651736290973588,
+  "n cells": 16,
+  "cell mean offset": -0.7204799056053162,
+  "other neurons mean offset": -0.15622466802597046,
+  "cell activity in y / x on those sums": 0.25772348046302795,
+  "predicted by offset alone": 0.2830987274646759
+ },
+ "8->10": {
+  "weighted R2 offset only": 0.9664254188537598,
+  "weighted R2 gain only": 0.5941222906112671,
+  "weighted R2 gain + offset": 0.9740103787251935,
+  "weighted median gain": 0.9752964974901553,
+  "n cells": 10,
+  "cell mean offset": -0.20991387963294983,
+  "other neurons mean offset": 0.046742018312215805,
+  "cell activity in y / x on those sums": 0.7611284852027893,
+  "predicted by offset alone": 0.7333590388298035
+ },
+ "10->8": {
+  "weighted R2 offset only": 0.9668251276016235,
+  "weighted R2 gain only": 0.6753268241882324,
+  "weighted R2 gain + offset": 0.9737167945583167,
+  "weighted median gain": 1.0032885318653948,
+  "n cells": 9,
+  "cell mean offset": -0.4060671925544739,
+  "other neurons mean offset": -0.02325827069580555,
+  "cell activity in y / x on those sums": 0.704731285572052,
+  "predicted by offset alone": 0.7368109226226807
+ }
+}

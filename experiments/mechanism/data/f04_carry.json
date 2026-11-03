@@ -1,0 +1,106 @@
+{
+ "2": {
+  "W_written_digit": {
+   "n": 2500,
+   "stayed": 0.7492,
+   "followed_alternative": 0.2508,
+   "other": 0.0
+  },
+  "O_operand_digit": {
+   "n": 2500,
+   "stayed": 0.2744,
+   "followed_alternative": 0.7256,
+   "other": 0.0
+  },
+  "D1_operand_two_back": {
+   "n": 1500,
+   "stayed": 0.914,
+   "followed_alternative": 0.086,
+   "other": 0.0
+  },
+  "D2_written_chain": {
+   "n": 1500,
+   "stayed": 0.45666666666666667,
+   "followed_alternative": 0.5433333333333333,
+   "other": 0.0
+  }
+ },
+ "8": {
+  "W_written_digit": {
+   "n": 2500,
+   "stayed": 0.428,
+   "followed_alternative": 0.572,
+   "other": 0.0
+  },
+  "O_operand_digit": {
+   "n": 2500,
+   "stayed": 0.534,
+   "followed_alternative": 0.4656,
+   "other": 0.0004
+  },
+  "D1_operand_two_back": {
+   "n": 1500,
+   "stayed": 1.0,
+   "followed_alternative": 0.0,
+   "other": 0.0
+  },
+  "D2_written_chain": {
+   "n": 1500,
+   "stayed": 0.002,
+   "followed_alternative": 0.998,
+   "other": 0.0
+  }
+ },
+ "10": {
+  "W_written_digit": {
+   "n": 2500,
+   "stayed": 0.4568,
+   "followed_alternative": 0.5432,
+   "other": 0.0
+  },
+  "O_operand_digit": {
+   "n": 2500,
+   "stayed": 0.5084,
+   "followed_alternative": 0.4916,
+   "other": 0.0
+  },
+  "D1_operand_two_back": {
+   "n": 1500,
+   "stayed": 1.0,
+   "followed_alternative": 0.0,
+   "other": 0.0
+  },
+  "D2_written_chain": {
+   "n": 1500,
+   "stayed": 0.0013333333333333333,
+   "followed_alternative": 0.9986666666666667,
+   "other": 0.0
+  }
+ },
+ "16": {
+  "W_written_digit": {
+   "n": 2500,
+   "stayed": 0.3976,
+   "followed_alternative": 0.602,
+   "other": 0.0004
+  },
+  "O_operand_digit": {
+   "n": 2500,
+   "stayed": 0.52,
+   "followed_alternative": 0.48,
+   "other": 0.0
+  },
+  "D1_operand_two_back": {
+   "n": 1500,
+   "stayed": 1.0,
+   "followed_alternative": 0.0,
+   "other": 0.0
+  },
+  "D2_written_chain": {
+   "n": 1500,
+   "stayed": 0.0,
+   "followed_alternative": 1.0,
+   "other": 0.0
+  }
+ }
+}

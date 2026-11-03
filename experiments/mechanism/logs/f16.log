@@ -1,0 +1,33 @@
+k0 full theory: code(a)+code(b)+carry+base    params  35 preR2 0.930 acc {2: 1.0, 8: 1.0, 10: 1.0, 16: 0.966}
+k0 no base vector                             params  32 preR2 0.789 acc {2: 1.0, 8: 0.672, 10: 0.748, 16: 0.695}
+k0 no b                                       params  20 preR2 0.569 acc {2: 0.501, 8: 0.123, 10: 0.102, 16: 0.058}
+k0 no a                                       params  20 preR2 0.550 acc {2: 0.511, 8: 0.123, 10: 0.097, 16: 0.065}
+k0 carry depends on base                      params  38 preR2 0.930 acc {2: 1.0, 8: 1.0, 10: 1.0, 16: 0.966}
+k0 theory fit on 8,10,16 only                 params  35 preR2 0.959 acc {8: 1.0, 10: 1.0, 16: 0.974}
+k0 tables fit only on base 2                  params  32 preR2 0.854 acc 1.0
+k0 tables fit only on base 8                  params  32 preR2 0.941 acc 1.0
+k0 tables fit only on base 10                 params  32 preR2 0.968 acc 1.0
+k0 tables fit only on base 16                 params  32 preR2 0.969 acc 0.99
+k1 full theory: code(a)+code(b)+carry+base    params  35 preR2 0.696 acc {2: 0.501, 8: 0.784, 10: 0.829, 16: 0.894}
+k1 no carry                                   params  34 preR2 0.566 acc {2: 0.501, 8: 0.526, 10: 0.508, 16: 0.482}
+k1 no base vector                             params  32 preR2 0.536 acc {2: 0.428, 8: 0.563, 10: 0.564, 16: 0.617}
+k1 no b                                       params  20 preR2 0.506 acc {2: 0.501, 8: 0.119, 10: 0.103, 16: 0.067}
+k1 no a                                       params  20 preR2 0.517 acc {2: 0.501, 8: 0.124, 10: 0.106, 16: 0.068}
+k1 carry depends on base                      params  38 preR2 0.774 acc {2: 0.625, 8: 0.789, 10: 0.797, 16: 0.883}
+k1 theory fit on 8,10,16 only                 params  35 preR2 0.912 acc {8: 1.0, 10: 1.0, 16: 1.0}
+k1 tables fit only on base 2                  params  32 preR2 0.639 acc 0.817
+k1 tables fit only on base 8                  params  32 preR2 0.891 acc 1.0
+k1 tables fit only on base 10                 params  32 preR2 0.918 acc 1.0
+k1 tables fit only on base 16                 params  32 preR2 0.894 acc 1.0
+k2 full theory: code(a)+code(b)+carry+base    params  35 preR2 0.827 acc {2: 0.813, 8: 1.0, 10: 1.0, 16: 1.0}
+k2 no carry                                   params  34 preR2 0.736 acc {2: 0.557, 8: 0.513, 10: 0.508, 16: 0.497}
+k2 no base vector                             params  32 preR2 0.640 acc {2: 0.813, 8: 0.868, 10: 0.692, 16: 0.864}
+k2 no b                                       params  20 preR2 0.598 acc {2: 0.507, 8: 0.126, 10: 0.109, 16: 0.257}
+k2 no a                                       params  20 preR2 0.614 acc {2: 0.489, 8: 0.124, 10: 0.104, 16: 0.248}
+k2 carry depends on base                      params  38 preR2 0.868 acc {2: 1.0, 8: 1.0, 10: 1.0, 16: 1.0}
+k2 theory fit on 8,10,16 only                 params  35 preR2 0.902 acc {8: 1.0, 10: 1.0, 16: 1.0}
+k2 tables fit only on base 2                  params  32 preR2 0.762 acc 1.0
+k2 tables fit only on base 8                  params  32 preR2 0.871 acc 1.0
+k2 tables fit only on base 10                 params  32 preR2 0.922 acc 1.0
+k2 tables fit only on base 16                 params  32 preR2 0.847 acc 1.0
+DONE

@@ -1,0 +1,94 @@
+{
+ "Q1": {
+  "8/k0": {
+   "s = a+b+c": 1.0,
+   "s = a+b+c test coverage": 1.0,
+   "(a+b, c)": 1.0,
+   "(a+b, c) test coverage": 1.0,
+   "(a, b, c)": 1.0,
+   "(a, b, c) test coverage": 1.0,
+   "(a+b, c, a0+b0)": 1.0,
+   "(a+b, c, a0+b0) test coverage": 1.0,
+   "weighted cos(A code, B code)": 0.7803994786993887,
+   "weighted share of A+B that depends only on a+b": 0.3815166866984407
+  },
+  "8/k1": {
+   "s = a+b+c": 0.9321457165732586,
+   "s = a+b+c test coverage": 1.0,
+   "(a+b, c)": 0.9517614091273019,
+   "(a+b, c) test coverage": 1.0,
+   "(a, b, c)": 0.9225380304243395,
+   "(a, b, c) test coverage": 1.0,
+   "(a+b, c, a0+b0)": 0.9973979183346677,
+   "(a+b, c, a0+b0) test coverage": 0.9971977582065652,
+   "weighted cos(A code, B code)": 0.9864521287420291,
+   "weighted share of A+B that depends only on a+b": 0.3684183366640432
+  },
+  "10/k0": {
+   "s = a+b+c": 1.0,
+   "s = a+b+c test coverage": 1.0,
+   "(a+b, c)": 1.0,
+   "(a+b, c) test coverage": 1.0,
+   "(a, b, c)": 1.0,
+   "(a, b, c) test coverage": 1.0,
+   "(a+b, c, a0+b0)": 1.0,
+   "(a+b, c, a0+b0) test coverage": 1.0,
+   "weighted cos(A code, B code)": 0.7917350042865352,
+   "weighted share of A+B that depends only on a+b": 0.34021276528177413
+  },
+  "10/k1": {
+   "s = a+b+c": 0.945167100260156,
+   "s = a+b+c test coverage": 1.0,
+   "(a+b, c)": 0.9779867920752452,
+   "(a+b, c) test coverage": 1.0,
+   "(a, b, c)": 0.9507704622773664,
+   "(a, b, c) test coverage": 1.0,
+   "(a+b, c, a0+b0)": 0.9941965179107465,
+   "(a+b, c, a0+b0) test coverage": 0.9939963978387032,
+   "weighted cos(A code, B code)": 0.9857278890696357,
+   "weighted share of A+B that depends only on a+b": 0.32046120097227637
+  },
+  "16/k0": {
+   "s = a+b+c": 1.0,
+   "s = a+b+c test coverage": 1.0,
+   "(a+b, c)": 1.0,
+   "(a+b, c) test coverage": 1.0,
+   "(a, b, c)": 1.0,
+   "(a, b, c) test coverage": 1.0,
+   "(a+b, c, a0+b0)": 1.0,
+   "(a+b, c, a0+b0) test coverage": 1.0,
+   "weighted cos(A code, B code)": 0.7823155544459548,
+   "weighted share of A+B that depends only on a+b": 0.2626027414112244
+  },
+  "16/k1": {
+   "s = a+b+c": 0.908872421389946,
+   "s = a+b+c test coverage": 1.0,
+   "(a+b, c)": 0.9453234528339676,
+   "(a+b, c) test coverage": 1.0,
+   "(a, b, c)": 0.8728219507310234,
+   "(a, b, c) test coverage": 0.9983977568596034,
+   "(a+b, c, a0+b0)": 0.9815742038854396,
+   "(a+b, c, a0+b0) test coverage": 0.9809733627077909,
+   "weighted cos(A code, B code)": 0.9835978922002361,
+   "weighted share of A+B that depends only on a+b": 0.23065421462338542
+  }
+ },
+ "Q3": {
+  "10": {
+   "2 bumps + parity": 0.9537815126050421,
+   "3 bumps + parity": 0.9693877551020408,
+   "4 bumps + parity": 0.9885954381752701,
+   "sums covered per top-60 neuron (median)": 5.0,
+   "sums covered as share of range": 0.2631578947368421,
+   "neurons strongly active per sum (median)": 8.0
+  },
+  "16": {
+   "2 bumps + parity": 0.8132132132132132,
+   "3 bumps + parity": 0.9357357357357358,
+   "4 bumps + parity": 0.9787787787787787,
+   "sums covered per top-60 neuron (median)": 10.0,
+   "sums covered as share of range": 0.3225806451612903,
+   "neurons strongly active per sum (median)": 10.0
+  }
+ }
+}

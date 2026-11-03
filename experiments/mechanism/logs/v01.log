@@ -1,0 +1,19 @@
+A 8 {'circular offset': 0.947, 'circular distance': 0.946, 'signed difference': 0.946, 'token distance': 0.953, 'embedding kernel': 0.313, 'parity of difference only': 0.276, 'corr_logits_vs_kernel': 0.586}
+B 8 {1: {'non_wrap_mean': 0.53, 'wrap_mean': -0.79, 'gram_non_wrap': 0.0, 'gram_wrap': -0.0}, 2: {'non_wrap_mean': 0.44, 'wrap_mean': 0.05, 'gram_non_wrap': 0.0, 'gram_wrap': -0.0}, 3: {'non_wrap_mean': -5.13, 'wrap_mean': -6.01, 'gram_non_wrap': -0.0, 'gram_wrap': -0.0}} offtarget sd 2.68
+C 8 predict sums >= base from sums < base, by period: {2: -3.75, 3: -4.34, 4: -4.68, 5: -4.37, 6: -5.23, 7: -6.65, 8: -10.5, 10: -30.29, 12: -67.78, 16: -167.97, 20: -260.9}
+D 8 {1: (0.56, np.float64(7.9)), 2: (0.5, np.float64(6.3)), 3: (0.31, np.float64(3.0)), 4: (0.29, np.float64(2.3))}
+E 8 largest same-parity population steps centred at [1, 13, 2, 3] | at base: 1.75 median: 2.29
+F 8 leave-one-sum-out R2: {'constant': -0.148, 'cubic in s': 0.279, 'parity': -0.169, 'cubic + parity': 0.436, 'cubic + parity x cubic': -0.155, 'linear + cos,sin at period base': 0.18, 'linear + periods base, base/2': -0.081}
+A 10 {'circular offset': 0.93, 'circular distance': 0.933, 'signed difference': 0.943, 'token distance': 0.944, 'embedding kernel': 0.342, 'parity of difference only': 0.298, 'corr_logits_vs_kernel': 0.611}
+B 10 {1: {'non_wrap_mean': 0.99, 'wrap_mean': -0.45, 'gram_non_wrap': 0.0, 'gram_wrap': -0.0}, 2: {'non_wrap_mean': 0.69, 'wrap_mean': 1.46, 'gram_non_wrap': 0.0, 'gram_wrap': -0.0}, 3: {'non_wrap_mean': -3.96, 'wrap_mean': -2.82, 'gram_non_wrap': 0.0, 'gram_wrap': -0.0}} offtarget sd 2.6
+C 10 predict sums >= base from sums < base, by period: {2: -4.93, 3: -5.57, 4: -5.62, 5: -6.06, 6: -5.6, 7: -5.84, 8: -6.09, 10: -9.46, 12: -19.48, 16: -62.63, 20: -120.78}
+D 10 {1: (0.59, np.float64(7.5)), 2: (0.54, np.float64(7.0)), 3: (0.59, np.float64(7.3)), 4: (0.09, np.float64(0.9)), 5: (0.3, np.float64(2.5))}
+E 10 largest same-parity population steps centred at [1, 3, 2, 4] | at base: 1.86 median: 2.29
+F 10 leave-one-sum-out R2: {'constant': -0.114, 'cubic in s': 0.485, 'parity': -0.137, 'cubic + parity': 0.579, 'cubic + parity x cubic': 0.388, 'linear + cos,sin at period base': 0.325, 'linear + periods base, base/2': 0.179}
+A 16 {'circular offset': 0.877, 'circular distance': 0.884, 'signed difference': 0.887, 'token distance': 0.889, 'embedding kernel': 0.326, 'parity of difference only': 0.287, 'corr_logits_vs_kernel': 0.587}
+B 16 {1: {'non_wrap_mean': 2.28, 'wrap_mean': 0.69, 'gram_non_wrap': 0.01, 'gram_wrap': -0.0}, 2: {'non_wrap_mean': 2.23, 'wrap_mean': 1.72, 'gram_non_wrap': 0.01, 'gram_wrap': 0.0}, 3: {'non_wrap_mean': -2.11, 'wrap_mean': -2.99, 'gram_non_wrap': 0.0, 'gram_wrap': -0.0}} offtarget sd 2.75
+C 16 predict sums >= base from sums < base, by period: {2: -6.66, 3: -6.96, 4: -6.83, 5: -7.2, 6: -6.94, 7: -7.28, 8: -7.39, 10: -7.64, 12: -8.02, 16: -11.92, 20: -27.27}
+D 16 {1: (0.57, np.float64(8.1)), 2: (0.64, np.float64(9.4)), 3: (0.51, np.float64(7.6)), 4: (0.13, np.float64(1.6)), 5: (0.59, np.float64(8.2)), 6: (0.05, np.float64(0.6)), 7: (0.05, np.float64(0.5)), 8: (0.32, np.float64(2.7))}
+E 16 largest same-parity population steps centred at [1, 2, 29, 3] | at base: 1.75 median: 1.75
+F 16 leave-one-sum-out R2: {'constant': -0.068, 'cubic in s': 0.546, 'parity': -0.053, 'cubic + parity': 0.622, 'cubic + parity x cubic': 0.535, 'linear + cos,sin at period base': 0.376, 'linear + periods base, base/2': 0.326}
+DONE

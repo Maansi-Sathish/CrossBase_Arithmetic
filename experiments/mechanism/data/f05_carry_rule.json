@@ -1,0 +1,98 @@
+{
+ "2": {
+  "consistent": {
+   "written < a+b": 0.99725,
+   "operands only: a+b >= base": 0.99725,
+   "written < a": 0.99725,
+   "written < b": 0.99725,
+   "written < max(a,b)": 0.99725,
+   "written < min(a,b)": 0.99725,
+   "no carry": 0.75125,
+   "always carry": 0.24875,
+   "output is one of the two carry options": 1.0
+  },
+  "random": {
+   "written < a+b": 0.752,
+   "operands only: a+b >= base": 0.78975,
+   "written < a": 0.6715,
+   "written < b": 0.66375,
+   "written < max(a,b)": 0.64875,
+   "written < min(a,b)": 0.6865,
+   "no carry": 0.56075,
+   "always carry": 0.43925,
+   "output is one of the two carry options": 1.0
+  }
+ },
+ "8": {
+  "consistent": {
+   "written < a+b": 0.9995,
+   "operands only: a+b >= base": 0.9995,
+   "written < a": 0.9995,
+   "written < b": 0.9995,
+   "written < max(a,b)": 0.9995,
+   "written < min(a,b)": 0.9995,
+   "no carry": 0.56275,
+   "always carry": 0.43725,
+   "output is one of the two carry options": 1.0
+  },
+  "random": {
+   "written < a+b": 0.65175,
+   "operands only: a+b >= base": 0.766,
+   "written < a": 0.798,
+   "written < b": 0.79025,
+   "written < max(a,b)": 0.7795,
+   "written < min(a,b)": 0.80875,
+   "no carry": 0.5625,
+   "always carry": 0.42475,
+   "output is one of the two carry options": 0.98725
+  }
+ },
+ "10": {
+  "consistent": {
+   "written < a+b": 1.0,
+   "operands only: a+b >= base": 1.0,
+   "written < a": 1.0,
+   "written < b": 1.0,
+   "written < max(a,b)": 1.0,
+   "written < min(a,b)": 1.0,
+   "no carry": 0.548,
+   "always carry": 0.452,
+   "output is one of the two carry options": 1.0
+  },
+  "random": {
+   "written < a+b": 0.65225,
+   "operands only: a+b >= base": 0.78475,
+   "written < a": 0.789,
+   "written < b": 0.79125,
+   "written < max(a,b)": 0.77125,
+   "written < min(a,b)": 0.809,
+   "no carry": 0.56325,
+   "always carry": 0.435,
+   "output is one of the two carry options": 0.99825
+  }
+ },
+ "16": {
+  "consistent": {
+   "written < a+b": 0.99975,
+   "operands only: a+b >= base": 0.99975,
+   "written < a": 0.99975,
+   "written < b": 0.99975,
+   "written < max(a,b)": 0.99975,
+   "written < min(a,b)": 0.99975,
+   "no carry": 0.5405,
+   "always carry": 0.45925,
+   "output is one of the two carry options": 0.99975
+  },
+  "random": {
+   "written < a+b": 0.67275,
+   "operands only: a+b >= base": 0.7685,
+   "written < a": 0.81625,
+   "written < b": 0.79025,
+   "written < max(a,b)": 0.8065,
+   "written < min(a,b)": 0.8,
+   "no carry": 0.5325,
+   "always carry": 0.466,
+   "output is one of the two carry options": 0.9985
+  }
+ }
+}

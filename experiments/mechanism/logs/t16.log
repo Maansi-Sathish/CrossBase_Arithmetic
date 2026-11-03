@@ -1,0 +1,27 @@
+Q11 binary context: writes 0 / 2 (0.79666668176651, 0.0)
+Q11 octal context: writes 0 / 2 (0.0, 0.4233333468437195)
+Q11 binary gets octal L0H0 on test line: 0 / 2 (0.42500001192092896, 0.0016666667070239782)
+Q11 octal gets binary L0H0 on test line: 0 / 2 (0.01833333447575569, 0.046666666865348816)
+Q11 binary gets octal L0H1 on test line: 0 / 2 (0.3700000047683716, 0.11166667193174362)
+Q11 octal gets binary L0H1 on test line: 0 / 2 (0.10833333432674408, 0.06333333253860474)
+Q11 binary gets octal L0H2 on test line: 0 / 2 (0.6150000095367432, 0.0)
+Q11 octal gets binary L0H2 on test line: 0 / 2 (0.006666666828095913, 0.4833333492279053)
+Q11 binary gets octal L0H3 on test line: 0 / 2 (0.7800000309944153, 0.0)
+Q11 octal gets binary L0H3 on test line: 0 / 2 (0.009999999776482582, 0.15666666626930237)
+Q11 binary gets octal L0 MLP on test line: 0 / 2 (0.35500001907348633, 0.0)
+Q11 octal gets binary L0 MLP on test line: 0 / 2 (0.06666667014360428, 0.01666666753590107)
+Q11 binary gets octal layer 0 output (incl. embeddings) on test line: 0 / 2 (0.3166666626930237, 0.006666666828095913)
+Q11 octal gets binary layer 0 output (incl. embeddings) on test line: 0 / 2 (0.96833336353302, 0.0)
+Q11 L0H1 at '=' attention on test line (binary context) 0.6993405222892761
+Q11 L0H1 at '=' attention on test line (octal context) 0.06443649530410767
+Q11 dose: n context digits replaced by d -> writes 0 / 2 {"1 x '2'": (0.77, 0.0), "2 x '2'": (0.74, 0.0), "4 x '2'": (0.65, 0.0), "1 x '3'": (0.77, 0.0), "2 x '3'": (0.75, 0.0), "4 x '3'": (0.7, 0.0), "1 x '4'": (0.77, 0.0), "2 x '4'": (0.75, 0.0), "4 x '4'": (0.7, 0.0), "1 x '5'": (0.77, 0.0), "2 x '5'": (0.72, 0.0), "4 x '5'": (0.68, 0.0), "1 x '6'": (0.78, 0.0), "2 x '6'": (0.78, 0.0), "4 x '6'": (0.71, 0.0), "1 x '7'": (0.78, 0.0), "2 x '7'": (0.74, 0.0), "4 x '7'": (0.69, 0.0)}
+Q12 short (2-3 digits) {'clean': {'H1 on a0': 0.39, 'H1 on a first': 0.32, 'correct': 0.9}, 'L0H3 outputs reversed over a': {'H1 on a0': 0.03, 'H1 on a first': 0.86, 'correct': 0.53}, "all of a's digits get a0's tag": {'H1 on a0': 0.5, 'H1 on a first': 0.14, 'correct': 0.87}, 'L0H3 attention to line start by digit index': [0.66, 0.57, 0.45]}
+Q12 long (7-10 digits) {'clean': {'H1 on a0': 0.69, 'H1 on a first': 0.0, 'correct': 1.0}, 'L0H3 outputs reversed over a': {'H1 on a0': 0.2, 'H1 on a first': 0.01, 'correct': 0.64}, "all of a's digits get a0's tag": {'H1 on a0': 0.11, 'H1 on a first': 0.01, 'correct': 0.6}, 'L0H3 attention to line start by digit index': [0.66, 0.57, 0.45, 0.35, 0.29, 0.28, 0.31, 0.37, 0.44, 0.47]}
+Traceback (most recent call last):
+  File "experiments/mechanism/t16_binary.py", line 111, in <module>
+    lg, c = model.forward(X, capture={"pattern1"}); pr = lg[J3, q].argmax(-1).cpu().numpy(); ok = pr == y
+            ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "experiments/mechanism/core.py", line 138, in forward
+    post = gelu_new(m @ self.sd[f"h.{L}.mlp.c_fc.weight"] + self.sd[f"h.{L}.mlp.c_fc.bias"])
+                    ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 490.00 MiB. GPU 0 has a total capacity of 5.67 GiB of which 473.50 MiB is free. Including non-PyTorch memory, this process has 5.14 GiB memory in use. Of the allocated memory 4.84 GiB is allocated by PyTorch, and 173.48 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)

@@ -1,0 +1,49 @@
+{
+ "n": 29998,
+ "errors": 98,
+ "error rate by k": {
+  "1": 0.0028,
+  "2": 0.0083,
+  "3": 0.0032,
+  "4": 0.0015,
+  "5": 0.0005
+ },
+ "agreement with model's carry on errors": {
+  "true carry": 0.0,
+  "AND of column k-1 (ignores incoming chain)": 0.16,
+  "OR of column k-1": 0.41,
+  "AND of column k-2": 0.22,
+  "carry-in of column k-1 (one step stale)": 0.23,
+  "a_{k-1} only": 0.2,
+  "b_{k-1} only": 0.37
+ },
+ "agreement with model's carry overall": {
+  "true carry": 0.997,
+  "AND of column k-1 (ignores incoming chain)": 0.845,
+  "OR of column k-1": 0.652,
+  "AND of column k-2": 0.698,
+  "carry-in of column k-1 (one step stale)": 0.752,
+  "a_{k-1} only": 0.752,
+  "b_{k-1} only": 0.746
+ },
+ "error rate by previous column state": {
+  "chain: c_in=1 from a carried carry (a_{k-1}+b_{k-1}=1, c_{k-1}=1)": {
+   "n": 4569,
+   "error rate": 0.0035
+  },
+  "c_in=1 from a_{k-1}=b_{k-1}=1": {
+   "n": 7347,
+   "error rate": 0.0027
+  },
+  "no carry, a_{k-1}+b_{k-1}=1": {
+   "n": 10421,
+   "error rate": 0.0038
+  },
+  "no carry, a_{k-1}=b_{k-1}=0": {
+   "n": 7661,
+   "error rate": 0.0029
+  }
+ },
+ "error rate when an operand ends at or before k": 0.0445,
+ "error rate otherwise": 0.0023
+}

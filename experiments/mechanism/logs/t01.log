@@ -1,0 +1,80 @@
+A digit 0: accuracy (8,10,16)
+   full tables                      [1.0, 1.0, 0.974]
+   smooth 2                         [0.117, 0.13, 0.14]
+   smooth 2 + parity                [0.273, 0.275, 0.265]
+   smooth 2 + parity + letter       [0.457, 0.436, 0.353]
+   random 4 dims                    [0.166, 0.156, 0.093]
+   smooth 3                         [0.277, 0.234, 0.218]
+   smooth 3 + parity                [0.506, 0.479, 0.404]
+   smooth 3 + parity + letter       [0.489, 0.496, 0.463]
+   random 5 dims                    [0.134, 0.15, 0.107]
+   smooth 4                         [0.247, 0.26, 0.258]
+   smooth 4 + parity                [0.447, 0.476, 0.495]
+   smooth 4 + parity + letter       [0.476, 0.648, 0.571]
+   random 6 dims                    [0.179, 0.164, 0.142]
+   smooth 6                         [0.408, 0.403, 0.4]
+   smooth 6 + parity                [0.733, 0.714, 0.771]
+   smooth 6 + parity + letter       [0.72, 0.736, 0.767]
+   random 8 dims                    [0.249, 0.208, 0.2]
+   smooth 8                         [0.499, 0.512, 0.457]
+   smooth 8 + parity                [0.983, 0.947, 0.925]
+   smooth 8 + parity + letter       [0.983, 0.949, 0.923]
+   random 10 dims                   [0.358, 0.404, 0.362]
+A digit 1: accuracy (8,10,16)
+   full tables                      [1.0, 1.0, 1.0]
+   smooth 2                         [0.11, 0.135, 0.071]
+   smooth 2 + parity                [0.222, 0.236, 0.151]
+   smooth 2 + parity + letter       [0.337, 0.315, 0.328]
+   random 4 dims                    [0.122, 0.146, 0.103]
+   smooth 3                         [0.19, 0.141, 0.182]
+   smooth 3 + parity                [0.381, 0.293, 0.335]
+   smooth 3 + parity + letter       [0.388, 0.354, 0.446]
+   random 5 dims                    [0.119, 0.149, 0.117]
+   smooth 4                         [0.186, 0.248, 0.294]
+   smooth 4 + parity                [0.385, 0.427, 0.523]
+   smooth 4 + parity + letter       [0.46, 0.565, 0.627]
+   random 6 dims                    [0.149, 0.167, 0.143]
+   smooth 6                         [0.395, 0.339, 0.42]
+   smooth 6 + parity                [0.727, 0.66, 0.789]
+   smooth 6 + parity + letter       [0.708, 0.679, 0.823]
+   random 8 dims                    [0.295, 0.231, 0.22]
+   smooth 8                         [0.475, 0.439, 0.492]
+   smooth 8 + parity                [0.915, 0.9, 0.952]
+   smooth 8 + parity + letter       [0.98, 0.936, 0.954]
+   random 10 dims                   [0.403, 0.38, 0.376]
+A digit 2: accuracy (8,10,16)
+   full tables                      [1.0, 1.0, 1.0]
+   smooth 2                         [0.102, 0.093, 0.0]
+   smooth 2 + parity                [0.226, 0.179, 0.187]
+   smooth 2 + parity + letter       [0.381, 0.375, 0.316]
+   random 4 dims                    [0.182, 0.134, 0.095]
+   smooth 3                         [0.293, 0.232, 0.391]
+   smooth 3 + parity                [0.523, 0.35, 0.642]
+   smooth 3 + parity + letter       [0.527, 0.451, 0.642]
+   random 5 dims                    [0.148, 0.139, 0.081]
+   smooth 4                         [0.319, 0.237, 0.459]
+   smooth 4 + parity                [0.524, 0.424, 0.71]
+   smooth 4 + parity + letter       [0.585, 0.539, 0.71]
+   random 6 dims                    [0.242, 0.176, 0.245]
+   smooth 6                         [0.455, 0.348, 0.528]
+   smooth 6 + parity                [0.753, 0.637, 0.833]
+   smooth 6 + parity + letter       [0.786, 0.666, 0.833]
+   random 8 dims                    [0.369, 0.294, 0.288]
+   smooth 8                         [0.439, 0.465, 0.497]
+   smooth 8 + parity                [0.829, 0.88, 0.902]
+   smooth 8 + parity + letter       [0.856, 0.899, 0.902]
+   random 10 dims                   [0.491, 0.492, 0.35]
+B b8: importance share rising 0.10, falling 0.29, non-monotone 0.61; rising turn-on points by s (bins of 2): [1, 1, 0, 1, 2, 4, 3]; near base (b-1..b+1): 3 of 12
+B b10: importance share rising 0.14, falling 0.25, non-monotone 0.60; rising turn-on points by s (bins of 2): [2, 1, 0, 2, 3, 2, 3, 4, 1]; near base (b-1..b+1): 4 of 18
+B b16: importance share rising 0.12, falling 0.21, non-monotone 0.67; rising turn-on points by s (bins of 2): [1, 0, 1, 0, 1, 3, 2, 0, 2, 2, 1, 0, 0, 0, 2]; near base (b-1..b+1): 2 of 15
+C 8->10: rising neurons 9, median turn-on shift +1.09 (important half +1.08; IQR [0.24, 1.42]), base difference +2
+C 10->8: rising neurons 15, median turn-on shift -0.62 (important half +0.69; IQR [-1.61, 0.74]), base difference -2
+C 10->16: rising neurons 15, median turn-on shift +0.73 (important half -1.13; IQR [-2.28, 2.43]), base difference +6
+C 16->10: rising neurons 12, median turn-on shift -3.02 (important half -1.84; IQR [-4.03, -1.35]), base difference -6
+C 8->16: rising neurons 9, median turn-on shift +1.41 (important half +1.15; IQR [0.61, 3.24]), base difference +8
+C 16->8: rising neurons 12, median turn-on shift -4.08 (important half -1.23; IQR [-7.04, -1.24]), base difference -8
+D b2 digit 1: cos(sum slope, carry) 0.98, carry / sum slope median 5.01 (IQR [4.28, 6.1]), R2 with a+b and c separate 0.564 vs single s 0.564
+D b8 digit 1: cos(sum slope, carry) 0.34, carry / sum slope median 3.41 (IQR [-1.13, 9.26]), R2 with a+b and c separate 0.564 vs single s 0.376
+D b10 digit 1: cos(sum slope, carry) 0.29, carry / sum slope median 3.03 (IQR [-1.83, 10.5]), R2 with a+b and c separate 0.557 vs single s 0.379
+D b16 digit 1: cos(sum slope, carry) 0.45, carry / sum slope median 8.25 (IQR [-0.98, 20.55]), R2 with a+b and c separate 0.491 vs single s 0.315
+DONE

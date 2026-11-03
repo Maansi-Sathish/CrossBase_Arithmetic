@@ -1,0 +1,214 @@
+{
+ "Q9": {
+  "8": {
+   "0": {
+    "accuracy, seen digit values": 1.0,
+    "accuracy, unseen digit values": null,
+    "n unseen": 0,
+    "error types (share of errors)": {
+     "missed or extra carry": 0.0,
+     "previous column's digit": 0.0,
+     "next column's digit": 0.0,
+     "carry-free top value (a+b+c written unwrapped)": 0.0,
+     "EOS or newline": 0.0
+    }
+   },
+   "1": {
+    "accuracy, seen digit values": 0.8293333333333334,
+    "accuracy, unseen digit values": null,
+    "n unseen": 0,
+    "error types (share of errors)": {
+     "missed or extra carry": 0.24609375,
+     "previous column's digit": 0.15625,
+     "next column's digit": 0.16796875,
+     "carry-free top value (a+b+c written unwrapped)": 0.0,
+     "EOS or newline": 0.0
+    }
+   },
+   "2": {
+    "accuracy, seen digit values": 0.24,
+    "accuracy, unseen digit values": null,
+    "n unseen": 0,
+    "error types (share of errors)": {
+     "missed or extra carry": 0.13859649122807016,
+     "previous column's digit": 0.11754385964912281,
+     "next column's digit": 0.2043859649122807,
+     "carry-free top value (a+b+c written unwrapped)": 0.002631578947368421,
+     "EOS or newline": 0.0
+    }
+   },
+   "3": {
+    "accuracy, seen digit values": 1.0,
+    "accuracy, unseen digit values": 0.08303507516105942,
+    "n unseen": 1397,
+    "error types (share of errors)": {
+     "missed or extra carry": 0.1366120218579235,
+     "previous column's digit": 0.1014832162373146,
+     "next column's digit": 0.0039032006245121,
+     "carry-free top value (a+b+c written unwrapped)": 0.0,
+     "EOS or newline": 0.0
+    }
+   }
+  },
+  "10": {
+   "0": {
+    "accuracy, seen digit values": 0.9786666666666667,
+    "accuracy, unseen digit values": null,
+    "n unseen": 0,
+    "error types (share of errors)": {
+     "missed or extra carry": 0.15625,
+     "previous column's digit": 0.0,
+     "next column's digit": 0.125,
+     "carry-free top value (a+b+c written unwrapped)": 0.0,
+     "EOS or newline": 0.0
+    }
+   },
+   "1": {
+    "accuracy, seen digit values": 0.5593333333333333,
+    "accuracy, unseen digit values": null,
+    "n unseen": 0,
+    "error types (share of errors)": {
+     "missed or extra carry": 0.19213313161875945,
+     "previous column's digit": 0.07715582450832073,
+     "next column's digit": 0.11195158850226929,
+     "carry-free top value (a+b+c written unwrapped)": 0.0,
+     "EOS or newline": 0.0
+    }
+   },
+   "2": {
+    "accuracy, seen digit values": 0.23333333333333334,
+    "accuracy, unseen digit values": null,
+    "n unseen": 0,
+    "error types (share of errors)": {
+     "missed or extra carry": 0.1391304347826087,
+     "previous column's digit": 0.08956521739130435,
+     "next column's digit": 0.14695652173913043,
+     "carry-free top value (a+b+c written unwrapped)": 0.0,
+     "EOS or newline": 0.0
+    }
+   },
+   "3": {
+    "accuracy, seen digit values": 1.0,
+    "accuracy, unseen digit values": 0.1496924128503076,
+    "n unseen": 1463,
+    "error types (share of errors)": {
+     "missed or extra carry": 0.1535369774919614,
+     "previous column's digit": 0.08762057877813505,
+     "next column's digit": 0.03778135048231511,
+     "carry-free top value (a+b+c written unwrapped)": 0.0,
+     "EOS or newline": 0.0972668810289389
+    }
+   }
+  },
+  "16": {
+   "0": {
+    "accuracy, seen digit values": 1.0,
+    "accuracy, unseen digit values": null,
+    "n unseen": 0,
+    "error types (share of errors)": {
+     "missed or extra carry": 0.0,
+     "previous column's digit": 0.0,
+     "next column's digit": 0.0,
+     "carry-free top value (a+b+c written unwrapped)": 0.0,
+     "EOS or newline": 0.0
+    }
+   },
+   "1": {
+    "accuracy, seen digit values": 0.7353333333333333,
+    "accuracy, unseen digit values": null,
+    "n unseen": 0,
+    "error types (share of errors)": {
+     "missed or extra carry": 0.12594458438287154,
+     "previous column's digit": 0.04534005037783375,
+     "next column's digit": 0.06297229219143577,
+     "carry-free top value (a+b+c written unwrapped)": 0.0,
+     "EOS or newline": 0.0
+    }
+   },
+   "2": {
+    "accuracy, seen digit values": 1.0,
+    "accuracy, unseen digit values": 0.6004288777698356,
+    "n unseen": 1399,
+    "error types (share of errors)": {
+     "missed or extra carry": 0.10912343470483005,
+     "previous column's digit": 0.07692307692307693,
+     "next column's digit": 0.13059033989266547,
+     "carry-free top value (a+b+c written unwrapped)": 0.0,
+     "EOS or newline": 0.059033989266547404
+    }
+   }
+  }
+ },
+ "Q10": {
+  "stop rate seen": 1.0,
+  "stop rate unseen": 0.6045918367346939,
+  "L1H0": {
+   "mean seen": 3.396538257598877,
+   "mean unseen": 2.353515863418579,
+   "unseen minus prediction from seen fit": -0.23346924180348474,
+   "unseen, stopping failed: minus prediction": -0.5434296307363816
+  },
+  "L1H1": {
+   "mean seen": 1.2052013874053955,
+   "mean unseen": 0.20522136986255646,
+   "unseen minus prediction from seen fit": -0.48768432620540364,
+   "unseen, stopping failed: minus prediction": -0.4166295768294034
+  },
+  "L1H2": {
+   "mean seen": 0.5189113616943359,
+   "mean unseen": 0.42978692054748535,
+   "unseen minus prediction from seen fit": 0.18263298363684927,
+   "unseen, stopping failed: minus prediction": 0.1630332136836118
+  },
+  "L1H3": {
+   "mean seen": 1.249903678894043,
+   "mean unseen": 1.4337352514266968,
+   "unseen minus prediction from seen fit": -0.022515739240866542,
+   "unseen, stopping failed: minus prediction": -0.3957286390202676
+  },
+  "L1 MLP": {
+   "mean seen": 16.50497055053711,
+   "mean unseen": 2.6910977363586426,
+   "unseen minus prediction from seen fit": -11.094208086314858,
+   "unseen, stopping failed: minus prediction": -19.30594536460619
+  },
+  "layer 0 + embeddings": {
+   "mean seen": -1.047460675239563,
+   "mean unseen": -0.27615591883659363,
+   "unseen minus prediction from seen fit": -2.3828092402537693,
+   "unseen, stopping failed: minus prediction": -2.5213930744529387
+  },
+  "L1H0 attention on a_top (seen / unseen)": [
+   0.12959566712379456,
+   0.18198621273040771
+  ],
+  "L1H0 attention on b_top (seen / unseen)": [
+   0.10593453049659729,
+   0.16603459417819977
+  ],
+  "L1H1 attention on a_top (seen / unseen)": [
+   0.16441509127616882,
+   0.18082819879055023
+  ],
+  "L1H1 attention on b_top (seen / unseen)": [
+   0.17060521245002747,
+   0.17384231090545654
+  ],
+  "L1H2 attention on a_top (seen / unseen)": [
+   0.00415055314078927,
+   0.009096752852201462
+  ],
+  "L1H2 attention on b_top (seen / unseen)": [
+   0.005743805319070816,
+   0.01457485556602478
+  ],
+  "L1H3 attention on a_top (seen / unseen)": [
+   0.034047067165374756,
+   0.04619739577174187
+  ],
+  "L1H3 attention on b_top (seen / unseen)": [
+   0.018923917785286903,
+   0.029640786349773407
+  ]
+ }
+}

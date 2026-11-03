@@ -1,0 +1,25 @@
+A k1 weights a,b,w [3.1, 3.0, -0.45]; rule match {'a AND b (operands only)': 0.756, 'a+b-w > 0.5': 0.7, 'a OR b': 0.498, 'written=0': 0.52, 'true carry from real lower digits': 0.756}
+   carry rate by (a,b,w): {'a0 b0 w0': 0.09, 'a0 b0 w1': 0.61, 'a0 b1 w0': 0.34, 'a0 b1 w1': 0.08, 'a1 b0 w0': 0.42, 'a1 b0 w1': 0.12, 'a1 b1 w0': 0.92, 'a1 b1 w1': 0.79}
+A k2 weights a,b,w [4.84, 4.62, -4.18]; rule match {'a AND b (operands only)': 0.688, 'a+b-w > 0.5': 0.754, 'a OR b': 0.564, 'written=0': 0.606, 'true carry from real lower digits': 0.724}
+   carry rate by (a,b,w): {'a0 b0 w0': 0.12, 'a0 b0 w1': 0.4, 'a0 b1 w0': 0.64, 'a0 b1 w1': 0.1, 'a1 b0 w0': 0.62, 'a1 b0 w1': 0.15, 'a1 b1 w0': 0.82, 'a1 b1 w1': 0.74}
+A k3 weights a,b,w [6.11, 5.89, -6.16]; rule match {'a AND b (operands only)': 0.693, 'a+b-w > 0.5': 0.813, 'a OR b': 0.616, 'written=0': 0.661, 'true carry from real lower digits': 0.739}
+   carry rate by (a,b,w): {'a0 b0 w0': 0.13, 'a0 b0 w1': 0.24, 'a0 b1 w0': 0.72, 'a0 b1 w1': 0.1, 'a1 b0 w0': 0.75, 'a1 b0 w1': 0.13, 'a1 b1 w0': 0.86, 'a1 b1 w1': 0.77}
+A theory k1: {'a,b,c': 0.817, 'a,b,prev a,prev b': 0.692, 'a,b,prev a,prev b,written': 1.0, 'a,b,written': 0.511, 'a,b,c + prev': 1.0}
+A theory k2: {'a,b,c': 1.0, 'a,b,prev a,prev b': 0.81, 'a,b,prev a,prev b,written': 0.948, 'a,b,written': 0.704, 'a,b,c + prev': 1.0}
+A theory k3: {'a,b,c': 1.0, 'a,b,prev a,prev b': 0.758, 'a,b,prev a,prev b,written': 1.0, 'a,b,written': 0.75, 'a,b,c + prev': 1.0}
+B context base 2 (rule 2, rule >=3): [0.71, 0.0]
+B context base 3 (rule 2, rule >=3): [0.0, 0.595]
+B context base 4 (rule 2, rule >=3): [0.0, 0.47]
+B context base 5 (rule 2, rule >=3): [0.0, 0.616]
+B context base 6 (rule 2, rule >=3): [0.0, 0.931]
+B context base 7 (rule 2, rule >=3): [0.0, 0.981]
+B context base 8 (rule 2, rule >=3): [0.0, 0.994]
+B binary context, n tokens changed to 2 (rule 2, rule>=3): {0: [0.71, 0.0], 1: [0.67, 0.0], 2: [0.66, 0.0], 4: [0.58, 0.0], 8: [0.49, 0.0], 16: [0.3, 0.02], 32: [0.17, 0.08]}
+B binary context, n tokens changed to 7 (rule 2, rule>=3): {0: [0.72, 0.0], 1: [0.68, 0.0], 2: [0.63, 0.0], 4: [0.59, 0.0], 8: [0.46, 0.0], 16: [0.36, 0.02], 32: [0.14, 0.1]}
+C k-short=-1/wrong=False {'n': 4640, 'mass_target': np.float32(0.12587063), 'mass_plus': np.float32(0.033000987), 'mass_last_digit': np.float32(0.113076806), 'alt_carry': np.float64(0.0)}
+C k-short=-1/wrong=True {'n': 360, 'mass_target': np.float32(0.09088488), 'mass_plus': np.float32(0.03660625), 'mass_last_digit': np.float32(0.25585198), 'alt_carry': np.float64(1.0)}
+C k-short=0/wrong=False {'n': 4707, 'mass_target': 0.0, 'mass_plus': np.float32(0.043269157), 'mass_last_digit': np.float32(0.053950824), 'alt_carry': np.float64(0.0)}
+C k-short=0/wrong=True {'n': 293, 'mass_target': 0.0, 'mass_plus': np.float32(0.069599934), 'mass_last_digit': np.float32(0.19156948), 'alt_carry': np.float64(1.0)}
+C k-short=1/wrong=False {'n': 4817, 'mass_target': 0.0, 'mass_plus': np.float32(0.043243878), 'mass_last_digit': np.float32(0.025553295), 'alt_carry': np.float64(0.0)}
+C k-short=1/wrong=True {'n': 183, 'mass_target': 0.0, 'mass_plus': np.float32(0.064920075), 'mass_last_digit': np.float32(0.13942432), 'alt_carry': np.float64(1.0)}
+DONE

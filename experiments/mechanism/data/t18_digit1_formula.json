@@ -1,0 +1,29 @@
+{
+ "8": {
+  "exact pre-activation": 1.0,
+  "table u[s1] + table v[p0]": 0.5392313851080864,
+  "table u[s1] + carry bit only": 0.33286629303442755,
+  "smooth u + smooth v (9 numbers)": 0.24579663730984788,
+  "smooth u + carry step + graded slope (7 numbers)": 0.25580464371497197,
+  "smooth u + carry step + slope + slope x carry (8 numbers)": 0.2702161729383507,
+  "table u[s1] + step + slope + slope x carry": 0.3656925540432346
+ },
+ "10": {
+  "exact pre-activation": 1.0,
+  "table u[s1] + table v[p0]": 0.46647988793275963,
+  "table u[s1] + carry bit only": 0.2983790274164499,
+  "smooth u + smooth v (9 numbers)": 0.1759055433259956,
+  "smooth u + carry step + graded slope (7 numbers)": 0.16950170102061238,
+  "smooth u + carry step + slope + slope x carry (8 numbers)": 0.20192115269161498,
+  "table u[s1] + step + slope + slope x carry": 0.34220532319391633
+ },
+ "16": {
+  "exact pre-activation": 1.0,
+  "table u[s1] + table v[p0]": 0.38373723212497496,
+  "table u[s1] + carry bit only": 0.15621870618866412,
+  "smooth u + smooth v (9 numbers)": 0.09473262567594633,
+  "smooth u + carry step + graded slope (7 numbers)": 0.1177648708191468,
+  "smooth u + carry step + slope + slope x carry (8 numbers)": 0.12076907670739034,
+  "table u[s1] + step + slope + slope x carry": 0.17784898858401763
+ }
+}

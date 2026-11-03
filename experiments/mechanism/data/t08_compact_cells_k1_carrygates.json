@@ -1,0 +1,47 @@
+{
+ "8/k1": {
+  "original": 1.0,
+  "sum table": 0.9321457165732586,
+  "bump": 0.22497998398718974,
+  "bump + parity gate": 0.5370296236989591,
+  "two bumps + parity gate": 0.7013610888710968,
+  "parity gate only": 0.1855484387510008,
+  "params per neuron": {
+   "sum table": 16,
+   "bump": 4,
+   "bump + parity gate": 6,
+   "two bumps + parity gate": 9,
+   "parity gate only": 3
+  }
+ },
+ "10/k1": {
+  "original": 1.0,
+  "sum table": 0.945167100260156,
+  "bump": 0.17690614368621171,
+  "bump + parity gate": 0.36922153291975185,
+  "two bumps + parity gate": 0.6007604562737643,
+  "parity gate only": 0.12467480488292976,
+  "params per neuron": {
+   "sum table": 20,
+   "bump": 4,
+   "bump + parity gate": 6,
+   "two bumps + parity gate": 9,
+   "parity gate only": 3
+  }
+ },
+ "16/k1": {
+  "original": 1.0,
+  "sum table": 0.908872421389946,
+  "bump": 0.09533346685359503,
+  "bump + parity gate": 0.19066693370719007,
+  "two bumps + parity gate": 0.31183657119967956,
+  "parity gate only": 0.07170038053274584,
+  "params per neuron": {
+   "sum table": 32,
+   "bump": 4,
+   "bump + parity gate": 6,
+   "two bumps + parity gate": 9,
+   "parity gate only": 3
+  }
+ }
+}

@@ -1,0 +1,64 @@
+{
+ "8/k2": {
+  "unseen leading digit": 0.186,
+  "counterpart (leading digit 1)": 1.0,
+  "L1H0 attention target a/b column (unseen | counterpart)": [
+   0.4,
+   0.49
+  ],
+  "L1H0 attention leading digits (unseen | counterpart)": [
+   0.35,
+   0.19
+  ],
+  "L1H1 attention target a/b column (unseen | counterpart)": [
+   0.34,
+   0.33
+  ],
+  "L1H1 attention leading digits (unseen | counterpart)": [
+   0.14,
+   0.09
+  ],
+  "L1H3 attention target a/b column (unseen | counterpart)": [
+   0.15,
+   0.14
+  ],
+  "L1H3 attention leading digits (unseen | counterpart)": [
+   0.02,
+   0.01
+  ],
+  "restore layer 0 output at leading digits": 1.0,
+  "same, but keep the unseen token embedding": 0.652,
+  "restore L1H0 at query": 0.994,
+  "restore L1H1 at query": 0.23,
+  "restore L1H2 at query": 0.188,
+  "restore L1H3 at query": 0.186,
+  "restore all L1 heads at query": 1.0
+ },
+ "16/k1": {
+  "unseen leading digit": 0.68,
+  "counterpart (leading digit 1)": 1.0,
+  "L1H1 attention target a/b column (unseen | counterpart)": [
+   0.28,
+   0.25
+  ],
+  "L1H1 attention leading digits (unseen | counterpart)": [
+   0.05,
+   0.02
+  ],
+  "L1H3 attention target a/b column (unseen | counterpart)": [
+   0.49,
+   0.56
+  ],
+  "L1H3 attention leading digits (unseen | counterpart)": [
+   0.28,
+   0.16
+  ],
+  "restore layer 0 output at leading digits": 1.0,
+  "same, but keep the unseen token embedding": 1.0,
+  "restore L1H0 at query": 0.272,
+  "restore L1H1 at query": 0.672,
+  "restore L1H2 at query": 0.704,
+  "restore L1H3 at query": 0.61,
+  "restore all L1 heads at query": 1.0
+ }
+}

@@ -1,0 +1,101 @@
+{
+ "8": {
+  "clean_stops": 1.0,
+  "corrupted_continues": 0.6260000467300415,
+  "n_valid": 313,
+  "clean_gets_corrupted (stops -> continues)": {
+   "L1H0": 0.07667731493711472,
+   "L1H1": 0.0,
+   "L1H2": 0.0,
+   "L1H3": 0.00319488812237978,
+   "all L1 heads": 0.0670926496386528,
+   "layer 0 output at query": 0.4504792392253876,
+   "L0H0 at query": 0.0,
+   "L0H1 at query": 0.0,
+   "L0H2 at query": 0.0,
+   "L0H3 at query": 0.00319488812237978,
+   "layer 0 output at a's top digit": 0.12460064142942429,
+   "layer 0 output at all of a's digits": 0.11501597613096237
+  },
+  "corrupted_gets_clean (continues -> stops)": {
+   "L1H0": 0.022364217787981033,
+   "L1H1": 0.3929712474346161,
+   "L1H2": 0.08626198023557663,
+   "L1H3": 0.0702875405550003,
+   "all L1 heads": 0.4057508111000061,
+   "layer 0 output at query": 0.8594249486923218,
+   "L0H0 at query": 0.0,
+   "L0H1 at query": 0.00958466436713934,
+   "L0H2 at query": 0.12140575051307678,
+   "L0H3 at query": 0.12140575051307678,
+   "layer 0 output at a's top digit": 0.5463258624076843,
+   "layer 0 output at all of a's digits": 0.5367411971092224
+  }
+ },
+ "10": {
+  "clean_stops": 1.0,
+  "corrupted_continues": 1.0,
+  "n_valid": 500,
+  "clean_gets_corrupted (stops -> continues)": {
+   "L1H0": 0.04399999976158142,
+   "L1H1": 0.004000000189989805,
+   "L1H2": 0.0,
+   "L1H3": 0.0020000000949949026,
+   "all L1 heads": 0.10999999940395355,
+   "layer 0 output at query": 0.9399999976158142,
+   "L0H0 at query": 0.0,
+   "L0H1 at query": 0.0,
+   "L0H2 at query": 0.0,
+   "L0H3 at query": 0.0020000000949949026,
+   "layer 0 output at a's top digit": 0.1940000057220459,
+   "layer 0 output at all of a's digits": 0.19599999487400055
+  },
+  "corrupted_gets_clean (continues -> stops)": {
+   "L1H0": 0.009999999776482582,
+   "L1H1": 0.0,
+   "L1H2": 0.0,
+   "L1H3": 0.0,
+   "all L1 heads": 0.041999999433755875,
+   "layer 0 output at query": 0.7879999876022339,
+   "L0H0 at query": 0.0,
+   "L0H1 at query": 0.0,
+   "L0H2 at query": 0.0,
+   "L0H3 at query": 0.0,
+   "layer 0 output at a's top digit": 0.06400000303983688,
+   "layer 0 output at all of a's digits": 0.06400000303983688
+  }
+ },
+ "16": {
+  "clean_stops": 1.0,
+  "corrupted_continues": 0.9700000286102295,
+  "n_valid": 485,
+  "clean_gets_corrupted (stops -> continues)": {
+   "L1H0": 0.008247422985732555,
+   "L1H1": 0.0,
+   "L1H2": 0.0,
+   "L1H3": 0.008247422985732555,
+   "all L1 heads": 0.004123711492866278,
+   "layer 0 output at query": 0.14226804673671722,
+   "L0H0 at query": 0.0,
+   "L0H1 at query": 0.0,
+   "L0H2 at query": 0.0,
+   "L0H3 at query": 0.002061855746433139,
+   "layer 0 output at a's top digit": 0.014432989992201328,
+   "layer 0 output at all of a's digits": 0.014432989992201328
+  },
+  "corrupted_gets_clean (continues -> stops)": {
+   "L1H0": 0.6639175415039062,
+   "L1H1": 0.41443300247192383,
+   "L1H2": 0.014432989992201328,
+   "L1H3": 0.0,
+   "all L1 heads": 0.7711340188980103,
+   "layer 0 output at query": 0.9814432859420776,
+   "L0H0 at query": 0.0,
+   "L0H1 at query": 0.002061855746433139,
+   "L0H2 at query": 0.006185567006468773,
+   "L0H3 at query": 0.08453608304262161,
+   "layer 0 output at a's top digit": 0.853608250617981,
+   "layer 0 output at all of a's digits": 0.8474226593971252
+  }
+ }
+}

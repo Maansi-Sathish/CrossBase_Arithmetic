@@ -1,0 +1,39 @@
+A ctx base 2 {'rule2 (0)': 0.8366666666666667, 'rule>=3 (2)': 0.0}
+A ctx base 3 {'rule2 (0)': 0.01, 'rule>=3 (2)': 0.09583333333333334}
+A ctx base 4 {'rule2 (0)': 0.0033333333333333335, 'rule>=3 (2)': 0.10916666666666666}
+A ctx base 5 {'rule2 (0)': 0.0, 'rule>=3 (2)': 0.175}
+A ctx base 6 {'rule2 (0)': 0.0, 'rule>=3 (2)': 0.30916666666666665}
+A ctx base 7 {'rule2 (0)': 0.0, 'rule>=3 (2)': 0.3233333333333333}
+A ctx base 8 {'rule2 (0)': 0.0, 'rule>=3 (2)': 0.33}
+B digit 2 {0.02: 0.76, 0.05: 0.64, 0.1: 0.45, 0.2: 0.26, 0.4: 0.11, 0.7: 0.05, 1.0: 0.05}
+B digit 3 {0.02: 0.77, 0.05: 0.67, 0.1: 0.52, 0.2: 0.28, 0.4: 0.11, 0.7: 0.07, 1.0: 0.07}
+B digit 4 {0.02: 0.83, 0.05: 0.68, 0.1: 0.58, 0.2: 0.32, 0.4: 0.14, 0.7: 0.11, 1.0: 0.14}
+B digit 5 {0.02: 0.78, 0.05: 0.67, 0.1: 0.48, 0.2: 0.3, 0.4: 0.12, 0.7: 0.1, 1.0: 0.13}
+B digit 6 {0.02: 0.82, 0.05: 0.68, 0.1: 0.57, 0.2: 0.33, 0.4: 0.16, 0.7: 0.12, 1.0: 0.17}
+B digit 7 {0.02: 0.79, 0.05: 0.64, 0.1: 0.46, 0.2: 0.27, 0.4: 0.09, 0.7: 0.07, 1.0: 0.08}
+C test-line digit 2 {'rule2 (0)': 0.6225, 'rule>=3 (2)': 0.0}
+C test-line digit 3 {'rule2 (0)': 0.6608333333333334, 'rule>=3 (2)': 0.0}
+C test-line digit 7 {'rule2 (0)': 0.625, 'rule>=3 (2)': 0.0}
+C test-line digit 5 {'rule2 (0)': 0.7025, 'rule>=3 (2)': 0.0}
+E binary ctx numbers short (<8) {'rule2 (0)': 0.7075, 'rule>=3 (2)': 0.0}
+E binary ctx numbers mid (<64) {'rule2 (0)': 0.7858333333333334, 'rule>=3 (2)': 0.0}
+E binary ctx numbers full {'rule2 (0)': 0.8566666666666667, 'rule>=3 (2)': 0.0}
+E {'rule2 (0)': 0.6658333333333334, 'rule>=3 (2)': 0.0}
+D ctx base 2 L0H1 per token x1000 [0.9, 0.9, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0] test-line mass by head [0.46, 0.68, 0.65, 0.68]
+D ctx base 3 L0H1 per token x1000 [0.4, 0.4, 24.0, 0.0, 0.0, 0.0, 0.0, 0.0] test-line mass by head [0.44, 0.19, 0.61, 0.63]
+D ctx base 4 L0H1 per token x1000 [0.3, 0.3, 22.2, 22.0, 0.0, 0.0, 0.0, 0.0] test-line mass by head [0.45, 0.12, 0.6, 0.62]
+D ctx base 5 L0H1 per token x1000 [0.2, 0.2, 26.2, 23.6, 19.6, 0.0, 0.0, 0.0] test-line mass by head [0.45, 0.1, 0.59, 0.62]
+D ctx base 6 L0H1 per token x1000 [0.2, 0.2, 23.9, 21.2, 19.3, 26.9, 0.0, 0.0] test-line mass by head [0.45, 0.08, 0.58, 0.62]
+D ctx base 7 L0H1 per token x1000 [0.2, 0.2, 23.0, 24.5, 20.7, 25.4, 20.2, 0.0] test-line mass by head [0.46, 0.07, 0.59, 0.62]
+D ctx base 8 L0H1 per token x1000 [0.2, 0.2, 27.4, 25.1, 19.6, 25.6, 21.7, 28.8] test-line mass by head [0.46, 0.07, 0.59, 0.62]
+F alpha 0 {'rule8': 1.0, 'rule10': 0.0, 'rule16': 0.0}
+F alpha 0.25 {'rule8': 1.0, 'rule10': 0.0, 'rule16': 0.0}
+F alpha 0.5 {'rule8': 0.97, 'rule10': 0.03, 'rule16': 0.0}
+F alpha 0.6 {'rule8': 0.89, 'rule10': 0.09, 'rule16': 0.01}
+F alpha 0.7 {'rule8': 0.79, 'rule10': 0.14, 'rule16': 0.06}
+F alpha 0.8 {'rule8': 0.63, 'rule10': 0.2, 'rule16': 0.12}
+F alpha 0.9 {'rule8': 0.46, 'rule10': 0.24, 'rule16': 0.2}
+F alpha 1 {'rule8': 0.29, 'rule10': 0.26, 'rule16': 0.29}
+F alpha 1.25 {'rule8': 0.12, 'rule10': 0.21, 'rule16': 0.35}
+F alpha 1.5 {'rule8': 0.04, 'rule10': 0.17, 'rule16': 0.27}
+DONE

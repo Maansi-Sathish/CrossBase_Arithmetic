@@ -1,0 +1,364 @@
+<meta charset="utf-8">
+<title>Base Adder Trace</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+/* Layout: one column. Inputs, the answer, the prompt with highlights, then a single step at a time with Back / Next. */
+:root {
+  --bg: #f4f6f8; --panel: #ffffff; --ink: #161a20; --muted: #5b6472; --line: #dce1e8; --soft: #eef1f5;
+  --good: #1b8a5a; --bad: #c4423a; --mark: rgba(43, 120, 214, 0.18); --heat: 43, 120, 214;
+  --b2: #2a78d6; --b8: #d9592a; --b10: #178f65; --b16: #b97c00;
+  --font-body: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --base: var(--b10);
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #101317; --panel: #171b21; --ink: #e6e9ee; --muted: #9aa3b0; --line: #2a3038; --soft: #1e232a;
+  --good: #3fbf86; --bad: #ec6a60; --mark: rgba(92, 160, 245, 0.22); --heat: 92, 160, 245;
+  --b2: #5b9ef0; --b8: #f08a5d; --b10: #3cc795; --b16: #e8b23a; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #101317; --panel: #171b21; --ink: #e6e9ee; --muted: #9aa3b0; --line: #2a3038; --soft: #1e232a;
+  --good: #3fbf86; --bad: #ec6a60; --mark: rgba(92, 160, 245, 0.22); --heat: 92, 160, 245;
+  --b2: #5b9ef0; --b8: #f08a5d; --b10: #3cc795; --b16: #e8b23a; color-scheme: dark }
+body { background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 16px; line-height: 1.55; }
+.wrap { max-width: 760px; margin: 0 auto; padding-block: 28px 64px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: grid; gap: 20px; }
+h1 { font-size: 1.7rem; line-height: 1.15; margin: 0; letter-spacing: -0.01em; }
+h2 { font-size: 1.25rem; line-height: 1.3; margin: 0; text-wrap: balance; }
+p { margin: 0; }
+.lede { color: var(--muted); }
+.mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+.muted { color: var(--muted); }
+.eyebrow { font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+.panel { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 18px; display: grid; gap: 14px; min-width: 0; }
+.inputs { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; font-size: 1.3rem; }
+.inputs input { font: 600 1.3rem var(--font-mono); width: 4.4em; padding: 6px 8px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); color: var(--ink); text-align: center; }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 9px; overflow: hidden; }
+.seg button { font: 600 0.95rem var(--font-body); padding: 8px 12px; border: 0; background: var(--panel); color: var(--muted); cursor: pointer; border-right: 1px solid var(--line); }
+.seg button:last-child { border-right: 0; }
+.seg button[aria-pressed="true"] { background: var(--base); color: #fff; }
+.btn { font: 600 0.95rem var(--font-body); padding: 9px 16px; border-radius: 9px; border: 1px solid var(--line); background: var(--panel); color: var(--ink); cursor: pointer; }
+.btn.primary { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.btn:disabled { opacity: 0.4; cursor: default; }
+button:focus-visible, input:focus-visible, select:focus-visible, summary:focus-visible { outline: 2px solid var(--base); outline-offset: 2px; }
+details > summary { cursor: pointer; color: var(--muted); font-size: 0.9rem; font-weight: 600; }
+.opts { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; padding-top: 10px; font-size: 0.92rem; }
+select { font: 500 0.92rem var(--font-body); padding: 6px 8px; border: 1px solid var(--line); border-radius: 7px; background: var(--bg); color: var(--ink); }
+.err { color: var(--bad); font-size: 0.92rem; }
+.answer { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: baseline; font-size: 1.15rem; }
+.answer .big { font: 600 1.7rem var(--font-mono); color: var(--base); letter-spacing: 0.05em; }
+.pill { display: inline-block; font-size: 0.82rem; font-weight: 600; padding: 2px 10px; border-radius: 99px; border: 1px solid currentColor; }
+.pill.good { color: var(--good); } .pill.bad { color: var(--bad); }
+.strip { overflow-x: auto; display: grid; gap: 3px; }
+.row { display: flex; gap: 2px; align-items: center; }
+.row .tag { font-size: 0.7rem; color: var(--muted); width: 4.8em; flex: none; }
+.tok { font: 500 0.95rem var(--font-mono); min-width: 1.4em; text-align: center; padding: 2px 2px; border-radius: 5px; }
+.tok.dim { color: var(--muted); opacity: 0.55; }
+.tok.ans { color: var(--base); font-weight: 600; }
+.tok.mark { background: var(--mark); color: var(--ink); opacity: 1; }
+.tok.read { background: var(--base); color: #fff; opacity: 1; font-weight: 600; }
+.tok.here { outline: 2px dashed var(--base); outline-offset: -1px; }
+.tok.small { font-size: 0.7rem; padding: 3px 3px; }
+.key { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 0.82rem; color: var(--muted); }
+.key span::before { content: ""; display: inline-block; width: 0.9em; height: 0.9em; border-radius: 3px; margin-right: 5px; vertical-align: -0.1em; background: var(--sw); outline: var(--ol, none); outline-offset: -1px; }
+.stepper { display: flex; gap: 6px; flex-wrap: wrap; }
+.stepper button { font: 600 0.85rem var(--font-body); padding: 6px 11px; border-radius: 99px; border: 1px solid var(--line); background: var(--panel); color: var(--muted); cursor: pointer; }
+.stepper button[aria-current="step"] { background: var(--base); border-color: var(--base); color: #fff; }
+.say { font-size: 1.12rem; }
+.flow { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font: 600 1.05rem var(--font-mono); }
+.flow .box { background: var(--soft); border-radius: 8px; padding: 6px 10px; }
+.flow .arrow { color: var(--muted); font-weight: 400; }
+.meter { display: grid; gap: 6px; }
+.meter .line { display: grid; grid-template-columns: 6.5em 1fr 3.4em; gap: 10px; align-items: center; font-size: 0.92rem; }
+.meter .track { height: 10px; background: var(--soft); border-radius: 5px; overflow: hidden; }
+.meter .fill { height: 100%; background: var(--line); }
+.meter .line.top .fill { background: var(--base); }
+.meter .line.top { font-weight: 600; }
+.nav { display: flex; justify-content: space-between; gap: 10px; }
+.tbl { overflow-x: auto; }
+table { border-collapse: collapse; font-size: 0.88rem; width: 100%; }
+th { text-align: left; font-weight: 600; color: var(--muted); font-size: 0.72rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 4px 10px 4px 0; border-bottom: 1px solid var(--line); }
+td { padding: 4px 10px 4px 0; border-bottom: 1px solid var(--soft); font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+.r { text-align: right; }
+.detail { display: grid; gap: 12px; padding-top: 10px; }
+.note { font-size: 0.88rem; color: var(--muted); }
+.sec { display: grid; gap: 8px; border-top: 1px solid var(--line); padding-top: 12px; min-width: 0; }
+.sec h3 { font-size: 1rem; margin: 0; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { font: 500 0.82rem var(--font-mono); padding: 4px 10px; border-radius: 99px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); cursor: pointer; }
+.chip[aria-pressed="true"] { border-color: var(--base); box-shadow: 0 0 0 1px var(--base); }
+.bar { height: 8px; border-radius: 3px; background: var(--base); }
+tr.hl td { font-weight: 600; }
+.eq { font-family: var(--font-mono); background: var(--soft); border-radius: 7px; padding: 6px 10px; overflow-x: auto; }
+.bars { display: grid; grid-template-columns: repeat(var(--n), minmax(12px, 1fr)); gap: 3px; align-items: end; height: 84px; }
+.bars div { display: grid; align-items: end; height: 100%; }
+.bars span { display: block; background: var(--line); border-radius: 2px 2px 0 0; min-height: 2px; }
+.bars span.win { background: var(--base); }
+.barlabels { display: grid; grid-template-columns: repeat(var(--n), minmax(12px, 1fr)); gap: 3px; font: 500 0.72rem var(--font-mono); text-align: center; color: var(--muted); }
+footer { font-size: 0.84rem; color: var(--muted); display: grid; gap: 6px; }
+</style>
+
+<div class="wrap">
+  <header style="display:grid;gap:6px">
+    <span class="eyebrow">arithmetic-model-L2_H4_D64, running in your browser</span>
+    <h1>Base Adder Trace</h1>
+    <p class="lede">Type two numbers and pick a base. The trained model adds them, and you can step through how it does it.</p>
+  </header>
+
+  <form class="panel" id="form" autocomplete="off">
+    <div class="inputs">
+      <input id="a" type="number" min="0" max="999" value="8" aria-label="First number">
+      <span>+</span>
+      <input id="b" type="number" min="0" max="999" value="7" aria-label="Second number">
+      <span class="muted" style="font-size:1rem">in base</span>
+      <div class="seg" id="baseSeg" role="group" aria-label="Base">
+        <button type="button" data-b="2" aria-pressed="false">2</button><button type="button" data-b="8" aria-pressed="false">8</button><button type="button" data-b="10" aria-pressed="true">10</button><button type="button" data-b="16" aria-pressed="false">16</button>
+      </div>
+      <button class="btn primary" type="submit">Add</button>
+    </div>
+    <p class="err" id="err" hidden></p>
+    <details>
+      <summary>More options</summary>
+      <div class="opts">
+        <button class="btn" type="button" id="shuffle">Use different examples</button>
+        <label for="ctxBase">Write the examples in</label>
+        <select id="ctxBase"><option value="same">the same base</option><option value="2">base 2</option><option value="8">base 8</option><option value="10">base 10</option><option value="16">base 16</option></select>
+      </div>
+    </details>
+  </form>
+
+  <section class="panel" aria-label="Answer">
+    <div class="answer" id="answer"></div>
+  </section>
+
+  <section class="panel" aria-label="Prompt">
+    <div style="display:grid;gap:4px"><span class="eyebrow">What the model sees</span>
+    <p class="note">Five solved examples, then your problem. Answers are written backwards (ones digit first).</p></div>
+    <div class="strip" id="strip"></div>
+    <div class="key" id="key"></div>
+  </section>
+
+  <section class="panel" aria-label="Steps">
+    <div class="stepper" id="stepper" role="tablist" aria-label="Steps"></div>
+    <div id="step" style="display:grid;gap:14px"></div>
+    <div class="nav"><button class="btn" type="button" id="prev">← Back</button><button class="btn primary" type="button" id="next">Next →</button></div>
+  </section>
+
+  <footer>
+    <p>Every number comes from running the trained weights in your browser. The carry threshold (about half the base) and the stop positions are rules from the study's report: they describe the model well, but they are summaries, not code inside it.</p>
+    <details><summary>Glossary</summary><div class="detail note">
+      <p><strong>Token:</strong> one character of the prompt (a digit, +, = or a line break). The model reads tokens left to right and predicts the next one.</p>
+      <p><strong>Layer:</strong> this model has 2. Each layer has 4 attention heads and an MLP of 256 neurons.</p>
+      <p><strong>Attention head (LxHy):</strong> head y in layer x. From one token it looks back at earlier tokens, weighting them by attention (the weights add up to 1).</p>
+      <p><strong>Neuron:</strong> one unit of an MLP layer. It takes a weighted sum of its inputs (its input) and applies GELU, a smooth version of max(0, x) (its output).</p>
+      <p><strong>Logit:</strong> the model's score for each possible next token. The highest one is what it writes.</p>
+      <p><strong>Vote:</strong> how much one neuron raises the written digit's logit above the average digit's (direct logit attribution).</p>
+      <p><strong>Column k:</strong> answer digit k, counting from the ones digit (column 0).</p>
+    </div></details>
+    <p>Very small numbers, like 0 + 0 or 8 + 7 in binary, are rare in training, and the model sometimes gets them wrong. Those are the model's own mistakes.</p>
+  </footer>
+</div>
+
+<script>/*__WEIGHTS__*/</script>
+<script>
+/*__ENGINE__*/
+// ---------- simple view ----------
+const showTok = t => t === EOS ? "end" : t === NL ? "newline" : ITOS[t];
+function roleOf(run, p) { if (p < run.start) return "a token in the examples"; if (p < run.plus) return `the first number's digit for column ${run.plus - 1 - p}`; if (p === run.plus) return "the + sign"; if (p < run.eq) return `the second number's digit for column ${run.eq - 1 - p}`; if (p === run.eq) return "the = sign"; return `answer digit ${p - run.eq - 1}`; }
+const $ = id => document.getElementById(id);
+const st = { base: 10, seed: 1, run: null, i: 0, head: null };
+const f1 = x => (x < 0 ? "−" : "") + Math.abs(x).toFixed(1);
+const f2 = x => (x < 0 ? "−" : "") + Math.abs(x).toFixed(2);
+const sg = x => (x >= 0 ? "+" : "−") + Math.abs(x).toFixed(1);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const isDigitTok = (t, base) => { const c = ITOS[t]; const v = DIG.indexOf(c); return c && c.length === 1 && v >= 0 && v < base; };
+
+// Build the list of steps the viewer pages through.
+function buildSteps(run) {
+  const out = [{ kind: "base", label: "Find the base" }];
+  run.steps.forEach(s => { if (isDigitTok(s.token, run.base)) out.push({ kind: "col", s, label: `Column ${s.k}` }); });
+  const last = run.steps[run.steps.length - 1];
+  out.push({ kind: "stop", s: last, label: "Stop" });
+  return out;
+}
+
+// Positions of each number's digit for column k (null if the number has no digit there), and the attention layer 1 heads put on them.
+function colPos(run, k) {
+  const pa = run.plus - 1 - k, pb = run.eq - 1 - k;
+  return { a: pa >= run.start ? pa : null, b: pb > run.plus ? pb : null };
+}
+function attnOn(s, p) { if (p === null) return null; let v = 0; for (const h of [0, 1, 3]) v = Math.max(v, s.cap.pattern1[h][p]); return v; }
+function reads(run, s) { const c = colPos(run, s.k); return { a: c.a === null ? null : { p: c.a, v: attnOn(s, c.a) }, b: c.b === null ? null : { p: c.b, v: attnOn(s, c.b) } }; }
+
+function tierInfo(run) {
+  const row = run.first.pattern0[1];
+  const cells = TIERS.map(([lab, set]) => { let n = 0, att = 0; for (let p = 0; p < run.eq; p++) if (set.includes(run.prompt[p])) { n++; att += row[p]; } return { lab, set, n, att }; });
+  let top = 0; cells.forEach((c, i) => { if (c.att > cells[top].att) top = i; });
+  return { cells, top };
+}
+
+function renderAnswer(run) {
+  const out = run.steps.filter(s => isDigitTok(s.token, run.base)).map(s => ITOS[s.token]).join("");
+  const last = run.steps[run.steps.length - 1], stopped = last.token === EOS;
+  const ok = out === run.truth && stopped && run.steps.every(s => s.token === EOS || isDigitTok(s.token, run.base));
+  const val = out ? parseInt(rev(out), run.base) : null;
+  const conv = run.base === 10 ? "" : ` <span class="muted">(${run.sa} + ${run.sb} in ${BASE_NAME[run.base]})</span>`;
+  $("answer").innerHTML = `<span>${run.a} + ${run.b}${conv} →</span> <span class="big">${esc(out) || "—"}</span>
+    <span class="muted">read backwards: <span class="mono">${out ? esc(rev(out)) : "—"}</span>${val !== null && run.base !== 10 ? ` = ${val}` : ""}</span>
+    <span class="pill ${ok ? "good" : "bad"}">${ok ? "Correct" : `Wrong: should be ${run.truth} then stop`}</span>`;
+}
+
+function renderStrip(run, step) {
+  const marks = new Map(); let key = [], here = null, heat = null;
+  if (step.kind === "base") {
+    const { cells, top } = tierInfo(run);
+    for (let p = 0; p < run.eq; p++) if (cells[top].set.includes(run.prompt[p])) marks.set(p, "mark");
+    here = run.eq;
+    if (st.head === "L0H1") heat = run.first.pattern0[1];
+    key = [`<span style="--sw:var(--mark)">digits of the highest tier (${cells[top].lab})</span>`];
+  } else if (step.kind === "col") {
+    const cur = colPos(run, step.s.k);
+    if (step.s.k > 0) { const pr = colPos(run, step.s.k - 1); for (const p of [pr.a, pr.b]) if (p !== null) marks.set(p, "mark"); }
+    for (const p of [cur.a, cur.b]) if (p !== null) marks.set(p, "read");
+    here = step.s.q;
+    if (typeof st.head === "number") heat = step.s.cap.pattern1[st.head];
+    key = [`<span style="--sw:var(--base)">this column's digits</span>`];
+    if (step.s.k > 0) key.push(`<span style="--sw:var(--mark)">last column's digits (re-read for the carry)</span>`);
+  } else { here = step.s.q; }
+  key.push(`<span style="--sw:transparent;--ol:2px dashed var(--base)">where the model is looking from</span>`);
+  if (heat) key.push(`<span style="--sw:rgba(var(--heat),.7)">attention of ${step.kind === "base" ? "L0H1" : "L1H" + st.head} (darker = more)</span>`);
+  const upto = step.kind === "base" ? run.eq : step.s.q + 1;
+  let html = "", line = [], n = 0;
+  const flush = tag => { html += `<div class="row"><span class="tag">${tag}</span>${line.join("")}</div>`; line = []; };
+  for (let p = 0; p < run.ids.length; p++) {
+    const t = run.ids[p];
+    if (t === NL && p < run.start) { flush(`example ${++n}`); continue; }
+    if (p > upto) break;
+    const h = heat && p < heat.length ? Math.min(1, heat[p] * 1.6) : 0;
+    const cls = ["tok", p < run.start && !marks.has(p) && !h ? "dim" : "", p > run.eq ? "ans" : "", heat ? "" : (marks.get(p) || ""), p === here ? "here" : "", (t === EOS || t === NL) ? "small" : ""].join(" ");
+    const tip = heat && p < heat.length ? ` title="attention ${heat[p].toFixed(3)}"` : "";
+    line.push(`<span class="${cls}"${tip} style="${h ? `background:rgba(var(--heat),${h.toFixed(3)})` : ""}">${t === EOS ? "end" : t === NL ? "↵" : esc(ITOS[t])}</span>`);
+  }
+  flush("your line");
+  $("strip").innerHTML = html;
+  $("key").innerHTML = key.join("");
+}
+
+const sec = (title, explain, body) => `<section class="sec"><h3>${title}</h3><p class="note">${explain}</p>${body}</section>`;
+
+function stepBase(run) {
+  const { cells, top } = tierInfo(run), row = run.first.pattern0[1];
+  const rows = cells.map((c, i) => {
+    let nC = 0, aC = 0, nT = 0, aT = 0;
+    for (let p = 0; p < run.eq; p++) if (c.set.includes(run.prompt[p])) { if (p < run.start) { nC++; aC += row[p]; } else { nT++; aT += row[p]; } }
+    return `<tr${i === top ? ' class="hl"' : ""}><td>${c.lab}</td><td class="r">${["−4.4", "0.7", "6.0", "8.6"][i]}</td><td class="r">${nC}</td><td class="r">${nT}</td><td class="r">${(100 * c.att).toFixed(1)}%</td><td style="width:28%"><div class="bar" style="width:${(100 * c.att).toFixed(0)}%"></div></td></tr>`;
+  }).join("");
+  const words = { 0: "only 0s and 1s", 1: "digits up to 7", 2: "8s or 9s", 3: "letters A–F" }[top];
+  const d0a = run.digOf(run.sa, 0) ?? 0, d0b = run.digOf(run.sb, 0) ?? 0, first = run.steps[0].token;
+  const follows = [2, 8, 10, 16].filter(B => VOC[DIG[(d0a + d0b) % B]] === first && DIG.indexOf(ITOS[first]) < B);
+  const bin = run.base === 2 || run.ctxBase === 2 ? `<p class="note">Binary is the exception. With no higher tier on the page, L0H1 looks mostly at your line's own 0s and 1s, and the binary rule is carried by those digits together with how far into the prompt they sit.</p>` : "";
+  return `<h2>The page has ${words}, so the model treats it as ${TIER_BASE[top]}.</h2>
+  ${sec("1. Attention head L0H1 ranks the digits", `An <strong>attention head</strong> lets one token look back at earlier tokens and copy information from them. L0H1 (layer 0, head 1) looks from the = sign. Its score for a digit depends only on the digit's tier, and attention grows like e<sup>score</sup>, so the highest tier present takes almost all of it. One 8 counts about e<sup>6.0−0.7</sup> ≈ 200 times as much as one 5.`,
+    `<div class="tbl"><table><thead><tr><th>Tier</th><th class="r">Score</th><th class="r">In examples</th><th class="r">In your line</th><th class="r">Attention</th><th></th></tr></thead><tbody>${rows}</tbody></table></div>
+     <p class="note"><button type="button" class="chip" data-head="L0H1" aria-pressed="${st.head === "L0H1"}">Show L0H1's attention on the prompt</button></p>`)}
+  ${sec("2. What it copies becomes the base offset", `The information L0H1 copies is written onto your line. Layer 1 turns it into one fixed offset added to the input of every layer 1 neuron. Changing the base changes only this offset; the digit codes stay the same.`,
+    `<p>Check: the first digit the model wrote, <span class="mono">${showTok(first)}</span>, ${follows.length ? "follows the " + follows.map(B => BASE_NAME[B]).join(" and ") + " rule" + (follows.length > 1 ? "s (they agree on this sum)" : "") : "follows none of the four bases' rules"} for ${DIG[d0a]} + ${DIG[d0b]}.</p>`)}
+  ${bin}`;
+}
+
+function digitBars(run, s) {
+  const toks = [...DIG.slice(0, run.base)].map(c => VOC[c]).concat([EOS, NL]);
+  const vals = toks.map(t => s.logits[t]), mn = Math.min(...vals), mx = Math.max(...vals);
+  const bars = toks.map((t, i) => `<div title="${showTok(t)}: ${f1(vals[i])}"><span class="${t === s.token ? "win" : ""}" style="height:${(6 + 94 * (vals[i] - mn) / (mx - mn || 1)).toFixed(1)}%"></span></div>`).join("");
+  const labs = toks.map(t => `<span>${t === EOS ? "end" : t === NL ? "↵" : ITOS[t]}</span>`).join("");
+  return `<div class="bars" style="--n:${toks.length}">${bars}</div><div class="barlabels" style="--n:${toks.length}">${labs}</div>`;
+}
+
+function stepCol(run, s) {
+  const base = run.base, k = s.k, ak = run.digOf(run.sa, k), bk = run.digOf(run.sb, k);
+  const A = ak ?? 0, B = bk ?? 0, out = DIG.indexOf(ITOS[s.token]);
+  const cin = k === 0 ? 0 : out === (A + B) % base ? 0 : out === (A + B + 1) % base ? 1 : null;
+  const sum = cin === null ? null : A + B + cin, cout = sum === null ? null : (sum >= base ? 1 : 0);
+  // 1. fetch
+  const chips = [0, 1, 2, 3].map(h => { const row = s.cap.pattern1[h]; let bp = 0; for (let p = 1; p < row.length; p++) if (row[p] > row[bp]) bp = p;
+    const c = run.ids[bp] === NL ? "↵" : ITOS[run.ids[bp]];
+    return `<button type="button" class="chip" data-head="${h}" aria-pressed="${st.head === h}" title="${esc(roleOf(run, bp))}">L1H${h} → <strong>${esc(c)}</strong> ${row[bp].toFixed(2)}</button>`; }).join("");
+  const need = (ak === null && bk === null) ? "Both numbers have run out, so the reading heads rest on + or =, and both digits count as 0."
+    : `This column needs <span class="mono">${ak === null ? "0 (no digit)" : DIG[ak]}</span> from the first number and <span class="mono">${bk === null ? "0 (no digit)" : DIG[bk]}</span> from the second.`;
+  // 2. carry
+  let carry = `<p>Column 0 has no carry coming in.</p>`;
+  if (k > 0) {
+    const ap = run.digOf(run.sa, k - 1) ?? 0, bp = run.digOf(run.sb, k - 1) ?? 0, w = DIG.indexOf(ITOS[run.steps[k - 1].token]);
+    const v = ap + bp - w, rule = v > THRESH[base] ? 1 : 0;
+    const ev = s.logits[VOC[DIG[(A + B + 1) % base]]] - s.logits[VOC[DIG[(A + B) % base]]];
+    carry = (base === 2 && k === 1
+      ? `<div class="eq">${DIG[ap]} AND ${DIG[bp]} = ${ap && bp ? 1 : 0} → carry ${ap && bp ? 1 : 0}</div><p class="note">In binary's column 1 the carry is just "were both previous digits 1?". The subtraction rule takes over from column 2.</p>`
+      : `<div class="eq">${DIG[ap]} + ${DIG[bp]} − ${DIG[w]} = ${v} ${v > THRESH[base] ? "&gt;" : "&lt;"} ${THRESH[base]} → carry ${rule}</div>`)
+      + `<p class="note">Model's evidence: logit(${DIG[(A + B + 1) % base]}, the answer with a carry) − logit(${DIG[(A + B) % base]}, without) = <strong>${sg(ev)}</strong>, so it ${ev > 0 ? "carried" : "did not carry"}.</p>`;
+  }
+  const flow = sum === null
+    ? `<div class="flow"><span class="box">${DIG[A]} + ${DIG[B]} + carry</span><span class="arrow">→</span><span class="box">wrote ${esc(ITOS[s.token])}</span></div><p style="color:var(--bad)">That digit is wrong for this sum.</p>`
+    : `<div class="flow"><span class="box">${DIG[A]} + ${DIG[B]}${k > 0 ? ` + ${cin}` : ""} = ${sum}</span><span class="arrow">→</span><span class="box" style="color:var(--base)">write ${DIG[sum % base]}</span>${cout ? `<span class="arrow">and</span><span class="box">carry 1</span>` : ""}</div>`;
+  // 3. neurons
+  const t = s.token, digs = [...DIG.slice(0, base)].map(c => VOC[c]);
+  const rel = arr => arr[t] - digs.reduce((x, d) => x + arr[d], 0) / digs.length;
+  const pushes = []; let total = 0, active = 0;
+  for (let n = 0; n < NM; n++) { const v = s.cap.post1[n] * rel(P[n]) / s.scale; total += v; if (s.cap.post1[n] > 0.1) active++; pushes.push([n, v]); }
+  pushes.sort((x, y) => y[1] - x[1]);
+  const top = pushes.slice(0, 6), mxv = Math.max(...top.map(x => x[1]), 1e-9), topSum = top.reduce((x, y) => x + y[1], 0);
+  const bias = rel(PB) / s.scale;
+  let heads = 0; for (let h = 0; h < NH; h++) { const v = new Float64Array(D); for (let i = 0; i < DH; i++) for (let d = 0; d < D; d++) v[d] += s.cap.z1[h * DH + i] * Wp1[(h * DH + i) * D + d]; heads += rel(Array.from({ length: NV }, (_, tt) => centDotU(v, tt))) / s.scale; }
+  const before = rel(Array.from({ length: NV }, (_, tt) => centDotU(s.cap.resid_pre1, tt))) / s.scale;
+  const nrows = top.map(([n, v]) => `<tr><td>${n}</td><td class="r">${f2(s.cap.pre1[n])}</td><td class="r">${f2(s.cap.post1[n])}</td><td class="r">${sg(v)}</td><td style="width:30%"><div class="bar" style="width:${Math.max(2, 100 * v / mxv).toFixed(0)}%"></div></td></tr>`).join("");
+  return `<h2>Column ${k}${k === 0 ? " (the ones digit)" : ""}: the model writes <span class="mono" style="color:var(--base)">${esc(ITOS[t])}</span>.</h2>${flow}
+  ${sec("1. Fetch the digits", `Layer 1's attention heads look back from the query token and copy this column's digits. Each chip shows the token a head attends to most and how much (attention adds up to 1). Click a chip to shade that head's attention on the prompt. ${need}`, `<div class="chips">${chips}</div>`)}
+  ${sec("2. Carry in", k === 0 ? "" : `The model decides the carry by comparing the last column's two digits with the digit it just wrote: <span class="mono">a + b − written</span> is about 0 without a carry and about the base with one. The cut-off is about half the base.`, carry)}
+  ${sec("3. Neurons vote", `Each of layer 1's 256 <strong>neurons</strong> computes GELU(input), where GELU is a smooth max(0, x) and the input is roughly code(a) + code(b) + carry + base offset. ${active} neurons are clearly on here. A neuron's <em>vote</em> is how much its output raises the logit of <span class="mono">${esc(ITOS[t])}</span> above the average ${BASE_NAME[base]} digit. The six biggest:`,
+    `<div class="tbl"><table><thead><tr><th>Neuron</th><th class="r">Input</th><th class="r">Output</th><th class="r">Vote</th><th></th></tr></thead><tbody>${nrows}</tbody></table></div>
+     <p class="note">A vote is output × the neuron's output weights, so a small negative output can still vote for a digit. These six: ${sg(topSum)}. All 256 neurons: ${sg(total)} (some vote against). Also adding to the logit: the layer's built-in bias ${sg(bias)}, layer 1's heads ${sg(heads)}, everything before layer 1 ${sg(before)}.</p>`)}
+  ${sec("4. Pick the highest score", `The votes add up to a <strong>logit</strong> (score) for every possible next token. The highest one is written.`,
+    `${digitBars(run, s)}<p class="note">Winner: <span class="mono">${esc(ITOS[t])}</span> with ${f1(s.logits[t])}.</p>`)}`;
+}
+
+function stepStop(run, s) {
+  const stopped = s.token === EOS, W = WINDOW[run.base], inside = s.q >= W[0] && s.q <= W[1];
+  const head = stopped ? `<h2>Nothing is left to add, so the model writes <span class="mono">end</span>.</h2>`
+    : s.token === NL ? `<h2>The model writes a new line instead of stopping.</h2>` : `<h2>The model has not stopped.</h2>`;
+  const rows = run.steps.map(x => `<tr${x === s ? ' class="hl"' : ""}><td>${x.q}</td><td>${x.k === 0 ? "=" : esc(ITOS[run.ids[x.q]])}</td><td class="r">${f2(x.cap.post1[177])}</td><td class="r">${sg(x.logits[EOS] - x.logits[NL])}</td><td>${x.token === EOS ? "end" : x.token === NL ? "newline" : esc(ITOS[x.token])}</td></tr>`).join("");
+  return `${head}
+  ${sec("1. Is anything left?", `Both numbers are used up and the last column made no carry. The model checks the carry the same way as before, with the top digits and the digit just written.`, "")}
+  ${sec("2. The stop neuron", `Neuron 177 in layer 1 switches on only in this state, and pushes the logit of "end" above "newline". The table follows it at every position the model wrote from.`,
+    `<div class="tbl"><table><thead><tr><th>Position</th><th>Query token</th><th class="r">Neuron 177</th><th class="r">Logit: end − newline</th><th>Wrote</th></tr></thead><tbody>${rows}</tbody></table></div>`)}
+  ${sec("3. Is this where answers end?", `The model also checks the position: it only stops where answers ended in training, which depends on the base because binary prompts are longer. With five examples, ${BASE_NAME[run.base]} answers can end roughly between positions ${W[0]} and ${W[1]}.`,
+    `<p>This answer ends at position <strong>${s.q}</strong>, ${inside ? "inside" : "outside"} that range.${stopped ? "" : " Outside it, the model writes a newline and starts a new problem instead."}</p>`)}`;
+}
+
+function render() {
+  const run = st.run, steps = st.steps, step = steps[st.i];
+  document.documentElement.style.setProperty("--base", `var(--b${run.base})`);
+  renderAnswer(run);
+  renderStrip(run, step);
+  $("stepper").innerHTML = steps.map((x, i) => `<button type="button" role="tab" data-i="${i}" aria-current="${i === st.i ? "step" : "false"}" aria-selected="${i === st.i}">${i + 1}. ${x.label}</button>`).join("");
+  $("step").innerHTML = step.kind === "base" ? stepBase(run) : step.kind === "col" ? stepCol(run, step.s) : stepStop(run, step.s);
+  $("prev").disabled = st.i === 0; $("next").disabled = st.i === steps.length - 1;
+}
+
+function go() {
+  const a = +$("a").value, b = +$("b").value, err = $("err");
+  if (!Number.isInteger(a) || !Number.isInteger(b) || a < 0 || b < 0 || a > 999 || b > 999) { err.textContent = "Use whole numbers from 0 to 999, the range the model was trained on."; err.hidden = false; return; }
+  err.hidden = true;
+  const cb = $("ctxBase").value === "same" ? st.base : +$("ctxBase").value;
+  st.run = trace(a, b, st.base, cb, st.seed); st.steps = buildSteps(st.run); st.i = 0; st.head = null; render();
+}
+$("form").addEventListener("submit", e => { e.preventDefault(); go(); });
+$("shuffle").addEventListener("click", () => { st.seed = (st.seed * 7919 + 13) % 1000003; go(); });
+$("ctxBase").addEventListener("change", go);
+$("baseSeg").addEventListener("click", e => { const btn = e.target.closest("button"); if (!btn) return; st.base = +btn.dataset.b; for (const x of $("baseSeg").children) x.setAttribute("aria-pressed", x === btn); go(); });
+$("stepper").addEventListener("click", e => { const btn = e.target.closest("button"); if (!btn) return; st.i = +btn.dataset.i; st.head = null; render(); });
+$("step").addEventListener("click", e => { const c = e.target.closest(".chip"); if (!c) return; const h = c.dataset.head === "L0H1" ? "L0H1" : +c.dataset.head; st.head = st.head === h ? null : h; render(); });
+$("prev").addEventListener("click", () => { if (st.i > 0) { st.i--; st.head = null; render(); } });
+$("next").addEventListener("click", () => { if (st.i < st.steps.length - 1) { st.i++; st.head = null; render(); } });
+document.addEventListener("keydown", e => { if (e.target.closest("input,select")) return; if (e.key === "ArrowRight") $("next").click(); if (e.key === "ArrowLeft") $("prev").click(); });
+window.__traceForTest = (a, b, base, seed) => trace(a, b, base, base, seed); window.__forward = forward; window.__VOC = VOC;
+go();
+</script>

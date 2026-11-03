@@ -1,0 +1,31 @@
+A b2 k1 constant share 0.96: {'add carry/0.5': 0.5, 'add carry/1.0': 0.53, 'add carry/1.5': 0.44, 'remove carry/0.5': 0.45, 'remove carry/1.0': 0.5, 'remove carry/1.5': 0.52}
+A b2 k2 constant share 0.94: {'add carry/0.5': 0.45, 'add carry/1.0': 0.97, 'add carry/1.5': 0.67, 'remove carry/0.5': 0.46, 'remove carry/1.0': 0.98, 'remove carry/1.5': 0.64}
+A b8 k1 constant share 0.98: {'add carry/0.5': 0.47, 'add carry/1.0': 0.96, 'add carry/1.5': 0.46, 'remove carry/0.5': 0.54, 'remove carry/1.0': 0.95, 'remove carry/1.5': 0.77}
+A b8 k2 constant share 0.97: {'add carry/0.5': 0.44, 'add carry/1.0': 0.97, 'add carry/1.5': 0.83, 'remove carry/0.5': 0.56, 'remove carry/1.0': 0.98, 'remove carry/1.5': 0.88}
+A b10 k1 constant share 0.98: {'add carry/0.5': 0.43, 'add carry/1.0': 0.94, 'add carry/1.5': 0.48, 'remove carry/0.5': 0.6, 'remove carry/1.0': 0.92, 'remove carry/1.5': 0.75}
+A b10 k2 constant share 0.97: {'add carry/0.5': 0.43, 'add carry/1.0': 0.96, 'add carry/1.5': 0.8, 'remove carry/0.5': 0.55, 'remove carry/1.0': 0.97, 'remove carry/1.5': 0.86}
+A b16 k1 constant share 0.96: {'add carry/0.5': 0.42, 'add carry/1.0': 0.87, 'add carry/1.5': 0.51, 'remove carry/0.5': 0.56, 'remove carry/1.0': 0.83, 'remove carry/1.5': 0.57}
+A b16 k2 constant share 0.98: {'add carry/0.5': 0.5, 'add carry/1.0': 0.99, 'add carry/1.5': 0.74, 'remove carry/0.5': 0.5, 'remove carry/1.0': 0.94, 'remove carry/1.5': 0.95}
+A transfer add-carry using another base's vector: {'2->8': 0.23, '2->10': 0.21, '2->16': 0.11, '8->2': 0.0, '8->10': 0.95, '8->16': 0.93, '10->2': 0.0, '10->8': 0.94, '10->16': 0.92, '16->2': 0.0, '16->8': 0.89, '16->10': 0.91} 
+  cosine {'2v8': 0.32, '2v10': 0.29, '2v16': 0.29, '8v10': 0.99, '8v16': 0.97, '10v16': 0.98}
+B 0 2 8 {'own': 0.0, 'other': 0.9841143764892772, 'n': 1259, 'constant_share': 0.8473421931266785}
+B 0 2 10 {'own': 0.0, 'other': 0.9698173153296267, 'n': 1259, 'constant_share': 0.8624029159545898}
+B 0 2 16 {'own': 0.0, 'other': 0.9650516282764099, 'n': 1259, 'constant_share': 0.8780153393745422}
+B 0 8 2 {'own': 0.0, 'other': 1.0, 'n': 86, 'constant_share': 0.8473421931266785}
+B 0 10 2 {'own': 0.0, 'other': 1.0, 'n': 46, 'constant_share': 0.8624029159545898}
+B 0 16 2 {'own': 0.0, 'other': 1.0, 'n': 22, 'constant_share': 0.8780153393745422}
+B 1 2 8 {'own': 0.19835164835164834, 'other': 0.0978021978021978, 'n': 1820, 'constant_share': 0.5120799541473389}
+B 1 2 10 {'own': 0.1989010989010989, 'other': 0.3027472527472527, 'n': 1820, 'constant_share': 0.5384570360183716}
+B 1 2 16 {'own': 0.1978021978021978, 'other': 0.1423076923076923, 'n': 1820, 'constant_share': 0.5672163367271423}
+B 1 8 2 {'own': 0.0, 'other': 0.0, 'n': 149, 'constant_share': 0.5120799541473389}
+B 1 10 2 {'own': 0.0, 'other': 0.0, 'n': 86, 'constant_share': 0.5384570360183716}
+B 1 16 2 {'own': 0.0, 'other': 0.0, 'n': 52, 'constant_share': 0.5672163367271423}
+C parity-neuron overlap (top 16): {'2v8': 8, '2v10': 7, '2v16': 8, '8v10': 14, '8v16': 12, '10v16': 14}
+D binary digit error by position relative to end of shorter operand:
+  gap<6 {-4: (np.float64(0.002), 5412), -3: (np.float64(0.006), 5444), -2: (np.float64(0.011), 5454), -1: (np.float64(0.007), 5460), 0: (np.float64(0.005), 5460), 1: (np.float64(0.004), 4637), 2: (np.float64(0.002), 3917), 3: (np.float64(0.003), 1960), 4: (np.float64(0.005), 571), 5: (np.float64(0.0), 9)}
+  gap>=6 {-4: (np.float64(0.0), 179), -3: (np.float64(0.003), 354), -2: (np.float64(0.029), 452), -1: (np.float64(0.122), 540), 0: (np.float64(0.083), 540), 1: (np.float64(0.065), 540), 2: (np.float64(0.031), 540), 3: (np.float64(0.011), 540), 4: (np.float64(0.019), 540), 5: (np.float64(0.017), 540)}
+E 2 {'n_stop': 3322, 'n_final_carry': 6490, 'clean_stop_rate': 0.9985704074338814, 'still_stops_after_swap_from_final_carry': {'R': 0.35954253037884204, 'H0': 0.9335239456754825, 'H1': 0.8956397426733381, 'H2': 0.4424588992137241, 'H3': 0.858470335954253, 'all heads': 0.08220157255182273}}
+E 8 {'n_stop': 8686, 'n_final_carry': 1297, 'clean_stop_rate': 0.9962121212121212, 'still_stops_after_swap_from_final_carry': {'R': 0.615530303030303, 'H0': 0.6571969696969697, 'H1': 0.7765151515151515, 'H2': 0.7746212121212122, 'H3': 0.8863636363636364, 'all heads': 0.3787878787878788}}
+E 10 {'n_stop': 4906, 'n_final_carry': 5089, 'clean_stop_rate': 1.0, 'still_stops_after_swap_from_final_carry': {'R': 0.6721311475409836, 'H0': 0.6775956284153005, 'H1': 0.7486338797814208, 'H2': 0.9453551912568307, 'H3': 0.9234972677595629, 'all heads': 0.31876138433515483}}
+E 16 {'n_stop': 9667, 'n_final_carry': 321, 'clean_stop_rate': 1.0, 'still_stops_after_swap_from_final_carry': {'R': 0.6028985507246377, 'H0': 0.263768115942029, 'H1': 0.9855072463768116, 'H2': 0.9449275362318841, 'H3': 0.19130434782608696, 'all heads': 0.2956521739130435}}
+DONE

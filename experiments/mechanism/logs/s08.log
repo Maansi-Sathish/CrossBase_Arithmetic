@@ -1,0 +1,57 @@
+VAL 2 0 {'max_resid_err': 1.30385160446167e-07, 'max_mlp_err': 1.6689300537109375e-06, 'digit_acc': 1.0, 'n': 9812}
+VAL 2 1 {'max_resid_err': 8.381903171539307e-08, 'max_mlp_err': 1.9073486328125e-06, 'digit_acc': 1.0, 'n': 9812}
+VAL 8 0 {'max_resid_err': 1.2479722499847412e-07, 'max_mlp_err': 1.430511474609375e-06, 'digit_acc': 1.0, 'n': 9983}
+VAL 8 1 {'max_resid_err': 8.568167686462402e-08, 'max_mlp_err': 1.430511474609375e-06, 'digit_acc': 1.0, 'n': 9983}
+VAL 10 0 {'max_resid_err': 1.2479722499847412e-07, 'max_mlp_err': 1.430511474609375e-06, 'digit_acc': 1.0, 'n': 9995}
+VAL 10 1 {'max_resid_err': 9.033828973770142e-08, 'max_mlp_err': 1.9073486328125e-06, 'digit_acc': 1.0, 'n': 9994}
+VAL 16 0 {'max_resid_err': 1.471489667892456e-07, 'max_mlp_err': 1.430511474609375e-06, 'digit_acc': 1.0, 'n': 9988}
+VAL 16 1 {'max_resid_err': 1.1920928955078125e-07, 'max_mlp_err': 1.430511474609375e-06, 'digit_acc': 1.0, 'n': 9984}
+BASE k0 receiver 2 donor 8 n=2495 donor-rule rate: {'R': 0.0, 'H0': 0.63, 'H1': 0.03, 'H2': 0.0, 'H3': 0.03, 'H0+H1+H2+H3': 0.96, 'R+H0+H1+H2+H3': 1.0}
+BASE k0 receiver 2 donor 10 n=2495 donor-rule rate: {'R': 0.0, 'H0': 0.49, 'H1': 0.01, 'H2': 0.01, 'H3': 0.04, 'H0+H1+H2+H3': 1.0, 'R+H0+H1+H2+H3': 1.0}
+BASE k0 receiver 2 donor 16 n=2495 donor-rule rate: {'R': 0.0, 'H0': 0.54, 'H1': 0.04, 'H2': 0.16, 'H3': 0.01, 'H0+H1+H2+H3': 1.0, 'R+H0+H1+H2+H3': 1.0}
+BASE k0 receiver 8 donor 2 n=175 donor-rule rate: {'R': 0.0, 'H0': 0.63, 'H1': 0.15, 'H2': 0.0, 'H3': 0.0, 'H0+H1+H2+H3': 0.95, 'R+H0+H1+H2+H3': 1.0}
+BASE k0 receiver 8 donor 10 n=4388 donor-rule rate: {'R': 0.27, 'H0': 0.06, 'H1': 0.0, 'H2': 0.0, 'H3': 0.01, 'H0+H1+H2+H3': 0.79, 'R+H0+H1+H2+H3': 1.0}
+BASE k0 receiver 8 donor 16 n=4388 donor-rule rate: {'R': 0.08, 'H0': 0.05, 'H1': 0.0, 'H2': 0.0, 'H3': 0.0, 'H0+H1+H2+H3': 0.81, 'R+H0+H1+H2+H3': 1.0}
+BASE k0 receiver 10 donor 2 n=93 donor-rule rate: {'R': 0.0, 'H0': 0.71, 'H1': 0.0, 'H2': 0.37, 'H3': 0.0, 'H0+H1+H2+H3': 0.97, 'R+H0+H1+H2+H3': 1.0}
+BASE k0 receiver 10 donor 8 n=2816 donor-rule rate: {'R': 0.18, 'H0': 0.18, 'H1': 0.0, 'H2': 0.0, 'H3': 0.02, 'H0+H1+H2+H3': 0.71, 'R+H0+H1+H2+H3': 1.0}
+BASE k0 receiver 10 donor 16 n=4543 donor-rule rate: {'R': 0.01, 'H0': 0.04, 'H1': 0.0, 'H2': 0.27, 'H3': 0.0, 'H0+H1+H2+H3': 0.98, 'R+H0+H1+H2+H3': 1.0}
+BASE k0 receiver 16 donor 2 n=40 donor-rule rate: {'R': 0.0, 'H0': 0.05, 'H1': 0.0, 'H2': 0.0, 'H3': 0.0, 'H0+H1+H2+H3': 0.95, 'R+H0+H1+H2+H3': 1.0}
+BASE k0 receiver 16 donor 8 n=1048 donor-rule rate: {'R': 0.06, 'H0': 0.17, 'H1': 0.0, 'H2': 0.0, 'H3': 0.0, 'H0+H1+H2+H3': 0.86, 'R+H0+H1+H2+H3': 1.0}
+BASE k0 receiver 16 donor 10 n=1763 donor-rule rate: {'R': 0.01, 'H0': 0.28, 'H1': 0.0, 'H2': 0.32, 'H3': 0.01, 'H0+H1+H2+H3': 0.98, 'R+H0+H1+H2+H3': 1.0}
+BASE k1 receiver 2 donor 8 n=3647 donor-rule rate: {'R': 0.0, 'H0': 0.02, 'H1': 0.0, 'H2': 0.0, 'H3': 0.2, 'H0+H1+H2+H3': 0.45, 'R+H0+H1+H2+H3': 1.0}
+BASE k1 receiver 2 donor 10 n=3647 donor-rule rate: {'R': 0.03, 'H0': 0.04, 'H1': 0.0, 'H2': 0.0, 'H3': 0.23, 'H0+H1+H2+H3': 0.6, 'R+H0+H1+H2+H3': 1.0}
+BASE k1 receiver 2 donor 16 n=3647 donor-rule rate: {'R': 0.01, 'H0': 0.03, 'H1': 0.0, 'H2': 0.0, 'H3': 0.18, 'H0+H1+H2+H3': 0.62, 'R+H0+H1+H2+H3': 1.0}
+BASE k1 receiver 8 donor 2 n=291 donor-rule rate: {'R': 0.07, 'H0': 0.08, 'H1': 0.08, 'H2': 0.0, 'H3': 0.12, 'H0+H1+H2+H3': 0.79, 'R+H0+H1+H2+H3': 1.0}
+BASE k1 receiver 8 donor 10 n=4860 donor-rule rate: {'R': 0.66, 'H0': 0.04, 'H1': 0.11, 'H2': 0.01, 'H3': 0.18, 'H0+H1+H2+H3': 0.51, 'R+H0+H1+H2+H3': 1.0}
+BASE k1 receiver 8 donor 16 n=4860 donor-rule rate: {'R': 0.3, 'H0': 0.0, 'H1': 0.05, 'H2': 0.01, 'H3': 0.11, 'H0+H1+H2+H3': 0.61, 'R+H0+H1+H2+H3': 1.0}
+BASE k1 receiver 10 donor 2 n=181 donor-rule rate: {'R': 0.03, 'H0': 0.09, 'H1': 0.1, 'H2': 0.01, 'H3': 0.22, 'H0+H1+H2+H3': 0.56, 'R+H0+H1+H2+H3': 1.0}
+BASE k1 receiver 10 donor 8 n=3124 donor-rule rate: {'R': 0.38, 'H0': 0.04, 'H1': 0.03, 'H2': 0.0, 'H3': 0.12, 'H0+H1+H2+H3': 0.21, 'R+H0+H1+H2+H3': 1.0}
+BASE k1 receiver 10 donor 16 n=4986 donor-rule rate: {'R': 0.22, 'H0': 0.0, 'H1': 0.05, 'H2': 0.07, 'H3': 0.09, 'H0+H1+H2+H3': 0.77, 'R+H0+H1+H2+H3': 1.0}
+BASE k1 receiver 16 donor 2 n=87 donor-rule rate: {'R': 0.05, 'H0': 0.06, 'H1': 0.26, 'H2': 0.01, 'H3': 0.03, 'H0+H1+H2+H3': 0.6, 'R+H0+H1+H2+H3': 1.0}
+BASE k1 receiver 16 donor 8 n=1326 donor-rule rate: {'R': 0.13, 'H0': 0.01, 'H1': 0.01, 'H2': 0.0, 'H3': 0.05, 'H0+H1+H2+H3': 0.24, 'R+H0+H1+H2+H3': 1.0}
+BASE k1 receiver 16 donor 10 n=2005 donor-rule rate: {'R': 0.1, 'H0': 0.01, 'H1': 0.05, 'H2': 0.09, 'H3': 0.11, 'H0+H1+H2+H3': 0.64, 'R+H0+H1+H2+H3': 1.0}
+SYN b2 k0 {'R': {'unchanged': 1.0}, 'H0': {'unchanged': 0.48, 'a': 0.52, 'b': 0.91, 'a+b': 0.52}, 'H1': {'unchanged': 0.5, 'a': 1.0, 'b': 0.5}, 'H2': {'unchanged': 1.0}, 'H3': {'unchanged': 0.89}, 'H0+H1': {'unchanged': 0.5, 'b': 0.5, 'a+b': 0.88}, 'H0+H3': {'unchanged': 0.5, 'a': 0.5, 'b': 1.0, 'a+b': 0.5}, 'H1+H3': {'unchanged': 0.5, 'a': 0.9}, 'H0+H1+H3': {'unchanged': 0.5, 'a+b': 1.0}, 'H0+H1+H2+H3': {'unchanged': 0.5, 'a+b': 1.0}}
+SYN b2 k1 {'R': {'unchanged': 0.81}, 'H0': {'unchanged': 0.55, 'b': 0.5}, 'H1': {'unchanged': 0.51, 'a': 0.68, 'a+c': 0.57}, 'H2': {'unchanged': 0.85}, 'H3': {'unchanged': 0.67}, 'H0+H1': {'unchanged': 0.5, 'a': 0.52, 'b': 0.51, 'c': 0.51, 'a+b': 0.53, 'a+c': 0.51, 'b+c': 0.5, 'a+b+c': 0.61}, 'H0+H3': {'unchanged': 0.5, 'b': 0.64, 'a+b': 0.5, 'a+c': 0.51, 'b+c': 0.6, 'a+b+c': 0.51}, 'H1+H3': {'unchanged': 0.5, 'a': 0.56, 'a+c': 0.52, 'a+b+c': 0.52}, 'H0+H1+H3': {'unchanged': 0.51, 'a+b': 0.55, 'a+b+c': 0.78}, 'H0+H1+H2+H3': {'unchanged': 0.51, 'a+b': 0.54, 'a+b+c': 0.81}}
+SYN b8 k0 {'R': {'unchanged': 1.0}, 'H0': {'unchanged': 0.13, 'b': 0.72}, 'H1': {'unchanged': 0.13, 'a': 1.0}, 'H2': {'unchanged': 1.0}, 'H3': {'unchanged': 0.85}, 'H0+H1': {'unchanged': 0.13, 'a+b': 0.84}, 'H0+H3': {'unchanged': 0.13, 'b': 1.0}, 'H1+H3': {'unchanged': 0.17, 'a': 0.72}, 'H0+H1+H3': {'unchanged': 0.13, 'a+b': 1.0}, 'H0+H1+H2+H3': {'unchanged': 0.13, 'a+b': 1.0}}
+SYN b8 k1 {'R': {'unchanged': 0.73}, 'H0': {'unchanged': 0.72}, 'H1': {'unchanged': 0.47}, 'H2': {'unchanged': 0.98}, 'H3': {'unchanged': 0.12}, 'H0+H1': {'unchanged': 0.36}, 'H0+H3': {'unchanged': 0.12, 'a+b': 0.58}, 'H1+H3': {'unchanged': 0.12, 'a+b+c': 0.53}, 'H0+H1+H3': {'unchanged': 0.12, 'a+b': 0.62, 'a+b+c': 0.69}, 'H0+H1+H2+H3': {'unchanged': 0.12, 'a+b': 0.63, 'a+b+c': 0.73}}
+SYN b10 k0 {'R': {'unchanged': 0.99}, 'H0': {'unchanged': 0.1, 'b': 0.93}, 'H1': {'unchanged': 0.1, 'a': 1.0}, 'H2': {'unchanged': 1.0}, 'H3': {'unchanged': 0.98}, 'H0+H1': {'unchanged': 0.1, 'a+b': 0.99}, 'H0+H3': {'unchanged': 0.1, 'b': 1.0}, 'H1+H3': {'unchanged': 0.11, 'a': 0.93}, 'H0+H1+H3': {'unchanged': 0.1, 'a+b': 0.99}, 'H0+H1+H2+H3': {'unchanged': 0.1, 'a+b': 0.99}}
+SYN b10 k1 {'R': {'unchanged': 0.74}, 'H0': {'unchanged': 0.89}, 'H1': {'unchanged': 0.57}, 'H2': {'unchanged': 1.0}, 'H3': {'unchanged': 0.1, 'a+b': 0.59}, 'H0+H1': {'unchanged': 0.47}, 'H0+H3': {'unchanged': 0.1, 'a+b': 0.74}, 'H1+H3': {'unchanged': 0.1, 'a+b': 0.57, 'a+b+c': 0.63}, 'H0+H1+H3': {'unchanged': 0.1, 'a+b': 0.65, 'a+b+c': 0.71}, 'H0+H1+H2+H3': {'unchanged': 0.1, 'a+b': 0.65, 'a+b+c': 0.74}}
+SYN b16 k0 {'R': {'unchanged': 0.99}, 'H0': {'unchanged': 0.06, 'b': 0.84}, 'H1': {'unchanged': 0.06, 'a': 1.0}, 'H2': {'unchanged': 1.0}, 'H3': {'unchanged': 0.95}, 'H0+H1': {'unchanged': 0.06, 'a+b': 0.95}, 'H0+H3': {'unchanged': 0.06, 'b': 0.99}, 'H1+H3': {'unchanged': 0.09, 'a': 0.83}, 'H0+H1+H3': {'unchanged': 0.06, 'a+b': 1.0}, 'H0+H1+H2+H3': {'unchanged': 0.06, 'a+b': 0.99}}
+SYN b16 k1 {'R': {'unchanged': 0.69}, 'H0': {'unchanged': 0.89}, 'H1': {'unchanged': 0.55}, 'H2': {'unchanged': 0.99}, 'H3': {'unchanged': 0.07, 'a+b': 0.57}, 'H0+H1': {'unchanged': 0.45}, 'H0+H3': {'unchanged': 0.06, 'a+b': 0.69}, 'H1+H3': {'unchanged': 0.06, 'a+b': 0.56, 'a+b+c': 0.61}, 'H0+H1+H3': {'unchanged': 0.06, 'a+b': 0.63, 'a+b+c': 0.68}, 'H0+H1+H2+H3': {'unchanged': 0.06, 'a+b': 0.64, 'a+b+c': 0.69}}
+base 2 rows 111362 baseline digit acc 0.9989044736983891
+ABL 2 n>0.05 44 top [(177, 0.835), (185, 0.605), (140, 0.602), (38, 0.6), (220, 0.566), (198, 0.481), (22, 0.465), (125, 0.381)] sig [0.32 0.55 0.   0.05 0.   0.09]
+base 8 rows 48608 baseline digit acc 0.9992182356813694
+ABL 8 n>0.05 19 top [(177, 0.695), (201, 0.383), (22, 0.311), (119, 0.266), (174, 0.24), (230, 0.194), (198, 0.163), (19, 0.162)] sig [0.2  0.19 0.09 0.12 0.   0.41]
+base 10 rows 44971 baseline digit acc 1.0
+ABL 10 n>0.05 18 top [(177, 0.61), (119, 0.252), (22, 0.227), (115, 0.184), (174, 0.146), (137, 0.146), (198, 0.135), (55, 0.122)] sig [0.12 0.22 0.15 0.06 0.06 0.39]
+base 16 rows 39613 baseline digit acc 0.9996970691439679
+ABL 16 n>0.05 17 top [(177, 0.555), (10, 0.282), (119, 0.276), (22, 0.242), (174, 0.225), (133, 0.111), (46, 0.103), (198, 0.096)] sig [0.11 0.19 0.2  0.06 0.   0.44]
+TEAMVAL 2 corr 0.883 not shortlisted: max drop 0.36475743986954756 n>0.01 5
+TEAMVAL 8 corr 0.719 not shortlisted: max drop 0.10768306120404691 n>0.01 2
+TEAMVAL 16 corr 0.714 not shortlisted: max drop 0.08219863836603925 n>0.01 4
+TEAMVAL 10 corr 0.637 not shortlisted: max drop 0.12196098049024517 n>0.01 4
+MIN base 2 {2: [0.0, 0.0, 0.0, 0.0, 0.45, 0.45, 1.0], 8: [0.0, 0.0, 0.0, 0.0, 0.0, 0.25, 1.0], 10: [0.0, 0.0, 0.0, 0.0, 0.0, 0.02, 1.0], 16: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0]}
+MIN base 8 {2: [0.0, 0.0, 0.0, 0.0, 0.01, 0.4, 1.0], 8: [0.0, 0.0, 0.01, 0.04, 0.35, 0.94, 1.0], 10: [0.0, 0.0, 0.0, 0.01, 0.07, 0.39, 1.0], 16: [0.0, 0.0, 0.0, 0.0, 0.01, 0.21, 1.0]}
+MIN base 10 {2: [0.0, 0.0, 0.0, 0.0, 0.0, 0.32, 1.0], 8: [0.0, 0.0, 0.0, 0.01, 0.11, 0.42, 1.0], 10: [0.0, 0.0, 0.0, 0.04, 0.38, 0.94, 1.0], 16: [0.0, 0.0, 0.0, 0.01, 0.05, 0.73, 1.0]}
+MIN base 16 {2: [0.0, 0.0, 0.0, 0.0, 0.0, 0.1, 1.0], 8: [0.0, 0.0, 0.0, 0.01, 0.03, 0.18, 1.0], 10: [0.0, 0.0, 0.0, 0.01, 0.09, 0.39, 1.0], 16: [0.0, 0.0, 0.0, 0.01, 0.13, 0.9, 1.0]}
+DONE

@@ -1,0 +1,80 @@
+{
+ "digit 0 (after '=')": {
+  "embeddings + layer 0": {
+   "target": -0.43,
+   "best other digit": "0"
+  },
+  "layer 1 heads": {
+   "target": -0.53,
+   "best other digit": "1"
+  },
+  "layer 1 MLP": {
+   "target": 10.52,
+   "best other digit": "5"
+  },
+  "  L1H0": {
+   "target": -0.15,
+   "best other digit": "0"
+  },
+  "  L1H1": {
+   "target": -0.88,
+   "best other digit": "1"
+  },
+  "  L1H2": {
+   "target": 0.3,
+   "best other digit": "7"
+  },
+  "  L1H3": {
+   "target": 0.1,
+   "best other digit": "8"
+  },
+  "final logit of target": 11.1
+ },
+ "L0H1 at '=' on test line tokens": {
+  "8@0": 0.564,
+  "+@1": 0.0,
+  "7@2": 0.003,
+  "=@3": 0.0
+ },
+ "digit 1 (after '5')": {
+  "embeddings + layer 0": {
+   "target": -2.24,
+   "best other digit": "4"
+  },
+  "layer 1 heads": {
+   "target": 0.57,
+   "best other digit": "0"
+  },
+  "layer 1 MLP": {
+   "target": 6.49,
+   "best other digit": "7"
+  },
+  "  L1H0": {
+   "target": 0.42,
+   "best other digit": "0"
+  },
+  "  L1H1": {
+   "target": 2.49,
+   "best other digit": "0"
+  },
+  "  L1H2": {
+   "target": -1.42,
+   "best other digit": "7"
+  },
+  "  L1H3": {
+   "target": -0.18,
+   "best other digit": "4"
+  },
+  "final logit of target": 5.4
+ },
+ "stop (after '51')": {
+  "embeddings + layer 0": -6.52,
+  "layer 1 heads": 8.27,
+  "layer 1 MLP": 16.45,
+  "  L1H0": -1.09,
+  "  L1H1": -0.29,
+  "  L1H2": 2.24,
+  "  L1H3": 1.55,
+  "final logit of target": 11.1
+ }
+}

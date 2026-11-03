@@ -1,0 +1,38 @@
+{
+ "2": {
+  "rows": 302739,
+  "bucket_accuracy": 0.9812,
+  "max_abs_diff_vs_fresh_forward": 4.673004150390625e-05,
+  "num_prompts": 10000
+ },
+ "8": {
+  "rows": 127076,
+  "bucket_accuracy": 0.9983,
+  "max_abs_diff_vs_fresh_forward": 1.6450881958007812e-05,
+  "num_prompts": 10000
+ },
+ "10": {
+  "rows": 112784,
+  "bucket_accuracy": 0.9995,
+  "max_abs_diff_vs_fresh_forward": 1.2874603271484375e-05,
+  "num_prompts": 10000
+ },
+ "16": {
+  "rows": 104224,
+  "bucket_accuracy": 0.9988,
+  "max_abs_diff_vs_fresh_forward": 1.4066696166992188e-05,
+  "num_prompts": 10000
+ },
+ "matched_pairs_across_bases": {
+  "2": 1.0,
+  "8": 1.0,
+  "10": 1.0,
+  "16": 1.0
+ },
+ "matched_shots_across_bases": {
+  "2": 1.0,
+  "8": 1.0,
+  "10": 1.0,
+  "16": 1.0
+ }
+}

@@ -1,0 +1,38 @@
+{
+ "8": {
+  "weights_atop_btop_written": [
+   -3.675121631931805,
+   -4.120602182525241,
+   3.0382929574978497
+  ],
+  "r2": 0.9232084367657513,
+  "rule_accuracy": 0.9995,
+  "threshold_over_base": 0.8125,
+  "model_correct": 0.9995,
+  "n": 2000
+ },
+ "10": {
+  "weights_atop_btop_written": [
+   -3.056548878283844,
+   -3.1177631456972117,
+   3.359703026101669
+  ],
+  "r2": 0.9632733517053438,
+  "rule_accuracy": 1.0,
+  "threshold_over_base": 0.85,
+  "model_correct": 1.0,
+  "n": 2000
+ },
+ "16": {
+  "weights_atop_btop_written": [
+   -1.737596174078058,
+   -2.1338736714708,
+   1.4829365314472134
+  ],
+  "r2": 0.9227248427767855,
+  "rule_accuracy": 1.0,
+  "threshold_over_base": 0.90625,
+  "model_correct": 1.0,
+  "n": 2000
+ }
+}

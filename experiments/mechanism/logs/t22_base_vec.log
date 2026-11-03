@@ -1,0 +1,7 @@
+8->10: switch 1.000 [0.998, 1.000] n=2183; kept 1.000 [0.998, 1.000] n=2813; random mean 0.083 max 0.323; noise-split mean 0.056 max 0.560
+10->8: switch 1.000 [0.997, 1.000] n=1386; kept 1.000 [0.998, 1.000] n=1792; random mean 0.161 max 0.396; noise-split mean 0.106 max 0.460
+10->16: switch 1.000 [0.998, 1.000] n=2228; kept 1.000 [0.998, 1.000] n=2770; random mean 0.030 max 0.227; noise-split mean 0.029 max 0.136
+16->10: switch 1.000 [0.996, 1.000] n=880; kept 0.998 [0.993, 1.000] n=1111; random mean 0.154 max 0.512; noise-split mean 0.096 max 0.376
+8->16: switch 0.988 [0.982, 0.991] n=2183; kept 0.999 [0.997, 1.000] n=2813; random mean 0.013 max 0.264; noise-split mean 0.011 max 0.179
+16->8: switch 0.998 [0.989, 1.000] n=523; kept 0.993 [0.984, 0.997] n=724; random mean 0.123 max 0.424; noise-split mean 0.051 max 0.210
+DONE base_vec

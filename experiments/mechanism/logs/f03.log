@@ -1,0 +1,25 @@
+clean octal context {8: 0.9993333333333333, 10: 0.0, 16: 0.0}
+A one token 0 {8: 1.0, 10: 0.0, 16: 0.0}
+A one token 1 {8: 0.999, 10: 0.0, 16: 0.0}
+A one token 2 {8: 0.999, 10: 0.0, 16: 0.0}
+A one token 3 {8: 0.999, 10: 0.0, 16: 0.0}
+A one token 4 {8: 0.999, 10: 0.0, 16: 0.0}
+A one token 5 {8: 0.999, 10: 0.0, 16: 0.0}
+A one token 6 {8: 0.999, 10: 0.0, 16: 0.0}
+A one token 7 {8: 0.999, 10: 0.0, 16: 0.0}
+A one token 8 {8: 0.517, 10: 0.483, 16: 0.225}
+A one token 9 {8: 0.513, 10: 0.486, 16: 0.225}
+A one token A {8: 0.095, 10: 0.443, 16: 0.891}
+A one token B {8: 0.077, 10: 0.449, 16: 0.913}
+A one token C {8: 0.056, 10: 0.454, 16: 0.931}
+A one token D {8: 0.121, 10: 0.423, 16: 0.859}
+A one token E {8: 0.059, 10: 0.459, 16: 0.929}
+A one token F {8: 0.117, 10: 0.435, 16: 0.877}
+B 9 {'n1': {8: 0.51, 10: 0.49, 16: 0.22}, 'n2': {8: 0.24, 10: 0.76, 16: 0.36}, 'n4': {8: 0.03, 10: 0.97, 16: 0.46}, 'n8': {8: 0.0, 10: 1.0, 16: 0.47}, 'operand': {8: 0.59, 10: 0.41, 16: 0.2}, 'answer': {8: 0.43, 10: 0.57, 16: 0.25}}
+B A {'n1': {8: 0.1, 10: 0.43, 16: 0.89}, 'n2': {8: 0.0, 10: 0.47, 16: 0.98}, 'n4': {8: 0.0, 10: 0.46, 16: 0.98}, 'n8': {8: 0.0, 10: 0.46, 16: 0.98}, 'operand': {8: 0.13, 10: 0.43, 16: 0.86}, 'answer': {8: 0.08, 10: 0.45, 16: 0.91}}
+B F {'n1': {8: 0.11, 10: 0.42, 16: 0.88}, 'n2': {8: 0.0, 10: 0.46, 16: 0.98}, 'n4': {8: 0.0, 10: 0.46, 16: 0.98}, 'n8': {8: 0.0, 10: 0.46, 16: 0.98}, 'operand': {8: 0.14, 10: 0.42, 16: 0.84}, 'answer': {8: 0.09, 10: 0.44, 16: 0.9}}
+D {'decimal context': {8: 0.0, 10: 1.0, 16: 0.452}, 'decimal context, only digits 0-7 shown': {8: 0.9973333333333333, 10: 0.0, 16: 0.0}, 'hex context': {8: 0.0, 10: 0.452, 16: 1.0}, 'hex context, only digits 0-7 shown': {8: 1.0, 10: 0.0, 16: 0.0}}
+C 9 n 725 {'resid_pre1/ctx_newline/clean_gets_edited': 0.0, 'resid_pre1/ctx_newline/edited_gets_clean': 0.03, 'resid_pre1/test_operands/clean_gets_edited': 0.12, 'resid_pre1/test_operands/edited_gets_clean': 0.33, 'resid_pre1/query/clean_gets_edited': 0.53, 'resid_pre1/query/edited_gets_clean': 0.82, 'resid_pre1/ctx_all/clean_gets_edited': 0.0, 'resid_pre1/ctx_all/edited_gets_clean': 0.04, 'resid_pre1/all_test/clean_gets_edited': 0.96, 'resid_pre1/all_test/edited_gets_clean': 0.99, 'resid_pre1/everything/clean_gets_edited': 1.0, 'resid_pre1/everything/edited_gets_clean': 1.0}
+C A n 800 {'resid_pre1/ctx_newline/clean_gets_edited': 0.0, 'resid_pre1/ctx_newline/edited_gets_clean': 0.02, 'resid_pre1/test_operands/clean_gets_edited': 0.19, 'resid_pre1/test_operands/edited_gets_clean': 0.27, 'resid_pre1/query/clean_gets_edited': 0.31, 'resid_pre1/query/edited_gets_clean': 0.48, 'resid_pre1/ctx_all/clean_gets_edited': 0.0, 'resid_pre1/ctx_all/edited_gets_clean': 0.03, 'resid_pre1/all_test/clean_gets_edited': 0.97, 'resid_pre1/all_test/edited_gets_clean': 0.97, 'resid_pre1/everything/clean_gets_edited': 1.0, 'resid_pre1/everything/edited_gets_clean': 1.0}
+C F n 800 {'resid_pre1/ctx_newline/clean_gets_edited': 0.0, 'resid_pre1/ctx_newline/edited_gets_clean': 0.02, 'resid_pre1/test_operands/clean_gets_edited': 0.2, 'resid_pre1/test_operands/edited_gets_clean': 0.37, 'resid_pre1/query/clean_gets_edited': 0.29, 'resid_pre1/query/edited_gets_clean': 0.47, 'resid_pre1/ctx_all/clean_gets_edited': 0.0, 'resid_pre1/ctx_all/edited_gets_clean': 0.03, 'resid_pre1/all_test/clean_gets_edited': 0.97, 'resid_pre1/all_test/edited_gets_clean': 0.97, 'resid_pre1/everything/clean_gets_edited': 1.0, 'resid_pre1/everything/edited_gets_clean': 1.0}
+DONE

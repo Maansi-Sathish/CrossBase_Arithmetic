@@ -1,0 +1,31 @@
+A 8 {'interaction_share_pre': 0.014561942314723426, 'interaction_share_post': 0.2783055213562435}
+B/C b8 f=1: power {'sum (f,f)': 0.12, 'difference (f,-f)': 0.05, 'axes (f,0)+(0,f)': 0.51} | phase a+b vs sum R=0.95 (gap 0.18, null95 0.46)
+B/C b8 f=2: power {'sum (f,f)': 0.12, 'difference (f,-f)': 0.08, 'axes (f,0)+(0,f)': 0.37} | phase a+b vs sum R=0.93 (gap 0.06, null95 0.41)
+B/C b8 f=4: power {'sum (f,f)': 0.22, 'difference (f,-f)': 0.0, 'axes (f,0)+(0,f)': 0.52} | phase a+b vs sum R=0.75 (gap -0.00, null95 0.50)
+D b8 H1 for a: digit explains 0.96; freq share [0.38999998569488525, 0.2800000011920929, 0.07999999821186066, 0.25]
+D b8 H0 for b: digit explains 0.87; freq share [0.3400000035762787, 0.30000001192092896, 0.07999999821186066, 0.2800000011920929]
+D b8 H3 for b: digit explains 0.44; freq share [0.3700000047683716, 0.2800000011920929, 0.07000000029802322, 0.2800000011920929]
+A 10 {'interaction_share_pre': 0.012727387359440828, 'interaction_share_post': 0.2961608028874463}
+B/C b10 f=1: power {'sum (f,f)': 0.12, 'difference (f,-f)': 0.06, 'axes (f,0)+(0,f)': 0.48} | phase a+b vs sum R=0.97 (gap 0.15, null95 0.46)
+B/C b10 f=2: power {'sum (f,f)': 0.07, 'difference (f,-f)': 0.05, 'axes (f,0)+(0,f)': 0.31} | phase a+b vs sum R=0.96 (gap 0.09, null95 0.42)
+B/C b10 f=3: power {'sum (f,f)': 0.06, 'difference (f,-f)': 0.04, 'axes (f,0)+(0,f)': 0.35} | phase a+b vs sum R=0.73 (gap 0.05, null95 0.39)
+B/C b10 f=5: power {'sum (f,f)': 0.2, 'difference (f,-f)': 0.0, 'axes (f,0)+(0,f)': 0.44} | phase a+b vs sum R=0.62 (gap 0.00, null95 0.50)
+D b10 H1 for a: digit explains 0.99; freq share [0.3700000047683716, 0.20999999344348907, 0.1599999964237213, 0.029999999329447746, 0.23000000417232513]
+D b10 H0 for b: digit explains 0.91; freq share [0.3199999928474426, 0.23000000417232513, 0.1899999976158142, 0.019999999552965164, 0.25]
+D b10 H3 for b: digit explains 0.42; freq share [0.3400000035762787, 0.2199999988079071, 0.1599999964237213, 0.019999999552965164, 0.25]
+A 16 {'interaction_share_pre': 0.009720225618225954, 'interaction_share_post': 0.25497978672603167}
+B/C b16 f=1: power {'sum (f,f)': 0.05, 'difference (f,-f)': 0.04, 'axes (f,0)+(0,f)': 0.47} | phase a+b vs sum R=0.97 (gap 0.02, null95 0.43)
+B/C b16 f=2: power {'sum (f,f)': 0.04, 'difference (f,-f)': 0.02, 'axes (f,0)+(0,f)': 0.3} | phase a+b vs sum R=0.96 (gap 0.06, null95 0.43)
+B/C b16 f=3: power {'sum (f,f)': 0.05, 'difference (f,-f)': 0.04, 'axes (f,0)+(0,f)': 0.35} | phase a+b vs sum R=0.96 (gap 0.14, null95 0.41)
+B/C b16 f=5: power {'sum (f,f)': 0.05, 'difference (f,-f)': 0.03, 'axes (f,0)+(0,f)': 0.31} | phase a+b vs sum R=0.78 (gap -0.02, null95 0.42)
+B/C b16 f=8: power {'sum (f,f)': 0.15, 'difference (f,-f)': 0.0, 'axes (f,0)+(0,f)': 0.38} | phase a+b vs sum R=0.88 (gap -0.00, null95 0.50)
+D b16 H1 for a: digit explains 0.98; freq share [0.3100000023841858, 0.18000000715255737, 0.15000000596046448, 0.019999999552965164, 0.11999999731779099, 0.009999999776482582, 0.009999999776482582, 0.18000000715255737]
+D b16 H0 for b: digit explains 0.91; freq share [0.23999999463558197, 0.17000000178813934, 0.1899999976158142, 0.009999999776482582, 0.1599999964237213, 0.009999999776482582, 0.009999999776482582, 0.2199999988079071]
+D b16 H3 for b: digit explains 0.47; freq share [0.25, 0.18000000715255737, 0.17000000178813934, 0.009999999776482582, 0.14000000059604645, 0.009999999776482582, 0.009999999776482582, 0.23000000417232513]
+D code similarity 8 10 H1 for a 0.993
+D code similarity 8 10 H0 for b 0.995
+D code similarity 10 16 H1 for a 0.989
+D code similarity 10 16 H0 for b 0.986
+D code similarity 8 16 H1 for a 0.977
+D code similarity 8 16 H0 for b 0.976
+DONE

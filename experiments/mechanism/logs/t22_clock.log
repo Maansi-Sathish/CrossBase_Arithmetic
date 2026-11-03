@@ -1,0 +1,4 @@
+base 8 (n=9983): {'R2 circular offset': '0.947 [0.945, 0.949]', 'R2 token distance': '0.953 [0.951, 0.955]', 'distance minus circular': '0.006 [0.004, 0.007]', 'ordinary neighbours': '0.530 [0.518, 0.542]', 'wrap-around neighbours': '-0.793 [-0.838, -0.749]', 'ordinary minus wrap-around': '1.323 [1.281, 1.370]'}
+base 10 (n=9995): {'R2 circular offset': '0.930 [0.929, 0.931]', 'R2 token distance': '0.944 [0.942, 0.945]', 'distance minus circular': '0.014 [0.013, 0.015]', 'ordinary neighbours': '0.990 [0.979, 1.003]', 'wrap-around neighbours': '-0.447 [-0.491, -0.407]', 'ordinary minus wrap-around': '1.437 [1.397, 1.487]'}
+base 16 (n=9988): {'R2 circular offset': '0.877 [0.875, 0.879]', 'R2 token distance': '0.889 [0.887, 0.890]', 'distance minus circular': '0.011 [0.011, 0.012]', 'ordinary neighbours': '2.278 [2.263, 2.292]', 'wrap-around neighbours': '0.694 [0.643, 0.751]', 'ordinary minus wrap-around': '1.584 [1.525, 1.637]'}
+DONE clock
