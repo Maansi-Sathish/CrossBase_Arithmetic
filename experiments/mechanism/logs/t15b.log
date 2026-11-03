@@ -1,0 +1,13 @@
+b8 digit 0: {'in range': 1.0, 'big, same length, leading digit seen': 1.0, 'big, same length, leading digit unseen': 1.0}
+b8 digit 1: {'in range': 1.0, 'big, same length, leading digit seen': 1.0, 'big, same length, leading digit unseen': 0.8}
+b8 digit 2: {'in range': 1.0, 'big, same length, leading digit seen': 1.0, 'big, same length, leading digit unseen': 0.17}
+b8 digit 3: {'in range': 1.0, 'big, same length, leading digit seen': 1.0, 'big, same length, leading digit unseen': 0.13}
+b10 digit 0: {'in range': 1.0, 'longer': 0.98}
+b10 digit 1: {'in range': 1.0, 'longer': 0.52}
+b10 digit 2: {'in range': 1.0, 'longer': 0.18}
+b10 digit 3: {'longer': 0.09}
+b16 digit 0: {'in range': 1.0, 'big, same length, leading digit seen': 1.0, 'big, same length, leading digit unseen': 1.0}
+b16 digit 1: {'in range': 1.0, 'big, same length, leading digit seen': 1.0, 'big, same length, leading digit unseen': 0.72}
+b16 digit 2: {'in range': 1.0, 'big, same length, leading digit seen': 1.0, 'big, same length, leading digit unseen': 0.62}
+b16 digit 3: {}
+DONE

@@ -1,0 +1,30 @@
+A 2 {'n_active': 74, 'additive_r2_weighted': 0.715, 'rectangle_r2_weighted': 0.925, 'rectangle_r2_median': 0.914, 'Sa_Sb_overlap_mean': 0.703, 'set_kinds': {'odd': 32, 'even': 42}, 'set_width_mean': 0.5, 'n_rect_r2_gt_07': 57}
+B 2 {'digit0_acc_all_binary_rectangles': 1.0, 'mean_rectangles_per_pair': 18.5}
+A 8 {'n_active': 146, 'additive_r2_weighted': 0.72, 'rectangle_r2_weighted': 0.739, 'rectangle_r2_median': 0.674, 'Sa_Sb_overlap_mean': 0.641, 'set_kinds': {'other': 75, 'low': 42, 'even': 2, 'high': 18, 'odd': 9}, 'set_width_mean': 0.442, 'n_rect_r2_gt_07': 58}
+B 8 {'digit0_acc_all_binary_rectangles': 0.828125, 'mean_rectangles_per_pair': 31.515625}
+A 10 {'n_active': 165, 'additive_r2_weighted': 0.703, 'rectangle_r2_weighted': 0.729, 'rectangle_r2_median': 0.648, 'Sa_Sb_overlap_mean': 0.677, 'set_kinds': {'other': 102, 'low': 25, 'even': 2, 'high': 25, 'odd': 11}, 'set_width_mean': 0.47, 'n_rect_r2_gt_07': 60}
+B 10 {'digit0_acc_all_binary_rectangles': 0.78, 'mean_rectangles_per_pair': 39.94}
+A 16 {'n_active': 189, 'additive_r2_weighted': 0.744, 'rectangle_r2_weighted': 0.676, 'rectangle_r2_median': 0.617, 'Sa_Sb_overlap_mean': 0.625, 'set_kinds': {'other': 152, 'low': 14, 'even': 1, 'high': 15, 'odd': 7}, 'set_width_mean': 0.444, 'n_rect_r2_gt_07': 42}
+B 16 {'digit0_acc_all_binary_rectangles': 0.71484375, 'mean_rectangles_per_pair': 42.6953125}
+C 8 vs 10: 0.48 of the change is on conflict pairs (which are 0.44 of pairs); top8 gain share 0.34
+   n 77 gain +0.00 fire on conflict -0.05/+0.12, on non-conflict -0.06/+0.24, S(8)=[0, 1, 4] S(10)=[0, 1, 4, 7, 8] writes 8EB52 suppresses D30A7
+   n105 gain +0.00 fire on conflict -0.01/+0.20, on non-conflict -0.01/-0.03, S(8)=[7] S(10)=[3, 6, 7, 9] writes 0AD34 suppresses 15B28
+   n127 gain +0.00 fire on conflict -0.07/+0.21, on non-conflict -0.08/-0.02, S(8)=[0, 1, 2, 3, 6, 7] S(10)=[6, 7] writes 3429E suppresses 01B76
+   n181 gain +0.00 fire on conflict -0.08/+0.27, on non-conflict -0.04/-0.06, S(8)=None S(10)=[5, 6, 7] writes 1267C suppresses A49E8
+   n 65 gain +0.00 fire on conflict -0.04/+0.12, on non-conflict -0.01/-0.04, S(8)=None S(10)=[6, 7] writes 8E394 suppresses 01657
+   n129 gain +0.00 fire on conflict -0.05/+0.06, on non-conflict -0.05/-0.09, S(8)=None S(10)=[4, 5, 9] writes 9A8E4 suppresses 10726
+C 10 vs 16: 0.55 of the change is on conflict pairs (which are 0.45 of pairs); top8 gain share 0.39
+   n200 gain +0.00 fire on conflict -0.14/+1.23, on non-conflict -0.15/+0.64, S(10)=None S(16)=[2, 3, 4, 5, 6, 7, 8, 9] writes A9B87 suppresses 1023F
+   n132 gain +0.00 fire on conflict -0.08/+0.39, on non-conflict -0.02/-0.08, S(10)=[0, 5, 6, 7, 8, 9] S(16)=[6, 7, 8, 9, 10, 11, 14, 15] writes 01EAF suppresses 594B3
+   n133 gain +0.00 fire on conflict -0.05/+1.19, on non-conflict -0.10/+0.08, S(10)=[7, 8, 9] S(16)=[4, 5, 6, 7, 8, 9, 10, 11] writes F01ED suppresses A7648
+   n108 gain +0.00 fire on conflict -0.07/+0.23, on non-conflict -0.11/+0.22, S(10)=[0, 1, 2, 3, 4, 8, 9] S(16)=[0, 1, 2, 3, 8, 9, 10, 11, 12, 13, 14, 15] writes B9CD8 suppresses 01234
+   n224 gain +0.00 fire on conflict -0.04/+0.17, on non-conflict -0.06/+0.00, S(10)=[7, 8, 9] S(16)=[7, 8, 9, 10, 15] writes A1B0C suppresses 54673
+   n 68 gain +0.00 fire on conflict +0.04/+0.33, on non-conflict +0.05/+0.18, S(10)=[0, 1, 2, 8, 9] S(16)=[0, 1, 2, 7, 8, 9] writes A0E8B suppresses 53462
+C 8 vs 16: 0.53 of the change is on conflict pairs (which are 0.44 of pairs); top8 gain share 0.42
+   n200 gain +0.00 fire on conflict -0.16/+1.20, on non-conflict -0.15/+0.51, S(8)=None S(16)=[2, 3, 4, 5, 6, 7, 8, 9] writes A9B87 suppresses 1023F
+   n146 gain +0.00 fire on conflict +0.07/+0.87, on non-conflict +0.00/+0.34, S(8)=[2, 3, 4, 5, 6] S(16)=[2, 3, 4, 5, 6, 7, 12, 13] writes ABE8C suppresses 54367
+   n231 gain +0.00 fire on conflict +0.24/-0.16, on non-conflict +0.19/-0.16, S(8)=[0, 1, 5, 6, 7] S(16)=[10, 11, 12, 13, 14, 15] writes 75123 suppresses ABECD
+   n 19 gain +0.00 fire on conflict +1.15/+0.42, on non-conflict -0.07/-0.11, S(8)=[4, 5, 6, 7] S(16)=[4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 15] writes 32451 suppresses 7608A
+   n 66 gain -0.00 fire on conflict -0.11/+0.09, on non-conflict -0.07/+0.58, S(8)=None S(16)=[0, 1, 2, 3, 4, 5, 11, 12, 13, 14, 15] writes 01234 suppresses 897BC
+   n241 gain +0.00 fire on conflict -0.01/+0.41, on non-conflict -0.01/+0.32, S(8)=[1, 2, 3] S(16)=[1, 2, 3, 7, 8, 13] writes AE4D3 suppresses 162C5
+DONE

@@ -1,0 +1,7 @@
+b8 digit 0: {'original': 1.0, 'sum table': 1.0, 'bump': 0.577, 'bump + parity gate': 0.836, 'two bumps + parity gate': 0.997, 'parity gate only': 0.235}
+b8 digit 1: {'original': 1.0, 'sum table': 0.932, 'bump': 0.225, 'bump + parity gate': 0.229, 'two bumps + parity gate': 0.333, 'parity gate only': 0.119}
+b10 digit 0: {'original': 1.0, 'sum table': 1.0, 'bump': 0.545, 'bump + parity gate': 0.852, 'two bumps + parity gate': 0.948, 'parity gate only': 0.186}
+b10 digit 1: {'original': 1.0, 'sum table': 0.945, 'bump': 0.177, 'bump + parity gate': 0.179, 'two bumps + parity gate': 0.244, 'parity gate only': 0.098}
+b16 digit 0: {'original': 1.0, 'sum table': 1.0, 'bump': 0.315, 'bump + parity gate': 0.53, 'two bumps + parity gate': 0.818, 'parity gate only': 0.112}
+b16 digit 1: {'original': 1.0, 'sum table': 0.909, 'bump': 0.095, 'bump + parity gate': 0.096, 'two bumps + parity gate': 0.135, 'parity gate only': 0.06}
+DONE

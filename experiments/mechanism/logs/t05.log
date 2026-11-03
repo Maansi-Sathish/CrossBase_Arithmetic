@@ -1,0 +1,11 @@
+hex, 3-digit numbers (stop after 3rd digit): stop rate where both top digits were seen at this position 1.00, where at least one wasn't 0.60
+  by_max = {int(m): round(float(np.nanmean(t[ok & (np.maximum(xs, ys) == m)])), 2) for m in range(1, base)}
+   stop rate by top sum digit written: {2: 1.0, 3: 1.0, 4: 1.0, 5: 1.0, 6: 1.0, 7: 1.0, 8: 1.0, 9: 1.0, 10: 0.91, 11: 0.36, 12: 0.4, 13: 0.4, 14: 0.09, 15: 0.61}
+   by larger top operand digit: {1: 1.0, 2: 1.0, 3: 1.0, 4: 1.0, 5: 0.98, 6: 0.75, 7: 0.46, 8: 0.4, 9: 0.21, 10: 0.56, 11: 0.72, 12: 0.65, 13: 0.61, 14: 1.0, 15: nan}
+hex, 2-digit numbers (control): stop rate where both top digits were seen at this position 1.00, where at least one wasn't nan
+octal, 4-digit numbers: stop rate where both top digits were seen at this position 1.00, where at least one wasn't 0.96
+   stop rate by top sum digit written: {2: 1.0, 3: 1.0, 4: 0.98, 5: 0.97, 6: 0.93, 7: 0.94}
+   by larger top operand digit: {1: 1.0, 2: 0.99, 3: 0.93, 4: 0.94, 5: 0.99, 6: 0.99, 7: nan}
+octal, 3-digit numbers (control): stop rate where both top digits were seen at this position 1.00, where at least one wasn't nan
+decimal, 3-digit numbers: stop rate where both top digits were seen at this position 1.00, where at least one wasn't nan
+DONE

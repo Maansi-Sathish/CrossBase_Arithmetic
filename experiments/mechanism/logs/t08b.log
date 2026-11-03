@@ -1,0 +1,4 @@
+b8 digit 1: {'original': 1.0, 'sum table': 0.932, 'bump': 0.225, 'bump + parity gate': 0.537, 'two bumps + parity gate': 0.701, 'parity gate only': 0.186}
+b10 digit 1: {'original': 1.0, 'sum table': 0.945, 'bump': 0.177, 'bump + parity gate': 0.369, 'two bumps + parity gate': 0.601, 'parity gate only': 0.125}
+b16 digit 1: {'original': 1.0, 'sum table': 0.909, 'bump': 0.095, 'bump + parity gate': 0.191, 'two bumps + parity gate': 0.312, 'parity gate only': 0.072}
+DONE

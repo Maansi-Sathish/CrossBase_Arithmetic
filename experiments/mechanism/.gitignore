@@ -1,0 +1,3 @@
+# Keep this folder's run logs in git (the root .gitignore ignores logs/ and *.log).
+!logs/
+!logs/*

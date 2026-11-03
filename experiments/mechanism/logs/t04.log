@@ -1,0 +1,21 @@
+A b2 L0H3 at a-digit with index l from start:  {0: (np.float32(0.67), np.float32(0.0), np.float32(0.05)), 1: (np.float32(0.57), np.float32(0.05), np.float32(0.06)), 2: (np.float32(0.46), np.float32(0.11), np.float32(0.08)), 3: (np.float32(0.35), np.float32(0.16), np.float32(0.1)), 4: (np.float32(0.29), np.float32(0.2), np.float32(0.11)), 5: (np.float32(0.28), np.float32(0.22), np.float32(0.11)), 6: (np.float32(0.31), np.float32(0.23), np.float32(0.11)), 7: (np.float32(0.37), np.float32(0.22), np.float32(0.1)), 8: (np.float32(0.44), np.float32(0.21), np.float32(0.09)), 9: (np.float32(0.47), np.float32(0.23), np.float32(0.08))}
+A b8 L0H3 at a-digit with index l from start:  {0: (np.float32(0.5), np.float32(0.0), np.float32(0.05)), 1: (np.float32(0.38), np.float32(0.05), np.float32(0.07)), 2: (np.float32(0.28), np.float32(0.11), np.float32(0.08)), 3: (np.float32(0.2), np.float32(0.15), np.float32(0.1))}
+A b10 L0H3 at a-digit with index l from start:  {0: (np.float32(0.44), np.float32(0.0), np.float32(0.07)), 1: (np.float32(0.34), np.float32(0.06), np.float32(0.07)), 2: (np.float32(0.24), np.float32(0.12), np.float32(0.09))}
+A b16 L0H3 at a-digit with index l from start:  {0: (np.float32(0.42), np.float32(0.0), np.float32(0.06)), 1: (np.float32(0.3), np.float32(0.05), np.float32(0.07)), 2: (np.float32(0.21), np.float32(0.11), np.float32(0.08))}
+B 2 {'clean': {'H1_on_b': 0.0, 'H1_on_a0': 0.69}, 'all L0 heads mean at b digits': {'H1_on_b': 0.0, 'H1_on_a0': 0.69}, 'L0 MLP mean at b digits': {'H1_on_b': 0.0, 'H1_on_a0': 0.69}}
+B 8 {'clean': {'H1_on_b': 0.01, 'H1_on_a0': 0.9}, 'all L0 heads mean at b digits': {'H1_on_b': 0.01, 'H1_on_a0': 0.9}, 'L0 MLP mean at b digits': {'H1_on_b': 0.0, 'H1_on_a0': 0.91}}
+B 10 {'clean': {'H1_on_b': 0.0, 'H1_on_a0': 0.94}, 'all L0 heads mean at b digits': {'H1_on_b': 0.0, 'H1_on_a0': 0.94}, 'L0 MLP mean at b digits': {'H1_on_b': 0.0, 'H1_on_a0': 0.94}}
+B 16 {'clean': {'H1_on_b': 0.0, 'H1_on_a0': 0.94}, 'all L0 heads mean at b digits': {'H1_on_b': 0.0, 'H1_on_a0': 0.94}, 'L0 MLP mean at b digits': {'H1_on_b': 0.01, 'H1_on_a0': 0.94}}
+Traceback (most recent call last):
+  File "experiments/mechanism/t04_l0_heads.py", line 76, in <module>
+    within = float(np.sum([(S_full[feats["tier"] == t] - S_full[feats["tier"] == t].mean()) ** 2 for t in range(4)]) / ((S_full - S_full.mean()) ** 2).sum())
+                   ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ".venv/lib/python3.13/site-packages/numpy/_core/fromnumeric.py", line 2425, in sum
+    return _wrapreduction(
+        a, np.add, 'sum', axis, dtype, out,
+        keepdims=keepdims, initial=initial, where=where
+    )
+  File ".venv/lib/python3.13/site-packages/numpy/_core/fromnumeric.py", line 83, in _wrapreduction
+    return ufunc.reduce(obj, axis, dtype, out, **passkwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: setting an array element with a sequence. The requested array has an inhomogeneous shape after 1 dimensions. The detected shape was (4,) + inhomogeneous part.

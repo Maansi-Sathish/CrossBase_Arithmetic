@@ -1,0 +1,23 @@
+b2 k1: {'plus': (0.22, -0.03, (1, 0)), 'eq': (0.18, 0.36, (1, 2)), 'query': (-1.13, -1.21, (-1, -1)), 'a_digits': (-0.36, -0.02, (-1, 0)), 'b_digits': (0.03, -0.51, (0, -1)), 'all': (-0.16, 0.01, (0, 0))}
+   predicted vs measured: r=0.86, slope=0.51
+b2 k2: {'plus': (0.59, 0.0, (1, 0)), 'eq': (1.0, 1.49, (1, 2)), 'query': (-1.1, -1.02, (-1, -1)), 'a_digits': (-0.7, -0.0, (-1, 0)), 'b_digits': (0.15, -0.68, (0, -1)), 'all': (-0.23, 0.01, (0, 0))}
+   predicted vs measured: r=0.98, slope=0.85
+b2 k3: {'plus': (0.75, 0.04, (1, 0)), 'eq': (0.98, 1.6, (1, 2)), 'query': (-1.09, -0.96, (-1, -1)), 'a_digits': (-0.79, -0.02, (-1, 0)), 'b_digits': (0.09, -0.76, (0, -1)), 'all': (-0.22, 0.02, (0, 0))}
+   predicted vs measured: r=0.99, slope=0.86
+b8 k1: {'plus': (0.35, 0.03, (1, 0)), 'eq': (-0.12, 0.18, (1, 2)), 'query': (-0.51, -0.4, (-1, -1)), 'a_digits': (-0.39, 0.04, (-1, 0)), 'b_digits': (0.02, -0.58, (0, -1)), 'all': (-0.17, 0.03, (0, 0))}
+   predicted vs measured: r=0.78, slope=0.25
+b8 k2: {'plus': (0.48, 0.17, (1, 0)), 'eq': (0.31, 0.34, (1, 2)), 'query': (-0.26, -0.02, (-1, -1)), 'a_digits': (-0.16, 0.01, (-1, 0)), 'b_digits': (-0.03, -0.3, (0, -1)), 'all': (0.06, 0.12, (0, 0))}
+   predicted vs measured: r=0.82, slope=0.20
+b10 k1: {'plus': (0.39, 0.04, (1, 0)), 'eq': (-0.06, 0.24, (1, 2)), 'query': (-0.53, -0.38, (-1, -1)), 'a_digits': (-0.38, 0.08, (-1, 0)), 'b_digits': (0.02, -0.63, (0, -1)), 'all': (-0.1, 0.03, (0, 0))}
+   predicted vs measured: r=0.80, slope=0.26
+b10 k2: {'plus': (0.48, 0.17, (1, 0)), 'eq': (0.19, 0.2, (1, 2)), 'query': (-0.11, 0.02, (-1, -1)), 'a_digits': (-0.04, 0.04, (-1, 0)), 'b_digits': (-0.01, -0.11, (0, -1)), 'all': (0.05, 0.04, (0, 0))}
+   predicted vs measured: r=0.73, slope=0.12
+b16 k1: {'plus': (0.33, 0.03, (1, 0)), 'eq': (-0.02, 0.23, (1, 2)), 'query': (-0.39, -0.29, (-1, -1)), 'a_digits': (-0.33, 0.06, (-1, 0)), 'b_digits': (0.03, -0.52, (0, -1)), 'all': (-0.09, -0.0, (0, 0))}
+   predicted vs measured: r=0.82, slope=0.22
+b16 k2: {'plus': (0.4, 0.14, (1, 0)), 'eq': (0.1, 0.11, (1, 2)), 'query': (-0.09, 0.06, (-1, -1)), 'a_digits': (-0.03, 0.03, (-1, 0)), 'b_digits': (-0.0, -0.11, (0, -1)), 'all': (0.05, 0.02, (0, 0))}
+   predicted vs measured: r=0.65, slope=0.09
+RECENCY 2 {'clean': {'attn_on_last_digit': 0.69, 'attn_on_second_last': 0.24, 'output_true': 1.0, 'output_uses_swapped_a': 0.0, 'output_uses_swapped_b': 0.0}, 'a': {'attn_on_last_digit': 0.22, 'attn_on_second_last': 0.72, 'output_true': 0.5, 'output_uses_swapped_a': 0.99, 'output_uses_swapped_b': 0.52}, 'b': {'attn_on_last_digit': 0.23, 'attn_on_second_last': 0.61, 'output_true': 0.5, 'output_uses_swapped_a': 0.52, 'output_uses_swapped_b': 0.96}}
+RECENCY 8 {'clean': {'attn_on_last_digit': 0.9, 'attn_on_second_last': 0.08, 'output_true': 1.0, 'output_uses_swapped_a': 0.0, 'output_uses_swapped_b': 0.0}, 'a': {'attn_on_last_digit': 0.59, 'attn_on_second_last': 0.37, 'output_true': 0.88, 'output_uses_swapped_a': 0.1, 'output_uses_swapped_b': 0.02}, 'b': {'attn_on_last_digit': 0.48, 'attn_on_second_last': 0.22, 'output_true': 0.98, 'output_uses_swapped_a': 0.01, 'output_uses_swapped_b': 0.02}}
+RECENCY 10 {'clean': {'attn_on_last_digit': 0.94, 'attn_on_second_last': 0.05, 'output_true': 1.0, 'output_uses_swapped_a': 0.0, 'output_uses_swapped_b': 0.0}, 'a': {'attn_on_last_digit': 0.52, 'attn_on_second_last': 0.45, 'output_true': 0.66, 'output_uses_swapped_a': 0.33, 'output_uses_swapped_b': 0.04}, 'b': {'attn_on_last_digit': 0.36, 'attn_on_second_last': 0.22, 'output_true': 0.95, 'output_uses_swapped_a': 0.0, 'output_uses_swapped_b': 0.04}}
+RECENCY 16 {'clean': {'attn_on_last_digit': 0.94, 'attn_on_second_last': 0.05, 'output_true': 1.0, 'output_uses_swapped_a': 0.0, 'output_uses_swapped_b': 0.0}, 'a': {'attn_on_last_digit': 0.58, 'attn_on_second_last': 0.38, 'output_true': 0.74, 'output_uses_swapped_a': 0.2, 'output_uses_swapped_b': 0.01}, 'b': {'attn_on_last_digit': 0.36, 'attn_on_second_last': 0.25, 'output_true': 0.91, 'output_uses_swapped_a': 0.01, 'output_uses_swapped_b': 0.05}}
+DONE

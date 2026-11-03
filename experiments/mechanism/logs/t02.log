@@ -1,0 +1,7 @@
+A/B/C b8: bump R2 weighted 0.74 (top40 median 0.83); top40 write o(pref) 0.38 (chance 0.12), within one 0.65 (chance 0.38); top-5 contributors tuned within 2 of s: [1.0, 0.6, 1.0, 0.6, 0.4, 0.2, 0.4, 0.4, 0.4, 0.4, 0.2, 0.4, 0.6, 0.6, 1.0]
+A/B/C b10: bump R2 weighted 0.73 (top40 median 0.85); top40 write o(pref) 0.25 (chance 0.10), within one 0.53 (chance 0.30); top-5 contributors tuned within 2 of s: [1.0, 0.6, 0.8, 0.4, 0.6, 0.2, 0.6, 0.2, 0.4, 0.2, 0.0, 0.0, 0.4, 0.6, 0.6, 0.8, 1.0, 0.8, 0.8]
+A/B/C b16: bump R2 weighted 0.67 (top40 median 0.74); top40 write o(pref) 0.17 (chance 0.06), within one 0.33 (chance 0.19); top-5 contributors tuned within 2 of s: [1.0, 1.0, 1.0, 0.8, 0.4, 0.4, 0.6, 0.4, 0.4, 0.6, 0.4, 0.4, 0.0, 0.0, 0.4, 0.4, 0.4, 0.0, 0.6, 0.4, 0.2, 0.2, 0.4, 0.2, 0.2, 0.2, 0.2, 0.2, 0.4, 0.2, 0.6]
+D s 10-15: decimal (wraps) vs hex (no wrap): workers 27/33, shared 15; 10's workers fire in 16 at 0.12 of their level, 16's workers fire in 10 at 0.37
+D s 8-9: octal (wraps) vs decimal (no wrap): workers 14/18, shared 7; 8's workers fire in 10 at 0.40 of their level, 10's workers fire in 8 at 0.40
+D s 0-7: no wrap in 8, 10, 16: workers 34/40, shared 28; 10's workers fire in 16 at 1.44 of their level, 16's workers fire in 10 at 0.58
+DONE

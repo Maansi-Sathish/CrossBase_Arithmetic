@@ -1,0 +1,66 @@
+A b2 x+y+z=: mass on end of (x,y,z) {'H0': [0.03, 0.13, 0.32], 'H1': [0.34, 0.0, 0.0], 'H3': [0.01, 0.05, 0.11]}; output matches {'x+y': 0.54, 'y+z': 0.51, 'x+z': 0.67}
+A b2 no plus: mass on (last digit, second last) {'H0': [0.33, 0.19], 'H1': [0.69, 0.22], 'H3': [0.12, 0.11]}
+A b8 x+y+z=: mass on end of (x,y,z) {'H0': [0.04, 0.27, 0.37], 'H1': [0.73, 0.0, 0.01], 'H3': [0.03, 0.11, 0.11]}; output matches {'x+y': 0.36, 'y+z': 0.16, 'x+z': 0.48}
+A b8 no plus: mass on (last digit, second last) {'H0': [0.13, 0.18], 'H1': [0.13, 0.23], 'H3': [0.02, 0.04]}
+A b10 x+y+z=: mass on end of (x,y,z) {'H0': [0.05, 0.23, 0.41], 'H1': [0.85, 0.0, 0.02], 'H3': [0.02, 0.07, 0.1]}; output matches {'x+y': 0.35, 'y+z': 0.14, 'x+z': 0.66}
+A b10 no plus: mass on (last digit, second last) {'H0': [0.14, 0.18], 'H1': [0.16, 0.22], 'H3': [0.01, 0.02]}
+A b16 x+y+z=: mass on end of (x,y,z) {'H0': [0.06, 0.15, 0.49], 'H1': [0.84, 0.01, 0.04], 'H3': [0.02, 0.05, 0.1]}; output matches {'x+y': 0.2, 'y+z': 0.07, 'x+z': 0.7}
+A b16 no plus: mass on (last digit, second last) {'H0': [0.16, 0.19], 'H1': [0.17, 0.21], 'H3': [0.02, 0.02]}
+B/C b10 k1: shift of attended position, a and b, for a -1 shift of the token's position tag
+    plus {'full shift': (-0.58, -0.21), 'layer 0 output at query only': (-0.58, 0.28), 'layer 0 output at operands/+/= only': (-0.0, -0.41), 'L0H0 at query': (0.02, 0.01), 'L0H1 at query': (-0.0, -0.0), 'L0H2 at query': (-0.62, 0.27), 'L0H3 at query': (0.02, 0.01), 'L0 neurons at query': (-0.54, 0.29)}
+    eq {'full shift': (-0.19, -0.59), 'layer 0 output at query only': (-0.19, -0.59), 'layer 0 output at operands/+/= only': (-0.0, -0.0), 'L0H0 at query': (0.01, 0.01), 'L0H1 at query': (-0.0, -0.0), 'L0H2 at query': (-0.15, -0.23), 'L0H3 at query': (0.02, -0.33), 'L0 neurons at query': (-0.2, -0.7)}
+B/C b10 k2: shift of attended position, a and b, for a -1 shift of the token's position tag
+    plus {'full shift': (-0.13, -0.1), 'layer 0 output at query only': (-0.13, 0.05), 'layer 0 output at operands/+/= only': (0.0, -0.07), 'L0H0 at query': (0.01, 0.01), 'L0H1 at query': (0.0, 0.0), 'L0H2 at query': (-0.12, 0.05), 'L0H3 at query': (-0.03, -0.01), 'L0 neurons at query': (-0.13, 0.04)}
+    eq {'full shift': (-0.04, -0.04), 'layer 0 output at query only': (-0.04, -0.04), 'layer 0 output at operands/+/= only': (0.0, 0.0), 'L0H0 at query': (0.0, 0.0), 'L0H1 at query': (-0.0, -0.0), 'L0H2 at query': (-0.02, -0.01), 'L0H3 at query': (-0.03, -0.03), 'L0 neurons at query': (-0.03, -0.02)}
+B/C b16 k1: shift of attended position, a and b, for a -1 shift of the token's position tag
+    plus {'full shift': (-0.47, -0.18), 'layer 0 output at query only': (-0.47, 0.24), 'layer 0 output at operands/+/= only': (-0.0, -0.35), 'L0H0 at query': (0.02, 0.01), 'L0H1 at query': (-0.0, -0.0), 'L0H2 at query': (-0.51, 0.22), 'L0H3 at query': (0.02, 0.01), 'L0 neurons at query': (-0.43, 0.26)}
+    eq {'full shift': (-0.13, -0.46), 'layer 0 output at query only': (-0.13, -0.46), 'layer 0 output at operands/+/= only': (0.0, -0.0), 'L0H0 at query': (0.01, 0.0), 'L0H1 at query': (-0.0, -0.0), 'L0H2 at query': (-0.1, -0.16), 'L0H3 at query': (0.0, -0.29), 'L0 neurons at query': (-0.15, -0.56)}
+B/C b8 k1: shift of attended position, a and b, for a -1 shift of the token's position tag
+    plus {'full shift': (-0.51, -0.3), 'layer 0 output at query only': (-0.51, 0.22), 'layer 0 output at operands/+/= only': (-0.0, -0.41), 'L0H0 at query': (0.02, 0.01), 'L0H1 at query': (0.0, 0.0), 'L0H2 at query': (-0.51, 0.21), 'L0H3 at query': (-0.01, 0.0), 'L0 neurons at query': (-0.48, 0.21)}
+    eq {'full shift': (-0.24, -0.65), 'layer 0 output at query only': (-0.24, -0.65), 'layer 0 output at operands/+/= only': (-0.0, -0.0), 'L0H0 at query': (0.01, 0.0), 'L0H1 at query': (-0.0, -0.0), 'L0H2 at query': (-0.15, -0.24), 'L0H3 at query': (-0.0, -0.33), 'L0 neurons at query': (-0.26, -0.8)}
+B/C b2 k2: shift of attended position, a and b, for a -1 shift of the token's position tag
+    plus {'full shift': (-0.65, -0.19), 'layer 0 output at query only': (-0.65, 0.58), 'layer 0 output at operands/+/= only': (0.0, -0.79), 'L0H0 at query': (0.03, 0.01), 'L0H1 at query': (-0.03, 0.05), 'L0H2 at query': (-0.16, 0.14), 'L0H3 at query': (-0.44, 0.43), 'L0 neurons at query': (-0.71, 0.72)}
+    eq {'full shift': (-0.94, -1.93), 'layer 0 output at query only': (-0.94, -1.93), 'layer 0 output at operands/+/= only': (-0.0, -0.0), 'L0H0 at query': (0.02, 0.01), 'L0H1 at query': (-0.37, -0.1), 'L0H2 at query': (-0.05, -0.15), 'L0H3 at query': (-0.63, -1.51), 'L0 neurons at query': (-0.79, -1.66)}
+B/C b2 k3: shift of attended position, a and b, for a -1 shift of the token's position tag
+    plus {'full shift': (-0.71, -0.32), 'layer 0 output at query only': (-0.71, 0.52), 'layer 0 output at operands/+/= only': (-0.0, -0.83), 'L0H0 at query': (0.02, 0.01), 'L0H1 at query': (-0.11, 0.1), 'L0H2 at query': (0.0, -0.04), 'L0H3 at query': (-0.56, 0.49), 'L0 neurons at query': (-0.75, 0.81)}
+    eq {'full shift': (-0.86, -1.78), 'layer 0 output at query only': (-0.86, -1.78), 'layer 0 output at operands/+/= only': (-0.0, -0.0), 'L0H0 at query': (0.02, 0.01), 'L0H1 at query': (-0.61, -0.7), 'L0H2 at query': (-0.08, 0.17), 'L0H3 at query': (-0.23, -0.84), 'L0 neurons at query': (-0.39, -1.31)}
+D b8 top digit-index L0 neurons (firing at digits 0,1,2): {182: [-0.14000000059604645, 0.4399999976158142, 0.49000000953674316], 150: [-0.11999999731779099, 0.05000000074505806, 0.49000000953674316], 200: [0.3400000035762787, -0.14000000059604645, -0.15000000596046448], 143: [0.23999999463558197, -0.1599999964237213, -0.1599999964237213], 164: [-0.05000000074505806, 0.3499999940395355, 0.18000000715255737], 43: [0.23000000417232513, -0.1599999964237213, -0.15000000596046448], 67: [-0.0, 0.27000001072883606, 0.3400000035762787], 105: [0.009999999776482582, 0.3199999928474426, 0.3400000035762787]}
+   k0 clean: mass on current digits by head [0.65, 0.91, 0.03, 0.17], on previous digits [0.0, 0.0, 0.0, 0.0]
+      zero L0 neuron 182: current [0.75, 0.93, 0.03, 0.32], previous [0.0, 0.0, 0.0, 0.0]
+      zero L0 neuron 150: current [0.6, 0.88, 0.03, 0.13], previous [0.0, 0.0, 0.0, 0.0]
+      zero L0 neuron 200: current [0.57, 0.89, 0.02, 0.15], previous [0.0, 0.0, 0.0, 0.0]
+   k1 clean: mass on current digits by head [0.07, 0.21, 0.07, 0.52], on previous digits [0.01, 0.7, 0.07, 0.21]
+      zero L0 neuron 182: current [0.18, 0.19, 0.06, 0.45], previous [0.06, 0.69, 0.05, 0.2]
+      zero L0 neuron 150: current [0.08, 0.19, 0.07, 0.5], previous [0.02, 0.72, 0.06, 0.26]
+      zero L0 neuron 200: current [0.1, 0.19, 0.07, 0.46], previous [0.02, 0.71, 0.06, 0.3]
+   k2 clean: mass on current digits by head [0.55, 0.26, 0.02, 0.13], on previous digits [0.16, 0.38, 0.04, 0.25]
+      zero L0 neuron 182: current [0.13, 0.32, 0.02, 0.11], previous [0.06, 0.31, 0.04, 0.13]
+      zero L0 neuron 150: current [0.3, 0.06, 0.04, 0.02], previous [0.29, 0.27, 0.05, 0.2]
+      zero L0 neuron 200: current [0.48, 0.25, 0.02, 0.08], previous [0.2, 0.33, 0.04, 0.19]
+D b10 top digit-index L0 neurons (firing at digits 0,1,2): {150: [-0.14000000059604645, 0.07000000029802322, 0.6000000238418579], 200: [0.5299999713897705, -0.14000000059604645, -0.1599999964237213], 182: [-0.14000000059604645, 0.4300000071525574, 0.5199999809265137], 43: [0.25999999046325684, -0.15000000596046448, -0.15000000596046448], 164: [-0.03999999910593033, 0.3700000047683716, 0.25], 195: [0.3499999940395355, -0.009999999776482582, 0.03999999910593033], 143: [0.18000000715255737, -0.17000000178813934, -0.17000000178813934], 114: [0.18000000715255737, 0.46000000834465027, 0.5]}
+   k0 clean: mass on current digits by head [0.62, 0.94, 0.02, 0.11], on previous digits [0.0, 0.0, 0.0, 0.0]
+      zero L0 neuron 150: current [0.53, 0.91, 0.02, 0.09], previous [0.0, 0.0, 0.0, 0.0]
+      zero L0 neuron 200: current [0.4, 0.91, 0.02, 0.1], previous [0.0, 0.0, 0.0, 0.0]
+      zero L0 neuron 182: current [0.75, 0.96, 0.02, 0.19], previous [0.0, 0.0, 0.0, 0.0]
+   k1 clean: mass on current digits by head [0.06, 0.22, 0.08, 0.56], on previous digits [0.01, 0.69, 0.06, 0.19]
+      zero L0 neuron 150: current [0.08, 0.18, 0.08, 0.53], previous [0.01, 0.72, 0.05, 0.24]
+      zero L0 neuron 200: current [0.08, 0.2, 0.08, 0.49], previous [0.01, 0.69, 0.05, 0.27]
+      zero L0 neuron 182: current [0.13, 0.22, 0.07, 0.44], previous [0.03, 0.62, 0.04, 0.12]
+   k2 clean: mass on current digits by head [0.65, 0.26, 0.02, 0.13], on previous digits [0.14, 0.41, 0.04, 0.25]
+      zero L0 neuron 150: current [0.32, 0.04, 0.05, 0.01], previous [0.31, 0.24, 0.05, 0.14]
+      zero L0 neuron 200: current [0.58, 0.26, 0.02, 0.07], previous [0.17, 0.34, 0.03, 0.16]
+      zero L0 neuron 182: current [0.15, 0.36, 0.02, 0.14], previous [0.04, 0.32, 0.04, 0.11]
+D b16 top digit-index L0 neurons (firing at digits 0,1,2): {200: [0.6899999976158142, -0.10000000149011612, -0.17000000178813934], 150: [-0.15000000596046448, 0.07999999821186066, 0.6499999761581421], 182: [-0.15000000596046448, 0.3400000035762787, 0.49000000953674316], 43: [0.27000001072883606, -0.12999999523162842, -0.14000000059604645], 164: [0.0, 0.4000000059604645, 0.30000001192092896], 125: [0.019999999552965164, 0.05000000074505806, 0.3700000047683716], 143: [0.15000000596046448, -0.17000000178813934, -0.17000000178813934], 158: [-0.09000000357627869, 0.05999999865889549, 0.2199999988079071]}
+   k0 clean: mass on current digits by head [0.66, 0.94, 0.02, 0.13], on previous digits [0.0, 0.0, 0.0, 0.0]
+      zero L0 neuron 200: current [0.42, 0.91, 0.02, 0.15], previous [0.0, 0.0, 0.0, 0.0]
+      zero L0 neuron 150: current [0.59, 0.91, 0.02, 0.11], previous [0.0, 0.0, 0.0, 0.0]
+      zero L0 neuron 182: current [0.74, 0.95, 0.02, 0.19], previous [0.0, 0.0, 0.0, 0.0]
+   k1 clean: mass on current digits by head [0.06, 0.23, 0.09, 0.56], on previous digits [0.01, 0.63, 0.06, 0.17]
+      zero L0 neuron 200: current [0.08, 0.24, 0.09, 0.52], previous [0.01, 0.63, 0.06, 0.21]
+      zero L0 neuron 150: current [0.07, 0.2, 0.09, 0.55], previous [0.01, 0.67, 0.06, 0.23]
+      zero L0 neuron 182: current [0.12, 0.23, 0.08, 0.48], previous [0.02, 0.56, 0.05, 0.12]
+   k2 clean: mass on current digits by head [0.62, 0.23, 0.02, 0.12], on previous digits [0.15, 0.42, 0.04, 0.25]
+      zero L0 neuron 200: current [0.55, 0.24, 0.02, 0.06], previous [0.19, 0.36, 0.04, 0.17]
+      zero L0 neuron 150: current [0.28, 0.04, 0.03, 0.01], previous [0.31, 0.24, 0.06, 0.18]
+      zero L0 neuron 182: current [0.22, 0.32, 0.02, 0.13], previous [0.08, 0.35, 0.03, 0.12]
+DONE

@@ -1390,7 +1390,7 @@ The Lasso shortlist also missed some important neurons: digit-only drops up to 0
 
 ## 14. Reproducing
 
-Run from the repository root. Scripts that use stored activations need `results/tables/`, built from the team's bucket by `e02_extract.py`, and run on the CPU with `CUDA_VISIBLE_DEVICES=""`. Results go to `experiments/mechanism/data/`, and logs to `results/logs/` (not tracked in git).
+Run from the repository root. Scripts that use stored activations need `results/tables/`, built from the team's bucket by `e02_extract.py`, and run on the CPU with `CUDA_VISIBLE_DEVICES=""`. Results go to `experiments/mechanism/data/`, and each run's printed output is kept in `experiments/mechanism/logs/` (one `.log` per script; a few record a crash that was fixed and rerun, for example `t04.log` then `t04b.log`). Some numbers in this report, such as the table in Section 11.2, appear only in the logs.
 
 | Section | Scripts in `experiments/mechanism/` |
 |---|---|

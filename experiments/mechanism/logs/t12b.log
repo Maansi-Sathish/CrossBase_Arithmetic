@@ -1,0 +1,8 @@
+decimal wrap cells: 30
+ s=10: decimal prompts -> push decimal answer +9.85, hex answer +3.42 | hex prompts -> decimal answer +10.44, hex answer +5.02
+ s=11: decimal prompts -> push decimal answer +10.39, hex answer +5.48 | hex prompts -> decimal answer +6.22, hex answer +4.82
+ s=12: decimal prompts -> push decimal answer +8.68, hex answer +2.35 | hex prompts -> decimal answer +7.00, hex answer +2.99
+ s=13: decimal prompts -> push decimal answer +11.64, hex answer +7.92 | hex prompts -> decimal answer +5.40, hex answer +5.38
+ s=14: decimal prompts -> push decimal answer +8.86, hex answer +3.30 | hex prompts -> decimal answer +5.25, hex answer +4.01
+ s=15: decimal prompts -> push decimal answer +13.40, hex answer +4.52 | hex prompts -> decimal answer +5.09, hex answer +5.25
+DONE

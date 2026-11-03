@@ -1,0 +1,9 @@
+Q1 b8 digit 0: {'s = a+b+c': 1.0, '(a+b, c)': 1.0, '(a, b, c)': 1.0, '(a+b, c, a0+b0)': 1.0, 'weighted cos(A code, B code)': 0.78, 'weighted share of A+B that depends only on a+b': 0.382}
+Q1 b8 digit 1: {'s = a+b+c': 0.932, '(a+b, c)': 0.952, '(a, b, c)': 0.923, '(a+b, c, a0+b0)': 0.997, 'weighted cos(A code, B code)': 0.986, 'weighted share of A+B that depends only on a+b': 0.368}
+Q1 b10 digit 0: {'s = a+b+c': 1.0, '(a+b, c)': 1.0, '(a, b, c)': 1.0, '(a+b, c, a0+b0)': 1.0, 'weighted cos(A code, B code)': 0.792, 'weighted share of A+B that depends only on a+b': 0.34}
+Q1 b10 digit 1: {'s = a+b+c': 0.945, '(a+b, c)': 0.978, '(a, b, c)': 0.951, '(a+b, c, a0+b0)': 0.994, 'weighted cos(A code, B code)': 0.986, 'weighted share of A+B that depends only on a+b': 0.32}
+Q1 b16 digit 0: {'s = a+b+c': 1.0, '(a+b, c)': 1.0, '(a, b, c)': 1.0, '(a+b, c, a0+b0)': 1.0, 'weighted cos(A code, B code)': 0.782, 'weighted share of A+B that depends only on a+b': 0.263}
+Q1 b16 digit 1: {'s = a+b+c': 0.909, '(a+b, c)': 0.945, '(a, b, c)': 0.873, '(a+b, c, a0+b0)': 0.982, 'weighted cos(A code, B code)': 0.984, 'weighted share of A+B that depends only on a+b': 0.231}
+Q3 b10 digit 0: {'2 bumps + parity': 0.954, '3 bumps + parity': 0.969, '4 bumps + parity': 0.989, 'sums covered per top-60 neuron (median)': 5.0, 'sums covered as share of range': 0.263, 'neurons strongly active per sum (median)': 8.0}
+Q3 b16 digit 0: {'2 bumps + parity': 0.813, '3 bumps + parity': 0.936, '4 bumps + parity': 0.979, 'sums covered per top-60 neuron (median)': 10.0, 'sums covered as share of range': 0.323, 'neurons strongly active per sum (median)': 10.0}
+DONE

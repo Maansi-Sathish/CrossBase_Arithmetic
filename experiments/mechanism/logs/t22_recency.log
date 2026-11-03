@@ -1,0 +1,19 @@
+base 8:
+   none                                       last 0.908 [0.906, 0.910] | first 0.002 [0.001, 0.002] | correct 1.000 [0.997, 1.000] n=1200
+   L0H0 reversed over a's digits (CONTROL)    last 0.867 [0.862, 0.871] | first 0.002 [0.002, 0.003] | correct 0.998 [0.994, 1.000] n=1200
+   L0H1 reversed over a's digits (CONTROL)    last 0.901 [0.899, 0.903] | first 0.002 [0.002, 0.003] | correct 1.000 [0.997, 1.000] n=1200
+   L0H2 reversed over a's digits (CONTROL)    last 0.856 [0.849, 0.862] | first 0.001 [0.000, 0.001] | correct 0.992 [0.985, 0.995] n=1200
+   L0H3 reversed over a's digits              last 0.002 [0.001, 0.003] | first 0.884 [0.878, 0.889] | correct 0.114 [0.097, 0.133] n=1200
+base 10:
+   none                                       last 0.943 [0.942, 0.944] | first 0.002 [0.001, 0.002] | correct 1.000 [0.997, 1.000] n=1200
+   L0H0 reversed over a's digits (CONTROL)    last 0.942 [0.941, 0.943] | first 0.001 [0.001, 0.002] | correct 1.000 [0.997, 1.000] n=1200
+   L0H1 reversed over a's digits (CONTROL)    last 0.942 [0.941, 0.943] | first 0.002 [0.001, 0.002] | correct 1.000 [0.997, 1.000] n=1200
+   L0H2 reversed over a's digits (CONTROL)    last 0.919 [0.915, 0.922] | first 0.004 [0.002, 0.005] | correct 0.996 [0.990, 0.998] n=1200
+   L0H3 reversed over a's digits              last 0.008 [0.006, 0.010] | first 0.909 [0.904, 0.915] | correct 0.098 [0.083, 0.116] n=1200
+base 16:
+   none                                       last 0.948 [0.947, 0.949] | first 0.008 [0.007, 0.009] | correct 1.000 [0.997, 1.000] n=1200
+   L0H0 reversed over a's digits (CONTROL)    last 0.943 [0.941, 0.944] | first 0.006 [0.005, 0.007] | correct 1.000 [0.997, 1.000] n=1200
+   L0H1 reversed over a's digits (CONTROL)    last 0.947 [0.946, 0.948] | first 0.008 [0.007, 0.009] | correct 1.000 [0.997, 1.000] n=1200
+   L0H2 reversed over a's digits (CONTROL)    last 0.859 [0.851, 0.867] | first 0.019 [0.016, 0.023] | correct 0.971 [0.960, 0.979] n=1200
+   L0H3 reversed over a's digits              last 0.025 [0.019, 0.032] | first 0.869 [0.859, 0.878] | correct 0.078 [0.064, 0.095] n=1200
+DONE recency

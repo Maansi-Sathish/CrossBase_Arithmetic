@@ -1,0 +1,37 @@
+
+8->10 usable 800
+   L0H0: clean gets edited -> high rule                           0.000 [0.000, 0.005] n=800
+   L0H0: edited gets clean -> low rule                            0.001 [0.000, 0.007] n=800
+   L0H1: clean gets edited -> high rule                           0.943 [0.924, 0.957] n=800
+   L0H1: edited gets clean -> low rule                            0.996 [0.989, 0.999] n=800
+   L0H2: clean gets edited -> high rule                           0.000 [0.000, 0.005] n=800
+   L0H2: edited gets clean -> low rule                            0.000 [0.000, 0.005] n=800
+   L0H3: clean gets edited -> high rule                           0.000 [0.000, 0.005] n=800
+   L0H3: edited gets clean -> low rule                            0.001 [0.000, 0.007] n=800
+   CONTROL L0H1: clean gets matched same-tier edit -> high rule   0.000 [0.000, 0.005] n=800
+   CONTROL L0H1: clean gets matched same-tier edit -> low rule kept 1.000 [0.995, 1.000] n=800
+
+8->16 usable 800
+   L0H0: clean gets edited -> high rule                           0.000 [0.000, 0.005] n=800
+   L0H0: edited gets clean -> low rule                            0.001 [0.000, 0.007] n=800
+   L0H1: clean gets edited -> high rule                           0.959 [0.943, 0.970] n=800
+   L0H1: edited gets clean -> low rule                            0.985 [0.974, 0.991] n=800
+   L0H2: clean gets edited -> high rule                           0.000 [0.000, 0.005] n=800
+   L0H2: edited gets clean -> low rule                            0.000 [0.000, 0.005] n=800
+   L0H3: clean gets edited -> high rule                           0.000 [0.000, 0.005] n=800
+   L0H3: edited gets clean -> low rule                            0.001 [0.000, 0.007] n=800
+   CONTROL L0H1: clean gets matched same-tier edit -> high rule   0.000 [0.000, 0.005] n=800
+   CONTROL L0H1: clean gets matched same-tier edit -> low rule kept 1.000 [0.995, 1.000] n=800
+
+10->16 usable 800
+   L0H0: clean gets edited -> high rule                           0.000 [0.000, 0.005] n=800
+   L0H0: edited gets clean -> low rule                            0.005 [0.002, 0.013] n=800
+   L0H1: clean gets edited -> high rule                           0.823 [0.794, 0.847] n=800
+   L0H1: edited gets clean -> low rule                            1.000 [0.995, 1.000] n=800
+   L0H2: clean gets edited -> high rule                           0.000 [0.000, 0.005] n=800
+   L0H2: edited gets clean -> low rule                            0.000 [0.000, 0.005] n=800
+   L0H3: clean gets edited -> high rule                           0.000 [0.000, 0.005] n=800
+   L0H3: edited gets clean -> low rule                            0.000 [0.000, 0.005] n=800
+   CONTROL L0H1: clean gets matched same-tier edit -> high rule   0.000 [0.000, 0.005] n=800
+   CONTROL L0H1: clean gets matched same-tier edit -> low rule kept 1.000 [0.995, 1.000] n=800
+DONE base_patch

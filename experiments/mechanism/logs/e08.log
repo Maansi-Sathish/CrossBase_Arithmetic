@@ -1,0 +1,6 @@
+base 2: teacher-forced exact 0.9830, team generation baseline 0.9830
+  base 2 comp 0/520  2s
+  base 2 comp 40/520  127s
+  base 2 comp 80/520  285s
+  base 2 comp 120/520  427s
+  base 2 comp 160/520  584s

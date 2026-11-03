@@ -1,0 +1,7 @@
+mod 3: best 0.313 [0.296, 0.332] n=2527  guessing 0.355  at [8, '=', 'a+b', 'mlp0']
+mod 7: best 0.133 [0.120, 0.147] n=2528  guessing 0.168  at [10, 'b_0', 'a', 'mlp0']
+mod 9: best 0.102 [0.091, 0.115] n=2527  guessing 0.134  at [10, '=', 'a+b', 'mlp0']
+mod 5: best 0.195 [0.180, 0.211] n=2527  guessing 0.227  at [16, 'q2', 'a', 'mlp0']
+mod 10: best 0.174 [0.160, 0.189] n=2527  guessing 0.126  at [2, '=', 'a+b', 'resid1']
+mod 16: best 0.090 [0.079, 0.102] n=2527  guessing 0.092  at [10, '=', 'a+b', 'mlp1']
+DONE saved

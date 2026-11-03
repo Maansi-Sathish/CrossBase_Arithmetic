@@ -1,0 +1,65 @@
+
+=== L2_H4_D64: accuracy {2: 0.987, 8: 1.0, 10: 1.0, 16: 1.0}
+  P1 clock (R2, null, symmetry, parity share): {8: (0.81, 0.13, 0.98, 0.52), 10: (0.81, 0.09, 0.99, 0.51), 16: (0.74, 0.05, 0.99, 0.49)}
+  P2 only digits 0-7 shown: follows octal rule {10: 1.0, 16: 1.0}
+  P3 constant base vector flips rule: {'k0/8->10': 1.0, 'k1/8->10': 1.0, 'k0/10->16': 1.0, 'k1/10->16': 1.0, 'k0/8->16': 0.98, 'k1/8->16': 0.98, 'k0/16->8': 1.0, 'k1/16->8': 1.0}
+  P4 carry vector flip: {2: 0.53, 8: 0.96, 10: 0.95, 16: 0.84} cos {'8v10': 0.99, '10v16': 0.97, '8v16': 0.97, '2v10': 0.3}
+  P5 linear carry (a, b, w, R2, threshold/base): {8: (np.float64(1.46), np.float64(1.51), np.float64(-1.68), 0.82, 0.56), 10: (np.float64(1.26), np.float64(1.23), np.float64(-1.36), 0.86, 0.55), 16: (np.float64(0.66), np.float64(0.61), np.float64(-0.77), 0.83, 0.53)}
+  P6 best large-digit head H1, letters / digits-0-7 attention = 2989.7; all heads [1.3, 2989.7, 1.6, 1.3]
+  P6 single head patch moves answer off octal rule: {0: 0.0, 1: 0.96, 2: 0.0, 3: 0.0}
+
+=== L2_H8_D64: accuracy {2: 0.998, 8: 1.0, 10: 1.0, 16: 1.0}
+  P1 clock (R2, null, symmetry, parity share): {8: (0.9, 0.14, 1.0, 0.53), 10: (0.89, 0.11, 1.0, 0.57), 16: (0.79, 0.06, 1.0, 0.56)}
+  P2 only digits 0-7 shown: follows octal rule {10: 1.0, 16: 1.0}
+  P3 constant base vector flips rule: {'k0/8->10': 1.0, 'k1/8->10': 1.0, 'k0/10->16': 1.0, 'k1/10->16': 0.99, 'k0/8->16': 1.0, 'k1/8->16': 0.9, 'k0/16->8': 1.0, 'k1/16->8': 1.0}
+  P4 carry vector flip: {2: 0.81, 8: 0.99, 10: 0.96, 16: 0.86} cos {'8v10': 0.99, '10v16': 0.99, '8v16': 0.98, '2v10': 0.56}
+  P5 linear carry (a, b, w, R2, threshold/base): {8: (np.float64(1.97), np.float64(1.8), np.float64(-1.83), 0.84, 0.56), 10: (np.float64(1.49), np.float64(1.44), np.float64(-1.45), 0.83, 0.55), 16: (np.float64(0.81), np.float64(0.78), np.float64(-0.89), 0.84, 0.53)}
+  P6 best large-digit head H5, letters / digits-0-7 attention = 5991.9; all heads [1.1, 0.9, 1.1, 1.6, 1.5, 5991.9, 1.2, 1.5]
+  P6 single head patch moves answer off octal rule: {0: 0.0, 1: 0.0, 2: 0.0, 3: 0.0, 4: 0.0, 5: 1.0, 6: 0.0, 7: 0.0}
+
+=== L2_H4_D128: accuracy {2: 0.998, 8: 1.0, 10: 1.0, 16: 1.0}
+  P1 clock (R2, null, symmetry, parity share): {8: (0.88, 0.14, 1.0, 0.49), 10: (0.89, 0.1, 1.0, 0.55), 16: (0.81, 0.06, 1.0, 0.47)}
+  P2 only digits 0-7 shown: follows octal rule {10: 0.996, 16: 1.0}
+  P3 constant base vector flips rule: {'k0/8->10': 1.0, 'k1/8->10': 1.0, 'k0/10->16': 1.0, 'k1/10->16': 1.0, 'k0/8->16': 1.0, 'k1/8->16': 1.0, 'k0/16->8': 1.0, 'k1/16->8': 1.0}
+  P4 carry vector flip: {2: 0.99, 8: 1.0, 10: 1.0, 16: 0.99} cos {'8v10': 0.99, '10v16': 0.97, '8v16': 0.96, '2v10': 0.56}
+  P5 linear carry (a, b, w, R2, threshold/base): {8: (np.float64(1.91), np.float64(1.9), np.float64(-1.83), 0.85, 0.56), 10: (np.float64(1.52), np.float64(1.45), np.float64(-1.46), 0.85, 0.55), 16: (np.float64(0.83), np.float64(0.75), np.float64(-0.92), 0.83, 0.53)}
+  P6 best large-digit head H1, letters / digits-0-7 attention = 10587.7; all heads [3.0, 10587.7, 1.9, 1.5]
+  P6 single head patch moves answer off octal rule: {0: 0.0, 1: 1.0, 2: 0.0, 3: 0.0}
+
+=== L2_H2_D64: accuracy {2: 0.767, 8: 0.962, 10: 0.987, 16: 0.988}
+  accuracy too low in some base; analyses still run for bases with accuracy >= 0.8
+  P1 clock (R2, null, symmetry, parity share): {8: (0.63, 0.11, 0.98, 0.52), 10: (0.71, 0.09, 1.0, 0.55), 16: (0.68, 0.05, 0.99, 0.56)}
+  P2 only digits 0-7 shown: follows octal rule {10: 1.0, 16: 0.998}
+  P3 constant base vector flips rule: {'k0/8->10': 0.99, 'k1/8->10': 0.96, 'k0/10->16': 1.0, 'k1/10->16': 0.98, 'k0/8->16': 1.0, 'k1/8->16': 0.95, 'k0/16->8': 0.99, 'k1/16->8': 0.99}
+  P4 carry vector flip: {8: 0.96, 10: 0.98, 16: 0.98} cos {'8v10': 0.99, '10v16': 0.98, '8v16': 0.97}
+  P5 linear carry (a, b, w, R2, threshold/base): {8: (np.float64(1.06), np.float64(1.07), np.float64(-1.72), 0.8, 0.56), 10: (np.float64(0.96), np.float64(0.91), np.float64(-1.33), 0.84, 0.55), 16: (np.float64(0.5), np.float64(0.52), np.float64(-0.76), 0.8, 0.53)}
+  P6 best large-digit head H0, letters / digits-0-7 attention = 471.1; all heads [471.1, 1.3]
+  P6 single head patch moves answer off octal rule: {0: 0.98, 1: 0.0}
+
+=== L3_H2_D64: accuracy {2: 1.0, 8: 1.0, 10: 1.0, 16: 1.0}
+  P1 clock (R2, null, symmetry, parity share): {8: (0.87, 0.14, 0.99, 0.55), 10: (0.86, 0.09, 1.0, 0.57), 16: (0.82, 0.06, 0.99, 0.54)}
+  P2 only digits 0-7 shown: follows octal rule {10: 1.0, 16: 1.0}
+  P3 constant base vector flips rule: {'k0/8->10': 0.98, 'k1/8->10': 1.0, 'k0/10->16': 1.0, 'k1/10->16': 0.99, 'k0/8->16': 0.95, 'k1/8->16': 0.95, 'k0/16->8': 0.97, 'k1/16->8': 1.0}
+  P4 carry vector flip: {2: 1.0, 8: 1.0, 10: 1.0, 16: 0.98} cos {'8v10': 1.0, '10v16': 0.99, '8v16': 0.99, '2v10': 0.91}
+  P5 linear carry (a, b, w, R2, threshold/base): {8: (np.float64(1.66), np.float64(1.69), np.float64(-1.7), 0.84, 0.56), 10: (np.float64(1.27), np.float64(1.43), np.float64(-1.35), 0.86, 0.55), 16: (np.float64(0.7), np.float64(0.75), np.float64(-0.82), 0.85, 0.47)}
+  P6 best large-digit head H0, letters / digits-0-7 attention = 3369.1; all heads [3369.1, 1.2]
+  P6 single head patch moves answer off octal rule: {0: 1.0, 1: 0.0}
+
+=== L1_H4_D64: accuracy {2: 0.0, 8: 0.11, 10: 0.1, 16: 0.06}
+  accuracy too low in some base; analyses still run for bases with accuracy >= 0.8
+  P1 clock (R2, null, symmetry, parity share): {}
+  P3 constant base vector flips rule: {}
+  P4 carry vector flip: {} cos {}
+  P5 linear carry (a, b, w, R2, threshold/base): {}
+
+=== L2_H8_D128: accuracy {2: 1.0, 8: 1.0, 10: 1.0, 16: 1.0}
+  P1 clock (R2, null, symmetry, parity share): {8: (0.9, 0.14, 1.0, 0.52), 10: (0.9, 0.1, 1.0, 0.55), 16: (0.85, 0.06, 1.0, 0.57)}
+  P2 only digits 0-7 shown: follows octal rule {10: 0.83, 16: 1.0}
+  P3 constant base vector flips rule: {'k0/8->10': 0.97, 'k1/8->10': 0.99, 'k0/10->16': 1.0, 'k1/10->16': 1.0, 'k0/8->16': 1.0, 'k1/8->16': 0.83, 'k0/16->8': 1.0, 'k1/16->8': 1.0}
+  P4 carry vector flip: {2: 0.97, 8: 0.99, 10: 1.0, 16: 0.99} cos {'8v10': 0.98, '10v16': 0.92, '8v16': 0.9, '2v10': 0.46}
+  P5 linear carry (a, b, w, R2, threshold/base): {8: (np.float64(1.95), np.float64(1.88), np.float64(-1.94), 0.81, 0.44), 10: (np.float64(1.51), np.float64(1.47), np.float64(-1.51), 0.85, 0.55), 16: (np.float64(0.83), np.float64(0.83), np.float64(-0.85), 0.75, 0.47)}
+  P6 best large-digit head H2, letters / digits-0-7 attention = 2352.0; all heads [1.4, 1.5, 2352.0, 2.6, 1.6, 1.8, 0.7, 1.0]
+  P6 single head patch moves answer off octal rule: {0: 0.0, 1: 0.0, 2: 1.0, 3: 0.0, 4: 0.0, 5: 0.0, 6: 0.0, 7: 0.0}
+L8_H4_D64 LOAD FAILED RemoteEntryNotFoundError('404 Client Error. (Request ID: Root=1-6ae6cbcc-2869ce1072b7e0a05dfb1be0;e40dc5fe-6c65-4054-aac9-a58919dc7459)\n\nEntry Not F
+DONE
+[W1101 00:19:09.377815579 AllocatorConfig.cpp:28] Warning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (function operator())

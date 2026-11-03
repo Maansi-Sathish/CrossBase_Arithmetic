@@ -1,0 +1,68 @@
+A k0 variance share [0.315, 0.197, 0.127, 0.075, 0.071, 0.049, 0.043, 0.042]
+   PC0: share 0.32, a~b +0.94, R2 linear 0.83 parity 0.13 letter 0.38 mod4 0.03; by digit [-13.2, -6.9, -9.2, -5.8, -7.0, -0.7, -1.1, 5.5, 2.9, 5.3, 0.6, 5.7, 3.1, 7.5, 5.4, 8.1]
+   PC1: share 0.20, a~b +0.94, R2 linear 0.20 parity 0.64 letter 0.22 mod4 0.00; by digit [1.3, -6.7, -2.0, -7.2, 2.9, -3.9, 3.4, -3.6, 3.5, -2.5, 6.0, -1.0, 5.1, -1.2, 6.2, -0.2]
+   PC2: share 0.13, a~b +0.94, R2 linear 0.02 parity 0.07 letter 0.05 mod4 0.01; by digit [-0.6, -0.6, 5.2, 2.0, -4.0, -4.5, 4.1, 2.0, 2.1, -0.5, -3.4, -5.0, 4.0, 2.2, -0.7, -2.4]
+   PC3: share 0.08, a~b +0.49, R2 linear 0.24 parity 0.03 letter 0.57 mod4 0.02; by digit [1.2, -0.2, -1.6, 0.3, -2.5, -3.7, -2.9, 0.3, -3.7, -1.3, 2.3, 1.6, 2.3, 5.3, 1.6, 0.9]
+   PC4: share 0.07, a~b +0.91, R2 linear 0.05 parity 0.00 letter 0.11 mod4 0.00; by digit [-1.7, 0.5, 1.7, -2.2, -1.9, 2.6, 1.8, -4.1, -2.2, -0.9, -2.1, 3.1, 5.0, -1.2, -0.8, 2.2]
+B k0 accuracy (8,10,16):
+   linear a+b only                        params   5 preR2 0.33 acc 0.281 0.162 0.098
+   linear a, b (separate)                 params   6 preR2 0.37 acc 0.188 0.142 0.118
+   + parity                               params   8 preR2 0.56 acc 0.386 0.334 0.222
+   + parity + squares                     params  10 preR2 0.61 acc 0.465 0.427 0.318
+   + parity + squares + mod 4             params  16 preR2 0.69 acc 0.734 0.506 0.307
+   + parity x linear                      params  12 preR2 0.62 acc 0.463 0.414 0.320
+   full tables (15+15)                    params  34 preR2 0.96 acc 1.000 1.000 0.974
+   top 1 components of the digit code     params   6 preR2 0.45 acc 0.292 0.217 0.096
+   top 2 components of the digit code     params   8 preR2 0.61 acc 0.454 0.369 0.190
+   top 3 components of the digit code     params  10 preR2 0.72 acc 0.612 0.442 0.253
+   top 4 components of the digit code     params  12 preR2 0.78 acc 0.780 0.544 0.359
+   top 6 components of the digit code     params  16 preR2 0.87 acc 0.907 0.798 0.557
+   top 8 components of the digit code     params  20 preR2 0.95 acc 1.000 1.000 0.802
+   top 12 components of the digit code    params  28 preR2 0.96 acc 1.000 1.000 0.970
+A k1 variance share [0.251, 0.229, 0.149, 0.089, 0.072, 0.058, 0.056, 0.051]
+   PC0: share 0.25, a~b +1.00, R2 linear 0.05 parity 0.81 letter 0.09 mod4 0.00; by digit [-2.6, 5.5, 0.2, 5.9, -3.6, 3.0, -3.6, 3.5, -2.4, 2.7, -5.6, 1.6, -4.2, 2.2, -4.2, 1.7]
+   PC1: share 0.23, a~b +1.00, R2 linear 0.80 parity 0.09 letter 0.29 mod4 0.03; by digit [-6.2, -4.9, -5.0, -2.4, -3.7, -0.6, 0.7, 2.9, 1.7, 3.3, -0.6, 0.8, 1.6, 4.2, 3.3, 4.8]
+   PC2: share 0.15, a~b +1.00, R2 linear 0.02 parity 0.07 letter 0.03 mod4 0.01; by digit [0.7, 0.4, -5.2, -2.1, 3.7, 4.0, -3.2, -1.4, -1.2, 0.5, 2.7, 4.0, -3.7, -1.9, 0.4, 2.3]
+   PC3: share 0.09, a~b +1.00, R2 linear 0.00 parity 0.00 letter 0.00 mod4 0.01; by digit [-2.0, 0.7, 1.6, -2.5, -1.1, 3.6, 3.0, -2.3, -0.4, 0.4, -2.4, 1.9, 3.0, -2.9, -1.8, 1.2]
+   PC4: share 0.07, a~b +1.00, R2 linear 0.08 parity 0.02 letter 0.43 mod4 0.00; by digit [-0.9, -0.4, 0.8, -0.0, 1.8, 0.9, 0.9, 1.2, 4.1, 1.5, -1.7, -2.8, -3.5, -3.1, 0.9, 0.4]
+B k1 accuracy (8,10,16):
+   linear a+b only                        params   5 preR2 0.43 acc 0.115 0.164 0.093
+   linear a, b (separate)                 params   6 preR2 0.43 acc 0.126 0.159 0.082
+   + parity                               params   8 preR2 0.58 acc 0.271 0.328 0.172
+   + parity + squares                     params  10 preR2 0.62 acc 0.368 0.372 0.295
+   + parity + squares + mod 4             params  16 preR2 0.69 acc 0.631 0.533 0.338
+   + parity x linear                      params  12 preR2 0.62 acc 0.381 0.370 0.313
+   full tables (15+15)                    params  34 preR2 0.91 acc 1.000 1.000 1.000
+   top 1 components of the digit code     params   6 preR2 0.48 acc 0.248 0.198 0.147
+   top 2 components of the digit code     params   8 preR2 0.62 acc 0.417 0.339 0.191
+   top 3 components of the digit code     params  10 preR2 0.71 acc 0.548 0.459 0.272
+   top 4 components of the digit code     params  12 preR2 0.77 acc 0.719 0.551 0.316
+   top 6 components of the digit code     params  16 preR2 0.84 acc 0.938 0.785 0.626
+   top 8 components of the digit code     params  20 preR2 0.90 acc 1.000 1.000 0.846
+   top 12 components of the digit code    params  28 preR2 0.91 acc 1.000 1.000 1.000
+A k2 variance share [0.486, 0.16, 0.112, 0.089, 0.053, 0.052, 0.039, 0.007]
+   PC0: share 0.49, a~b +1.00, R2 linear 0.15 parity 0.10 letter 0.59 mod4 0.01; by digit [-4.8, 2.3, 0.1, 3.3, -1.6, 4.8, 2.9, 8.4, 5.2, 8.2, -4.8, -4.8, -4.8, -4.8, -4.8, -4.8]
+   PC1: share 0.16, a~b +1.00, R2 linear 0.04 parity 0.35 letter 0.00 mod4 0.00; by digit [0.2, 5.4, -0.2, 5.6, -2.9, 1.4, -5.0, 0.5, -6.2, 0.3, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2]
+   PC2: share 0.11, a~b +1.00, R2 linear 0.08 parity 0.09 letter 0.03 mod4 0.20; by digit [-0.5, 0.1, 7.2, 2.6, -2.3, -3.8, 2.0, -1.4, 0.7, -1.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5]
+   PC3: share 0.09, a~b +1.00, R2 linear 0.17 parity 0.02 letter 0.10 mod4 0.06; by digit [-0.8, -0.3, 1.8, 1.4, 5.3, 3.9, -0.5, -3.4, -0.6, -1.8, -0.8, -0.8, -0.8, -0.8, -0.8, -0.8]
+   PC4: share 0.05, a~b +1.00, R2 linear 0.00 parity 0.00 letter 0.00 mod4 0.27; by digit [-0.0, 1.5, 0.8, -1.4, -0.5, -0.1, -2.6, -3.5, 2.3, 3.6, -0.0, -0.0, -0.0, -0.0, -0.0, -0.0]
+B k2 accuracy (8,10,16):
+   linear a+b only                        params   5 preR2 0.45 acc 0.273 0.259 0.262
+   linear a, b (separate)                 params   6 preR2 0.45 acc 0.273 0.259 0.262
+   + parity                               params   8 preR2 0.62 acc 0.428 0.467 0.513
+   + parity + squares                     params  10 preR2 0.67 acc 0.516 0.552 0.710
+   + parity + squares + mod 4             params  16 preR2 0.81 acc 0.915 0.696 0.966
+   + parity x linear                      params  12 preR2 0.68 acc 0.565 0.560 0.773
+   full tables (15+15)                    params  34 preR2 0.90 acc 1.000 1.000 1.000
+   top 1 components of the digit code     params   6 preR2 0.51 acc 0.295 0.172 0.449
+   top 2 components of the digit code     params   8 preR2 0.62 acc 0.457 0.381 0.513
+   top 3 components of the digit code     params  10 preR2 0.73 acc 0.584 0.417 0.713
+   top 4 components of the digit code     params  12 preR2 0.79 acc 0.874 0.620 0.778
+   top 6 components of the digit code     params  16 preR2 0.88 acc 1.000 0.945 1.000
+   top 8 components of the digit code     params  20 preR2 0.90 acc 1.000 1.000 1.000
+   top 12 components of the digit code    params  28 preR2 0.90 acc 1.000 1.000 1.000
+C b2: top parity neurons [198, 220, 185, 140, 22, 104], fire same way on even+even and odd+odd in 0.80 of top 10; tables (EE,EO,OE,OO): [[2.31, -0.06, -0.04, -0.0], [2.46, -0.02, 0.11, -0.01], [2.17, -0.07, -0.04, -0.0], [2.13, -0.08, -0.05, -0.0]]
+C b8: top parity neurons [22, 119, 174, 125, 104, 45], fire same way on even+even and odd+odd in 0.80 of top 10; tables (EE,EO,OE,OO): [[-0.03, 0.0, -0.09, 1.82], [-0.04, -0.04, -0.1, 1.43], [-0.02, -0.09, -0.1, 1.33], [-0.01, -0.13, -0.14, 1.01]]
+C b10: top parity neurons [22, 119, 174, 104, 125, 140], fire same way on even+even and odd+odd in 0.60 of top 10; tables (EE,EO,OE,OO): [[-0.01, -0.11, -0.13, 1.53], [-0.04, -0.05, -0.09, 1.43], [-0.02, -0.12, -0.1, 1.2], [1.31, 0.19, 0.06, -0.06]]
+C b16: top parity neurons [174, 22, 119, 125, 11, 45], fire same way on even+even and odd+odd in 0.30 of top 10; tables (EE,EO,OE,OO): [[-0.03, -0.02, -0.04, 1.52], [-0.01, -0.11, -0.15, 1.3], [-0.06, 0.09, -0.01, 1.51], [-0.02, -0.1, -0.12, 1.06]]
+DONE

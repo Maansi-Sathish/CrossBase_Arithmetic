@@ -1,0 +1,10 @@
+base 8: clean stops 1.00, corrupted continues 0.63, pairs 313
+   clean_gets_corrupted (stops -> continues) {'L1H0': 0.08, 'L1H1': 0.0, 'L1H2': 0.0, 'L1H3': 0.0, 'all L1 heads': 0.07, 'layer 0 output at query': 0.45, 'L0H0 at query': 0.0, 'L0H1 at query': 0.0, 'L0H2 at query': 0.0, 'L0H3 at query': 0.0, "layer 0 output at a's top digit": 0.12, "layer 0 output at all of a's digits": 0.12}
+   corrupted_gets_clean (continues -> stops) {'L1H0': 0.02, 'L1H1': 0.39, 'L1H2': 0.09, 'L1H3': 0.07, 'all L1 heads': 0.41, 'layer 0 output at query': 0.86, 'L0H0 at query': 0.0, 'L0H1 at query': 0.01, 'L0H2 at query': 0.12, 'L0H3 at query': 0.12, "layer 0 output at a's top digit": 0.55, "layer 0 output at all of a's digits": 0.54}
+base 10: clean stops 1.00, corrupted continues 1.00, pairs 500
+   clean_gets_corrupted (stops -> continues) {'L1H0': 0.04, 'L1H1': 0.0, 'L1H2': 0.0, 'L1H3': 0.0, 'all L1 heads': 0.11, 'layer 0 output at query': 0.94, 'L0H0 at query': 0.0, 'L0H1 at query': 0.0, 'L0H2 at query': 0.0, 'L0H3 at query': 0.0, "layer 0 output at a's top digit": 0.19, "layer 0 output at all of a's digits": 0.2}
+   corrupted_gets_clean (continues -> stops) {'L1H0': 0.01, 'L1H1': 0.0, 'L1H2': 0.0, 'L1H3': 0.0, 'all L1 heads': 0.04, 'layer 0 output at query': 0.79, 'L0H0 at query': 0.0, 'L0H1 at query': 0.0, 'L0H2 at query': 0.0, 'L0H3 at query': 0.0, "layer 0 output at a's top digit": 0.06, "layer 0 output at all of a's digits": 0.06}
+base 16: clean stops 1.00, corrupted continues 0.97, pairs 485
+   clean_gets_corrupted (stops -> continues) {'L1H0': 0.01, 'L1H1': 0.0, 'L1H2': 0.0, 'L1H3': 0.01, 'all L1 heads': 0.0, 'layer 0 output at query': 0.14, 'L0H0 at query': 0.0, 'L0H1 at query': 0.0, 'L0H2 at query': 0.0, 'L0H3 at query': 0.0, "layer 0 output at a's top digit": 0.01, "layer 0 output at all of a's digits": 0.01}
+   corrupted_gets_clean (continues -> stops) {'L1H0': 0.66, 'L1H1': 0.41, 'L1H2': 0.01, 'L1H3': 0.0, 'all L1 heads': 0.77, 'layer 0 output at query': 0.98, 'L0H0 at query': 0.0, 'L0H1 at query': 0.0, 'L0H2 at query': 0.01, 'L0H3 at query': 0.08, "layer 0 output at a's top digit": 0.85, "layer 0 output at all of a's digits": 0.85}
+DONE

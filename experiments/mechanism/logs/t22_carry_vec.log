@@ -1,0 +1,5 @@
+base 2: flip 0.530 [0.514, 0.547] n=3652; random mean 0.347 p95 0.540 max 0.607; noise-split mean 0.438 max 0.556
+base 8: flip 0.955 [0.947, 0.962] n=2813; random mean 0.108 p95 0.188 max 0.228; noise-split mean 0.140 max 0.329
+base 10: flip 0.944 [0.935, 0.952] n=2769; random mean 0.095 p95 0.167 max 0.205; noise-split mean 0.129 max 0.411
+base 16: flip 0.875 [0.862, 0.887] n=2647; random mean 0.071 p95 0.118 max 0.162; noise-split mean 0.087 max 0.166
+DONE carry_vec
