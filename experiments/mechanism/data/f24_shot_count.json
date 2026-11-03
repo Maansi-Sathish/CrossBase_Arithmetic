@@ -1,0 +1,220 @@
+{
+ "2": {
+  "0": {
+   "exact": 0.0,
+   "digits_right": 0.9826666666666667,
+   "digits_right_then_newline": 0.9826666666666667,
+   "example": "'11000001011\\n10'"
+  },
+  "1": {
+   "exact": 0.0,
+   "digits_right": 0.986,
+   "digits_right_then_newline": 0.986,
+   "example": "'0010101001\\n100'"
+  },
+  "2": {
+   "exact": 0.0,
+   "digits_right": 0.9833333333333333,
+   "digits_right_then_newline": 0.9833333333333333,
+   "example": "'01101110111\\n10'"
+  },
+  "3": {
+   "exact": 0.0,
+   "digits_right": 0.9826666666666667,
+   "digits_right_then_newline": 0.9826666666666667,
+   "example": "'10001011011\\n10'"
+  },
+  "4": {
+   "exact": 0.0,
+   "digits_right": 0.982,
+   "digits_right_then_newline": 0.982,
+   "example": "'10000110001\\n10'"
+  },
+  "5": {
+   "exact": 0.9813333333333333,
+   "digits_right": 0.9826666666666667,
+   "digits_right_then_newline": 0.0013333333333333333,
+   "example": "'00101001001'"
+  },
+  "6": {
+   "exact": 0.01,
+   "digits_right": 0.012,
+   "digits_right_then_newline": 0.0,
+   "example": "'10101010101010'"
+  },
+  "7": {
+   "exact": 0.0,
+   "digits_right": 0.0033333333333333335,
+   "digits_right_then_newline": 0.0,
+   "example": "'10101010101010'"
+  }
+ },
+ "8": {
+  "0": {
+   "exact": 0.0,
+   "digits_right": 0.8893333333333333,
+   "digits_right_then_newline": 0.8893333333333333,
+   "example": "'1501\\n106+127=5'"
+  },
+  "1": {
+   "exact": 0.0,
+   "digits_right": 0.9973333333333333,
+   "digits_right_then_newline": 0.9973333333333333,
+   "example": "'1452\\n1160+1001'"
+  },
+  "2": {
+   "exact": 0.0,
+   "digits_right": 0.9993333333333333,
+   "digits_right_then_newline": 0.9993333333333333,
+   "example": "'7461\\n1661+144='"
+  },
+  "3": {
+   "exact": 0.0,
+   "digits_right": 1.0,
+   "digits_right_then_newline": 1.0,
+   "example": "'4352\\n1661+1001'"
+  },
+  "4": {
+   "exact": 0.0,
+   "digits_right": 0.9986666666666667,
+   "digits_right_then_newline": 0.9986666666666667,
+   "example": "'7102\\n1616+1475'"
+  },
+  "5": {
+   "exact": 0.9986666666666667,
+   "digits_right": 0.9993333333333333,
+   "digits_right_then_newline": 0.0006666666666666666,
+   "example": "'2361'"
+  },
+  "6": {
+   "exact": 0.318,
+   "digits_right": 0.37933333333333336,
+   "digits_right_then_newline": 0.0013333333333333333,
+   "example": "'6162'"
+  },
+  "7": {
+   "exact": 0.014,
+   "digits_right": 0.024666666666666667,
+   "digits_right_then_newline": 0.0,
+   "example": "'7041'"
+  },
+  "8": {
+   "exact": 0.0006666666666666666,
+   "digits_right": 0.004666666666666667,
+   "digits_right_then_newline": 0.0,
+   "example": "'1002'"
+  }
+ },
+ "10": {
+  "0": {
+   "exact": 0.0,
+   "digits_right": 0.8333333333333334,
+   "digits_right_then_newline": 0.8333333333333334,
+   "example": "'916\\n35+373=804'"
+  },
+  "1": {
+   "exact": 0.0,
+   "digits_right": 0.972,
+   "digits_right_then_newline": 0.972,
+   "example": "'2641\\n275+502=7'"
+  },
+  "2": {
+   "exact": 0.0,
+   "digits_right": 0.9973333333333333,
+   "digits_right_then_newline": 0.9973333333333333,
+   "example": "'348\\n900+932=23'"
+  },
+  "3": {
+   "exact": 0.0,
+   "digits_right": 0.9993333333333333,
+   "digits_right_then_newline": 0.9993333333333333,
+   "example": "'8911\\n111+31=24'"
+  },
+  "4": {
+   "exact": 0.0,
+   "digits_right": 0.9993333333333333,
+   "digits_right_then_newline": 0.9993333333333333,
+   "example": "'2001\\n136+25=16'"
+  },
+  "5": {
+   "exact": 0.998,
+   "digits_right": 0.998,
+   "digits_right_then_newline": 0.0,
+   "example": "'4051'"
+  },
+  "6": {
+   "exact": 0.962,
+   "digits_right": 0.962,
+   "digits_right_then_newline": 0.0,
+   "example": "'9461'"
+  },
+  "7": {
+   "exact": 0.25666666666666665,
+   "digits_right": 0.25866666666666666,
+   "digits_right_then_newline": 0.0,
+   "example": "'6721'"
+  },
+  "8": {
+   "exact": 0.020666666666666667,
+   "digits_right": 0.021333333333333333,
+   "digits_right_then_newline": 0.0,
+   "example": "'167'"
+  }
+ },
+ "16": {
+  "0": {
+   "exact": 0.0,
+   "digits_right": 0.9146666666666666,
+   "digits_right_then_newline": 0.9146666666666666,
+   "example": "'182\\n1E0+217=7F'"
+  },
+  "1": {
+   "exact": 0.0,
+   "digits_right": 0.9953333333333333,
+   "digits_right_then_newline": 0.9953333333333333,
+   "example": "'3E2\\n221+117=83'"
+  },
+  "2": {
+   "exact": 0.0,
+   "digits_right": 0.998,
+   "digits_right_then_newline": 0.998,
+   "example": "'8F2\\n23F+2A=962'"
+  },
+  "3": {
+   "exact": 0.0,
+   "digits_right": 1.0,
+   "digits_right_then_newline": 1.0,
+   "example": "'6A4\\n1F9+167=06'"
+  },
+  "4": {
+   "exact": 0.0,
+   "digits_right": 0.9993333333333333,
+   "digits_right_then_newline": 0.9993333333333333,
+   "example": "'853\\n2A4+2AB=F4'"
+  },
+  "5": {
+   "exact": 1.0,
+   "digits_right": 1.0,
+   "digits_right_then_newline": 0.0,
+   "example": "'05'"
+  },
+  "6": {
+   "exact": 0.9793333333333333,
+   "digits_right": 0.9793333333333333,
+   "digits_right_then_newline": 0.0,
+   "example": "'E33'"
+  },
+  "7": {
+   "exact": 0.452,
+   "digits_right": 0.452,
+   "digits_right_then_newline": 0.0,
+   "example": "'B24'"
+  },
+  "8": {
+   "exact": 0.015333333333333332,
+   "digits_right": 0.016,
+   "digits_right_then_newline": 0.0,
+   "example": "'B\\n111+111=B21'"
+  }
+ }
+}

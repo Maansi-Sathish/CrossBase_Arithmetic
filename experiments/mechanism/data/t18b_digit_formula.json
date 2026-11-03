@@ -1,0 +1,50 @@
+{
+ "8/k0": {
+  "full digit tables A[a] + B[b] + c*C": 1.0,
+  "polynomial degree 2 + parity, per operand (8 numbers)": 0.6803442754203363,
+  "polynomial degree 3 + parity, per operand (10 numbers)": 0.8374699759807847,
+  "polynomial degree 4 + parity, per operand (12 numbers)": 0.9675740592473979,
+  "polynomial degree 6 + parity, per operand (16 numbers)": 1.0,
+  "degree 4 + parity, same code for a and b (7 numbers)": 0.9649719775820657
+ },
+ "8/k1": {
+  "full digit tables A[a] + B[b] + c*C": 0.9457566052842273,
+  "polynomial degree 2 + parity, per operand (8 numbers)": 0.4569655724579664,
+  "polynomial degree 3 + parity, per operand (10 numbers)": 0.5844675740592474,
+  "polynomial degree 4 + parity, per operand (12 numbers)": 0.7213771016813451,
+  "polynomial degree 6 + parity, per operand (16 numbers)": 0.9457566052842273,
+  "degree 4 + parity, same code for a and b (7 numbers)": 0.7211769415532426
+ },
+ "10/k0": {
+  "full digit tables A[a] + B[b] + c*C": 1.0,
+  "polynomial degree 2 + parity, per operand (8 numbers)": 0.6250500200080032,
+  "polynomial degree 3 + parity, per operand (10 numbers)": 0.7352941176470589,
+  "polynomial degree 4 + parity, per operand (12 numbers)": 0.8533413365346139,
+  "polynomial degree 6 + parity, per operand (16 numbers)": 0.9959983993597439,
+  "degree 4 + parity, same code for a and b (7 numbers)": 0.8531412565026011
+ },
+ "10/k1": {
+  "full digit tables A[a] + B[b] + c*C": 0.9579747848709226,
+  "polynomial degree 2 + parity, per operand (8 numbers)": 0.3221933159895938,
+  "polynomial degree 3 + parity, per operand (10 numbers)": 0.4350610366219732,
+  "polynomial degree 4 + parity, per operand (12 numbers)": 0.5595357214328597,
+  "polynomial degree 6 + parity, per operand (16 numbers)": 0.8330998599159496,
+  "degree 4 + parity, same code for a and b (7 numbers)": 0.5619371622973784
+ },
+ "16/k0": {
+  "full digit tables A[a] + B[b] + c*C": 1.0,
+  "polynomial degree 2 + parity, per operand (8 numbers)": 0.3605605605605606,
+  "polynomial degree 3 + parity, per operand (10 numbers)": 0.4948948948948949,
+  "polynomial degree 4 + parity, per operand (12 numbers)": 0.6266266266266266,
+  "polynomial degree 6 + parity, per operand (16 numbers)": 0.8316316316316317,
+  "degree 4 + parity, same code for a and b (7 numbers)": 0.5883883883883884
+ },
+ "16/k1": {
+  "full digit tables A[a] + B[b] + c*C": 0.9188864410174244,
+  "polynomial degree 2 + parity, per operand (8 numbers)": 0.1550170238333667,
+  "polynomial degree 3 + parity, per operand (10 numbers)": 0.22491488083316644,
+  "polynomial degree 4 + parity, per operand (12 numbers)": 0.28820348487883035,
+  "polynomial degree 6 + parity, per operand (16 numbers)": 0.4698578009212898,
+  "degree 4 + parity, same code for a and b (7 numbers)": 0.28980572801922694
+ }
+}

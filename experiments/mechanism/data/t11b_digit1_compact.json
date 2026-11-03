@@ -1,0 +1,14 @@
+{
+ "8": {
+  "two bumps + carry-aware gates (8 numbers)": 0.7013610888710968,
+  "+ graded previous-column sum (12 numbers)": 0.8364691753402722
+ },
+ "10": {
+  "two bumps + carry-aware gates (8 numbers)": 0.6007604562737643,
+  "+ graded previous-column sum (12 numbers)": 0.7746647988793276
+ },
+ "16": {
+  "two bumps + carry-aware gates (8 numbers)": 0.31183657119967956,
+  "+ graded previous-column sum (12 numbers)": 0.44121770478670136
+ }
+}

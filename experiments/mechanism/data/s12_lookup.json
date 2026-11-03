@@ -1,0 +1,404 @@
+{
+ "A": {
+  "2": {
+   "unchanged": {
+    "entries": 0,
+    "digit": 1.0,
+    "digit_by_k": {
+     "0": 1.0,
+     "1": 1.0,
+     "2": 1.0
+    },
+    "whole_answer_digits": 1.0
+   },
+   "full table (k,a,b,c)": {
+    "entries": 76,
+    "digit": 0.9963971967229296,
+    "digit_by_k": {
+     "0": 1.0,
+     "1": 0.9969309462915601,
+     "2": 1.0
+    },
+    "whole_answer_digits": 0.9626598465473146
+   },
+   "sum table (k,s)": {
+    "entries": 39,
+    "digit": 0.9998025861218044,
+    "digit_by_k": {
+     "0": 1.0,
+     "1": 0.9979539641943734,
+     "2": 1.0
+    },
+    "whole_answer_digits": 0.9979539641943734
+   },
+   "output table (k,o)": {
+    "entries": 21,
+    "digit": 0.9999506465304511,
+    "digit_by_k": {
+     "0": 1.0,
+     "1": 0.9994884910485934,
+     "2": 1.0
+    },
+    "whole_answer_digits": 0.9994884910485934
+   },
+   "additive f(a)+g(b)+h(c)": {
+    "entries": 62,
+    "digit": 0.5220610008883625,
+    "digit_by_k": {
+     "0": 0.4424552429667519,
+     "1": 0.5263427109974425,
+     "2": 0.5590792838874681
+    },
+    "whole_answer_digits": 0.0010230179028132991
+   },
+   "no information (k only)": {
+    "entries": 11,
+    "digit": 0.520728457210542,
+    "digit_by_k": {
+     "0": 0.4163682864450128,
+     "1": 0.49872122762148335,
+     "2": 0.50076726342711
+    },
+    "whole_answer_digits": 0.0010230179028132991
+   },
+   "heldout_r2": {
+    "full table (k,a,b,c)": 0.5629658013937433,
+    "sum table (k,s)": 0.476334776488225,
+    "output table (k,o)": 0.19084895551851633,
+    "additive f(a)+g(b)+h(c)": 0.4532633957354436,
+    "no information (k only)": 0.15440824376456908
+   }
+  },
+  "8": {
+   "unchanged": {
+    "entries": 0,
+    "digit": 1.0,
+    "digit_by_k": {
+     "0": 1.0,
+     "1": 1.0,
+     "2": 1.0
+    },
+    "whole_answer_digits": 1.0
+   },
+   "full table (k,a,b,c)": {
+    "entries": 327,
+    "digit": 0.9564543222638584,
+    "digit_by_k": {
+     "0": 1.0,
+     "1": 0.9159159159159159,
+     "2": 0.9250879839115134
+    },
+    "whole_answer_digits": 0.8443443443443444
+   },
+   "sum table (k,s)": {
+    "entries": 50,
+    "digit": 0.9577464788732394,
+    "digit_by_k": {
+     "0": 1.0,
+     "1": 0.9084084084084084,
+     "2": 0.9376571141277024
+    },
+    "whole_answer_digits": 0.8478478478478478
+   },
+   "output table (k,o)": {
+    "entries": 27,
+    "digit": 0.9563251066029202,
+    "digit_by_k": {
+     "0": 1.0,
+     "1": 0.8978978978978979,
+     "2": 0.942684766214178
+    },
+    "whole_answer_digits": 0.8388388388388388
+   },
+   "additive f(a)+g(b)+h(c)": {
+    "entries": 59,
+    "digit": 0.23116681741827108,
+    "digit_by_k": {
+     "0": 0.15565565565565564,
+     "1": 0.12662662662662663,
+     "2": 0.13071895424836602
+    },
+    "whole_answer_digits": 0.002002002002002002
+   },
+   "no information (k only)": {
+    "entries": 4,
+    "digit": 0.15286212688977904,
+    "digit_by_k": {
+     "0": 0.12162162162162163,
+     "1": 0.12662662662662663,
+     "2": 0.1282051282051282
+    },
+    "whole_answer_digits": 0.0005005005005005005
+   },
+   "heldout_r2": {
+    "full table (k,a,b,c)": 0.8634932793423125,
+    "sum table (k,s)": 0.41150930445730083,
+    "output table (k,o)": 0.2540605855343161,
+    "additive f(a)+g(b)+h(c)": 0.6518453996408282,
+    "no information (k only)": 0.17394336722761783
+   }
+  },
+  "10": {
+   "unchanged": {
+    "entries": 0,
+    "digit": 1.0,
+    "digit_by_k": {
+     "0": 1.0,
+     "1": 1.0,
+     "2": 1.0
+    },
+    "whole_answer_digits": 1.0
+   },
+   "full table (k,a,b,c)": {
+    "entries": 500,
+    "digit": 0.966,
+    "digit_by_k": {
+     "0": 1.0,
+     "1": 0.9535,
+     "2": 0.9270256668344238
+    },
+    "whole_answer_digits": 0.8855
+   },
+   "sum table (k,s)": {
+    "entries": 59,
+    "digit": 0.9731428571428572,
+    "digit_by_k": {
+     "0": 1.0,
+     "1": 0.9555,
+     "2": 0.9501761449421238
+    },
+    "whole_answer_digits": 0.906
+   },
+   "output table (k,o)": {
+    "entries": 31,
+    "digit": 0.9767142857142858,
+    "digit_by_k": {
+     "0": 1.0,
+     "1": 0.959,
+     "2": 0.9592350276799195
+    },
+    "whole_answer_digits": 0.9185
+   },
+   "additive f(a)+g(b)+h(c)": {
+    "entries": 68,
+    "digit": 0.23714285714285716,
+    "digit_by_k": {
+     "0": 0.1285,
+     "1": 0.1,
+     "2": 0.09562154001006543
+    },
+    "whole_answer_digits": 0.002
+   },
+   "no information (k only)": {
+    "entries": 4,
+    "digit": 0.22657142857142856,
+    "digit_by_k": {
+     "0": 0.09,
+     "1": 0.1005,
+     "2": 0.09662808253648716
+    },
+    "whole_answer_digits": 0.0005
+   },
+   "heldout_r2": {
+    "full table (k,a,b,c)": 0.8925512539310461,
+    "sum table (k,s)": 0.37034682158534105,
+    "output table (k,o)": 0.203924963893386,
+    "additive f(a)+g(b)+h(c)": 0.6479785459077925,
+    "no information (k only)": 0.14427429483305843
+   }
+  },
+  "16": {
+   "unchanged": {
+    "entries": 0,
+    "digit": 1.0,
+    "digit_by_k": {
+     "0": 1.0,
+     "1": 1.0,
+     "2": 1.0
+    },
+    "whole_answer_digits": 1.0
+   },
+   "full table (k,a,b,c)": {
+    "entries": 799,
+    "digit": 0.9633631605605267,
+    "digit_by_k": {
+     "0": 1.0,
+     "1": 0.8913370055082624,
+     "2": 1.0
+    },
+    "whole_answer_digits": 0.8913370055082624
+   },
+   "sum table (k,s)": {
+    "entries": 70,
+    "digit": 0.9723113287185547,
+    "digit_by_k": {
+     "0": 1.0,
+     "1": 0.9178768152228343,
+     "2": 1.0
+    },
+    "whole_answer_digits": 0.9178768152228343
+   },
+   "output table (k,o)": {
+    "entries": 39,
+    "digit": 0.972480162080027,
+    "digit_by_k": {
+     "0": 1.0,
+     "1": 0.9183775663495243,
+     "2": 1.0
+    },
+    "whole_answer_digits": 0.9183775663495243
+   },
+   "additive f(a)+g(b)+h(c)": {
+    "entries": 77,
+    "digit": 0.13641735606955935,
+    "digit_by_k": {
+     "0": 0.11417125688532799,
+     "1": 0.06159238858287431,
+     "2": 0.23691031622602385
+    },
+    "whole_answer_digits": 0.0015022533800701052
+   },
+   "no information (k only)": {
+    "entries": 3,
+    "digit": 0.06061117676852946,
+    "digit_by_k": {
+     "0": 0.04156234351527291,
+     "1": 0.06059088632949424,
+     "2": 0.08035251425609125
+    },
+    "whole_answer_digits": 0.0
+   },
+   "heldout_r2": {
+    "full table (k,a,b,c)": 0.9155523310676473,
+    "sum table (k,s)": 0.3526503418044321,
+    "output table (k,o)": 0.2524730767475847,
+    "additive f(a)+g(b)+h(c)": 0.7111588951266516,
+    "no information (k only)": 0.1603079211277595
+   }
+  }
+ },
+ "B": {
+  "2": {
+   "share_additive": 0.7165754044418285,
+   "share_sum_function": 0.28342459555817157,
+   "share_pair_specific": 0.0,
+   "cells": 4,
+   "rank_95": 3,
+   "rank_99": 3,
+   "n_active": 53,
+   "neurons_mostly_additive": 38,
+   "neurons_mostly_sum": 2,
+   "neurons_mostly_pair": 0,
+   "mean_cells_active_fraction": 0.5040622389949235,
+   "neurons_lt_10pct_cells": 0
+  },
+  "8": {
+   "share_additive": 0.7216819655264417,
+   "share_sum_function": 0.17376853026557,
+   "share_pair_specific": 0.10454950420798818,
+   "cells": 64,
+   "rank_95": 18,
+   "rank_99": 30,
+   "n_active": 97,
+   "neurons_mostly_additive": 55,
+   "neurons_mostly_sum": 0,
+   "neurons_mostly_pair": 1,
+   "mean_cells_active_fraction": 0.23270264068487273,
+   "neurons_lt_10pct_cells": 22
+  },
+  "10": {
+   "share_additive": 0.703832270232582,
+   "share_sum_function": 0.16011427101226983,
+   "share_pair_specific": 0.13605345875514815,
+   "cells": 100,
+   "rank_95": 23,
+   "rank_99": 40,
+   "n_active": 102,
+   "neurons_mostly_additive": 67,
+   "neurons_mostly_sum": 1,
+   "neurons_mostly_pair": 3,
+   "mean_cells_active_fraction": 0.22004537700299076,
+   "neurons_lt_10pct_cells": 20
+  },
+  "16": {
+   "share_additive": 0.7450765418384663,
+   "share_sum_function": 0.1085147178930646,
+   "share_pair_specific": 0.14640874026846912,
+   "cells": 256,
+   "rank_95": 32,
+   "rank_99": 59,
+   "n_active": 133,
+   "neurons_mostly_additive": 99,
+   "neurons_mostly_sum": 0,
+   "neurons_mostly_pair": 3,
+   "mean_cells_active_fraction": 0.2127520921694038,
+   "neurons_lt_10pct_cells": 29
+  }
+ },
+ "C": {
+  "2": {
+   "n_neurons_with_damage": 13,
+   "mean_r2_from_sum": -0.2983103160095144,
+   "null_r2": -0.9021789375759444,
+   "median_share_pairs_broken": 0.0,
+   "neurons_breaking_le_10pct_pairs": 10,
+   "mean_neurons_breaking_each_pair": 0.75,
+   "max_neurons_breaking_a_pair": 2,
+   "pairs_with_no_critical_neuron": 2,
+   "pairs": 4
+  },
+  "8": {
+   "n_neurons_with_damage": 24,
+   "mean_r2_from_sum": 0.001088404228960745,
+   "null_r2": -0.3015655424337818,
+   "median_share_pairs_broken": 0.0078125,
+   "neurons_breaking_le_10pct_pairs": 21,
+   "mean_neurons_breaking_each_pair": 0.71875,
+   "max_neurons_breaking_a_pair": 3,
+   "pairs_with_no_critical_neuron": 40,
+   "pairs": 64
+  },
+  "10": {
+   "n_neurons_with_damage": 26,
+   "mean_r2_from_sum": -0.06758144922431367,
+   "null_r2": -0.2359897192970479,
+   "median_share_pairs_broken": 0.01,
+   "neurons_breaking_le_10pct_pairs": 25,
+   "mean_neurons_breaking_each_pair": 0.66,
+   "max_neurons_breaking_a_pair": 5,
+   "pairs_with_no_critical_neuron": 61,
+   "pairs": 100
+  },
+  "16": {
+   "n_neurons_with_damage": 42,
+   "mean_r2_from_sum": 0.0038882002843309746,
+   "null_r2": -0.13662933805890873,
+   "median_share_pairs_broken": 0.0078125,
+   "neurons_breaking_le_10pct_pairs": 40,
+   "mean_neurons_breaking_each_pair": 0.9296875,
+   "max_neurons_breaking_a_pair": 5,
+   "pairs_with_no_critical_neuron": 116,
+   "pairs": 256
+  }
+ },
+ "D": {
+  "8": {
+   "digit0_vs_digit1_table": -0.17557294270970145,
+   "carry_vs_nocarry_same_pair": 0.6134573650018529,
+   "carry_vs_a_plus_one": 0.24458546036263557,
+   "carry_vs_b_plus_one": 0.22016211958548834
+  },
+  "10": {
+   "digit0_vs_digit1_table": -0.18955195180166887,
+   "carry_vs_nocarry_same_pair": 0.6192942950030705,
+   "carry_vs_a_plus_one": 0.284894741769238,
+   "carry_vs_b_plus_one": 0.2716561102078457
+  },
+  "16": {
+   "digit0_vs_digit1_table": -0.22670913137222312,
+   "carry_vs_nocarry_same_pair": 0.6605527704667115,
+   "carry_vs_a_plus_one": 0.33184485860748764,
+   "carry_vs_b_plus_one": 0.3417074929757662
+  }
+ }
+}

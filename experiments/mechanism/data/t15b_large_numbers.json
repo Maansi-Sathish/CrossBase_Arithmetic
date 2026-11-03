@@ -1,0 +1,59 @@
+{
+ "8": {
+  "0": {
+   "in range": 1.0,
+   "big, same length, leading digit seen": 1.0,
+   "big, same length, leading digit unseen": 1.0
+  },
+  "1": {
+   "in range": 1.0,
+   "big, same length, leading digit seen": 1.0,
+   "big, same length, leading digit unseen": 0.8
+  },
+  "2": {
+   "in range": 1.0,
+   "big, same length, leading digit seen": 1.0,
+   "big, same length, leading digit unseen": 0.17
+  },
+  "3": {
+   "in range": 1.0,
+   "big, same length, leading digit seen": 1.0,
+   "big, same length, leading digit unseen": 0.13
+  }
+ },
+ "10": {
+  "0": {
+   "in range": 1.0,
+   "longer": 0.98
+  },
+  "1": {
+   "in range": 1.0,
+   "longer": 0.52
+  },
+  "2": {
+   "in range": 1.0,
+   "longer": 0.18
+  },
+  "3": {
+   "longer": 0.09
+  }
+ },
+ "16": {
+  "0": {
+   "in range": 1.0,
+   "big, same length, leading digit seen": 1.0,
+   "big, same length, leading digit unseen": 1.0
+  },
+  "1": {
+   "in range": 1.0,
+   "big, same length, leading digit seen": 1.0,
+   "big, same length, leading digit unseen": 0.72
+  },
+  "2": {
+   "in range": 1.0,
+   "big, same length, leading digit seen": 1.0,
+   "big, same length, leading digit unseen": 0.62
+  },
+  "3": {}
+ }
+}

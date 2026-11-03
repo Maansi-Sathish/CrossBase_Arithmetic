@@ -1,0 +1,1104 @@
+{
+ "Q4": {
+  "2/k1": {
+   "query -2": {
+    "a read offset": -0.14625020325183868,
+    "b read offset": 0.1761811375617981,
+    "mass on a": 0.2734651565551758,
+    "mass on b": 0.3620889484882355,
+    "correct": 0.55
+   },
+   "query -1": {
+    "a read offset": 0.018762750551104546,
+    "b read offset": 0.31010642647743225,
+    "mass on a": 0.28486135601997375,
+    "mass on b": 0.5094443559646606,
+    "correct": 0.6775
+   },
+   "query +0": {
+    "a read offset": -0.6562028527259827,
+    "b read offset": -0.24639110267162323,
+    "mass on a": 0.23362883925437927,
+    "mass on b": 0.6697895526885986,
+    "correct": 1.0
+   },
+   "query +1": {
+    "a read offset": -1.9497872591018677,
+    "b read offset": -1.6691679954528809,
+    "mass on a": 0.14258725941181183,
+    "mass on b": 0.7863327860832214,
+    "correct": 0.4975
+   },
+   "query +2": {
+    "a read offset": -2.7266106605529785,
+    "b read offset": -2.4275729656219482,
+    "mass on a": 0.0831788033246994,
+    "mass on b": 0.8463051319122314,
+    "correct": 0.525
+   },
+   "plus -2": {
+    "a read offset": -0.6984338760375977,
+    "b read offset": -1.110303282737732,
+    "mass on a": 0.13227689266204834,
+    "mass on b": 0.7935187220573425,
+    "correct": 0.565
+   },
+   "plus -1": {
+    "a read offset": -0.6868497133255005,
+    "b read offset": -0.5063133239746094,
+    "mass on a": 0.17469722032546997,
+    "mass on b": 0.7505021691322327,
+    "correct": 0.775
+   },
+   "plus +1": {
+    "a read offset": -0.6582847237586975,
+    "b read offset": -0.23446118831634521,
+    "mass on a": 0.25666743516921997,
+    "mass on b": 0.61221843957901,
+    "correct": 0.94
+   },
+   "plus +2": {
+    "a read offset": -0.6136874556541443,
+    "b read offset": -0.14322833716869354,
+    "mass on a": 0.22410082817077637,
+    "mass on b": 0.5893616080284119,
+    "correct": 0.8225
+   },
+   "equals -2": {
+    "a read offset": -4.023798942565918,
+    "b read offset": -4.559474468231201,
+    "mass on a": 0.0503489226102829,
+    "mass on b": 0.8716908693313599,
+    "correct": 0.515
+   },
+   "equals -1": {
+    "a read offset": -2.2053749561309814,
+    "b read offset": -2.378345251083374,
+    "mass on a": 0.12499908357858658,
+    "mass on b": 0.7999647259712219,
+    "correct": 0.575
+   },
+   "equals +1": {
+    "a read offset": 0.06544584780931473,
+    "b read offset": 0.46651023626327515,
+    "mass on a": 0.2894394099712372,
+    "mass on b": 0.5340009331703186,
+    "correct": 0.5775
+   },
+   "equals +2": {
+    "a read offset": -0.22880683839321136,
+    "b read offset": 0.2584128677845001,
+    "mass on a": 0.2996712028980255,
+    "mass on b": 0.40532660484313965,
+    "correct": 0.46
+   },
+   "operands -2": {
+    "a read offset": 0.030049718916416168,
+    "b read offset": 0.3825697600841522,
+    "mass on a": 0.2841748893260956,
+    "mass on b": 0.607829749584198,
+    "correct": 0.555
+   },
+   "operands -1": {
+    "a read offset": -0.3256117105484009,
+    "b read offset": 0.09891927242279053,
+    "mass on a": 0.2610984146595001,
+    "mass on b": 0.6382803320884705,
+    "correct": 0.8925
+   },
+   "operands +1": {
+    "a read offset": -0.9208357930183411,
+    "b read offset": -0.8184119462966919,
+    "mass on a": 0.21588189899921417,
+    "mass on b": 0.6903932094573975,
+    "correct": 0.6775
+   },
+   "operands +2": {
+    "a read offset": -1.2830548286437988,
+    "b read offset": -1.6620086431503296,
+    "mass on a": 0.19489021599292755,
+    "mass on b": 0.7101917266845703,
+    "correct": 0.54
+   }
+  },
+  "2/k2": {
+   "query -2": {
+    "a read offset": 0.3865100145339966,
+    "b read offset": 1.5271753072738647,
+    "mass on a": 0.058596543967723846,
+    "mass on b": 0.8591938614845276,
+    "correct": 0.505
+   },
+   "query -1": {
+    "a read offset": 0.22283588349819183,
+    "b read offset": 1.1990382671356201,
+    "mass on a": 0.040457554161548615,
+    "mass on b": 0.927158772945404,
+    "correct": 0.4925
+   },
+   "query +0": {
+    "a read offset": -0.6074973344802856,
+    "b read offset": -0.06463232636451721,
+    "mass on a": 0.038798294961452484,
+    "mass on b": 0.924101710319519,
+    "correct": 0.9975
+   },
+   "query +1": {
+    "a read offset": -1.1082043647766113,
+    "b read offset": -1.0488951206207275,
+    "mass on a": 0.04423348233103752,
+    "mass on b": 0.9220147728919983,
+    "correct": 0.4825
+   },
+   "query +2": {
+    "a read offset": -1.7305368185043335,
+    "b read offset": -2.0237863063812256,
+    "mass on a": 0.06559229642152786,
+    "mass on b": 0.904321551322937,
+    "correct": 0.4925
+   },
+   "plus -2": {
+    "a read offset": -0.6172651648521423,
+    "b read offset": -1.1988922357559204,
+    "mass on a": 0.021467074751853943,
+    "mass on b": 0.9471543431282043,
+    "correct": 0.495
+   },
+   "plus -1": {
+    "a read offset": -0.538494884967804,
+    "b read offset": -0.4106925427913666,
+    "mass on a": 0.029727553948760033,
+    "mass on b": 0.9369020462036133,
+    "correct": 0.6875
+   },
+   "plus +1": {
+    "a read offset": -0.826176106929779,
+    "b read offset": -0.09938613325357437,
+    "mass on a": 0.03716433420777321,
+    "mass on b": 0.9186349511146545,
+    "correct": 0.865
+   },
+   "plus +2": {
+    "a read offset": -1.18251633644104,
+    "b read offset": -0.06586869060993195,
+    "mass on a": 0.026890788227319717,
+    "mass on b": 0.9168592691421509,
+    "correct": 0.655
+   },
+   "equals -2": {
+    "a read offset": -3.469616651535034,
+    "b read offset": -4.008152484893799,
+    "mass on a": 0.009615938179194927,
+    "mass on b": 0.9557353258132935,
+    "correct": 0.5
+   },
+   "equals -1": {
+    "a read offset": -1.5317459106445312,
+    "b read offset": -1.9307076930999756,
+    "mass on a": 0.02656574174761772,
+    "mass on b": 0.9378274083137512,
+    "correct": 0.5175
+   },
+   "equals +1": {
+    "a read offset": 0.24916212260723114,
+    "b read offset": 1.4461218118667603,
+    "mass on a": 0.032966192811727524,
+    "mass on b": 0.9307858347892761,
+    "correct": 0.545
+   },
+   "equals +2": {
+    "a read offset": 0.24787726998329163,
+    "b read offset": 1.6887869834899902,
+    "mass on a": 0.05183517187833786,
+    "mass on b": 0.7228417992591858,
+    "correct": 0.525
+   },
+   "operands -2": {
+    "a read offset": 0.6653703451156616,
+    "b read offset": 1.2296589612960815,
+    "mass on a": 0.050959233194589615,
+    "mass on b": 0.910610020160675,
+    "correct": 0.4825
+   },
+   "operands -1": {
+    "a read offset": 0.05953606590628624,
+    "b read offset": 0.5819933414459229,
+    "mass on a": 0.04094180092215538,
+    "mass on b": 0.9220659136772156,
+    "correct": 0.66
+   },
+   "operands +1": {
+    "a read offset": -1.1369379758834839,
+    "b read offset": -0.7313618063926697,
+    "mass on a": 0.039432309567928314,
+    "mass on b": 0.9233724474906921,
+    "correct": 0.5425
+   },
+   "operands +2": {
+    "a read offset": -1.3626781702041626,
+    "b read offset": -1.5758410692214966,
+    "mass on a": 0.04234068840742111,
+    "mass on b": 0.9193505048751831,
+    "correct": 0.495
+   }
+  },
+  "8/k1": {
+   "query -2": {
+    "a read offset": -0.08462043851613998,
+    "b read offset": -0.7173698544502258,
+    "mass on a": 0.38808363676071167,
+    "mass on b": 0.5247923731803894,
+    "correct": 0.1725
+   },
+   "query -1": {
+    "a read offset": 0.004764752462506294,
+    "b read offset": -0.2677101194858551,
+    "mass on a": 0.4389178454875946,
+    "mass on b": 0.48693206906318665,
+    "correct": 0.545
+   },
+   "query +0": {
+    "a read offset": 0.03374399244785309,
+    "b read offset": 0.04622219130396843,
+    "mass on a": 0.48384109139442444,
+    "mass on b": 0.4198601543903351,
+    "correct": 0.9975
+   },
+   "query +1": {
+    "a read offset": -0.4825664460659027,
+    "b read offset": -0.33639654517173767,
+    "mass on a": 0.2882450819015503,
+    "mass on b": 0.18934519588947296,
+    "correct": 0.1175
+   },
+   "query +2": {
+    "a read offset": -0.9808010458946228,
+    "b read offset": -0.8866526484489441,
+    "mass on a": 0.12235073745250702,
+    "mass on b": 0.08069624751806259,
+    "correct": 0.1225
+   },
+   "plus -2": {
+    "a read offset": -0.7383143305778503,
+    "b read offset": -0.7882848978042603,
+    "mass on a": 0.35360991954803467,
+    "mass on b": 0.44846582412719727,
+    "correct": 0.135
+   },
+   "plus -1": {
+    "a read offset": -0.46216529607772827,
+    "b read offset": -0.27699580788612366,
+    "mass on a": 0.40619444847106934,
+    "mass on b": 0.4592036306858063,
+    "correct": 0.3025
+   },
+   "plus +1": {
+    "a read offset": 0.3693670332431793,
+    "b read offset": 0.06392224878072739,
+    "mass on a": 0.5059930086135864,
+    "mass on b": 0.3960411250591278,
+    "correct": 0.515
+   },
+   "plus +2": {
+    "a read offset": 0.47340986132621765,
+    "b read offset": 0.10023438930511475,
+    "mass on a": 0.4609717130661011,
+    "mass on b": 0.401967316865921,
+    "correct": 0.235
+   },
+   "equals -2": {
+    "a read offset": -0.5022265315055847,
+    "b read offset": -0.9957820773124695,
+    "mass on a": 0.09573674947023392,
+    "mass on b": 0.18684245645999908,
+    "correct": 0.1125
+   },
+   "equals -1": {
+    "a read offset": -0.22351783514022827,
+    "b read offset": -0.5987187027931213,
+    "mass on a": 0.2968839704990387,
+    "mass on b": 0.3022383153438568,
+    "correct": 0.125
+   },
+   "equals +1": {
+    "a read offset": -0.08387092500925064,
+    "b read offset": 0.22420164942741394,
+    "mass on a": 0.4616146683692932,
+    "mass on b": 0.44658201932907104,
+    "correct": 0.6725
+   },
+   "equals +2": {
+    "a read offset": -0.1958978921175003,
+    "b read offset": 0.21371497213840485,
+    "mass on a": 0.47114863991737366,
+    "mass on b": 0.4205753207206726,
+    "correct": 0.44
+   },
+   "operands -2": {
+    "a read offset": 0.6847918629646301,
+    "b read offset": 0.4518377482891083,
+    "mass on a": 0.3386255204677582,
+    "mass on b": 0.3929618299007416,
+    "correct": 0.13
+   },
+   "operands -1": {
+    "a read offset": 0.47214236855506897,
+    "b read offset": 0.4538140296936035,
+    "mass on a": 0.4759211540222168,
+    "mass on b": 0.38296371698379517,
+    "correct": 0.2975
+   },
+   "operands +1": {
+    "a read offset": -0.36545035243034363,
+    "b read offset": -0.5449540615081787,
+    "mass on a": 0.47192010283470154,
+    "mass on b": 0.4373355805873871,
+    "correct": 0.185
+   },
+   "operands +2": {
+    "a read offset": -0.7007395625114441,
+    "b read offset": -1.0235286951065063,
+    "mass on a": 0.48467788100242615,
+    "mass on b": 0.39486679434776306,
+    "correct": 0.105
+   }
+  },
+  "8/k2": {
+   "query -2": {
+    "a read offset": 0.5854569673538208,
+    "b read offset": 0.03511108458042145,
+    "mass on a": 0.1049974113702774,
+    "mass on b": 0.044902510941028595,
+    "correct": 0.1025
+   },
+   "query -1": {
+    "a read offset": 0.5533406138420105,
+    "b read offset": 0.16118693351745605,
+    "mass on a": 0.25608548521995544,
+    "mass on b": 0.16377374529838562,
+    "correct": 0.105
+   },
+   "query +0": {
+    "a read offset": 0.15895268321037292,
+    "b read offset": 0.10762608051300049,
+    "mass on a": 0.4173942804336548,
+    "mass on b": 0.42525309324264526,
+    "correct": 1.0
+   },
+   "query +1": {
+    "a read offset": -0.10874353349208832,
+    "b read offset": 0.08749189227819443,
+    "mass on a": 0.18340624868869781,
+    "mass on b": 0.20223368704319,
+    "correct": 0.155
+   },
+   "query +2": {
+    "a read offset": -0.18463782966136932,
+    "b read offset": 0.18034610152244568,
+    "mass on a": 0.08433382958173752,
+    "mass on b": 0.09196874499320984,
+    "correct": 0.095
+   },
+   "plus -2": {
+    "a read offset": -0.20851890742778778,
+    "b read offset": -0.33460208773612976,
+    "mass on a": 0.23109152913093567,
+    "mass on b": 0.5006547570228577,
+    "correct": 0.1025
+   },
+   "plus -1": {
+    "a read offset": -0.08827360719442368,
+    "b read offset": -0.17243844270706177,
+    "mass on a": 0.26484543085098267,
+    "mass on b": 0.5395588874816895,
+    "correct": 0.125
+   },
+   "plus +1": {
+    "a read offset": 0.6327136158943176,
+    "b read offset": 0.2816408574581146,
+    "mass on a": 0.5629501938819885,
+    "mass on b": 0.2801208198070526,
+    "correct": 0.43
+   },
+   "plus +2": {
+    "a read offset": 1.0082067251205444,
+    "b read offset": 0.4125806987285614,
+    "mass on a": 0.6377959251403809,
+    "mass on b": 0.22777625918388367,
+    "correct": 0.12
+   },
+   "equals -2": {
+    "a read offset": 0.04724542424082756,
+    "b read offset": 0.034932877868413925,
+    "mass on a": 0.17548911273479462,
+    "mass on b": 0.1508554220199585,
+    "correct": 0.1075
+   },
+   "equals -1": {
+    "a read offset": -0.051820773631334305,
+    "b read offset": -0.041608985513448715,
+    "mass on a": 0.2710007429122925,
+    "mass on b": 0.23186324536800385,
+    "correct": 0.2675
+   },
+   "equals +1": {
+    "a read offset": 0.47258684039115906,
+    "b read offset": 0.42116615176200867,
+    "mass on a": 0.24627862870693207,
+    "mass on b": 0.34138014912605286,
+    "correct": 0.1125
+   },
+   "equals +2": {
+    "a read offset": 0.5435099601745605,
+    "b read offset": 0.5540481209754944,
+    "mass on a": 0.12193496525287628,
+    "mass on b": 0.209498330950737,
+    "correct": 0.0775
+   },
+   "operands -2": {
+    "a read offset": 0.6879817247390747,
+    "b read offset": 0.5597459077835083,
+    "mass on a": 0.44262558221817017,
+    "mass on b": 0.3386911451816559,
+    "correct": 0.1375
+   },
+   "operands -1": {
+    "a read offset": 0.4798565208911896,
+    "b read offset": 0.4043695032596588,
+    "mass on a": 0.4596991240978241,
+    "mass on b": 0.35843774676322937,
+    "correct": 0.4275
+   },
+   "operands +1": {
+    "a read offset": -0.016711635515093803,
+    "b read offset": -0.18028077483177185,
+    "mass on a": 0.35469192266464233,
+    "mass on b": 0.46625998616218567,
+    "correct": 0.42
+   },
+   "operands +2": {
+    "a read offset": 0.008276890031993389,
+    "b read offset": -0.2703808844089508,
+    "mass on a": 0.38089972734451294,
+    "mass on b": 0.36394232511520386,
+    "correct": 0.1175
+   }
+  },
+  "10/k1": {
+   "query -2": {
+    "a read offset": -0.0498960018157959,
+    "b read offset": -0.5095138549804688,
+    "mass on a": 0.40073734521865845,
+    "mass on b": 0.5032826066017151,
+    "correct": 0.2125
+   },
+   "query -1": {
+    "a read offset": 0.06455838680267334,
+    "b read offset": -0.22981123626232147,
+    "mass on a": 0.40639784932136536,
+    "mass on b": 0.5262738466262817,
+    "correct": 0.715
+   },
+   "query +0": {
+    "a read offset": 0.0389271043241024,
+    "b read offset": 0.03838709741830826,
+    "mass on a": 0.47324705123901367,
+    "mass on b": 0.43136709928512573,
+    "correct": 1.0
+   },
+   "query +1": {
+    "a read offset": -0.5505350232124329,
+    "b read offset": -0.3646469712257385,
+    "mass on a": 0.2839350402355194,
+    "mass on b": 0.17353413999080658,
+    "correct": 0.0875
+   },
+   "query +2": {
+    "a read offset": -0.8322566151618958,
+    "b read offset": -0.7393625378608704,
+    "mass on a": 0.11147643625736237,
+    "mass on b": 0.07812147587537766,
+    "correct": 0.08
+   },
+   "plus -2": {
+    "a read offset": -0.8271911144256592,
+    "b read offset": -0.623404860496521,
+    "mass on a": 0.2778875529766083,
+    "mass on b": 0.4603789746761322,
+    "correct": 0.065
+   },
+   "plus -1": {
+    "a read offset": -0.5791499018669128,
+    "b read offset": -0.19529786705970764,
+    "mass on a": 0.39321279525756836,
+    "mass on b": 0.4687216877937317,
+    "correct": 0.17
+   },
+   "plus +1": {
+    "a read offset": 0.4489935338497162,
+    "b read offset": 0.07456334680318832,
+    "mass on a": 0.46215909719467163,
+    "mass on b": 0.42761754989624023,
+    "correct": 0.475
+   },
+   "plus +2": {
+    "a read offset": 0.5683651566505432,
+    "b read offset": 0.232974573969841,
+    "mass on a": 0.38308653235435486,
+    "mass on b": 0.3903942406177521,
+    "correct": 0.075
+   },
+   "equals -2": {
+    "a read offset": -0.3405354917049408,
+    "b read offset": -0.8157691955566406,
+    "mass on a": 0.13343565165996552,
+    "mass on b": 0.22040919959545135,
+    "correct": 0.09
+   },
+   "equals -1": {
+    "a read offset": -0.16851146519184113,
+    "b read offset": -0.6051046252250671,
+    "mass on a": 0.32076674699783325,
+    "mass on b": 0.3124714493751526,
+    "correct": 0.095
+   },
+   "equals +1": {
+    "a read offset": -0.021603193134069443,
+    "b read offset": 0.27706217765808105,
+    "mass on a": 0.38884520530700684,
+    "mass on b": 0.5433696508407593,
+    "correct": 0.82
+   },
+   "equals +2": {
+    "a read offset": -0.07513225078582764,
+    "b read offset": 0.2897951602935791,
+    "mass on a": 0.3675965666770935,
+    "mass on b": 0.5562393665313721,
+    "correct": 0.665
+   },
+   "operands -2": {
+    "a read offset": 0.6594065427780151,
+    "b read offset": 0.13303838670253754,
+    "mass on a": 0.247222438454628,
+    "mass on b": 0.391708105802536,
+    "correct": 0.09
+   },
+   "operands -1": {
+    "a read offset": 0.4966011643409729,
+    "b read offset": 0.40088361501693726,
+    "mass on a": 0.47575339674949646,
+    "mass on b": 0.3532792925834656,
+    "correct": 0.245
+   },
+   "operands +1": {
+    "a read offset": -0.3597908616065979,
+    "b read offset": -0.5518069267272949,
+    "mass on a": 0.44511878490448,
+    "mass on b": 0.4893357753753662,
+    "correct": 0.1375
+   },
+   "operands +2": {
+    "a read offset": -0.5732929706573486,
+    "b read offset": -0.7644667029380798,
+    "mass on a": 0.527523398399353,
+    "mass on b": 0.41044455766677856,
+    "correct": 0.095
+   }
+  },
+  "10/k2": {
+   "query -2": {
+    "a read offset": 0.6795762777328491,
+    "b read offset": 0.29087549448013306,
+    "mass on a": 0.08348466455936432,
+    "mass on b": 0.039885759353637695,
+    "correct": 0.0725
+   },
+   "query -1": {
+    "a read offset": 0.6095957159996033,
+    "b read offset": 0.26340043544769287,
+    "mass on a": 0.2395804226398468,
+    "mass on b": 0.11868274211883545,
+    "correct": 0.0975
+   },
+   "query +0": {
+    "a read offset": 0.19872945547103882,
+    "b read offset": 0.22157268226146698,
+    "mass on a": 0.4244050085544586,
+    "mass on b": 0.37731069326400757,
+    "correct": 1.0
+   },
+   "query +1": {
+    "a read offset": 0.08537726104259491,
+    "b read offset": 0.24361692368984222,
+    "mass on a": 0.2189626693725586,
+    "mass on b": 0.228714257478714,
+    "correct": 0.215
+   },
+   "query +2": {
+    "a read offset": 0.09543188661336899,
+    "b read offset": 0.37811750173568726,
+    "mass on a": 0.09339810907840729,
+    "mass on b": 0.09200393408536911,
+    "correct": 0.0575
+   },
+   "plus -2": {
+    "a read offset": 0.03966346010565758,
+    "b read offset": 0.09587834775447845,
+    "mass on a": 0.15882214903831482,
+    "mass on b": 0.3408312499523163,
+    "correct": 0.1
+   },
+   "plus -1": {
+    "a read offset": 0.07020694017410278,
+    "b read offset": 0.12587350606918335,
+    "mass on a": 0.2293296903371811,
+    "mass on b": 0.43205487728118896,
+    "correct": 0.23
+   },
+   "plus +1": {
+    "a read offset": 0.6816118359565735,
+    "b read offset": 0.39194753766059875,
+    "mass on a": 0.5529335737228394,
+    "mass on b": 0.2572578489780426,
+    "correct": 0.115
+   },
+   "plus +2": {
+    "a read offset": 1.0938869714736938,
+    "b read offset": 0.6703973412513733,
+    "mass on a": 0.5973575711250305,
+    "mass on b": 0.22227025032043457,
+    "correct": 0.1175
+   },
+   "equals -2": {
+    "a read offset": 0.21399104595184326,
+    "b read offset": 0.21796901524066925,
+    "mass on a": 0.20192904770374298,
+    "mass on b": 0.14180704951286316,
+    "correct": 0.0375
+   },
+   "equals -1": {
+    "a read offset": 0.15585823357105255,
+    "b read offset": 0.18343329429626465,
+    "mass on a": 0.31122636795043945,
+    "mass on b": 0.23715198040008545,
+    "correct": 0.3125
+   },
+   "equals +1": {
+    "a read offset": 0.3889623284339905,
+    "b read offset": 0.42197561264038086,
+    "mass on a": 0.21235664188861847,
+    "mass on b": 0.2791348397731781,
+    "correct": 0.1375
+   },
+   "equals +2": {
+    "a read offset": 0.5289033055305481,
+    "b read offset": 0.6035829782485962,
+    "mass on a": 0.06039856746792793,
+    "mass on b": 0.11069179326295853,
+    "correct": 0.085
+   },
+   "operands -2": {
+    "a read offset": 0.594491720199585,
+    "b read offset": 0.5237464308738708,
+    "mass on a": 0.4561062753200531,
+    "mass on b": 0.29533228278160095,
+    "correct": 0.23
+   },
+   "operands -1": {
+    "a read offset": 0.41068407893180847,
+    "b read offset": 0.4574047029018402,
+    "mass on a": 0.4675332009792328,
+    "mass on b": 0.3119221031665802,
+    "correct": 0.5975
+   },
+   "operands +1": {
+    "a read offset": 0.15564322471618652,
+    "b read offset": 0.13156329095363617,
+    "mass on a": 0.38541480898857117,
+    "mass on b": 0.36974582076072693,
+    "correct": 0.6375
+   },
+   "operands +2": {
+    "a read offset": 0.2770324647426605,
+    "b read offset": 0.14954496920108795,
+    "mass on a": 0.4395674169063568,
+    "mass on b": 0.23101213574409485,
+    "correct": 0.0325
+   }
+  },
+  "16/k1": {
+   "query -2": {
+    "a read offset": -0.03442630544304848,
+    "b read offset": -0.4848666191101074,
+    "mass on a": 0.40078410506248474,
+    "mass on b": 0.4958533048629761,
+    "correct": 0.13
+   },
+   "query -1": {
+    "a read offset": 0.06202567368745804,
+    "b read offset": -0.21271078288555145,
+    "mass on a": 0.4073164761066437,
+    "mass on b": 0.5155243277549744,
+    "correct": 0.61
+   },
+   "query +0": {
+    "a read offset": 0.004210236016660929,
+    "b read offset": -0.011287800967693329,
+    "mass on a": 0.4691448211669922,
+    "mass on b": 0.4211415648460388,
+    "correct": 1.0
+   },
+   "query +1": {
+    "a read offset": -0.5103258490562439,
+    "b read offset": -0.36182844638824463,
+    "mass on a": 0.2577723264694214,
+    "mass on b": 0.15363265573978424,
+    "correct": 0.0675
+   },
+   "query +2": {
+    "a read offset": -0.7718358635902405,
+    "b read offset": -0.6667347550392151,
+    "mass on a": 0.09789758175611496,
+    "mass on b": 0.06257890164852142,
+    "correct": 0.07
+   },
+   "plus -2": {
+    "a read offset": -0.8085532188415527,
+    "b read offset": -0.6240362524986267,
+    "mass on a": 0.30241888761520386,
+    "mass on b": 0.42648664116859436,
+    "correct": 0.07
+   },
+   "plus -1": {
+    "a read offset": -0.5713890194892883,
+    "b read offset": -0.2395571917295456,
+    "mass on a": 0.4102790653705597,
+    "mass on b": 0.43936705589294434,
+    "correct": 0.115
+   },
+   "plus +1": {
+    "a read offset": 0.391599178314209,
+    "b read offset": -0.0019955846946686506,
+    "mass on a": 0.4389781057834625,
+    "mass on b": 0.42787864804267883,
+    "correct": 0.6675
+   },
+   "plus +2": {
+    "a read offset": 0.5048123598098755,
+    "b read offset": 0.12899534404277802,
+    "mass on a": 0.3273735046386719,
+    "mass on b": 0.4148101806640625,
+    "correct": 0.1075
+   },
+   "equals -2": {
+    "a read offset": -0.2830405831336975,
+    "b read offset": -0.7973385453224182,
+    "mass on a": 0.13157622516155243,
+    "mass on b": 0.20999354124069214,
+    "correct": 0.065
+   },
+   "equals -1": {
+    "a read offset": -0.1698470264673233,
+    "b read offset": -0.601632833480835,
+    "mass on a": 0.30861717462539673,
+    "mass on b": 0.3008863627910614,
+    "correct": 0.075
+   },
+   "equals +1": {
+    "a read offset": -0.006313125137239695,
+    "b read offset": 0.2388754040002823,
+    "mass on a": 0.38766223192214966,
+    "mass on b": 0.5380763411521912,
+    "correct": 0.81
+   },
+   "equals +2": {
+    "a read offset": -0.034268077462911606,
+    "b read offset": 0.26445966958999634,
+    "mass on a": 0.3566966950893402,
+    "mass on b": 0.5647255778312683,
+    "correct": 0.585
+   },
+   "operands -2": {
+    "a read offset": 0.5727599263191223,
+    "b read offset": 0.116157166659832,
+    "mass on a": 0.2882968485355377,
+    "mass on b": 0.3563712239265442,
+    "correct": 0.075
+   },
+   "operands -1": {
+    "a read offset": 0.4111141860485077,
+    "b read offset": 0.3069559931755066,
+    "mass on a": 0.4710404872894287,
+    "mass on b": 0.34402546286582947,
+    "correct": 0.415
+   },
+   "operands +1": {
+    "a read offset": -0.38391295075416565,
+    "b read offset": -0.5758496522903442,
+    "mass on a": 0.44964519143104553,
+    "mass on b": 0.4759967625141144,
+    "correct": 0.06
+   },
+   "operands +2": {
+    "a read offset": -0.5261056423187256,
+    "b read offset": -0.7219201326370239,
+    "mass on a": 0.5573849081993103,
+    "mass on b": 0.37058135867118835,
+    "correct": 0.0575
+   }
+  },
+  "16/k2": {
+   "query -2": {
+    "a read offset": 0.5528140068054199,
+    "b read offset": 0.270279198884964,
+    "mass on a": 0.07493627071380615,
+    "mass on b": 0.04617147892713547,
+    "correct": 0.0525
+   },
+   "query -1": {
+    "a read offset": 0.4878954291343689,
+    "b read offset": 0.2415834367275238,
+    "mass on a": 0.21685275435447693,
+    "mass on b": 0.1392982453107834,
+    "correct": 0.0575
+   },
+   "query +0": {
+    "a read offset": 0.21969884634017944,
+    "b read offset": 0.2486449033021927,
+    "mass on a": 0.4108099639415741,
+    "mass on b": 0.3751121461391449,
+    "correct": 1.0
+   },
+   "query +1": {
+    "a read offset": 0.12975749373435974,
+    "b read offset": 0.3117888569831848,
+    "mass on a": 0.2535252571105957,
+    "mass on b": 0.25389280915260315,
+    "correct": 0.385
+   },
+   "query +2": {
+    "a read offset": 0.14535902440547943,
+    "b read offset": 0.47245287895202637,
+    "mass on a": 0.12412015348672867,
+    "mass on b": 0.11995510756969452,
+    "correct": 0.0
+   },
+   "plus -2": {
+    "a read offset": 0.05867024138569832,
+    "b read offset": 0.1406734138727188,
+    "mass on a": 0.19360508024692535,
+    "mass on b": 0.3181162476539612,
+    "correct": 0.0125
+   },
+   "plus -1": {
+    "a read offset": 0.09546950459480286,
+    "b read offset": 0.15812358260154724,
+    "mass on a": 0.2542666792869568,
+    "mass on b": 0.4183749556541443,
+    "correct": 0.185
+   },
+   "plus +1": {
+    "a read offset": 0.6184186339378357,
+    "b read offset": 0.38843291997909546,
+    "mass on a": 0.4981761872768402,
+    "mass on b": 0.27228111028671265,
+    "correct": 0.2125
+   },
+   "plus +2": {
+    "a read offset": 1.0063433647155762,
+    "b read offset": 0.62642902135849,
+    "mass on a": 0.5222710967063904,
+    "mass on b": 0.24356859922409058,
+    "correct": 0.045
+   },
+   "equals -2": {
+    "a read offset": 0.2622702419757843,
+    "b read offset": 0.26000502705574036,
+    "mass on a": 0.24914197623729706,
+    "mass on b": 0.18818381428718567,
+    "correct": 0.0
+   },
+   "equals -1": {
+    "a read offset": 0.20536623895168304,
+    "b read offset": 0.2323571741580963,
+    "mass on a": 0.3419259488582611,
+    "mass on b": 0.2657031714916229,
+    "correct": 0.37
+   },
+   "equals +1": {
+    "a read offset": 0.3225369155406952,
+    "b read offset": 0.365374892950058,
+    "mass on a": 0.21220672130584717,
+    "mass on b": 0.29165637493133545,
+    "correct": 0.115
+   },
+   "equals +2": {
+    "a read offset": 0.4241834878921509,
+    "b read offset": 0.5021284222602844,
+    "mass on a": 0.06498350948095322,
+    "mass on b": 0.12216433137655258,
+    "correct": 0.0475
+   },
+   "operands -2": {
+    "a read offset": 0.7084341049194336,
+    "b read offset": 0.6424574255943298,
+    "mass on a": 0.44053852558135986,
+    "mass on b": 0.29930195212364197,
+    "correct": 0.125
+   },
+   "operands -1": {
+    "a read offset": 0.4496188163757324,
+    "b read offset": 0.5410393476486206,
+    "mass on a": 0.4519968032836914,
+    "mass on b": 0.308993399143219,
+    "correct": 0.645
+   },
+   "operands +1": {
+    "a read offset": 0.18758679926395416,
+    "b read offset": 0.16302354633808136,
+    "mass on a": 0.3817613422870636,
+    "mass on b": 0.3603920638561249,
+    "correct": 0.395
+   },
+   "operands +2": {
+    "a read offset": 0.3451065421104431,
+    "b read offset": 0.19730907678604126,
+    "mass on a": 0.4439578056335449,
+    "mass on b": 0.22802232205867767,
+    "correct": 0.0025
+   }
+  }
+ },
+ "Q5": {
+  "2": {
+   "clean": {
+    "H1 on a0": 0.6799320578575134,
+    "H1 on a first": 6.318698979157489e-06,
+    "correct": 0.998
+   },
+   "L0H3 outputs reversed over a's digits": {
+    "H1 on a0": 0.2117147594690323,
+    "H1 on a first": 0.0037956235464662313,
+    "correct": 0.682
+   },
+   "L0H3 cannot see the line start, at a's digits": {
+    "H1 on a0": 0.6794623136520386,
+    "H1 on a first": 0.0015075292903929949,
+    "correct": 0.98
+   }
+  },
+  "8": {
+   "clean": {
+    "H1 on a0": 0.9073889255523682,
+    "H1 on a first": 0.001973710721358657,
+    "correct": 1.0
+   },
+   "L0H3 outputs reversed over a's digits": {
+    "H1 on a0": 0.003108985023573041,
+    "H1 on a first": 0.8793307542800903,
+    "correct": 0.136
+   },
+   "L0H3 cannot see the line start, at a's digits": {
+    "H1 on a0": 0.6022302508354187,
+    "H1 on a first": 0.09105809777975082,
+    "correct": 0.906
+   }
+  },
+  "10": {
+   "clean": {
+    "H1 on a0": 0.9436736106872559,
+    "H1 on a first": 0.0013658162206411362,
+    "correct": 1.0
+   },
+   "L0H3 outputs reversed over a's digits": {
+    "H1 on a0": 0.0055273547768592834,
+    "H1 on a first": 0.9156888127326965,
+    "correct": 0.11
+   },
+   "L0H3 cannot see the line start, at a's digits": {
+    "H1 on a0": 0.5254284143447876,
+    "H1 on a first": 0.20595142245292664,
+    "correct": 0.804
+   }
+  },
+  "16": {
+   "clean": {
+    "H1 on a0": 0.9483858346939087,
+    "H1 on a first": 0.0058205099776387215,
+    "correct": 1.0
+   },
+   "L0H3 outputs reversed over a's digits": {
+    "H1 on a0": 0.01361156441271305,
+    "H1 on a first": 0.8828181028366089,
+    "correct": 0.07
+   },
+   "L0H3 cannot see the line start, at a's digits": {
+    "H1 on a0": 0.47455087304115295,
+    "H1 on a first": 0.252121239900589,
+    "correct": 0.598
+   }
+  }
+ },
+ "Q6": {
+  "2": {
+   "tags swapped": 0.902,
+   "L1H0 on b0 clean / swapped": [
+    0.5412302017211914,
+    0.40519005060195923
+   ],
+   "L1H0 on b's first digit clean / swapped": [
+    0.00035534132621251047,
+    0.0018674414604902267
+   ],
+   "swapped + restore L1H0": 0.934,
+   "swapped + restore L1H1": 0.938,
+   "swapped + restore L1H2": 0.9,
+   "swapped + restore L1H3": 0.882
+  },
+  "8": {
+   "tags swapped": 0.492,
+   "L1H0 on b0 clean / swapped": [
+    0.5768947601318359,
+    0.22877049446105957
+   ],
+   "L1H0 on b's first digit clean / swapped": [
+    0.01878972351551056,
+    0.02484927698969841
+   ],
+   "swapped + restore L1H0": 0.996,
+   "swapped + restore L1H1": 0.498,
+   "swapped + restore L1H2": 0.486,
+   "swapped + restore L1H3": 0.266
+  },
+  "10": {
+   "tags swapped": 0.38,
+   "L1H0 on b0 clean / swapped": [
+    0.5579413175582886,
+    0.14600151777267456
+   ],
+   "L1H0 on b's first digit clean / swapped": [
+    0.021276162937283516,
+    0.047355614602565765
+   ],
+   "swapped + restore L1H0": 1.0,
+   "swapped + restore L1H1": 0.38,
+   "swapped + restore L1H2": 0.392,
+   "swapped + restore L1H3": 0.156
+  },
+  "16": {
+   "tags swapped": 0.348,
+   "L1H0 on b0 clean / swapped": [
+    0.5860396027565002,
+    0.1658061146736145
+   ],
+   "L1H0 on b's first digit clean / swapped": [
+    0.028344500809907913,
+    0.02772434428334236
+   ],
+   "swapped + restore L1H0": 0.984,
+   "swapped + restore L1H1": 0.346,
+   "swapped + restore L1H2": 0.36,
+   "swapped + restore L1H3": 0.148
+  }
+ }
+}

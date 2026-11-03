@@ -1,0 +1,450 @@
+{
+ "A": {
+  "2": {
+   "1": {
+    "stop": 0.0,
+    "newline": 1.0,
+    "mean length": 61.236666666666665
+   },
+   "2": {
+    "stop": 0.0,
+    "newline": 1.0,
+    "mean length": 92.86666666666666
+   },
+   "3": {
+    "stop": 0.0,
+    "newline": 1.0,
+    "mean length": 123.66666666666667
+   },
+   "4": {
+    "stop": 0.0,
+    "newline": 1.0,
+    "mean length": 155.37
+   },
+   "5": {
+    "stop": 0.996666669845581,
+    "newline": 0.0033333334140479565,
+    "mean length": 186.75666666666666
+   },
+   "6": {
+    "stop": 0.01666666753590107,
+    "newline": 0.0,
+    "mean length": 218.14
+   },
+   "7": {
+    "stop": 0.0,
+    "newline": 0.0,
+    "mean length": 245.64545454545456
+   },
+   "8": {
+    "stop": NaN,
+    "newline": NaN,
+    "mean length": NaN
+   }
+  },
+  "8": {
+   "1": {
+    "stop": 0.0,
+    "newline": 1.0,
+    "mean length": 26.3
+   },
+   "2": {
+    "stop": 0.0,
+    "newline": 1.0,
+    "mean length": 39.983333333333334
+   },
+   "3": {
+    "stop": 0.0,
+    "newline": 0.996666669845581,
+    "mean length": 53.8
+   },
+   "4": {
+    "stop": 0.0,
+    "newline": 1.0,
+    "mean length": 67.39666666666666
+   },
+   "5": {
+    "stop": 1.0,
+    "newline": 0.0,
+    "mean length": 81.29
+   },
+   "6": {
+    "stop": 0.84333336353302,
+    "newline": 0.0033333334140479565,
+    "mean length": 94.89666666666666
+   },
+   "7": {
+    "stop": 0.6000000238418579,
+    "newline": 0.0,
+    "mean length": 108.63333333333334
+   },
+   "8": {
+    "stop": 0.2666666805744171,
+    "newline": 0.0,
+    "mean length": 122.32666666666667
+   }
+  },
+  "10": {
+   "1": {
+    "stop": 0.0,
+    "newline": 1.0,
+    "mean length": 23.57
+   },
+   "2": {
+    "stop": 0.0,
+    "newline": 1.0,
+    "mean length": 35.88666666666666
+   },
+   "3": {
+    "stop": 0.0,
+    "newline": 1.0,
+    "mean length": 48.07333333333333
+   },
+   "4": {
+    "stop": 0.0,
+    "newline": 1.0,
+    "mean length": 60.43
+   },
+   "5": {
+    "stop": 1.0,
+    "newline": 0.0,
+    "mean length": 72.66333333333333
+   },
+   "6": {
+    "stop": 1.0,
+    "newline": 0.0,
+    "mean length": 84.90666666666667
+   },
+   "7": {
+    "stop": 0.9933333396911621,
+    "newline": 0.0,
+    "mean length": 97.14666666666666
+   },
+   "8": {
+    "stop": 0.9733333587646484,
+    "newline": 0.0,
+    "mean length": 109.45
+   }
+  },
+  "16": {
+   "1": {
+    "stop": 0.0,
+    "newline": 1.0,
+    "mean length": 21.86
+   },
+   "2": {
+    "stop": 0.0,
+    "newline": 1.0,
+    "mean length": 33.31666666666667
+   },
+   "3": {
+    "stop": 0.0,
+    "newline": 1.0,
+    "mean length": 44.63
+   },
+   "4": {
+    "stop": 0.0,
+    "newline": 1.0,
+    "mean length": 56.20666666666666
+   },
+   "5": {
+    "stop": 1.0,
+    "newline": 0.0,
+    "mean length": 67.6
+   },
+   "6": {
+    "stop": 1.0,
+    "newline": 0.0,
+    "mean length": 78.88333333333334
+   },
+   "7": {
+    "stop": 1.0,
+    "newline": 0.0,
+    "mean length": 90.43
+   },
+   "8": {
+    "stop": 0.9800000190734863,
+    "newline": 0.0,
+    "mean length": 101.92333333333333
+   }
+  }
+ },
+ "B": {
+  "2": {
+   "3 shots": 0.0,
+   "3 shots, tags shifted +63 (to 5-shot positions)": 1.0,
+   "5 shots": 1.0,
+   "5 shots, tags shifted -63 (to 3-shot positions)": 0.0,
+   "5 short shots (one-digit operands)": 0.21000000834465027,
+   "mean length short": 71.24333333333334,
+   "3 long shots (three-digit operands)": 0.0,
+   "mean length long 3-shot": 124.33666666666667,
+   "mean length 5-shot": 186.93666666666667
+  },
+  "8": {
+   "3 shots": 0.0,
+   "3 shots, tags shifted +28 (to 5-shot positions)": 1.0,
+   "5 shots": 1.0,
+   "5 shots, tags shifted -28 (to 3-shot positions)": 0.0033333334140479565,
+   "5 short shots (one-digit operands)": 0.0,
+   "mean length short": 44.79666666666667,
+   "3 long shots (three-digit operands)": 0.0,
+   "mean length long 3-shot": 54.56,
+   "mean length 5-shot": 81.46
+  },
+  "10": {
+   "3 shots": 0.0,
+   "3 shots, tags shifted +25 (to 5-shot positions)": 1.0,
+   "5 shots": 1.0,
+   "5 shots, tags shifted -25 (to 3-shot positions)": 0.0,
+   "5 short shots (one-digit operands)": 0.0033333334140479565,
+   "mean length short": 43.57666666666667,
+   "3 long shots (three-digit operands)": 0.0,
+   "mean length long 3-shot": 49.00333333333333,
+   "mean length 5-shot": 72.66333333333333
+  },
+  "16": {
+   "3 shots": 0.0,
+   "3 shots, tags shifted +23 (to 5-shot positions)": 1.0,
+   "5 shots": 1.0,
+   "5 shots, tags shifted -23 (to 3-shot positions)": 0.40666666626930237,
+   "5 short shots (one-digit operands)": 0.4833333492279053,
+   "mean length short": 42.7,
+   "3 long shots (three-digit operands)": 0.0,
+   "mean length long 3-shot": 46.32666666666667,
+   "mean length 5-shot": 67.53666666666666
+  }
+ },
+ "C": {
+  "2": {
+   "4 shots": 0.0,
+   "4 shots + one blank line": 0.7333333492279053,
+   "4 shots, one separator doubled": 0.0033333334140479565,
+   "5 shots": 1.0,
+   "5 shots + one blank line": 0.9666666984558105
+  },
+  "8": {
+   "4 shots": 0.0,
+   "4 shots + one blank line": 0.34333333373069763,
+   "4 shots, one separator doubled": 0.23666667938232422,
+   "5 shots": 1.0,
+   "5 shots + one blank line": 0.34333333373069763
+  },
+  "10": {
+   "4 shots": 0.0,
+   "4 shots + one blank line": 0.8799999952316284,
+   "4 shots, one separator doubled": 0.3566666841506958,
+   "5 shots": 1.0,
+   "5 shots + one blank line": 1.0
+  },
+  "16": {
+   "4 shots": 0.0,
+   "4 shots + one blank line": 0.7400000095367432,
+   "4 shots, one separator doubled": 0.2800000011920929,
+   "5 shots": 1.0,
+   "5 shots + one blank line": 1.0
+  }
+ },
+ "D": {
+  "2": {
+   "3-shot stop": 0.0,
+   "5-shot stop": 1.0,
+   "3-shot gets 5-shot L0H0": 0.0,
+   "5-shot gets 3-shot L0H0": 0.013333333656191826,
+   "3-shot gets 5-shot L0H1": 0.0,
+   "5-shot gets 3-shot L0H1": 0.6566666960716248,
+   "3-shot gets 5-shot L0H2": 0.0,
+   "5-shot gets 3-shot L0H2": 0.8566666841506958,
+   "3-shot gets 5-shot L0H3": 0.0,
+   "5-shot gets 3-shot L0H3": 1.0,
+   "3-shot gets 5-shot L1H0": 0.0,
+   "5-shot gets 3-shot L1H0": 0.9933333396911621,
+   "3-shot gets 5-shot L1H1": 0.0,
+   "5-shot gets 3-shot L1H1": 0.996666669845581,
+   "3-shot gets 5-shot L1H2": 0.0,
+   "5-shot gets 3-shot L1H2": 1.0,
+   "3-shot gets 5-shot L1H3": 0.0,
+   "5-shot gets 3-shot L1H3": 1.0,
+   "3-shot gets 5-shot L0 MLP": 0.0,
+   "5-shot gets 3-shot L0 MLP": 0.9933333396911621,
+   "3-shot gets 5-shot L1 MLP": 1.0,
+   "5-shot gets 3-shot L1 MLP": 0.0,
+   "3-shot gets 5-shot layer 0 output (resid_pre1)": 0.3400000035762787,
+   "5-shot gets 3-shot layer 0 output (resid_pre1)": 0.0,
+   "L0 attention to newlines (5-shot) by head": [
+    0.094,
+    0.084,
+    0.037,
+    0.053
+   ],
+   "L0 attention to newlines (3-shot) by head": [
+    0.084,
+    0.081,
+    0.038,
+    0.052
+   ],
+   "L1 attention to newlines (5-shot) by head": [
+    0.011,
+    0.049,
+    0.033,
+    0.002
+   ],
+   "L1 attention to newlines (3-shot) by head": [
+    0.01,
+    0.076,
+    0.026,
+    0.002
+   ]
+  },
+  "8": {
+   "3-shot stop": 0.0,
+   "5-shot stop": 1.0,
+   "3-shot gets 5-shot L0H0": 0.0,
+   "5-shot gets 3-shot L0H0": 0.0,
+   "3-shot gets 5-shot L0H1": 0.0,
+   "5-shot gets 3-shot L0H1": 1.0,
+   "3-shot gets 5-shot L0H2": 0.0,
+   "5-shot gets 3-shot L0H2": 0.9833333492279053,
+   "3-shot gets 5-shot L0H3": 0.0,
+   "5-shot gets 3-shot L0H3": 1.0,
+   "3-shot gets 5-shot L1H0": 0.0,
+   "5-shot gets 3-shot L1H0": 1.0,
+   "3-shot gets 5-shot L1H1": 0.0,
+   "5-shot gets 3-shot L1H1": 0.89000004529953,
+   "3-shot gets 5-shot L1H2": 0.0,
+   "5-shot gets 3-shot L1H2": 0.8766666650772095,
+   "3-shot gets 5-shot L1H3": 0.0,
+   "5-shot gets 3-shot L1H3": 0.996666669845581,
+   "3-shot gets 5-shot L0 MLP": 0.0,
+   "5-shot gets 3-shot L0 MLP": 0.996666669845581,
+   "3-shot gets 5-shot L1 MLP": 1.0,
+   "5-shot gets 3-shot L1 MLP": 0.0,
+   "3-shot gets 5-shot layer 0 output (resid_pre1)": 0.3100000023841858,
+   "5-shot gets 3-shot layer 0 output (resid_pre1)": 0.0,
+   "L0 attention to newlines (5-shot) by head": [
+    0.236,
+    0.006,
+    0.264,
+    0.185
+   ],
+   "L0 attention to newlines (3-shot) by head": [
+    0.202,
+    0.005,
+    0.236,
+    0.163
+   ],
+   "L1 attention to newlines (5-shot) by head": [
+    0.003,
+    0.149,
+    0.003,
+    0.005
+   ],
+   "L1 attention to newlines (3-shot) by head": [
+    0.003,
+    0.157,
+    0.003,
+    0.004
+   ]
+  },
+  "10": {
+   "3-shot stop": 0.0,
+   "5-shot stop": 1.0,
+   "3-shot gets 5-shot L0H0": 0.0033333334140479565,
+   "5-shot gets 3-shot L0H0": 0.07666666805744171,
+   "3-shot gets 5-shot L0H1": 0.0,
+   "5-shot gets 3-shot L0H1": 1.0,
+   "3-shot gets 5-shot L0H2": 0.0,
+   "5-shot gets 3-shot L0H2": 1.0,
+   "3-shot gets 5-shot L0H3": 0.0,
+   "5-shot gets 3-shot L0H3": 1.0,
+   "3-shot gets 5-shot L1H0": 0.0,
+   "5-shot gets 3-shot L1H0": 1.0,
+   "3-shot gets 5-shot L1H1": 0.0,
+   "5-shot gets 3-shot L1H1": 1.0,
+   "3-shot gets 5-shot L1H2": 0.0,
+   "5-shot gets 3-shot L1H2": 0.9733333587646484,
+   "3-shot gets 5-shot L1H3": 0.0,
+   "5-shot gets 3-shot L1H3": 0.996666669845581,
+   "3-shot gets 5-shot L0 MLP": 0.0,
+   "5-shot gets 3-shot L0 MLP": 0.9566667079925537,
+   "3-shot gets 5-shot L1 MLP": 1.0,
+   "5-shot gets 3-shot L1 MLP": 0.0,
+   "3-shot gets 5-shot layer 0 output (resid_pre1)": 0.7233333587646484,
+   "5-shot gets 3-shot layer 0 output (resid_pre1)": 0.0,
+   "L0 attention to newlines (5-shot) by head": [
+    0.241,
+    0.0,
+    0.225,
+    0.253
+   ],
+   "L0 attention to newlines (3-shot) by head": [
+    0.212,
+    0.0,
+    0.209,
+    0.237
+   ],
+   "L1 attention to newlines (5-shot) by head": [
+    0.014,
+    0.098,
+    0.003,
+    0.008
+   ],
+   "L1 attention to newlines (3-shot) by head": [
+    0.012,
+    0.101,
+    0.002,
+    0.007
+   ]
+  },
+  "16": {
+   "3-shot stop": 0.0,
+   "5-shot stop": 1.0,
+   "3-shot gets 5-shot L0H0": 0.04333333298563957,
+   "5-shot gets 3-shot L0H0": 0.07666666805744171,
+   "3-shot gets 5-shot L0H1": 0.0,
+   "5-shot gets 3-shot L0H1": 1.0,
+   "3-shot gets 5-shot L0H2": 0.0,
+   "5-shot gets 3-shot L0H2": 0.996666669845581,
+   "3-shot gets 5-shot L0H3": 0.0,
+   "5-shot gets 3-shot L0H3": 1.0,
+   "3-shot gets 5-shot L1H0": 0.0,
+   "5-shot gets 3-shot L1H0": 1.0,
+   "3-shot gets 5-shot L1H1": 0.0,
+   "5-shot gets 3-shot L1H1": 1.0,
+   "3-shot gets 5-shot L1H2": 0.0,
+   "5-shot gets 3-shot L1H2": 0.9866666793823242,
+   "3-shot gets 5-shot L1H3": 0.0,
+   "5-shot gets 3-shot L1H3": 1.0,
+   "3-shot gets 5-shot L0 MLP": 0.0,
+   "5-shot gets 3-shot L0 MLP": 0.996666669845581,
+   "3-shot gets 5-shot L1 MLP": 1.0,
+   "5-shot gets 3-shot L1 MLP": 0.0,
+   "3-shot gets 5-shot layer 0 output (resid_pre1)": 0.7633333802223206,
+   "5-shot gets 3-shot layer 0 output (resid_pre1)": 0.0,
+   "L0 attention to newlines (5-shot) by head": [
+    0.253,
+    0.0,
+    0.151,
+    0.285
+   ],
+   "L0 attention to newlines (3-shot) by head": [
+    0.221,
+    0.0,
+    0.137,
+    0.262
+   ],
+   "L1 attention to newlines (5-shot) by head": [
+    0.025,
+    0.038,
+    0.001,
+    0.013
+   ],
+   "L1 attention to newlines (3-shot) by head": [
+    0.025,
+    0.051,
+    0.001,
+    0.013
+   ]
+  }
+ }
+}

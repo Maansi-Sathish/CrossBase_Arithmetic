@@ -1,0 +1,284 @@
+{
+ "A": {
+  "2/k1": {
+   "alpha": 5.309459813194886,
+   "beta": 5.369665598991401,
+   "gamma": -0.42581783212484325,
+   "linear_r2": 0.1857441447465069,
+   "additive_onehot_r2": 0.1857441447465069,
+   "saturated_r2": 0.6487291177906078,
+   "threshold_rule_acc": 0.7411666666666666,
+   "best_threshold": 0.5,
+   "best_threshold_over_base": 0.25,
+   "valid": 1.0
+  },
+  "2/k2": {
+   "alpha": 6.0734806517326,
+   "beta": 6.497283678440105,
+   "gamma": -4.7298127123126985,
+   "linear_r2": 0.3444591756216655,
+   "additive_onehot_r2": 0.3444591756216655,
+   "saturated_r2": 0.49189038029653254,
+   "threshold_rule_acc": 0.793,
+   "best_threshold": 0.5,
+   "best_threshold_over_base": 0.25,
+   "valid": 1.0
+  },
+  "8/k1": {
+   "alpha": 1.4274847771003671,
+   "beta": 1.5144070152733147,
+   "gamma": -1.7238840584356288,
+   "linear_r2": 0.823964220429892,
+   "additive_onehot_r2": 0.8259977189606342,
+   "saturated_r2": 0.9249113300592926,
+   "threshold_rule_acc": 0.9297388374052232,
+   "best_threshold": 4.5,
+   "best_threshold_over_base": 0.5625,
+   "valid": 0.9891666666666666
+  },
+  "8/k2": {
+   "alpha": 1.5174356203557773,
+   "beta": 1.40361323937656,
+   "gamma": -1.8812634005269515,
+   "linear_r2": 0.818746434976996,
+   "additive_onehot_r2": 0.8205669378625438,
+   "saturated_r2": 0.8830854364202204,
+   "threshold_rule_acc": 0.8921765295887663,
+   "best_threshold": 3.5,
+   "best_threshold_over_base": 0.4375,
+   "valid": 0.997
+  },
+  "10/k1": {
+   "alpha": 1.2469569492995263,
+   "beta": 1.2233842116824107,
+   "gamma": -1.3731705087485835,
+   "linear_r2": 0.8500372840905461,
+   "additive_onehot_r2": 0.8551531012343737,
+   "saturated_r2": 0.9514518626157993,
+   "threshold_rule_acc": 0.944332998996991,
+   "best_threshold": 5.5,
+   "best_threshold_over_base": 0.55,
+   "valid": 0.997
+  },
+  "10/k2": {
+   "alpha": 1.2465022791906386,
+   "beta": 1.1780639817151621,
+   "gamma": -1.5004797573868953,
+   "linear_r2": 0.8590057872804465,
+   "additive_onehot_r2": 0.860544631814901,
+   "saturated_r2": 0.9340504573097141,
+   "threshold_rule_acc": 0.9167778519012675,
+   "best_threshold": 4.5,
+   "best_threshold_over_base": 0.45,
+   "valid": 0.9993333333333333
+  },
+  "16/k1": {
+   "alpha": 0.6533385927312647,
+   "beta": 0.6016158007570853,
+   "gamma": -0.7748985614669743,
+   "linear_r2": 0.828531940950899,
+   "additive_onehot_r2": 0.8335657591699048,
+   "saturated_r2": 0.9643873383278355,
+   "threshold_rule_acc": 0.9281657200133645,
+   "best_threshold": 7.5,
+   "best_threshold_over_base": 0.46875,
+   "valid": 0.9976666666666667
+  },
+  "16/k2": {
+   "alpha": 0.7599015609022888,
+   "beta": 0.7331495243801409,
+   "gamma": -0.9680895898565494,
+   "linear_r2": 0.8708854958350647,
+   "additive_onehot_r2": 0.8759908317784001,
+   "saturated_r2": 0.973526002993645,
+   "threshold_rule_acc": 0.923153858976496,
+   "best_threshold": 7.5,
+   "best_threshold_over_base": 0.46875,
+   "valid": 0.9998333333333334
+  }
+ },
+ "B": {
+  "k1/with carry input": {
+   "params": 34,
+   "pre_r2": 0.9115190505981445,
+   "acc_b8": 1.0,
+   "acc_b10": 1.0,
+   "acc_b16": 1.0
+  },
+  "k1/prev digits + written, no carry input": {
+   "params": 78,
+   "pre_r2": 0.9454447031021118,
+   "acc_b8": 0.9405524419535628,
+   "acc_b10": 0.9383630178106864,
+   "acc_b16": 0.9094732625675946
+  },
+  "k1/linear a+b-w axis only (1 number)": {
+   "params": 34,
+   "pre_r2": 0.9115190505981445,
+   "acc_b8": 1.0,
+   "acc_b10": 1.0,
+   "acc_b16": 1.0
+  },
+  "k1/prev digits only": {
+   "params": 63,
+   "pre_r2": 0.8485783338546753,
+   "acc_b8": 0.9649719775820657,
+   "acc_b10": 0.9345607364418651,
+   "acc_b16": 0.8976567194071701
+  },
+  "k1/written only": {
+   "params": 48,
+   "pre_r2": 0.8479298949241638,
+   "acc_b8": 0.6945556445156125,
+   "acc_b10": 0.7102261356814088,
+   "acc_b16": 0.6787502503504906
+  },
+  "k2/with carry input": {
+   "params": 34,
+   "pre_r2": 0.9018860459327698,
+   "acc_b8": 1.0,
+   "acc_b10": 1.0,
+   "acc_b16": 1.0
+  },
+  "k2/prev digits + written, no carry input": {
+   "params": 78,
+   "pre_r2": 0.9387685060501099,
+   "acc_b8": 0.9392176529588766,
+   "acc_b10": 0.9331056649256729,
+   "acc_b16": 0.9828724721419727
+  },
+  "k2/linear a+b-w axis only (1 number)": {
+   "params": 34,
+   "pre_r2": 0.8984923958778381,
+   "acc_b8": 1.0,
+   "acc_b10": 1.0,
+   "acc_b16": 1.0
+  },
+  "k2/prev digits only": {
+   "params": 63,
+   "pre_r2": 0.8444654941558838,
+   "acc_b8": 0.9131394182547643,
+   "acc_b10": 0.9256729610285255,
+   "acc_b16": 0.914775072224515
+  },
+  "k2/written only": {
+   "params": 48,
+   "pre_r2": 0.8746718168258667,
+   "acc_b8": 0.6916750250752257,
+   "acc_b10": 0.6868220168742467,
+   "acc_b16": 0.7214197276104003
+  }
+ },
+ "C": {
+  "k0/count s only": {
+   "params": 4,
+   "pre_r2": 0.6583592295646667,
+   "acc_b2": 1.0
+  },
+  "k0/a,b,c": {
+   "params": 4,
+   "pre_r2": 0.8542064428329468,
+   "acc_b2": 1.0
+  },
+  "k1/count s only": {
+   "params": 4,
+   "pre_r2": 0.46307653188705444,
+   "acc_b2": 0.6927306047648136
+  },
+  "k1/a,b,c": {
+   "params": 4,
+   "pre_r2": 0.6388598084449768,
+   "acc_b2": 0.8167379352474038
+  },
+  "k1/a,b,c + prev + written": {
+   "params": 7,
+   "pre_r2": 0.8885459899902344,
+   "acc_b2": 1.0
+  },
+  "k1/a,b, prev, written (no c)": {
+   "params": 6,
+   "pre_r2": 0.8885459899902344,
+   "acc_b2": 1.0
+  },
+  "k1/full interaction of a,b,c": {
+   "params": 8,
+   "pre_r2": 0.6567023396492004,
+   "acc_b2": 0.8167379352474038
+  },
+  "k2/count s only": {
+   "params": 4,
+   "pre_r2": 0.6466872692108154,
+   "acc_b2": 1.0
+  },
+  "k2/a,b,c": {
+   "params": 4,
+   "pre_r2": 0.761742889881134,
+   "acc_b2": 1.0
+  },
+  "k2/a,b,c + prev + written": {
+   "params": 7,
+   "pre_r2": 0.8182723522186279,
+   "acc_b2": 1.0
+  },
+  "k2/a,b, prev, written (no c)": {
+   "params": 6,
+   "pre_r2": 0.776648998260498,
+   "acc_b2": 0.9484829973528813
+  },
+  "k2/full interaction of a,b,c": {
+   "params": 8,
+   "pre_r2": 0.7772931456565857,
+   "acc_b2": 1.0
+  },
+  "k3/count s only": {
+   "params": 4,
+   "pre_r2": 0.6472171545028687,
+   "acc_b2": 1.0
+  },
+  "k3/a,b,c": {
+   "params": 4,
+   "pre_r2": 0.7537350058555603,
+   "acc_b2": 1.0
+  },
+  "k3/a,b,c + prev + written": {
+   "params": 7,
+   "pre_r2": 0.7924054861068726,
+   "acc_b2": 1.0
+  },
+  "k3/a,b, prev, written (no c)": {
+   "params": 6,
+   "pre_r2": 0.7493897676467896,
+   "acc_b2": 1.0
+  },
+  "k3/full interaction of a,b,c": {
+   "params": 8,
+   "pre_r2": 0.7655581831932068,
+   "acc_b2": 1.0
+  },
+  "k4/count s only": {
+   "params": 4,
+   "pre_r2": 0.6293598413467407,
+   "acc_b2": 1.0
+  },
+  "k4/a,b,c": {
+   "params": 4,
+   "pre_r2": 0.7435956001281738,
+   "acc_b2": 1.0
+  },
+  "k4/a,b,c + prev + written": {
+   "params": 7,
+   "pre_r2": 0.7829199433326721,
+   "acc_b2": 1.0
+  },
+  "k4/a,b, prev, written (no c)": {
+   "params": 6,
+   "pre_r2": 0.7343082427978516,
+   "acc_b2": 1.0
+  },
+  "k4/full interaction of a,b,c": {
+   "params": 8,
+   "pre_r2": 0.7538254261016846,
+   "acc_b2": 1.0
+  }
+ }
+}

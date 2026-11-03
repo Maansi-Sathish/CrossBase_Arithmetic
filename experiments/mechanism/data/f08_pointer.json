@@ -1,0 +1,828 @@
+{
+ "pointer": {
+  "2/k1": {
+   "plus/-1": {
+    "measured_a": -0.3087335205078125,
+    "measured_b": -0.17300694783528645,
+    "pred_a": -1,
+    "pred_b": 0
+   },
+   "plus/+1": {
+    "measured_a": 0.2210876973470052,
+    "measured_b": -0.029103597005208332,
+    "pred_a": 1,
+    "pred_b": 0
+   },
+   "eq/-1": {
+    "measured_a": -0.8905826822916667,
+    "measured_b": -1.9284171040852864,
+    "pred_a": -1,
+    "pred_b": -2
+   },
+   "eq/+1": {
+    "measured_a": 0.1823456319173177,
+    "measured_b": 0.35609527587890627,
+    "pred_a": 1,
+    "pred_b": 2
+   },
+   "query/-1": {
+    "measured_a": 0.16932749430338542,
+    "measured_b": 0.18835154215494793,
+    "pred_a": 1,
+    "pred_b": 1
+   },
+   "query/+1": {
+    "measured_a": -1.1273648579915365,
+    "measured_b": -1.2144554646809895,
+    "pred_a": -1,
+    "pred_b": -1
+   },
+   "a_digits/-1": {
+    "measured_a": 0.25410807291666665,
+    "measured_b": -0.013740692138671875,
+    "pred_a": 1,
+    "pred_b": 0
+   },
+   "a_digits/+1": {
+    "measured_a": -0.3590532938639323,
+    "measured_b": -0.017904561360677085,
+    "pred_a": -1,
+    "pred_b": 0
+   },
+   "b_digits/-1": {
+    "measured_a": -0.13067586263020833,
+    "measured_b": 0.2831879170735677,
+    "pred_a": 0,
+    "pred_b": 1
+   },
+   "b_digits/+1": {
+    "measured_a": 0.03307362874348958,
+    "measured_b": -0.5052351888020833,
+    "pred_a": 0,
+    "pred_b": -1
+   },
+   "all/-1": {
+    "measured_a": -0.016415303548177083,
+    "measured_b": -0.010394846598307292,
+    "pred_a": 0,
+    "pred_b": 0
+   },
+   "all/+1": {
+    "measured_a": -0.16334004720052084,
+    "measured_b": 0.012776896158854167,
+    "pred_a": 0,
+    "pred_b": 0
+   },
+   "fit": {
+    "corr": 0.8614541338232,
+    "slope": 0.5136429061889649
+   }
+  },
+  "2/k2": {
+   "plus/-1": {
+    "measured_a": -0.6461235046386719,
+    "measured_b": -0.2093872578938802,
+    "pred_a": -1,
+    "pred_b": 0
+   },
+   "plus/+1": {
+    "measured_a": 0.5929966735839843,
+    "measured_b": 0.003701171875,
+    "pred_a": 1,
+    "pred_b": 0
+   },
+   "eq/-1": {
+    "measured_a": -0.9466626485188802,
+    "measured_b": -1.898144785563151,
+    "pred_a": -1,
+    "pred_b": -2
+   },
+   "eq/+1": {
+    "measured_a": 0.9963951619466146,
+    "measured_b": 1.491216532389323,
+    "pred_a": 1,
+    "pred_b": 2
+   },
+   "query/-1": {
+    "measured_a": 1.0892841084798177,
+    "measured_b": 1.2058378601074218,
+    "pred_a": 1,
+    "pred_b": 1
+   },
+   "query/+1": {
+    "measured_a": -1.096532236735026,
+    "measured_b": -1.0227769470214845,
+    "pred_a": -1,
+    "pred_b": -1
+   },
+   "a_digits/-1": {
+    "measured_a": 0.6818058268229167,
+    "measured_b": -0.033336283365885414,
+    "pred_a": 1,
+    "pred_b": 0
+   },
+   "a_digits/+1": {
+    "measured_a": -0.7010328165690104,
+    "measured_b": -0.0029345703125,
+    "pred_a": -1,
+    "pred_b": 0
+   },
+   "b_digits/-1": {
+    "measured_a": -0.19685714721679687,
+    "measured_b": 0.6476102701822917,
+    "pred_a": 0,
+    "pred_b": 1
+   },
+   "b_digits/+1": {
+    "measured_a": 0.14546473185221354,
+    "measured_b": -0.6806990559895834,
+    "pred_a": 0,
+    "pred_b": -1
+   },
+   "all/-1": {
+    "measured_a": 0.014440511067708333,
+    "measured_b": -0.013046112060546875,
+    "pred_a": 0,
+    "pred_b": 0
+   },
+   "all/+1": {
+    "measured_a": -0.2296198018391927,
+    "measured_b": 0.005825602213541667,
+    "pred_a": 0,
+    "pred_b": 0
+   },
+   "fit": {
+    "corr": 0.9753656412024663,
+    "slope": 0.8543239873250326
+   }
+  },
+  "2/k3": {
+   "plus/-1": {
+    "measured_a": -0.7389230855305989,
+    "measured_b": -0.3011365254720052,
+    "pred_a": -1,
+    "pred_b": 0
+   },
+   "plus/+1": {
+    "measured_a": 0.7532072448730469,
+    "measured_b": 0.044145914713541665,
+    "pred_a": 1,
+    "pred_b": 0
+   },
+   "eq/-1": {
+    "measured_a": -0.8738086446126302,
+    "measured_b": -1.7620281473795574,
+    "pred_a": -1,
+    "pred_b": -2
+   },
+   "eq/+1": {
+    "measured_a": 0.9845936075846354,
+    "measured_b": 1.5960048929850261,
+    "pred_a": 1,
+    "pred_b": 2
+   },
+   "query/-1": {
+    "measured_a": 1.04952392578125,
+    "measured_b": 0.9421392313639323,
+    "pred_a": 1,
+    "pred_b": 1
+   },
+   "query/+1": {
+    "measured_a": -1.0932162475585938,
+    "measured_b": -0.9554251607259114,
+    "pred_a": -1,
+    "pred_b": -1
+   },
+   "a_digits/-1": {
+    "measured_a": 0.8106944783528646,
+    "measured_b": -0.005390675862630209,
+    "pred_a": 1,
+    "pred_b": 0
+   },
+   "a_digits/+1": {
+    "measured_a": -0.7904981486002605,
+    "measured_b": -0.0224200439453125,
+    "pred_a": -1,
+    "pred_b": 0
+   },
+   "b_digits/-1": {
+    "measured_a": -0.14606124877929688,
+    "measured_b": 0.7924848937988281,
+    "pred_a": 0,
+    "pred_b": 1
+   },
+   "b_digits/+1": {
+    "measured_a": 0.09227193196614583,
+    "measured_b": -0.763922373453776,
+    "pred_a": 0,
+    "pred_b": -1
+   },
+   "all/-1": {
+    "measured_a": -0.010826059977213542,
+    "measured_b": -0.05714975992838542,
+    "pred_a": 0,
+    "pred_b": 0
+   },
+   "all/+1": {
+    "measured_a": -0.22297948201497395,
+    "measured_b": 0.021071675618489584,
+    "pred_a": 0,
+    "pred_b": 0
+   },
+   "fit": {
+    "corr": 0.9886398565845465,
+    "slope": 0.8632251561482747
+   }
+  },
+  "8/k1": {
+   "plus/-1": {
+    "measured_a": -0.49688621520996096,
+    "measured_b": -0.30475466410319013,
+    "pred_a": -1,
+    "pred_b": 0
+   },
+   "plus/+1": {
+    "measured_a": 0.34643304189046226,
+    "measured_b": 0.03284266153971354,
+    "pred_a": 1,
+    "pred_b": 0
+   },
+   "eq/-1": {
+    "measured_a": -0.23382270812988282,
+    "measured_b": -0.6466519419352214,
+    "pred_a": -1,
+    "pred_b": -2
+   },
+   "eq/+1": {
+    "measured_a": -0.11523735046386718,
+    "measured_b": 0.1846997324625651,
+    "pred_a": 1,
+    "pred_b": 2
+   },
+   "query/-1": {
+    "measured_a": -0.022326672871907552,
+    "measured_b": -0.28150894165039064,
+    "pred_a": 1,
+    "pred_b": 1
+   },
+   "query/+1": {
+    "measured_a": -0.5124306996663411,
+    "measured_b": -0.40419583638509116,
+    "pred_a": -1,
+    "pred_b": -1
+   },
+   "a_digits/-1": {
+    "measured_a": 0.3612891133626302,
+    "measured_b": -0.04770645141601562,
+    "pred_a": 1,
+    "pred_b": 0
+   },
+   "a_digits/+1": {
+    "measured_a": -0.38563152313232424,
+    "measured_b": 0.03706250508626302,
+    "pred_a": -1,
+    "pred_b": 0
+   },
+   "b_digits/-1": {
+    "measured_a": 0.0609259033203125,
+    "measured_b": 0.4384478505452474,
+    "pred_a": 0,
+    "pred_b": 1
+   },
+   "b_digits/+1": {
+    "measured_a": 0.020566940307617188,
+    "measured_b": -0.5819559224446614,
+    "pred_a": 0,
+    "pred_b": -1
+   },
+   "all/-1": {
+    "measured_a": 0.0565701421101888,
+    "measured_b": -0.053557484944661456,
+    "pred_a": 0,
+    "pred_b": 0
+   },
+   "all/+1": {
+    "measured_a": -0.1669097900390625,
+    "measured_b": 0.02536158243815104,
+    "pred_a": 0,
+    "pred_b": 0
+   },
+   "fit": {
+    "corr": 0.7839161258115859,
+    "slope": 0.25023616472880045
+   }
+  },
+  "8/k2": {
+   "plus/-1": {
+    "measured_a": -0.2737854258219401,
+    "measured_b": -0.2747590128580729,
+    "pred_a": -1,
+    "pred_b": 0
+   },
+   "plus/+1": {
+    "measured_a": 0.4776253890991211,
+    "measured_b": 0.1662615712483724,
+    "pred_a": 1,
+    "pred_b": 0
+   },
+   "eq/-1": {
+    "measured_a": -0.1914624277750651,
+    "measured_b": -0.14709341684977215,
+    "pred_a": -1,
+    "pred_b": -2
+   },
+   "eq/+1": {
+    "measured_a": 0.30966214497884115,
+    "measured_b": 0.33684112548828127,
+    "pred_a": 1,
+    "pred_b": 2
+   },
+   "query/-1": {
+    "measured_a": 0.412882080078125,
+    "measured_b": 0.07805375417073568,
+    "pred_a": 1,
+    "pred_b": 1
+   },
+   "query/+1": {
+    "measured_a": -0.2619994481404622,
+    "measured_b": -0.018839200337727863,
+    "pred_a": -1,
+    "pred_b": -1
+   },
+   "a_digits/-1": {
+    "measured_a": 0.2526576741536458,
+    "measured_b": -0.022986221313476562,
+    "pred_a": 1,
+    "pred_b": 0
+   },
+   "a_digits/+1": {
+    "measured_a": -0.15983646392822265,
+    "measured_b": 0.013741836547851563,
+    "pred_a": -1,
+    "pred_b": 0
+   },
+   "b_digits/-1": {
+    "measured_a": 0.05187048594156901,
+    "measured_b": 0.31021151224772137,
+    "pred_a": 0,
+    "pred_b": 1
+   },
+   "b_digits/+1": {
+    "measured_a": -0.025468788146972655,
+    "measured_b": -0.3030108388264974,
+    "pred_a": 0,
+    "pred_b": -1
+   },
+   "all/-1": {
+    "measured_a": -0.013175150553385417,
+    "measured_b": -0.03240650177001953,
+    "pred_a": 0,
+    "pred_b": 0
+   },
+   "all/+1": {
+    "measured_a": 0.06173395792643229,
+    "measured_b": 0.12388253529866536,
+    "pred_a": 0,
+    "pred_b": 0
+   },
+   "fit": {
+    "corr": 0.8236862761005522,
+    "slope": 0.20089477221171056
+   }
+  },
+  "10/k1": {
+   "plus/-1": {
+    "measured_a": -0.5640695190429688,
+    "measured_b": -0.21246136983235678,
+    "pred_a": -1,
+    "pred_b": 0
+   },
+   "plus/+1": {
+    "measured_a": 0.3907046127319336,
+    "measured_b": 0.042030258178710936,
+    "pred_a": 1,
+    "pred_b": 0
+   },
+   "eq/-1": {
+    "measured_a": -0.18182912190755207,
+    "measured_b": -0.5890457534790039,
+    "pred_a": -1,
+    "pred_b": -2
+   },
+   "eq/+1": {
+    "measured_a": -0.06189933776855469,
+    "measured_b": 0.23658220926920573,
+    "pred_a": 1,
+    "pred_b": 2
+   },
+   "query/-1": {
+    "measured_a": 0.007045415242513021,
+    "measured_b": -0.24116756439208983,
+    "pred_a": 1,
+    "pred_b": 1
+   },
+   "query/+1": {
+    "measured_a": -0.5333124160766601,
+    "measured_b": -0.375057258605957,
+    "pred_a": -1,
+    "pred_b": -1
+   },
+   "a_digits/-1": {
+    "measured_a": 0.38072718302408853,
+    "measured_b": -0.09376104990641276,
+    "pred_a": 1,
+    "pred_b": 0
+   },
+   "a_digits/+1": {
+    "measured_a": -0.37950950622558594,
+    "measured_b": 0.07936339060465494,
+    "pred_a": -1,
+    "pred_b": 0
+   },
+   "b_digits/-1": {
+    "measured_a": 0.05704142252604167,
+    "measured_b": 0.43421480814615887,
+    "pred_a": 0,
+    "pred_b": 1
+   },
+   "b_digits/+1": {
+    "measured_a": 0.024037513732910156,
+    "measured_b": -0.6316269048055013,
+    "pred_a": 0,
+    "pred_b": -1
+   },
+   "all/-1": {
+    "measured_a": 0.054372393290201826,
+    "measured_b": -0.03659267425537109,
+    "pred_a": 0,
+    "pred_b": 0
+   },
+   "all/+1": {
+    "measured_a": -0.10420135498046874,
+    "measured_b": 0.03369035085042318,
+    "pred_a": 0,
+    "pred_b": 0
+   },
+   "fit": {
+    "corr": 0.7990758757308872,
+    "slope": 0.2613142884572347
+   }
+  },
+  "10/k2": {
+   "plus/-1": {
+    "measured_a": -0.12879578908284506,
+    "measured_b": -0.09587818145751953,
+    "pred_a": -1,
+    "pred_b": 0
+   },
+   "plus/+1": {
+    "measured_a": 0.48254706064860026,
+    "measured_b": 0.17099249521891277,
+    "pred_a": 1,
+    "pred_b": 0
+   },
+   "eq/-1": {
+    "measured_a": -0.04288759867350261,
+    "measured_b": -0.03870248158772786,
+    "pred_a": -1,
+    "pred_b": -2
+   },
+   "eq/+1": {
+    "measured_a": 0.18911048889160156,
+    "measured_b": 0.2020310084025065,
+    "pred_a": 1,
+    "pred_b": 2
+   },
+   "query/-1": {
+    "measured_a": 0.4087646230061849,
+    "measured_b": 0.04320334116617838,
+    "pred_a": 1,
+    "pred_b": 1
+   },
+   "query/+1": {
+    "measured_a": -0.1132479476928711,
+    "measured_b": 0.021562576293945312,
+    "pred_a": -1,
+    "pred_b": -1
+   },
+   "a_digits/-1": {
+    "measured_a": 0.1759241231282552,
+    "measured_b": -0.03611807505289714,
+    "pred_a": 1,
+    "pred_b": 0
+   },
+   "a_digits/+1": {
+    "measured_a": -0.041179529825846356,
+    "measured_b": 0.03718636830647786,
+    "pred_a": -1,
+    "pred_b": 0
+   },
+   "b_digits/-1": {
+    "measured_a": 0.02670372009277344,
+    "measured_b": 0.28239718119303386,
+    "pred_a": 0,
+    "pred_b": 1
+   },
+   "b_digits/+1": {
+    "measured_a": -0.00792950948079427,
+    "measured_b": -0.11192906697591146,
+    "pred_a": 0,
+    "pred_b": -1
+   },
+   "all/-1": {
+    "measured_a": 0.05285924275716146,
+    "measured_b": 0.029531822204589844,
+    "pred_a": 0,
+    "pred_b": 0
+   },
+   "all/+1": {
+    "measured_a": 0.05281689961751302,
+    "measured_b": 0.041443405151367185,
+    "pred_a": 0,
+    "pred_b": 0
+   },
+   "fit": {
+    "corr": 0.728202776354628,
+    "slope": 0.12399455769856771
+   }
+  },
+  "16/k1": {
+   "plus/-1": {
+    "measured_a": -0.4547174326578776,
+    "measured_b": -0.18640682220458984,
+    "pred_a": -1,
+    "pred_b": 0
+   },
+   "plus/+1": {
+    "measured_a": 0.32899883270263675,
+    "measured_b": 0.029634068806966146,
+    "pred_a": 1,
+    "pred_b": 0
+   },
+   "eq/-1": {
+    "measured_a": -0.13117457071940103,
+    "measured_b": -0.47359219868977864,
+    "pred_a": -1,
+    "pred_b": -2
+   },
+   "eq/+1": {
+    "measured_a": -0.017602195739746095,
+    "measured_b": 0.22692256927490234,
+    "pred_a": 1,
+    "pred_b": 2
+   },
+   "query/-1": {
+    "measured_a": 0.017303619384765625,
+    "measured_b": -0.14966550191243488,
+    "pred_a": 1,
+    "pred_b": 1
+   },
+   "query/+1": {
+    "measured_a": -0.39011775970458984,
+    "measured_b": -0.2892749532063802,
+    "pred_a": -1,
+    "pred_b": -1
+   },
+   "a_digits/-1": {
+    "measured_a": 0.3271397527058919,
+    "measured_b": -0.0760482660929362,
+    "pred_a": 1,
+    "pred_b": 0
+   },
+   "a_digits/+1": {
+    "measured_a": -0.332085812886556,
+    "measured_b": 0.05891368865966797,
+    "pred_a": -1,
+    "pred_b": 0
+   },
+   "b_digits/-1": {
+    "measured_a": 0.04072095235188802,
+    "measured_b": 0.3405871327718099,
+    "pred_a": 0,
+    "pred_b": 1
+   },
+   "b_digits/+1": {
+    "measured_a": 0.027935892740885416,
+    "measured_b": -0.5220441055297852,
+    "pred_a": 0,
+    "pred_b": -1
+   },
+   "all/-1": {
+    "measured_a": 0.0560680898030599,
+    "measured_b": 0.005343971252441407,
+    "pred_a": 0,
+    "pred_b": 0
+   },
+   "all/+1": {
+    "measured_a": -0.08829760233561199,
+    "measured_b": -0.0008967971801757813,
+    "pred_a": 0,
+    "pred_b": 0
+   },
+   "fit": {
+    "corr": 0.8202901211205077,
+    "slope": 0.2183602905273437
+   }
+  },
+  "16/k2": {
+   "plus/-1": {
+    "measured_a": -0.12457302093505859,
+    "measured_b": -0.09135021209716797,
+    "pred_a": -1,
+    "pred_b": 0
+   },
+   "plus/+1": {
+    "measured_a": 0.3980974706013997,
+    "measured_b": 0.13982934315999349,
+    "pred_a": 1,
+    "pred_b": 0
+   },
+   "eq/-1": {
+    "measured_a": -0.0141082763671875,
+    "measured_b": -0.015755437215169272,
+    "pred_a": -1,
+    "pred_b": -2
+   },
+   "eq/+1": {
+    "measured_a": 0.10183948516845703,
+    "measured_b": 0.11489621480305989,
+    "pred_a": 1,
+    "pred_b": 2
+   },
+   "query/-1": {
+    "measured_a": 0.26633155822753907,
+    "measured_b": -0.007718149820963542,
+    "pred_a": 1,
+    "pred_b": 1
+   },
+   "query/+1": {
+    "measured_a": -0.08954715728759766,
+    "measured_b": 0.06336041768391927,
+    "pred_a": -1,
+    "pred_b": -1
+   },
+   "a_digits/-1": {
+    "measured_a": 0.1922408930460612,
+    "measured_b": -0.032960700988769534,
+    "pred_a": 1,
+    "pred_b": 0
+   },
+   "a_digits/+1": {
+    "measured_a": -0.03388652801513672,
+    "measured_b": 0.03154396057128906,
+    "pred_a": -1,
+    "pred_b": 0
+   },
+   "b_digits/-1": {
+    "measured_a": 0.024517911275227865,
+    "measured_b": 0.33992706298828124,
+    "pred_a": 0,
+    "pred_b": 1
+   },
+   "b_digits/+1": {
+    "measured_a": -0.0021187591552734373,
+    "measured_b": -0.10555411020914714,
+    "pred_a": 0,
+    "pred_b": -1
+   },
+   "all/-1": {
+    "measured_a": 0.058726959228515625,
+    "measured_b": 0.05842585245768229,
+    "pred_a": 0,
+    "pred_b": 0
+   },
+   "all/+1": {
+    "measured_a": 0.0518216069539388,
+    "measured_b": 0.02423009236653646,
+    "pred_a": 0,
+    "pred_b": 0
+   },
+   "fit": {
+    "corr": 0.647608099938227,
+    "slope": 0.09281651496887207
+   }
+  }
+ },
+ "recency": {
+  "2": {
+   "clean": {
+    "attn_on_last_digit": 0.6892642378807068,
+    "attn_on_second_last": 0.23778812050819398,
+    "output_true": 1.0,
+    "output_uses_swapped_a": 0.0,
+    "output_uses_swapped_b": 0.0
+   },
+   "a": {
+    "attn_on_last_digit": 0.2161001718044281,
+    "attn_on_second_last": 0.7169219589233399,
+    "output_true": 0.50375,
+    "output_uses_swapped_a": 0.9900249376558603,
+    "output_uses_swapped_b": 0.5169902912621359
+   },
+   "b": {
+    "attn_on_last_digit": 0.22671131670475006,
+    "attn_on_second_last": 0.6071235489845276,
+    "output_true": 0.50375,
+    "output_uses_swapped_a": 0.516209476309227,
+    "output_uses_swapped_b": 0.9635922330097088
+   },
+   "both_shift_a": {
+    "attn_on_last_digit": 0.6892642378807068,
+    "attn_on_second_last": 0.23778812050819398,
+    "output_true": 1.0,
+    "output_uses_swapped_a": 0.0,
+    "output_uses_swapped_b": 0.0
+   }
+  },
+  "8": {
+   "clean": {
+    "attn_on_last_digit": 0.9024302983283996,
+    "attn_on_second_last": 0.0752610456943512,
+    "output_true": 1.0,
+    "output_uses_swapped_a": 0.0,
+    "output_uses_swapped_b": 0.0
+   },
+   "a": {
+    "attn_on_last_digit": 0.5869533824920654,
+    "attn_on_second_last": 0.3725139570236206,
+    "output_true": 0.87875,
+    "output_uses_swapped_a": 0.10084033613445378,
+    "output_uses_swapped_b": 0.021337126600284494
+   },
+   "b": {
+    "attn_on_last_digit": 0.4798247504234314,
+    "attn_on_second_last": 0.21726638674736024,
+    "output_true": 0.98125,
+    "output_uses_swapped_a": 0.008403361344537815,
+    "output_uses_swapped_b": 0.017069701280227598
+   },
+   "both_shift_a": {
+    "attn_on_last_digit": 0.9024302983283996,
+    "attn_on_second_last": 0.0752610456943512,
+    "output_true": 1.0,
+    "output_uses_swapped_a": 0.0,
+    "output_uses_swapped_b": 0.0
+   }
+  },
+  "10": {
+   "clean": {
+    "attn_on_last_digit": 0.9402472972869873,
+    "attn_on_second_last": 0.04867856159806252,
+    "output_true": 1.0,
+    "output_uses_swapped_a": 0.0,
+    "output_uses_swapped_b": 0.0
+   },
+   "a": {
+    "attn_on_last_digit": 0.5244736576080322,
+    "attn_on_second_last": 0.4504202175140381,
+    "output_true": 0.65875,
+    "output_uses_swapped_a": 0.3328671328671329,
+    "output_uses_swapped_b": 0.03899721448467967
+   },
+   "b": {
+    "attn_on_last_digit": 0.3550106918811798,
+    "attn_on_second_last": 0.22385808527469636,
+    "output_true": 0.9525,
+    "output_uses_swapped_a": 0.004195804195804196,
+    "output_uses_swapped_b": 0.036211699164345405
+   },
+   "both_shift_a": {
+    "attn_on_last_digit": 0.9402472972869873,
+    "attn_on_second_last": 0.04867856159806252,
+    "output_true": 1.0,
+    "output_uses_swapped_a": 0.0,
+    "output_uses_swapped_b": 0.0
+   }
+  },
+  "16": {
+   "clean": {
+    "attn_on_last_digit": 0.9401233434677124,
+    "attn_on_second_last": 0.04573874235153198,
+    "output_true": 1.0,
+    "output_uses_swapped_a": 0.0,
+    "output_uses_swapped_b": 0.0
+   },
+   "a": {
+    "attn_on_last_digit": 0.58470867395401,
+    "attn_on_second_last": 0.38422890424728395,
+    "output_true": 0.7375,
+    "output_uses_swapped_a": 0.203778677462888,
+    "output_uses_swapped_b": 0.013245033112582781
+   },
+   "b": {
+    "attn_on_last_digit": 0.36457454681396484,
+    "attn_on_second_last": 0.24630422174930572,
+    "output_true": 0.91375,
+    "output_uses_swapped_a": 0.01349527665317139,
+    "output_uses_swapped_b": 0.04900662251655629
+   },
+   "both_shift_a": {
+    "attn_on_last_digit": 0.9401233434677124,
+    "attn_on_second_last": 0.04573874235153198,
+    "output_true": 1.0,
+    "output_uses_swapped_a": 0.0,
+    "output_uses_swapped_b": 0.0
+   }
+  }
+ }
+}

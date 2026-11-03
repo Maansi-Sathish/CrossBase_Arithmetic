@@ -1,0 +1,36 @@
+{
+ "n": 3000,
+ "errors": 62,
+ "accuracy": 0.9793333333333334,
+ "kinds": {
+  "wrong digit (carry flipped)": 54,
+  "did not stop": 6,
+  "stopped early": 2
+ },
+ "wrong digit position vs shorter operand": {
+  "k < shorter length": 40,
+  "k > shorter length": 8,
+  "k = shorter length": 6
+ },
+ "carry-in at wrong digit": {
+  "0": 32,
+  "1": 22
+ },
+ "first wrong position": {
+  "1": 10,
+  "3": 12,
+  "6": 5,
+  "7": 2,
+  "2": 19,
+  "11": 3,
+  "4": 4,
+  "9": 3,
+  "10": 2,
+  "0": 2
+ },
+ "incoming carry chain length at wrong digit (median, share >= 3)": [
+  0.0,
+  0.09259259259259259
+ ],
+ "all carry-in positions: chain share >= 3": 0.4152667027947666
+}

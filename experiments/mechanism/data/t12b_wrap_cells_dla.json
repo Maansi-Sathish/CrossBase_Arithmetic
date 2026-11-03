@@ -1,0 +1,65 @@
+{
+ "n_cells": 30,
+ "by_sum": {
+  "10": {
+   "decimal": {
+    "to decimal answer": 9.845017433166504,
+    "to hex answer": 3.4153060913085938
+   },
+   "hex": {
+    "to decimal answer": 10.441333770751953,
+    "to hex answer": 5.023833751678467
+   }
+  },
+  "11": {
+   "decimal": {
+    "to decimal answer": 10.389832496643066,
+    "to hex answer": 5.483269691467285
+   },
+   "hex": {
+    "to decimal answer": 6.218593597412109,
+    "to hex answer": 4.82393741607666
+   }
+  },
+  "12": {
+   "decimal": {
+    "to decimal answer": 8.675339698791504,
+    "to hex answer": 2.3461878299713135
+   },
+   "hex": {
+    "to decimal answer": 6.999607563018799,
+    "to hex answer": 2.98738694190979
+   }
+  },
+  "13": {
+   "decimal": {
+    "to decimal answer": 11.641901969909668,
+    "to hex answer": 7.924250602722168
+   },
+   "hex": {
+    "to decimal answer": 5.40411376953125,
+    "to hex answer": 5.377697944641113
+   }
+  },
+  "14": {
+   "decimal": {
+    "to decimal answer": 8.864616394042969,
+    "to hex answer": 3.302215814590454
+   },
+   "hex": {
+    "to decimal answer": 5.251408100128174,
+    "to hex answer": 4.009080410003662
+   }
+  },
+  "15": {
+   "decimal": {
+    "to decimal answer": 13.399669647216797,
+    "to hex answer": 4.51987361907959
+   },
+   "hex": {
+    "to decimal answer": 5.094649791717529,
+    "to hex answer": 5.247139930725098
+   }
+  }
+ }
+}

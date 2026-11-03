@@ -1,0 +1,92 @@
+{
+ "8/k0": {
+  "original": 1.0,
+  "sum table": 1.0,
+  "bump": 0.576861489191353,
+  "bump + parity gate": 0.8360688550840673,
+  "two bumps + parity gate": 0.9973979183346677,
+  "parity gate only": 0.23518815052041633,
+  "params per neuron": {
+   "sum table": 15,
+   "bump": 4,
+   "bump + parity gate": 6,
+   "two bumps + parity gate": 9,
+   "parity gate only": 3
+  }
+ },
+ "8/k1": {
+  "original": 1.0,
+  "sum table": 0.9321457165732586,
+  "bump": 0.22497998398718974,
+  "bump + parity gate": 0.22938350680544436,
+  "two bumps + parity gate": 0.33286629303442755,
+  "parity gate only": 0.11949559647718175,
+  "params per neuron": {
+   "sum table": 16,
+   "bump": 4,
+   "bump + parity gate": 6,
+   "two bumps + parity gate": 9,
+   "parity gate only": 3
+  }
+ },
+ "10/k0": {
+  "original": 1.0,
+  "sum table": 1.0,
+  "bump": 0.5446178471388555,
+  "bump + parity gate": 0.8519407763105242,
+  "two bumps + parity gate": 0.9483793517406963,
+  "parity gate only": 0.18627450980392157,
+  "params per neuron": {
+   "sum table": 19,
+   "bump": 4,
+   "bump + parity gate": 6,
+   "two bumps + parity gate": 9,
+   "parity gate only": 3
+  }
+ },
+ "10/k1": {
+  "original": 1.0,
+  "sum table": 0.945167100260156,
+  "bump": 0.17690614368621171,
+  "bump + parity gate": 0.178907344406644,
+  "two bumps + parity gate": 0.24434660796477886,
+  "parity gate only": 0.09825895537322393,
+  "params per neuron": {
+   "sum table": 20,
+   "bump": 4,
+   "bump + parity gate": 6,
+   "two bumps + parity gate": 9,
+   "parity gate only": 3
+  }
+ },
+ "16/k0": {
+  "original": 1.0,
+  "sum table": 1.0,
+  "bump": 0.3149149149149149,
+  "bump + parity gate": 0.5297297297297298,
+  "two bumps + parity gate": 0.8176176176176176,
+  "parity gate only": 0.11191191191191191,
+  "params per neuron": {
+   "sum table": 31,
+   "bump": 4,
+   "bump + parity gate": 6,
+   "two bumps + parity gate": 9,
+   "parity gate only": 3
+  }
+ },
+ "16/k1": {
+  "original": 1.0,
+  "sum table": 0.908872421389946,
+  "bump": 0.09533346685359503,
+  "bump + parity gate": 0.0955337472461446,
+  "two bumps + parity gate": 0.13518926497095934,
+  "parity gate only": 0.060284398157420385,
+  "params per neuron": {
+   "sum table": 32,
+   "bump": 4,
+   "bump + parity gate": 6,
+   "two bumps + parity gate": 9,
+   "parity gate only": 3
+  }
+ }
+}
